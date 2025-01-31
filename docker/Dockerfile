@@ -38,11 +38,11 @@ RUN echo '# OS update' \
 	&& rm -rf chipseq.git/ \
 	&&        echo '# Install EPD' \
 	&& cd /usr/local/ \
-	&& git clone https://gitlab.sib.swiss/EPD/epd-web.git EPD_web.git \
+	&& git clone https://github.com/sib-swiss/EPD.git EPD_web.git \
 	&& cd EPD_web.git/ \
-	&& git switch miniEPD \
 	&& git pull \
 	&& rm -Rf .git* docker/ \
+	&& chmod a+wrx htdocs/epdnew/gif/* \
 	&& find htdocs/ cgi-bin/ -type f -exec perl -i -pe 's|miniepd/||g' {} \; \
 	&&        echo '# Install the EPD database' \
 	&& service mysql start \
