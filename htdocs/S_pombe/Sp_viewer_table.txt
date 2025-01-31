@@ -1,0 +1,10 @@
+#!	sequence	EPD	https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/000/002/945/GCF_000002945.1_ASM294v2/								
+#!	note	a	the midpoint between paired-end fragments was calculated								
+#!	note	b	tags were centered by 50 bp								
+#	UCSC track name	Track description	Track resolution	Strand	Original dataset	Raw format	Tissue	Stage/Time point	Condition	MGA series name	PMID
+1	Nucleosomes	centered MNase-seq tags__a	20		SRP028538	SRA			wild-type	degennaro13	24100010
+2	H3K4me3 (WT)	centered H3K4me3 ChIP-seq tags__b	10		GSM1201989	SRA			wild-type	degennaro13	24100010
+3	All CAGE (+)	5' end of CAGE reads	1	+	E-MTAB-3188,GSE110976	FASTQ			wild-type	li15,thodberg18	25747261
+4	All CAGE (-)	5' end of CAGE reads	1	-	E-MTAB-3188,GSE110976	FASTQ			wild-type	li15,thodberg18	25747261
+5	EPDnew promoters	EPDnew promoters v. 002	1__epd							epd	epd
+6	RefSeq genes	RefSeq gene annotation	1		https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/000/002/945/GCF_000002945.1_ASM294v2/GCF_000002945.1_ASM294v2_genomic.gff.gz	GFF					22121212

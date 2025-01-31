@@ -1,0 +1,14 @@
+#!	sequence	UCSC									
+#!	note	a	tags were centered by 73 bp								
+#!	note	b	tags were centered by 80 bp								
+#	UCSC track name	Track description	Track resolution	Strand	Original dataset	Raw format	Tissue	Stage/Time point	Condition	MGA series name	PMID
+1	Nucleosomes	centered MNase-seq tags__a	10		GSE20136	SRA		all stages merged		ercan11	21177966
+#!	2,5	Nucleosomes at various stages									
+2	Nucleosomes (MS)	centered MNase-seq tags	10		GSM514735	SRA		mixed stage embryos		ercan11	21177966
+3	Nucleosomes (GL)	centered MNase-seq tags	10		GSM514736	SRA		young germline-less adults		ercan11	21177966
+4	Nucleosomes (GC)	centered MNase-seq tags	10		GSM590213	SRA		young germline-containing adults		ercan11	21177966
+5	Nucleosomes (L3)	centered MNase-seq tags	10		GSM590214	SRA		L3 stage XO hermaphrodites		ercan11	21177966
+6	H3K4me3	centered H3K4me3 ChIP-seq tags__b	10		GSM1208361,GSM1208362	SRA	whole embryo			chen14	24653213
+7	GRO-cap (+)	5' end of GRO-cap reads	1	+	GSE43087	SRA				kruesi13	23795297
+8	GRO-cap (-)	5' end of GRO-cap reads	1	-	GSE43087	SRA				kruesi13	23795297
+9	EPDnew promoters	EPDnew promoters v. 001	1__epd							epd	epd

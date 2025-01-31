@@ -1,0 +1,95 @@
+#!/usr/bin/env perl
+
+################################################################################
+#
+#   get_doc
+#   -------
+#
+#   Document server to provide unified access to documents from
+#   databases through WWW. The cgi-script expects two parameters,
+#   db and format in order to determine the entry in a config
+#   file, which contains the wanted UNIX command to show the
+#   document. Words in the given UNIX command which start with
+#   a $-sign are interpreted as variables and are substituted
+#   by the parameter with the same name.
+#
+#   written by C. Lottaz (SIB-ISREC) in December 2000
+#
+################################################################################
+
+use strict;
+use CGI;
+use MyCGI;
+
+my $configFile = '../etc/docserv.conf';
+#my $q = new CGI;
+my $q = new MyCGI;
+
+################################################################################
+#
+# choose the entry in the config file specified by the
+# parameters db and format
+#
+
+local *INFILE;
+my $db = $q->param('db');
+my $format = $q->param('format');
+if (!$db) { printErrorPage("You must specify a database: db=..."); }
+if (!$format) { printErrorPage("You must specify a format: format=..."); }
+open(INFILE, $configFile);
+while (<INFILE>) {
+    if (m/^$format\:\:$db/) { last; }
+}
+close(INFILE);
+if (!m/^$format\:\:$db/) {
+    printErrorPage("No configuration entry found for database $db in format $format.");
+}
+
+################################################################################
+#
+# Parse the chosen configuration line
+# and substitute variables
+#
+s/^\S+\s+\"//; # cut the characters in front of the UNIX command
+my($command, $mimeType) = split(/\"\s+/, $_, 2);
+while($command =~ m/\$([a-zA-Z0-9_]+)/) {
+    my $variable = $1;
+    my $value = $q->param($variable);
+#   $value=~s/\|//go;
+    $value=~s/[|%;]//go; $value=~s/\s+//go;
+#   $value=~s/[^A-Za-z0-9_]//go; $value=~s/\s+//go;
+    if (!$value) { printErrorPage("You must attribute a value to the variable $variable."); }
+    $command =~ s/\$$variable/$value/g;
+}
+#close(OF);
+################################################################################
+#
+# launch the command and deliver the output
+#
+
+local *INPROC;
+#if ($mimeType) { print $q->header($mimeType); }
+if ($mimeType =~/text\/html/) { print $q->header('text/html');}
+elsif ($mimeType =~/text\/plain/) { print $q->header('text/plain');}
+
+open(INPROC, "$command 2>&1 |");
+    while (<INPROC>) { print $_; }
+close(INPROC);
+exit 0;
+
+################################################################################
+#
+# Print error page
+#
+
+sub printErrorPage {
+    my($msg) = @_;
+    print($q->header('text/html'), $q->start_html(),
+	  $q->h1("Oops..."), $msg, $q->end_html());
+    exit 0;
+}
+
+#
+# End of File
+#
+################################################################################

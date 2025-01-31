@@ -1,0 +1,12 @@
+Name: Z. mays (Oct 2013 B73 RefGen_v3/zm3)
+Status: full
+NCBI Assembly: https://www.ncbi.nlm.nih.gov/assembly/GCF_000005005.1/
+Source: Assembled chromosomes from RefSeq (GCF_000005005.1): ftp://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/000/005/005/GCF_000005005.1_B73_RefGen_v3/
+NCBI Version: B73 RefGen_v3
+UCSC Assembly: none (zeaMay_b73)
+Local Assembly: zm3
+Bowtie Idx: z_mays_zm3
+Liftover: none
+RepeatMasker: none
+MGA FTP: https://epd.expasy.org/ftp/mga/zm3/
+UCSC Genome Browser: https://genome-euro.ucsc.edu/cgi-bin/hgTracks?hubUrl=https://epd.expasy.org/epd/ucsc/epdHub/epdHub.txt&genome=zm3

@@ -1,0 +1,12 @@
+Name: A. mellifera (Apr 2011 Amel_4.5/amel5)
+Status: full
+NCBI Assembly: https://www.ncbi.nlm.nih.gov/assembly/GCF_000002195.4/
+Source: Assembled chromosomes from RefSeq (GCF_000002195.4): ftp://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/000/002/195/GCF_000002195.4_Amel_4.5/
+NCBI Version: Amel_4.5
+UCSC Assembly: none
+Local Assembly: amel5
+Bowtie Idx: a_mellifera_amel5
+Liftover: none
+RepeatMasker: none
+MGA FTP: https://epd.expasy.org/ftp/mga/amel5/
+UCSC Genome Browser: https://genome-euro.ucsc.edu/cgi-bin/hgTracks?hubUrl=https://epd.expasy.org/epd/ucsc/epdHub/epdHub.txt&genome=amel5

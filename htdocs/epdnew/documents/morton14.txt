@@ -1,0 +1,11 @@
+### ##################################################################
+### BAM file was downloaded from supporting material web-site:
+### http://megraw.cgrb.oregonstate.edu/suppmats/3PEAT/
+
+wget http://megraw.cgrb.oregonstate.edu/jbrowse_public/arabidopsis_public/webdata/peat/peat.sorted.bam
+
+# Make the SGA:
+bamToBed -i peat.sorted.bam > peat.sorted.bed
+sed -i 's/^Chr/chr/' peat.sorted.bed
+
+awk 'BEGIN{FS=OFS="\t"; while( (getline < "chr_NC_gi") >0 ){chr["chr" $1]=$2}} $6=="+"{print chr[$1],"PEAT",$2+1,"+","1"} $6=="-"{print chr[$1],"PEAT",$3,"-","1"}' peat.sorted.bed | sort -k1,1 -k3,3n -k4,4 | compactsga > arabidopsis_TSS.sga

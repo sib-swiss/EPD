@@ -1,0 +1,7 @@
+chipseq   https://epd.expasy.org/chipseq
+ssa       https://epd.expasy.org/ssa
+mga       https://epd.expasy.org/mga
+ftp       https://epd.expasy.org/ftp
+pwmtools  https://epd.expasy.org/pwmtools
+epdhub    https://epd.expasy.org/epd/ucsc/epdHub
+ccg       https://epd.expasy.org

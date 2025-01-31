@@ -1,0 +1,12 @@
+Name: D. rerio (July 2010 Zv9/danRer7)
+Status: full
+NCBI Assembly: https://www.ncbi.nlm.nih.gov/assembly/GCF_000002035.4/
+Source: Assembled chromosomes from Refseq (GCF_000002035.4): ftp://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/000/002/035/GCF_000002035.4_Zv9/
+NCBI Version: Zv9
+UCSC Assembly: danRer7
+Local Assembly: danRer7
+Bowtie Idx: d_rerio_danRer7
+Liftover: danRer7ToHg19, danRer7ToMm9, danRer7ToMm10
+RepeatMasker: rmsk/rmsk_danRer7.SGA.gz
+MGA FTP: https://epd.expasy.org/ftp/mga/danRer7/
+UCSC Genome Browser: https://genome-euro.ucsc.edu/cgi-bin/hgTracks?hubUrl=https://epd.expasy.org/epd/ucsc/epdHub/epdHub.txt&genome=danRer7

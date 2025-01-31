@@ -1,0 +1,12 @@
+Name: C. familiaris (Sep 2011 CanFam3.1/canFam3)
+Status: full
+NCBI Assembly: https://www.ncbi.nlm.nih.gov/assembly/GCF_000002285.3/
+Source: Assembled chromosomes from Refseq (GCF_000002285.3): ftp://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/000/002/285/GCF_000002285.3_CanFam3.1/
+NCBI Version: CanFam3.1
+UCSC Assembly: canFam3
+Local Assembly: canFam3
+Bowtie Idx: d_rerio_canFam3
+Liftover: canFam3ToCanFam2, canFam3ToHg19, canFam3ToHg38, canFam3ToMm10, canFam3ToMm9, canFam3ToRn6, canFam3ToXenTro9, canFam3ToMm39
+RepeatMasker: rmsk/rmsk_canFam3.SGA.gz
+MGA FTP: https://epd.expasy.org/ftp/mga/canFam3/
+UCSC Genome Browser: https://genome-euro.ucsc.edu/cgi-bin/hgTracks?hubUrl=https://epd.expasy.org/epd/ucsc/epdHub/epdHub.txt&genome=canFam3

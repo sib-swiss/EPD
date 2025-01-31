@@ -1,0 +1,36 @@
+#!	sequence	UCSC									
+#	UCSC track name	Track description	Track resolution	Strand	Original dataset	Raw format	Tissue	Stage/Time point	Condition	MGA series name	PMID
+1	All CAGE (+)	5' end of CAGE reads	1	+	FANTOM5	BAM	all adult tissues merged			francescatto17	29087374
+#!	2,31	Selected FANTOM CAGE samples									
+2	(+) Amygdala	5' end of CAGE reads	1	+	FANTOM5	BAM	amygdala			francescatto17	29087374
+3	(+) CaudateNucleus	5' end of CAGE reads	1	+	FANTOM5	BAM	caudate nucleus			francescatto17	29087374
+4	(+) Cerebellum	5' end of CAGE reads	1	+	FANTOM5	BAM	cerebellum			francescatto17	29087374
+5	(+) Globus Pallidus	5' end of CAGE reads	1	+	FANTOM5	BAM	globus pallidus			francescatto17	29087374
+6	(+) Hippocampus	5' end of CAGE reads	1	+	FANTOM5	BAM	hippocampus			francescatto17	29087374
+7	(+) LocusCoeruleus	5' end of CAGE reads	1	+	FANTOM5	BAM	locus coeruleus			francescatto17	29087374
+8	(+) MedFrontaGyrus	5' end of CAGE reads	1	+	FANTOM5	BAM	medial frontal gyrus			francescatto17	29087374
+9	(+) MedTemporGyrus	5' end of CAGE reads	1	+	FANTOM5	BAM	medial temporal gyrus			francescatto17	29087374
+10	(+) MedullOblongat	5' end of CAGE reads	1	+	FANTOM5	BAM	medulla oblongata			francescatto17	29087374
+11	(+) OccipitCortex	5' end of CAGE reads	1	+	FANTOM5	BAM	occipital cortex			francescatto17	29087374
+12	(+) ParietalGyrus	5' end of CAGE reads	1	+	FANTOM5	BAM	parietal gyrus			francescatto17	29087374
+13	(+) Putamen	5' end of CAGE reads	1	+	FANTOM5	BAM	putamen			francescatto17	29087374
+14	(+) SpinalCord	5' end of CAGE reads	1	+	FANTOM5	BAM	spinal cord			francescatto17	29087374
+15	(+) SubstantNigra	5' end of CAGE reads	1	+	FANTOM5	BAM	substantia nigra			francescatto17	29087374
+16	(+) Thalamus	5' end of CAGE reads	1	+	FANTOM5	BAM	thalamus			francescatto17	29087374
+17	(-) Amygdala	5' end of CAGE reads	1	-	FANTOM5	BAM	amygdala			francescatto17	29087374
+18	(-) CaudateNucleus	5' end of CAGE reads	1	-	FANTOM5	BAM	caudate nucleus			francescatto17	29087374
+19	(-) Cerebellum	5' end of CAGE reads	1	-	FANTOM5	BAM	cerebellum			francescatto17	29087374
+20	(-) GlobusPallidus	5' end of CAGE reads	1	-	FANTOM5	BAM	globus pallidus			francescatto17	29087374
+21	(-) Hippocampus	5' end of CAGE reads	1	-	FANTOM5	BAM	hippocampus			francescatto17	29087374
+22	(-) LocusCoeruleus	5' end of CAGE reads	1	-	FANTOM5	BAM	locus coeruleus			francescatto17	29087374
+23	(-) MedFrontaGyrus	5' end of CAGE reads	1	-	FANTOM5	BAM	medial frontal gyrus			francescatto17	29087374
+24	(-) MedTemporGyrus	5' end of CAGE reads	1	-	FANTOM5	BAM	medial temporal gyrus			francescatto17	29087374
+25	(-) MedullOblongat	5' end of CAGE reads	1	-	FANTOM5	BAM	medulla oblongata			francescatto17	29087374
+26	(-) OccipitCortex	5' end of CAGE reads	1	-	FANTOM5	BAM	occipital cortex			francescatto17	29087374
+27	(-) ParietalGyrus	5' end of CAGE reads	1	-	FANTOM5	BAM	parietal gyrus			francescatto17	29087374
+28	(-) Putamen	5' end of CAGE reads	1	-	FANTOM5	BAM	putamen			francescatto17	29087374
+29	(-) SpinalCord	5' end of CAGE reads	1	-	FANTOM5	BAM	spinal cord			francescatto17	29087374
+30	(-) SubstantNigra	5' end of CAGE reads	1	-	FANTOM5	BAM	substantia nigra			francescatto17	29087374
+31	(-) Thalamus	5' end of CAGE reads	1	-	FANTOM5	BAM	thalamus			francescatto17	29087374
+32	All CAGE (-)	5' end of CAGE reads	1	-	FANTOM5	BAM	all adult tissues merged			francescatto17	29087374
+33	EPDnew promoters	EPDnew promoters v. 001	1__epd							epd	epd

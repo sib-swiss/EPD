@@ -1,0 +1,39 @@
+wget http://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE43087 -O GSE43087.html
+
+for GSM in $(grep -o "GSM[0-9]*" GSE43087.html | sort -u); do
+    echo "Downloading data for sample $GSM"
+    wget -q http://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=$GSM -O $GSM.html
+    TITLE=$(grep Title -A1 $GSM.html | sed 's/<[^>]*>//g' | grep -v "Title")
+    DESCR=$(grep Characteristics -A1 $GSM.html | sed -e "s/<br>/\t/g" -e 's/<[^>]*>//g' | grep -v "Characteristics")
+    SRX=$(grep -o "SRX[0-9][0-9][0-9][0-9][0-9][0-9]" $GSM.html | uniq)
+    wget -q http://www.ncbi.nlm.nih.gov/sra?term=$SRX -O $SRX.html
+    for FTP in $(grep -o "ftp[^\"]*" $SRX.html | sort -u | grep -v "SRX"); do
+	echo "$GSM -> $SRX -> $SRR"
+	SRR=$(echo "$FTP" | awk -F '/' '{print $NF}')
+	wget $FTP/$SRR.sra
+	echo -e "$GSM\t$SRX\t$SRR\t$TITLE\t$DESCR" >> samples.txt
+    done
+    rm $GSM.html $SRX.html
+done
+
+for SRR in $(ls *.sra | sed 's/.sra//g'); do
+    fastq-dump --split-3 $SRR.sra
+    bowtie -p 6 --best --strata -m1 --sam -l 30 -n 2 c_elegans_ce6 -q $SRR.fastq > $SRR.sam
+done
+
+for GSM in $(cut -f1 samples.txt | uniq)
+do
+  FEATURE=$(awk -v gsm=$GSM '$1 == gsm {split($4, a, "_"); print a[1]}' samples.txt | uniq)
+  for SAMPLE in $(awk -v gsm=$GSM '$1 == gsm {print $3}' samples.txt); do
+      echo "Processing $SAMPLE -> $FEATURE"
+      sed -i 's/chr|NC_[0-9]*|//' $SAMPLE.sam
+      awk 'BEGIN {FS="\t"} $3 != "\*" {print $0}' $SAMPLE.sam > $SAMPLE.clean.sam
+      samtools view -bS -o $SAMPLE.bam $SAMPLE.clean.sam
+      samtools sort $SAMPLE.bam $SAMPLE.sorted
+      bamToBed -i $SAMPLE.sorted.bam > $SAMPLE.bed
+      bed2sga -f $FEATURE -a ce6 $SAMPLE.bed | sort -s -k1,1 -k3,3n -k4,4 | compactsga > $SAMPLE.sga
+      sort -m -s -k1,1 -k3,3n -k4,4 temp $SAMPLE.sga | compactsga > $GSM.sga
+      rm temp; cp $SAMPLE.sga temp
+  done
+  rm temp; touch temp
+done

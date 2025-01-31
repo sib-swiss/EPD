@@ -1,0 +1,8 @@
+#!/usr/bin/env perl
+
+$ENV{'PATH'} .= ":/usr/molbio/perl";
+$record = $ARGV[0];
+
+($dataset) = $record =~ /([A-Z0-9]+)/;
+system "fetch cleanex_ref:$dataset\_DOC cleanex_ref:$record";
+

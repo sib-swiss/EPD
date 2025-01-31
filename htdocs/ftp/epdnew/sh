@@ -1,0 +1,51 @@
+cd /var/vhosts/sib.swiss/MINIEPD/htdocs/ftp/epdnew/A_mellifera/current
+   ln -s Am_EPDnew_001_amel5.dat Am_EPDnew.dat
+   ln -s Am_EPDnew_001_amel5.fps Am_EPDnew.fps
+cd /var/vhosts/sib.swiss/MINIEPD/htdocs/ftp/epdnew/A_thaliana/current
+   ln -s At_EPDnew_004_araTha1.dat At_EPDnew.dat
+   ln -s At_EPDnew_004_araTha1.fps At_EPDnew.fps
+cd /var/vhosts/sib.swiss/MINIEPD/htdocs/ftp/epdnew/C_elegans/current
+   ln -s Ce_EPDnew_001_ce6.dat Ce_EPDnew.dat
+   ln -s Ce_EPDnew_001_ce6.fps Ce_EPDnew.fps
+cd /var/vhosts/sib.swiss/MINIEPD/htdocs/ftp/epdnew/C_familiaris/current
+   ln -s Cf_EPDnew_001_canFam3.dat Cf_EPDnew.dat
+   ln -s Cf_EPDnew_001_canFam3.fps Cf_EPDnew.fps
+cd /var/vhosts/sib.swiss/MINIEPD/htdocs/ftp/epdnew/D_melanogaster/current
+   ln -s Dm_EPDnew_005_dm6.dat Dm_EPDnew.dat
+   ln -s Dm_EPDnew_005_dm6.fps Dm_EPDnew.fps
+cd /var/vhosts/sib.swiss/MINIEPD/htdocs/ftp/epdnew/D_rerio/current
+   ln -s Dr_EPDnew_001_danRer7.dat Dr_EPDnew.dat
+   ln -s Dr_EPDnew_001_danRer7.fps Dr_EPDnew.fps
+cd /var/vhosts/sib.swiss/MINIEPD/htdocs/ftp/epdnew/G_gallus/current
+   ln -s Gg_EPDnew_001_galGal5.dat Gg_EPDnew.dat
+   ln -s Gg_EPDnew_001_galGal5.fps Gg_EPDnew.fps
+cd /var/vhosts/sib.swiss/MINIEPD/htdocs/ftp/epdnew/H_sapiens/current
+   ln -s Hs_EPDnew_006_hg38.dat Hs_EPDnew.dat
+   ln -s Hs_EPDnew_006_hg38.fps Hs_EPDnew.fps
+cd /var/vhosts/sib.swiss/MINIEPD/htdocs/ftp/epdnew/H_sapiens_nc/current
+   ln -s HsNC_EPDnew_001_hg38.dat HsNC_EPDnew.dat
+   ln -s HsNC_EPDnew_001_hg38.fps HsNC_EPDnew.fps
+cd /var/vhosts/sib.swiss/MINIEPD/htdocs/ftp/epdnew/M_mulatta/current
+   ln -s Rm_EPDnew_001_rheMac8.dat Rm_EPDnew.dat
+   ln -s Rm_EPDnew_001_rheMac8.fps Rm_EPDnew.fps
+cd /var/vhosts/sib.swiss/MINIEPD/htdocs/ftp/epdnew/M_musculus/current
+   ln -s Mm_EPDnew_003_mm10.dat Mm_EPDnew.dat
+   ln -s Mm_EPDnew_003_mm10.fps Mm_EPDnew.fps
+cd /var/vhosts/sib.swiss/MINIEPD/htdocs/ftp/epdnew/M_musculus_nc/current
+   ln -s MmNC_EPDnew_001_mm10.dat MmNC_EPDnew.dat
+   ln -s MmNC_EPDnew_001_mm10.fps MmNC_EPDnew.fps
+cd /var/vhosts/sib.swiss/MINIEPD/htdocs/ftp/epdnew/P_falciparum/current
+   ln -s Pf_EPDnew_001_pfa2.dat Pf_EPDnew.dat
+   ln -s Pf_EPDnew_001_pfa2.fps Pf_EPDnew.fps
+cd /var/vhosts/sib.swiss/MINIEPD/htdocs/ftp/epdnew/R_norvegicus/current
+   ln -s Rn_EPDnew_001_rn6.dat Rn_EPDnew.dat
+   ln -s Rn_EPDnew_001_rn6.fps Rn_EPDnew.fps
+cd /var/vhosts/sib.swiss/MINIEPD/htdocs/ftp/epdnew/S_cerevisiae/current
+   ln -s Sc_EPDnew_002_sacCer3.dat Sc_EPDnew.dat
+   ln -s Sc_EPDnew_002_sacCer3.fps Sc_EPDnew.fps
+cd /var/vhosts/sib.swiss/MINIEPD/htdocs/ftp/epdnew/S_pombe/current
+   ln -s Sp_EPDnew_002_spo2.dat Sp_EPDnew.dat
+   ln -s Sp_EPDnew_002_spo2.fps Sp_EPDnew.fps
+cd /var/vhosts/sib.swiss/MINIEPD/htdocs/ftp/epdnew/Z_mays/current
+   ln -s Zm_EPDnew_001_zm3.dat Zm_EPDnew.dat
+   ln -s Zm_EPDnew_001_zm3.fps Zm_EPDnew.fps

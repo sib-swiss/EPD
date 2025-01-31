@@ -1,0 +1,15 @@
+wget http://www.ebi.ac.uk/arrayexpress/files/E-MTAB-3188/E-MTAB-3188.sdrf.txt
+
+wget $(cut -f22 E-MTAB-3188.sdrf.txt | grep ftp)
+
+gunzip -v *.gz
+
+# During generation of EPDnew database there was a 1 bp shift in Inr
+# position (tag are longer that what it should be), I trim 1 bp from
+# 5'end and then shift them accordingly
+bowtie --trim5 1 --best --strata -m1 --sam -l 20 -n 2 -p 30 --chunkmbs 1000 /home/local/db/bowtie/s_pombe -q ERR706688.fastq > ERR706688.sam
+
+samtools view -bS -o ERR706688.bam ERR706688.sam 2> /dev/null
+
+bamToBed -i ERR706688.bam | sed 's/^[^ ]*|//g' | bed2sga -a spo2 -f DeepCAGE | sort -T . -s -k1,1 -k3,3n -k4,4 | compactsga > ERR706688.sga
+

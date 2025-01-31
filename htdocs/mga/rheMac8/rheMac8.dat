@@ -1,0 +1,12 @@
+Name: M. mulatta (Nov 2015 BCM Mmul_8.0.1/rheMac8)
+Status: full
+NCBI Assembly: https://www.ncbi.nlm.nih.gov/assembly/GCF_000772875.2/
+Source: Assembled chromosomes from RefSeq (GCF_000772875.2): ftp://ftp.ncbi.nlm.nih.gov/genomes/Macaca_mulatta/Assembled_chromosomes
+NCBI Version: Mmul_8.0.1
+UCSC Assembly: rheMac8
+Local Assembly: rheMac8
+Bowtie Idx: m_mulatta_rheMac8
+Liftover: rheMac8ToHg19, rheMac8ToHg38, rheMac8ToMm10, rheMac8ToPanTro5, rheMac8ToRn6
+RepeatMasker: rmsk/rmsk_rheMac8.SGA.gz
+MGA FTP: https://epd.expasy.org/ftp/mga/rheMac8/
+UCSC Genome Browser: https://genome-euro.ucsc.edu/cgi-bin/hgTracks?hubUrl=https://epd.expasy.org/epd/ucsc/epdHub/epdHub.txt&genome=rheMac8

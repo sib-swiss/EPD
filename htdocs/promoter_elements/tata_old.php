@@ -1,0 +1,199 @@
+
+<?php include("../header.php"); ?>
+
+
+<center><h3>TATA-box base frequency table and weigth matrix</h3>
+(from Bucher 1990, J. Mol. Biol. 212, 563-578, Table 3)
+<p>
+<table bgcolor=white border cellpadding=5 nosave>
+<tr><td>Position</td>
+<td align=right>  -3</td>
+<td align=right>  -2</td>
+<td align=right>  -1</td>
+<td align=right>   0</td>
+<td align=right>   1</td>
+<td align=right>   2</td>
+<td align=right>   3</td>
+<td align=right>   4</td>
+<td align=right>   5</td>
+<td align=right>   6</td>
+<td align=right>   7</td>
+<td align=right>   8</td>
+<td align=right>   9</td>
+<td align=right>  10</td>
+<td align=right>  11</td>
+</tr><tr><td></td></tr>
+<tr><td align=center># A</td>
+<td align=right>61</td>
+<td align=right>16</td>
+<td align=right>352</td>
+<td align=right>3</td>
+<td align=right>354</td>
+<td align=right>268</td>
+<td align=right>360</td>
+<td align=right>222</td>
+<td align=right>155</td>
+<td align=right>56</td>
+<td align=right>83</td>
+<td align=right>82</td>
+<td align=right>82</td>
+<td align=right>68</td>
+<td align=right>77</td>
+</tr>
+<tr><td align=center># C</td>
+<td align=right>145</td>
+<td align=right>46</td>
+<td align=right>0</td>
+<td align=right>10</td>
+<td align=right>0</td>
+<td align=right>0</td>
+<td align=right>3</td>
+<td align=right>2</td>
+<td align=right>44</td>
+<td align=right>135</td>
+<td align=right>147</td>
+<td align=right>127</td>
+<td align=right>118</td>
+<td align=right>107</td>
+<td align=right>101</td>
+</tr>
+<tr><td align=center># G</td>
+<td align=right>152</td>
+<td align=right>18</td>
+<td align=right>2</td>
+<td align=right>2</td>
+<td align=right>5</td>
+<td align=right>0</td>
+<td align=right>20</td>
+<td align=right>44</td>
+<td align=right>157</td>
+<td align=right>150</td>
+<td align=right>128</td>
+<td align=right>128</td>
+<td align=right>128</td>
+<td align=right>139</td>
+<td align=right>140</td>
+</tr>
+<tr><td align=center># T</td>
+<td align=right>31</td>
+<td align=right>309</td>
+<td align=right>35</td>
+<td align=right>374</td>
+<td align=right>30</td>
+<td align=right>121</td>
+<td align=right>6</td>
+<td align=right>121</td>
+<td align=right>33</td>
+<td align=right>48</td>
+<td align=right>31</td>
+<td align=right>52</td>
+<td align=right>61</td>
+<td align=right>75</td>
+<td align=right>71</td>
+</tr>
+<tr>
+<td></td>
+<tr><td align=center>W(A)</td>
+<td align=right>-1.02</td>
+<td align=right>-3.05</td>
+<td align=right> 0.00</td>
+<td align=right>-4.61</td>
+<td align=right> 0.00</td>
+<td align=right> 0.00</td>
+<td align=right> 0.00</td>
+<td align=right> 0.00</td>
+<td align=right>-0.01</td>
+<td align=right>-0.94</td>
+<td align=right>-0.54</td>
+<td align=right>-0.48</td>
+<td align=right>-0.48</td>
+<td align=right>-0.74</td>
+<td align=right>-0.62</td>
+</tr>
+<tr><td align=center>W(C)</td>
+<td align=right>-0.28</td>
+<td align=right>-2.06</td>
+<td align=right>-5.22</td>
+<td align=right>-3.49</td>
+<td align=right>-5.17</td>
+<td align=right>-4.63</td>
+<td align=right>-4.12</td>
+<td align=right>-3.74</td>
+<td align=right>-1.13</td>
+<td align=right>-0.05</td>
+<td align=right> 0.00</td>
+<td align=right>-0.05</td>
+<td align=right>-0.11</td>
+<td align=right>-0.28</td>
+<td align=right>-0.40</td>
+</tr>
+</tr>
+<tr><td align=center>W(G)</td>
+<td align=right> 0.00</td>
+<td align=right>-2.74</td>
+<td align=right>-4.28</td>
+<td align=right>-4.61</td>
+<td align=right>-3.77</td>
+<td align=right>-4.73</td>
+<td align=right>-2.65</td>
+<td align=right>-1.50</td>
+<td align=right> 0.00</td>
+<td align=right> 0.00</td>
+<td align=right>-0.09</td>
+<td align=right> 0.00</td>
+<td align=right> 0.00</td>
+<td align=right> 0.00</td>
+<td align=right> 0.00</td>
+</tr>
+<tr><td align=center>W(T)</td>
+<td align=right>-1.68</td>
+<td align=right> 0.00</td>
+<td align=right>-2.28</td>
+<td align=right> 0.00</td>
+<td align=right>-2.34</td>
+<td align=right>-0.52</td>
+<td align=right>-3.65</td>
+<td align=right>-0.37</td>
+<td align=right>-1.40</td>
+<td align=right>-0.97</td>
+<td align=right>-1.40</td>
+<td align=right>-0.82</td>
+<td align=right>-0.66</td>
+<td align=right>-0.54</td>
+<td align=right>-0.61</td>
+</tr>
+<tr><td>Consensus</td>
+<td align=center>g/c</td>
+<td align=center>t</td>
+<td align=center>A/t</td>
+<td align=center>T</td>
+<td align=center>A/t</td>
+<td align=center>A/T</td>
+<td align=center>A</td>
+<td align=center>a/t</td>
+<td align=center>g/a</td>
+<td align=center>g/c</td>
+<td align=center>c/g</td>
+<td align=center>g/c</td>
+<td align=center>g/c</td>
+<td align=center>g/c</td>
+<td align=center>g/c</td
+</tr>
+<tr>
+<td></td>
+</tr>
+<tr>
+<td colspan=10 align=center>Preferred region: Position 0 between -36 and -20 relative to transcription start site.</td>
+<td colspan=6 align=center>Optimizid cut-off value: -8.16 (97%)</td>
+</tr></table>
+</center>
+
+<!-- ######### Insert the footer #########-->
+<?php readfile("../footer.html"); ?>
+
+
+
+
+
+</body>
+</html>

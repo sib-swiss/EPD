@@ -1,0 +1,5 @@
+FANTOM5/ZENBU	hg38	http://fantom.gsc.riken.jp/zenbu/gLyphs/#config=338Jp369HlMrduGQJmN3-B;loc=hg38::chr16:85797694..85801694
+DBTSS/KERO	hg38	https://dbtss.hgc.jp/#kero:chr16:85797694-85801694
+refTSS	hg38	https://genome-euro.ucsc.edu/cgi-bin/hgTracks?db=hg38&hubUrl=http://reftss.clst.riken.jp/trackhub/hub.txt&ignoreCookie=1&position=chr16%3A85797693-85801693
+SwissRegulon	hg19	href="http://swissregulon.unibas.ch/jbrowse/JBrowse/?data=hg19&tracks=DNA,genes,refseq_transcripts,promoters,tfbs&loc=chr16:85831150..85835150
+#SwissRegulon	hg19	http://swissregulon.unibas.ch/jbrowse/JBrowse/?data=hg19_f5&loc=chr16:85831150..85835150

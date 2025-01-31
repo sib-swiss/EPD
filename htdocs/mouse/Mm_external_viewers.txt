@@ -1,0 +1,3 @@
+SwissRegulon	mm10	http://swissregulon.unibas.ch/jbrowse/JBrowse/?data=mm10_f5&loc=chr12:57228424..57232424
+FANTOM5/ZENBU	mm10	http://fantom.gsc.riken.jp/zenbu/gLyphs/#config=qlHuP2o9KFFqPk1n7Mcui;loc=mm10::chr12:57228424..57232424+
+refTSS	mm10	https://genome-euro.ucsc.edu/cgi-bin/hgTracks?db=mm10&hubUrl=http://reftss.clst.riken.jp/trackhub/hub.txt&ignoreCookie=1&position=chr12%3A57228423-57232423

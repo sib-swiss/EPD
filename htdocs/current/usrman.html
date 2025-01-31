@@ -1,0 +1,4398 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html lang='en'>
+<head>
+    <title>EPD User Manual</title>
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8">
+    <meta http-equiv="Content-Style-Type" content="text/css">
+    <link rel="stylesheet" href="/css_epd/sib-expasy.min-20240214.css" type="text/css" media="screen" charset="utf-8">
+
+<link rel="shortcut icon" href="/img_epd/favicon.ico" type="image/x-icon">
+</head>
+
+<body>
+<div id='sib_top'><a name='TOP'></a></div>
+<div id='sib_container'>
+  <div id='sib_header'>
+     <div id='sib_other_logo'>
+        <img src = '/img_epd/epd_rabbit_pe.gif' alt = 'EPD' height = '75' >
+     </div>
+
+     <div  id = 'sib_title'>
+        <h1><a href='/miniepd/'>EPD User Manual</a></h1>
+     </div>
+
+ </div>
+
+<!-- END OF HEADER -->
+<!-- ********************************************************************************************** -->
+<div id='sib_body'>
+
+<div class="frontpage"><spacer type="vertical" size="30">
+<h1><font size="+1">EUKARYOTIC PROMOTER DATABASE<br>
+USER MANUAL<spacer type="vertical" size="60"></font><font size="+0">Written by:<spacer
+ type="vertical" size="30">Philipp
+Bucher, Rouaida Cavin P&eacute;rier, Viviane Praz and Christoph Schmid</font></h1>
+EPFL School of Life Sciences - SV
+<br>
+and Swiss Institute for Experimental Cancer Research - ISREC
+<br>
+Computational Cancer Genomics Group
+<br>
+EPFL SV ISREC GR-BUCHER Station 15
+<br>
+CH-1015 /Lausanne
+<br>
+Switzerland
+<p>Electronic mail:
+</p>
+<address><script>eval(unescape('%66%75%6E%63%74%69%6F%6E%20%73%65%62%5F%74%72%61%6E%73%70%6F%73%65%32%31%32%33%28%68%29%20%7B%76%61%72%20%73%3D%27%61%6D%6C%69%6F%74%61%3A%6B%73%65%2D%64%70%67%40%6F%6F%6C%67%67%65%6F%72%70%75%2E%73%6F%63%6D%27%3B%76%61%72%20%72%3D%27%27%3B%66%6F%72%28%76%61%72%20%69%3D%30%3B%69%3C%73%2E%6C%65%6E%67%74%68%3B%69%2B%2B%2C%69%2B%2B%29%7B%72%3D%72%2B%73%2E%73%75%62%73%74%72%69%6E%67%28%69%2B%31%2C%69%2B%32%29%2B%73%2E%73%75%62%73%74%72%69%6E%67%28%69%2C%69%2B%31%29%7D%68%2E%68%72%65%66%3D%72%3B%7D%64%6F%63%75%6D%65%6E%74%2E%77%72%69%74%65%28%27%3C%61%20%68%72%65%66%3D%22%23%22%20%6F%6E%4D%6F%75%73%65%4F%76%65%72%3D%22%6A%61%76%61%73%63%72%69%70%74%3A%73%65%62%5F%74%72%61%6E%73%70%6F%73%65%32%31%32%33%28%74%68%69%73%29%22%20%6F%6E%46%6F%63%75%73%3D%22%6A%61%76%61%73%63%72%69%70%74%3A%73%65%62%5F%74%72%61%6E%73%70%6F%73%65%32%31%32%33%28%74%68%69%73%29%22%3E%43%6F%6E%74%61%63%74%20%55%73%3C%2F%61%3E%27%29%3B'));</script><noscript>ask-epd [AT] googlegroups.com</noscript></address>
+<font size="2">
+<blockquote>This manual and the database it accompanies may be copied
+and
+redistributed freely, without advance permission, provided that this
+statement
+is reproduced with each copy.
+  <p>Published Research assisted by the Eukaryotic Promoter Database
+should
+cite: <br>
+EPD in its twentieth year: towards complete promoter coverage of
+selected model organisms<br>
+Schmid, C.D., Perier, R., Praz, V. and Bucher, P. (2006) Nucleic Acids
+Res, <span style="font-weight: bold;">34</span>, D82-85.</p>
+</blockquote>
+</div>
+<hr>
+<div class="TOC">
+<center>
+<h2>EPD RELEASE 109, November 2011</h2>
+</center>
+<b><font color="#ff0000">WHAT IS NEW IN RELEASE 109:</font></b>
+Update to new EMBL Release
+<br>
+&nbsp;
+<a href="/miniepd/current/EPD_release_history.html">EPD
+release history</a>
+<!--SECTION--><!--CONTENTS-->
+<h2 class="section">CONTENTS</h2>
+<ol>
+  <li> <a href="#INTRODUCTION">INTRODUCTION</a></li>
+  <li> <a href="#PROMOTER_SELECTION">PROMOTER SELECTION</a></li>
+  <li> <a href="#ASSIGNMENT_OF_TRANSCRIPTION_INITIATION_SITE">ASSIGNMENT
+OF INITIATION
+SITE</a></li>
+  <li> <a href="#FORMAT_CONVENTIONS">FORMAT CONVENTIONS</a></li>
+  <ol>
+    <li> <a href="#The_title_line">The title line</a></li>
+    <li> <a href="#Promoter_entries">Promoter entries</a></li>
+    <ol>
+      <li> <a href="#The_ID_line">The ID line</a></li>
+      <li> <a href="#The_AC_line">The AC line</a></li>
+      <li> <a href="#The_DT_line">The DT line</a></li>
+      <li> <a href="#The_DE_line">The DE line</a></li>
+      <li> <a href="#The_OS_line">The OS line</a></li>
+      <li> <a href="#The_HG_line">The HG line</a></li>
+      <li> <a href="#The_AP_line">The AP line</a></li>
+      <li> <a href="#The_NP_line">The NP line</a></li>
+      <li> <a href="#The_DR_line">The DR line</a></li>
+      <li> <a href="#The_RN,_RX,_RA,_RT_and_RL_lines">The RN, RX, RA,
+RT
+and RL lines</a></li>
+      <li> <a href="#The_ME_line">The ME line</a></li>
+      <li> <a href="#The_SE_line">The SE line</a></li>
+      <li> <a href="#The_FL_line">The FL line</a></li>
+      <li> <a href="#The_IF_line">The IF line</a></li>
+      <li> <a href="#The_TX_line">The TX line</a></li>
+      <li> <a href="#The_KW_line">The KW line</a></li>
+      <li> <a href="#The_FP,_DO_and_RF_lines">The FP, DO and RF lines</a></li>
+      <li> <a href="#The_//_line">The // line</a></li>
+    </ol>
+    <li> <a href="#Line_types_retained_from_the_old_format">Line types
+retained
+from the old format</a></li>
+    <ol>
+      <li> <a href="#The_FP_line">The FP line</a></li>
+      <li> <a href="#Documentation">Documentation</a></li>
+      <li> <a href="#Literature_references">Literature references</a></li>
+      <li> <a href="#Miscellaneous">Miscellaneous</a></li>
+    </ol>
+    <li> <a
+ href="#Distinct_format_of_preliminary_entries_in_epd_bulk.dat">Distinct
+format of 'preliminary' entries in epd_bulk.dat</a></li>
+  </ol>
+  <li> <a href="#CLASSIFICATION">CLASSIFICATION</a></li>
+  <li> <a href="#HOMOLOGOUS_PROMOTERS">HOMOLOGOUS PROMOTERS</a></li>
+  <li> <a href="#PROMOTER_SEQUENCE_RETRIEVAL">PROMOTER SEQUENCE
+RETRIEVAL</a></li>
+  <li> <a href="#REFERENCES">REFERENCES</a></li>
+</ol>
+<ol type="A">
+  <li> <a href="/miniepd/current/SURVEY.html">APPENDIX
+A
+: SURVEY
+OF RELEASE</a></li>
+  <li> <a href="#APPENDIXB">APPENDIX B&nbsp; : CODES AND ABBREVIATIONS</a></li>
+  <ol>
+    <li> <a href="#SPECIES_CODES">SPECIES CODES</a></li>
+    <li> <a href="#JOURNAL_CODES">JOURNAL CODES</a></li>
+    <li> <a href="#ABBREVIATIONS">ABBREVIATIONS</a></li>
+  </ol>
+</ol>
+</div>
+<!--SECTION-->
+<!--INTRO--><a name="INTRODUCTION"></a>
+<h2 class="section">1 INTRODUCTION</h2>
+The Eukaryotic Promoter Database EPD was designed and developed at the
+Weizmann Institute of Science in Rehovot (Israel) and is currently
+maintained
+at ISREC in Epalinges s/Lausanne (Switzerland). EPD is a specialized
+annotation
+database of the EMBL Data Library. It provides information about
+eukaryotic
+promoters available in the EMBL Data Library and is intended to assist
+experimental researchers, as well as computer analysts, in the
+investigation
+of eukaryotic transcription signals. The present version originated
+from
+a previous compilation published in an article (<a
+ href="/miniepd/current/usrman.html#ref_1">1</a>)
+and is organized as a hierarchically ordered and documented "functional
+position set" (<a
+ href="/miniepd/current/usrman.html#ref_2">2</a>)
+pointing to transcription initiation sites. All information is either
+directly
+extracted from scientific literature or, starting from release 73,
+compiled
+by a new&nbsp;<span style="font-style: italic;">in silico</span> primer
+extension method (<a href="#ref_16">16</a>). Thus promoter information
+in EPD is independent of the EMBL sequence entry descriptions. As a
+consequence,
+many of the initiation sites referred to in EPD do not appear in
+corresponding
+EMBL feature tables.A coordinated updating procedure has been set up by
+the two laboratories that will ensure future compatibility between the
+position references in EPD and the sequence data in the main data
+library.
+Investigators who access EMBL via publicly available programs should be
+aware of the fact that software producers occasionally modify the
+sequence
+data in ways that render position references inaccurate. EPD is
+generally
+not compatible with sequence data of another release because EMBL
+sequence
+entries are not designed as stable data units. The completeness and
+accuracy
+of EPD greatly benefits from user-feedback. Any report of mistakes or
+omissions
+would be very much appreciated. Direct communication of newly published
+transcript mapping or gene expression data is also welcome. Please
+forward
+all correspondence to the address given on top of this document. Use
+electronic
+mail if possible.
+<!--SECTION--><!--PROMOTER--><br>
+<a name="PROMOTER_SELECTION"></a>
+<h2 class="section">2 PROMOTER SELECTION</h2>
+EPD is a rigorously selected database. In order to be included in EPD,
+a promoter must be:
+<ol>
+  <li>recognized by eukaryotic RNA POL II,</li>
+  <li>active in a higher eukaryote,</li>
+  <li>experimentally defined, or homologous and sufficiently similar to
+an
+experimentally
+defined promoter,</li>
+  <li>biologically functional,</li>
+  <li>available in the current EMBL release,</li>
+  <li>distinct from other promoters in the database.</li>
+</ol>
+Explanations:
+<ol>
+  <li>Transcription by RNA POL II is bona fide assumed for protein
+coding
+genes
+but must be supported by alpha-amanitin data if the end product is an
+RNA.</li>
+  <li>All eukaryotes except phycophyta, fungi, myxomycetes, and
+protozoa are
+considered higher eukaryotes. Note that the expression "active in" does
+not always refer to the source organism of the promoter (e.g. in
+viruses).
+EPD contains currently promoter sequences from 139 different <a
+ href="#SPECIES_CODES">species</a>.</li>
+  <li>A promoter is experimentally determined if a corresponding
+transcription
+initiation site is mapped with a precision of +/- 5 bp or higher. Any
+technique
+that characterizes the 5'terminus of an in vivo or in vitro generated
+RNA
+is acceptable. Single nuclease-protection or primer-extension data must
+be accompanied by additional evidence unless the gene's intron-exon
+organization
+is well established. Similarity is considered "sufficient" if percent
+identity
+(as defined in Section 6) is &gt;=60% between -79 and +20 or &gt;=75%
+between
+-49 and +10.</li>
+  <li>A promoter is biologically functional if it contributes to the
+source
+organism's
+survival and/or reproduction. This is bona fide assumed except for
+promoters
+of pseudogenes, minor transcription initiation sites (&lt;20% of total
+gene transcripts), promoters giving rise to an unstable RNA product,
+and
+mutant promoter.</li>
+  <li>The minimum sequence requirement is 45 bp between -49 and +10.</li>
+  <li>Promoters are considered distinct if they originate from
+different gene
+loci or different species. Identity is assumed if two promoters from
+the
+same species exhibit &gt;95% similarity between -79 and +20 while their
+genetic
+relationship is unknown. Multiple isolates of viruses or transposable
+elements
+are considered distinct if at least one promoter region fails to
+fulfill
+the above similarity criterion.</li>
+</ol>
+<!--SECTION-->
+<!--TSS_assignment--><a
+ name="ASSIGNMENT_OF_TRANSCRIPTION_INITIATION_SITE"></a>
+<h2 class="section">3 ASSIGNMENT OF TRANSCRIPTION INITIATION SITE</h2>
+A eukaryotic promoter is defined as a DNA sequence around a
+transcription
+initiation site. The position reference to the initiation site is
+therefore
+the central part of a promoter entry. Its assignment is based directly
+on experimental data shown in an article, proposed adjustments
+originating
+from consensus sequence considerations being ignored.
+<font color="#000000">In
+the case of minor discrepancies between different publications averaged
+</font>positions
+are given. Position references are subject to permanent re-evaluation.
+A transcription initiation site may be reassigned upon publication of
+new
+data. Position references are replaced if longer upstream sequences of
+the same promoter become available in a new EMBL sequence entry.
+<br>
+Several initiation sites preceding the same gene appear as alternative
+promoters if they are clearly separated from each other or
+differentially
+regulated. The minimum distance required between two alternative
+initiation
+sites is 20 bp. Otherwise, they are considered a single promoter
+region.
+<br>
+Four types of promoters are distinguished by one-letter codes in order
+to account for the variety of transcription initiation patterns in
+eukaryotes:
+<ul>
+  <li>S: Single initiation site: &gt;90% of all reported transcripts
+initiate
+within
+10 bp (the experimental data usually do not allow distinction between a
+single cap-site and small mRNA 5' heterogeneity).</li>
+  <li>M: Multiple initiation sites: &gt;75% of all reported transcripts
+initiate
+within 20 bp.</li>
+  <li> <font color="#000000">R: Initiation region: &gt;75% of all
+reported
+transcripts
+initiate within 100 bp.</font></li>
+  <li> <font color="#000000">U: Undefined transcription initiation
+pattern, exclusively
+in 'preliminary' entries in epd_bulk.dat (see next section).</font></li>
+</ul>
+<font color="#000000">Note that in addition to true alternative
+promoter
+activity, variability in the position of the transcription initiation
+site
+might also be due to experimental constraints, a biological variability
+in the activity of the DNA polymerase II, or the presence of highly
+similar
+(pseudo-) genes with distinct transcription initiation sites.</font>
+<br>
+<font color="#000000">In sequence entries that contain a c</font>omplete
+RNA or DNA genome of a retrovirus or a retrovirus-like transposable
+elements,
+the position reference points to the U3/R boundary of the 3'terminal
+LTR.
+<br>
+<!--SECTION-->
+<!--FORMAT--><a name="FORMAT_CONVENTIONS"></a>
+<h2 class="section">4 FORMAT CONVENTIONS</h2>
+EPD is distributed as two ASCII flatfiles (epd.dat, epd_bulk.dat) in
+essentially
+identical format. Differences in the format of 'preliminary' entries in
+'epd_bulk.dat' are described in <a
+ href="#Distinct_format_of_preliminary_entries_in_epd_bulk.dat">paragraph
+4.4</a>. EPD files contain a title line followed by a number of
+promoter
+entries. Interspersed are group headings whose function and format are
+described in the next section. The title line and parts of the promoter
+entries are rigidly formatted so that the entire database conforms to
+the
+standards of an FPS file (functional position set) of our current
+signal
+search analysis (<a
+ href="/miniepd/current/usrman.html#ref_1">1</a>,<a
+ href="/miniepd/current/usrman.html#ref_2">2</a>)
+software.
+<!--SECTION--><br>
+<a name="The_title_line"></a>
+<h3 class="subsection">4.1. The title line</h3>
+The title line of EPD is shown below:
+<pre>TI&nbsp;&nbsp; EPD83&nbsp;&nbsp;&nbsp;&nbsp; Eukaryotic Promoter Database / Release 83&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; EP</pre>
+The TI line contains the following fields:
+<center><br>
+<table>
+  <caption>&nbsp;
+  <center>
+  <p></p>
+  </center>
+  </caption><tbody>
+  </tbody><tbody>
+  </tbody><tbody>
+  </tbody> <tbody>
+    <tr>
+      <th>columns</th>
+      <th>data type</th>
+    </tr>
+    <tr>
+      <td>1- 2</td>
+      <td>"TI"</td>
+    </tr>
+    <tr>
+      <td>3- 5</td>
+      <td>(blank)</td>
+    </tr>
+    <tr>
+      <td>6-15</td>
+      <td>FPS name</td>
+    </tr>
+    <tr>
+      <td>16-70</td>
+      <td>title</td>
+    </tr>
+    <tr>
+      <td>71-72</td>
+      <td>FPS code</td>
+    </tr>
+  </tbody>
+</table>
+</center>
+Explanations:
+<ul>
+  <li>FPS name and FPS code are used by our data extraction software to
+generate
+default names for output files.</li>
+</ul>
+<p><br>
+<a name="Promoter_entries"></a></p>
+<h3 class="subsection">4.2. Promoter entries</h3>
+An EPD entry contains the following types of information:
+<ul>
+  <li>Promoter identification and description.</li>
+  <li>Machine-readable pointers to the transcription initiation site in
+corresponding
+sequence entries.</li>
+  <li>Description of the experimental evidence defining the
+transcription
+start
+site.</li>
+  <li>Various kinds of promoter classifications useful for extraction
+of
+biologically
+meaningful promoter subsets.</li>
+  <li>Information on regulatory properties.</li>
+  <li>Cross-references to other databases.</li>
+  <li>Bibliographic references.</li>
+</ul>
+Promoter entries are presented in a similar format as EMBL and
+SWISS-PROT
+sequence entries. Each line starts with a line code identifying the
+type
+of information presented. The current line types and line codes and the
+order in which they appear in an entry, are shown below:
+<pre>&nbsp;&nbsp;&nbsp; ID&nbsp; - IDentification.<br>&nbsp;&nbsp;&nbsp; AC&nbsp; - ACcession number(s).<br>&nbsp;&nbsp;&nbsp; DT&nbsp; - DaTe.<br>&nbsp;&nbsp;&nbsp; DE&nbsp; - DEscription.<br>&nbsp;&nbsp;&nbsp; OS&nbsp; - Organism Species.<br>&nbsp;&nbsp;&nbsp; HG&nbsp; - Homology Group.<br>&nbsp;&nbsp;&nbsp; AP&nbsp; - Alternative Promoter.<br>&nbsp;&nbsp;&nbsp; NP&nbsp; - Neighbouring Promoter.<br>&nbsp;&nbsp;&nbsp; DR&nbsp; - Database cross-References.<br>&nbsp;&nbsp;&nbsp; RN&nbsp; - Reference Number.<br>&nbsp;&nbsp;&nbsp; RX&nbsp; - Reference cross-references.<br>&nbsp;&nbsp;&nbsp; RA&nbsp; - Reference Authors.<br>&nbsp;&nbsp;&nbsp; RT&nbsp; - Reference Title.<br>&nbsp;&nbsp;&nbsp; RL&nbsp; - Reference Location.<br>&nbsp;&nbsp;&nbsp; ME&nbsp; - MEthods.<br>&nbsp;&nbsp;&nbsp; SE&nbsp; - SEquence.<br>&nbsp;&nbsp;&nbsp; FL&nbsp; - Full Length.<br>&nbsp;&nbsp;&nbsp; IF&nbsp; - Initiation Frequency.<br>&nbsp;&nbsp;&nbsp; TX&nbsp; - TaXonomy.<br>&nbsp;&nbsp;&nbsp; KW&nbsp; - KeyWords.<br>&nbsp;&nbsp;&nbsp; FP&nbsp; - Functional Position.<br>&nbsp;&nbsp;&nbsp; DO&nbsp; - DOcumentation.<br>&nbsp;&nbsp;&nbsp; RF&nbsp; - literature ReFerence.<br>&nbsp;&nbsp;&nbsp; //&nbsp; - Termination line.</pre>
+Spacer lines (XX) are inserted in order to make the promoter database
+easier
+to read by eye. Some line types occur many times in a single entry.
+Each
+entry must begin with an identification line (ID) and end with a
+terminator
+line (//). Text does not exceed column 72. Below is an example of a
+promoter
+entry:
+<pre>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ID&nbsp;&nbsp; HS_MYC_2&nbsp;&nbsp;&nbsp;&nbsp; standard; single; VRT.<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; XX<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; AC&nbsp;&nbsp; EP11148;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; XX<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; DT&nbsp;&nbsp; ??-APR-1987 (Rel. 11, created)<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; DT   07-MAR-2005 (Rel. 82, Last annotation update).<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; XX<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; DE&nbsp;&nbsp; c-myc (cellular homologue of myelocytomatosis virus 29 oncogene),<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; DE&nbsp;&nbsp; promoter 2.<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; OS&nbsp;&nbsp; Homo sapiens (human)<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; XX<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; HG&nbsp;&nbsp; Homology group 53; Mammalian c-myc proto-oncogene, promoter 2<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; AP&nbsp;&nbsp; Alternative promoter #2 of 2; exon 1; site 2; major promoter.<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; NP&nbsp;&nbsp; none.<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; XX<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; DR   GENOME; NT_008046.15; NT_008046; [-41966656, 15188617].<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; DR   EPD; EP11146; HS_MYC_1; alternative promoter; [-162; +].<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; DR   CLEANEX; HS_MYC.<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; DR   EMBL; AC103819.3; [-87815, 60206].<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; DR   EMBL; X00364.2; [-2489, 8507].<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; DR   EMBL; D10493.1; [-2487, 5569].<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; DR   EMBL; K01910.1; [-2451, 49].<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; DR   EMBL; M16261.1; [-1843, 1048].<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; DR   EMBL; J03253.1; [-1759, 461].<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; DR   EMBL; L00057.1; [-810, 2795].<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; DR   EMBL; K03015.1; [-555, 458].<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; DR   EMBL; X00196.1; [-532, 2792].<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; DR   EMBL; M12026.1; [-511, 678].<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; DR   EMBL; K01708.1; [-410, 500].<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; DR   EMBL; K00559.1; [-345, 1020].<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; DR   EMBL; K02280.1; [-302, 178].<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; DR   EMBL; K01909.1; [-266, 1365].<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; DR   EMBL; S65124.1; [-266, 1023].<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; DR   EMBL; M14206.1; [-266, 446].<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; DR   EMBL; M20013.1; [-240, 982].<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; DR   EMBL; AF111270.1; [-142, 264].<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; DR   EMBL; K02275.1; [-96, 780].<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; DR   EMBL; X00675.1; [-96, 404].<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; DR   EMBL; K02277.1; [-96, 157].<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; DR   SWISS-PROT; P01106; MYC_HUMAN.<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; DR   TRANSFAC; R01157; HS$CMYC_01; [-211, -189]; by position.<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; DR   TRANSFAC; R01158; HS$CMYC_02; [-168, -145]; by position.<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; DR   TRANSFAC; R01804; HS$CMYC_04; [-300, -283]; by position.<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; DR   TRANSFAC; R01851; HS$CMYC_05; [-65, -57]; by position.<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; DR   TRANSFAC; R01852; HS$CMYC_06; [-42, -34]; by position.<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; DR   TRANSFAC; R04076; HS$CMYC_12; [-251, -228]; by position.<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; DR   TRANSFAC; R04076; HS$CMYC_12; [-252, -229]; by position.<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; DR   TRANSFAC; R04076; HS$CMYC_12; [-253, -230]; by position.<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; DR   TRANSFAC; R04621; HS$CMYC_17; [-313, -262]; by position.<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; DR   TRANSFAC; R08503; HS$CMYC_18; [-50, -41]; by position.<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; DR   TRANSFAC; R16688; HS$CMYC_24; [-7, 41]; by position.<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; DR   TRANSFAC; R16689; HS$CMYC_25; [-7, 41]; by position.<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; DR   TRANSFAC; R17051; HS$CMYC_30; [-510, -480]; by position.<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; DR   TRANSFAC; R18503; HS$CMYC_31; [-185, -170]; by position.<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; DR   TRANSFAC; R18504; HS$CMYC_32; [-153, -168]; by position.<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; DR   RefSeq; NM_002467.<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; DR   MIM; 190080.<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; XX<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; RN&nbsp;&nbsp; [1]<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; RX&nbsp;&nbsp; MEDLINE; 84026482.<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; RA&nbsp;&nbsp; Battey J., Moulding C., Taub R., Murphy W., Stewart T., Potter H.,<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; RA&nbsp;&nbsp; Lenoir G., Leder P.;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; RT&nbsp;&nbsp; "The human c-myc oncogene: structural consequences of<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; RT&nbsp;&nbsp; translocation into the IgH locus in Burkitt lymphoma";<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; RL&nbsp;&nbsp; Cell 34:779-787(1983).<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; RN&nbsp;&nbsp; [2]<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; RX&nbsp;&nbsp; MEDLINE; 84131953.<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; RA&nbsp;&nbsp; Bernard O.D., Cory S., Gerondakis S., Webb E., Adams J.M.;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; RT&nbsp;&nbsp; "Sequence of the murine and human cellular myc oncogenes and two<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; RT&nbsp;&nbsp; modes of myc transcription resulting from chromosome translocation<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; RT&nbsp;&nbsp; in B lymphoid tumours";<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; RL&nbsp;&nbsp; EMBO J. 2:2375-2383(1983).<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; RN&nbsp;&nbsp; [3]<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; RX&nbsp;&nbsp; MEDLINE; 87257828.<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; RA&nbsp;&nbsp; Lipp M., Schilling R., Wiest S., Laux G., Bornkamm G.W.;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; RT&nbsp;&nbsp; "Target sequences for cis-acting regulation within the dual<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; RT&nbsp;&nbsp; promoter of the human c-myc gene.";<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; RL&nbsp;&nbsp; Mol. Cell. Biol. 7:1393-1400(1987).<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; RN&nbsp;&nbsp; [4]<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; RX&nbsp;&nbsp; MEDLINE; 88038843.<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; RA&nbsp;&nbsp; Broome H.E., Reed J.C., Godillot E.P., Hoover R.G.;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; RT&nbsp;&nbsp; "Differential promoter utilization by the c-myc gene in mitogen-<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; RT&nbsp;&nbsp; and interleukin-2-stimulated human lymphocytes.";<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; RL&nbsp;&nbsp; Mol. Cell. Biol. 7:2988-2993(1987).<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; XX<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ME&nbsp;&nbsp; Nuclease protection [1,4].<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ME&nbsp;&nbsp; Nuclease protection; transfected or transformed cells [3].<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ME&nbsp;&nbsp; Length measurement of an RNA product; low-precision data [1].<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; XX<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; SE&nbsp;&nbsp; agggagggatcgcgctgagtataaaagccggttttcggggctttatctaACTCGCTGTAG<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; XX<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; TX&nbsp;&nbsp; 6. Vertebrate promoters<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; TX&nbsp;&nbsp; 6.1. Chromosomal genes<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; TX&nbsp;&nbsp; 6.1.5. Hormones, growth factors, regulatory proteins<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; TX&nbsp;&nbsp; 6.1.5.16. Various cellular protooncogenes<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; XX<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; KW&nbsp;&nbsp; Proto-oncogene, Nuclear protein, DNA-binding, Glycoprotein,<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; KW&nbsp;&nbsp; Transcription regulation.<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; XX<br>      FP   Hs c-myc         P2+:+S  EU:NC_000008.9       1+ 128817660; 11148.053 010*2<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; XX<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; DO&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Experimental evidence: 4,4#,2l<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; DO&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Expression/Regulation: +mitogen<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; RF&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Cell34:779&nbsp;&nbsp;&nbsp;&nbsp; EMBOJ2:2375&nbsp;&nbsp;&nbsp; MCB7:1393&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; MCB7:2988<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; //</pre>
+A detailed description of each line type is given below.
+<br>
+<!--SECTION-->
+<!--ID--><a name="The_ID_line"></a>
+<h4 class="subsubsection">4.2.1. The ID line</h4>
+The identification line is always the first line of an entry. The
+general
+form of the ID line is:
+<pre>ID&nbsp;&nbsp; ENTRY_NAME data class; initiation site type; TAXONOMIC DIVISION.</pre>
+<ul>
+  <li> <i>ENTRY_NAME</i> is a unique entry identifier "<tt>HS_MYC_2</tt>"
+which
+obeys rigorous naming conventions. It contains 2 or 3 fields, the first
+is the species identification code at most 4 alphanumeric characters
+representing
+the biological source of the promoter. The second field uses for gene
+identification
+the protein code of SWISS-PROT ID (if available). For human EPD
+entries,
+instead of the SwissProt ID the official gene symbol approved by the <a
+ href="http://www.genenames.org/">HGNC (HUGO Gene nomenclature committee) </a> (if available) is used. The third field is
+optional,
+it is either a number which represents alternative promoters or a
+letter
+for promoters of duplicated genes. The `_' sign serves as a separator.</li>
+  <li>The <i>data class</i> field relates to the quality of the
+information:
+"standard" means that the information is complete and correct according
+the standards laid down in this document; "preliminary" means that the
+entry has not yet undergone all quality checks necessary for being
+classified
+as "standard".</li>
+  <li>The <i>initiation site type</i> is either "single", "multiple",
+"region"
+as defined in <a
+ href="/miniepd/current/usrman.html#ASSIGNMENT_OF_TRANSCRIPTION_INITIATION_SITE">Section
+3</a>.</li>
+  <li> <i>TAXONOMIC DIVISION</i> are</li>
+  <ul>
+    <li>PLN for plant</li>
+    <li>NEM for nematode</li>
+    <li>ART for arthropode</li>
+    <li>MLS for mollusc</li>
+    <li>ECH for echinoderm</li>
+    <li>VRT for vertebrates.</li>
+  </ul>
+Note that these codes relate to the organism in which the promoter is
+expressed,
+not to the source organism in which the promoter is replicated as
+defined
+on the OS line.
+</ul>
+The ID line is terminated by a period.
+<br>
+<!--SECTION-->
+<!--AC--><a name="The_AC_line"></a>
+<h4 class="subsubsection">4.2.2. The AC line</h4>
+<pre>AC&nbsp;&nbsp; EP11148;</pre>
+The accession number consists of the character string "<tt>EP</tt>"
+followed
+by 5 digits representing the EMBL release number followed by the EPD
+entry
+order. Most EPD entries currently have only one accession number. If
+necessary,
+more then one AC will be used, separated by semicolons and the list is
+terminated by a semicolon.
+<br>
+<!--SECTION-->
+<!--DT--><a name="The_DT_line"></a>
+<h4 class="subsubsection">4.2.3. The DT line</h4>
+The date lines show the date of entry or last modification of the
+entry.
+<pre>DT&nbsp;&nbsp; DD-MMM-YEAR (Rel. XX, Comment)</pre>
+where `DD' is the day, `MMM' the month, `YEAR' the year, and `XX' the
+EPD
+release number. The comment portion of the line indicates the action
+taken
+on that date.
+<ul>
+  <li>The first DT line indicates when the entry first appeared in the
+database.</li>
+  <li>The second DT line indicates when the promoter data was last
+modified.
+It is terminated by a period.</li>
+</ul>
+<!--SECTION-->
+<!--SECTION--><!--SECTION--><!--DE--><a name="The_DE_line"></a>
+<h4 class="subsubsection">4.2.4. The DE line</h4>
+<pre>DE&nbsp;&nbsp; c-myc (cellular homologue of myelocytomatosis virus 29 oncogene),<br>DE&nbsp;&nbsp; promoter 2.</pre>
+The description lines contain general descriptive information about the
+promoter. The description is given in ordinary English and is
+free-format.
+It contains the swiss-prot gene names when known. In some cases, more
+than
+one DE line is required; in this case, the text is divided only between
+words. The last DE line is terminated by a period.<br>
+<!--SECTION-->
+<!--OS--><a name="The_OS_line"></a>
+<h4 class="subsubsection">4.2.5. The OS line</h4>
+<pre>OS&nbsp;&nbsp; Mus musculus (house mouse)</pre>
+The species line specifies the source organism(s) of the promotery. The
+species names are based on NCBI's taxonomy and thus can be
+automatically
+hyperlinked to the NCBI's taxonomy web pages.<br>
+<!--SECTION-->
+<!--HG--><a name="The_HG_line"></a>
+<h4 class="subsubsection">4.2.6. The HG line</h4>
+<pre>HG&nbsp;&nbsp; Homology group 53; Mammalian c-myc proto-oncogene, promoter 2</pre>
+The <a href="/miniepd/current/HG.html">homology group</a>
+line is optional, it contains 2 fields: a homology group number that
+allows
+identification of all sequence-wise similar promoters in EPD, and a
+homology
+group name.<br>
+<!--SECTION-->
+<!--AP--><a name="The_AP_line"></a>
+<h4 class="subsubsection">4.2.7. The AP line</h4>
+<pre>AP&nbsp;&nbsp; Alternative promoter #2 of 2;<font color="#000000"> 5' e</font>xon 1; site 2; major promoter.</pre>
+The AP line is optional and provides information on <a
+ href="/miniepd/current/AP.html">alternative
+promoters</a> of the same gene (for more details, see Section 4.3.1.).
+It contains 3 or 4 fields, separated by semicolons, providing the
+following
+types of information:
+<ul>
+  <font color="#000000">descriptive text fields followed by</font>
+</ul>
+<ul>
+  <li>Two numbers indicating, respectively, the promoter's relative
+position
+along the gene, and the total number of alternative promoters of the
+gene.
+Promoters are numbered in the 5' to 3' directions starting with one.</li>
+  <li>A number referring to the exon preceded by the promoters. Note
+that
+multiple
+promoters may be associated with the same (3'-coterminal) exon or with
+different exons. Known exons are numbered in 5' to 3' direction
+starting
+with one.</li>
+  <br>
+  <font color="#000000">Note that the nomenclature of 5'-exons in EPD
+may differ from the usage in the literature.</font> <li>A number
+indicating the promoter's relative position among the
+subset of
+promoters preceeding the same exon.</li>
+  <li>An optional keyword indicating major promoters.</li>
+</ul>
+The AP line is terminated by a period.<br>
+<!--SECTION-->
+<!--NP--><a name="The_NP_line"></a>
+<h4 class="subsubsection">4.2.8. The NP line</h4>
+<pre>NP&nbsp;&nbsp; Neighbouring Promoter; EP23008; MM_H2B1; [-209; -].</pre>
+The NP line is optional and provides information on promoters which are
+physically closer to each other than 1000 bp. It contains 3 fields,
+separated
+by semicolons, providing the following types of information:
+<ul>
+  <li>The EPD accession number of the neighbouring promoter.</li>
+  <li>The EPD identifier of the neighbouring promoter.</li>
+  <li>The last field indicates, respectively, the position and the
+direction
+of the neighbouring promoter relative to the transcription initiation
+site
+given in the promoter entry.</li>
+  <ul>
+    <li>Negative numbers indicate the upstream region of this entry and
+positive
+ones indicate the downstream region.</li>
+    <li>The sign indicates the transcription direction of the
+neighbouring
+promoter
+relative to the promoter entry:</li>
+    <br>
+"+" means same direction <br>
+"-" means opposite direction
+  </ul>
+</ul>
+<!--SECTION-->
+<!--DR--><a name="The_DR_line"></a>
+<h4 class="subsubsection">4.2.9. The DR line</h4>
+The DR lines contain cross-references to other EPD entries (if there
+are
+alternative promoters of the same gene), or to entries from other
+databases.
+So far, we have incorporated links to <a
+ href="http://cleanex.vital-it.ch/current/CleanEx_manual.html">CLEANEX</a>,
+ EMBL (<a href="/miniepd/current/usrman.html#ref_3">3</a>),
+ GenBank (<a href="/miniepd/current/usrman.html#ref_4">4</a>),
+ DDBJ (<a href="/miniepd/current/usrman.html#ref_5">5</a>),&nbsp;
+SWISS-PROT (<a
+ href="/miniepd/current/usrman.html#ref_6">6</a>),
+TRANSFAC (<a href="/miniepd/current/usrman.html#ref_7">7</a>),&nbsp;
+Flybase (<a href="/miniepd/current/usrman.html#ref_8">8</a>),
+MIM (<a href="/miniepd/current/usrman.html#ref_9">9</a>)
+and MGD (<a href="/miniepd/current/usrman.html#ref_10">10</a>).
+The precise format of these lines depends on the target database. Note
+that some cross-references include numbers enclosed in square brackets
+indicating the relative position of a linked sequence object, or
+keywords
+characterising the nature of the relationship between the entries. For
+instance, the ranges associated with cross-references to EMBL entries
+define
+the extensions of the EMBL sequences relative to the initiation site
+described
+by the EPD entry. The multiplicity of EMBL cross-references in some
+entries
+mirrors the redundancy of the sequence database. The first of these
+references
+corresponds to the longest promoter region, except when the sequences
+are
+cancelled from EMBL database, but still exist in GenBank or DDBJ.
+<br>
+The format of the DR line is shown by the following example <font
+ color="#000000">lines:</font>
+<pre><font color="#000000">&nbsp;&nbsp;&nbsp;&nbsp; DR&nbsp;&nbsp; GENOME; NT_037436.1; NT_037436; [-14139754, 9212459].<br>&nbsp;&nbsp;&nbsp;&nbsp; DR&nbsp;&nbsp; EPD; EP11146; HS_MYC_1; alternative promoter; [-162; +].<br>&nbsp;&nbsp;&nbsp;&nbsp; DR&nbsp;&nbsp; EMBL; J00120.1; [-2489, 8507].<br>&nbsp;&nbsp;&nbsp;&nbsp; DR&nbsp;&nbsp; SWISS-PROT; P01106; MYC_HUMAN.<br>&nbsp;&nbsp;&nbsp;&nbsp; DR&nbsp;&nbsp; SPTREMBL; Q8IQL1.<br>&nbsp;&nbsp;&nbsp;&nbsp; DR&nbsp;&nbsp; FLYBASE; FBgn0013718; nuf.<br>&nbsp;&nbsp;&nbsp;&nbsp; DR&nbsp;&nbsp; TRANSFAC; R01804; HS$CMYC_04; [-300, -283]; by position.<br>&nbsp;&nbsp;&nbsp;&nbsp; DR&nbsp;&nbsp; MIM; 190080.<br>&nbsp;&nbsp;&nbsp;&nbsp; DR&nbsp;&nbsp; RefSeq; NM_003529.<br>&nbsp;&nbsp;&nbsp;&nbsp; DR&nbsp;&nbsp; MGD; MGI:88468; Cola2.<br>&nbsp;&nbsp;&nbsp;&nbsp; DR&nbsp;&nbsp; ENSEMBL; CG32140.<br>&nbsp;&nbsp;&nbsp;&nbsp; DR&nbsp;&nbsp; TRANSCRIPTOME; DMe000571.</font></pre>
+<font color="#000000">Explanations (for detailed information go to <a
+ href="/miniepd/current/guidelines.html">Guidelines
+</a>):</font>
+<ul>
+  <li> <font color="#000000">The first item on the DR line is the
+abbreviated
+name of the data collection to which reference is made. The currently
+defined
+data bank identifiers are the following:</font></li>
+  <br>
+  <table>
+    <caption>&nbsp; <br>
+    </caption><tbody>
+    </tbody><tbody>
+    </tbody><tbody>
+    </tbody> <tbody>
+      <tr>
+        <td><font color="#000000">GENOME</font></td>
+        <td><font color="#000000">NCBI Reference Sequence (RefSeq) of
+genomic sequence
+contigs</font></td>
+      </tr>
+      <tr>
+        <td><font color="#000000">EPD</font></td>
+        <td><font color="#000000">Eukaryotic Promoter Database:
+alternative promoters
+of the same gene</font></td>
+      </tr>
+      <tr>
+        <td><font color="#000000">CLEANEX</font></td>
+        <td><font color="#000000">Gene expression database for human
+EPD promoters</font></td>
+      </tr>
+      <tr>
+        <td><font color="#000000">EMBL</font></td>
+        <td><font color="#000000">Nucleotide sequence database of the
+EMBL</font></td>
+      </tr>
+      <tr>
+        <td><font color="#000000">SWISS_PROT</font></td>
+        <td><font color="#000000">Protein sequence database</font></td>
+      </tr>
+      <tr>
+        <td><font color="#000000">SPTREMBL</font></td>
+        <td><font color="#000000">Subset of protein sequence database
+TrEMBL. It
+contains the entries which should be eventually incorporated into
+SWISS-PROT.
+SWISS-PROT accession numbers have been assigned for all SP-TrEMBL
+entries</font></td>
+      </tr>
+      <tr>
+        <td><font color="#000000">FLYBASE</font></td>
+        <td><font color="#000000">Drosophila genome database</font></td>
+      </tr>
+      <tr>
+        <td><font color="#000000">TRANSFAC</font></td>
+        <td><font color="#000000">Transcription factor (TF) database</font></td>
+      </tr>
+      <tr>
+        <td><font color="#000000">MIM</font></td>
+        <td><font color="#000000">Mendelian Inheritance in Man Database</font></td>
+      </tr>
+      <tr>
+        <td><font color="#000000">RefSeq</font></td>
+        <td><font color="#000000">Reference Sequence Database</font></td>
+      </tr>
+      <tr>
+        <td><font color="#000000">MGD</font></td>
+        <td><font color="#000000">Mouse Genome Database</font></td>
+      </tr>
+      <tr>
+        <td><font color="#000000">ENSEMBL</font></td>
+        <td><font color="#000000">Metazoan genome annotation</font></td>
+      </tr>
+      <tr>
+        <td><font color="#000000">TRANSCRIPTOME</font></td>
+        <td><font color="#000000">Catalog of transcripts and their
+mapping onto
+the genome (LICR Lausanne branch)&nbsp;</font></td>
+      </tr>
+      <tr>
+        <td><font color="#000000">TIGR</font></td>
+        <td><font color="#000000">'gene identifiers' from the 'Rice
+Genome Annotation'
+project at TIGR</font></td>
+      </tr>
+    </tbody>
+  </table>
+  <li>The second item is the primary accession number (or an equivalent
+unique
+identifier of another data banks) of the entry to which reference is
+made.</li>
+  <li>The third item (if it exists) is a secondary idientifier or name
+for
+the
+cross-referenced database entry.</li>
+  <li>The fourth item for EMBL and Transfac indicates the location and
+extension
+of the sequences given in these entries relative to the transcription
+initiation
+site given in the promoter entry. Negative numbers indicate the
+upstream
+region of this site and positive ones indicate the downstream part.</li>
+  <li>The fifth item</li>
+  <ul>
+    <li>in the EPD line, indicates the position and the direction of
+the
+alternative
+promoter as it is defined for the neighbouring promoter in the <a
+ href="/miniepd/current/usrman.html#The_NP_line">NP</a>
+line last field</li>
+    <li>in the TRANSFAC line, designates the criteria used to collect
+the TF
+entry:</li>
+    <br>
+- by position: The TF binding site is situated between -500 and + 100,
++1 being the transcription initiation site <br>
+- by function: The TF binding site is known to regulate the
+corresponding
+promoter.
+  </ul>
+</ul>
+<i>NB </i>: TRANSFAC cross-reference lines should not exceed the real
+number
+of binding sites found in "TRANSFAC Site Table". Thus the position
+given
+in this DR line in related to the longest EMBL entry common to both EPD
+and TRANSFAC (version 6.3) databases.<br>
+<!--SECTION-->
+<!--RA--><a name="The_RN,_RX,_RA,_RT_and_RL_lines"></a>
+<h4 class="subsubsection">4.2.10. The RN, RX, RA, RT and RL lines</h4>
+These lines comprise the literature citations within EPD. The citations
+indicate the papers from which the data has been abstracted. The
+reference
+lines for a given citation occur in a block, and are always in the
+order
+RN, RX, RA, RT, RL. Within each such reference block the RN line occurs
+once, the RX lines occurs zero or more times, and the RA, RT and RL
+lines
+each occur one or more times. If several references are given, there
+will
+be a reference block for each.An example of a complete reference is:
+<pre>RN&nbsp;&nbsp; [1]<br>RX&nbsp;&nbsp; MEDLINE; 84026482.<br>RA&nbsp;&nbsp; Battey J., Moulding C., Taub R., Murphy W., Stewart T., Potter H.,<br>RA&nbsp;&nbsp; Lenoir G., Leder P.;<br>RT&nbsp;&nbsp; "The human c-myc oncogene: structural consequences of<br>RT&nbsp;&nbsp; translocation into the IgH locus in Burkitt lymphoma";<br>RL&nbsp;&nbsp; Cell 34:779-787(1983).</pre>
+The formats of the individual lines are explained below. &gt;<a
+ name="The_RN_line"></a>
+<h4 class="subsubsubsection">4.2.10.1. The RN line</h4>
+The RN line gives a sequential number to each reference citation in an
+entry.This number is used to indicate the reference in the ME lines.<a
+ name="The RX line"></a>
+<h4 class="subsubsubsection">4.2.10.2 The RX line</h4>
+The RX line is an optional line which is used to indicate the
+identifier
+assigned to a specific reference in PubMed (PMID, from the National
+Library
+of Medicine (NLM)). .<a name="The_RA_line"></a>
+<h4 class="subsubsubsection">4.2.10.3 The RA line</h4>
+The RA lines list the authors of the paper (or other work) cited. The
+authors
+are are listed in the order given in the paper. The names are listed
+surname
+first followed by a blank followed by initial(s) with periods. The
+authors'
+names are separated by commas and terminated by a semicolon. Author
+names
+are not split between lines.&nbsp;<a name="The_RT_line"></a>
+<h4 class="subsubsubsection">4.2.10.4 The RT line</h4>
+The RT lines contain the title of the reference citation.<a
+ name="The RL line"></a>
+<h4 class="subsubsubsection">4.2.10.5 The RL line</h4>
+The RL lines contain the conventional citation information for the
+reference.
+In general, the RL lines alone are sufficient to find the paper in
+question.
+It includes the journal abbreviation, the volume number, the page
+range,
+and the year. Journal names are abbreviated according to the
+conventions
+used by the National Library of Medicine (NLM) and are based on the
+existing
+ISO and ANSI standards.<br>
+<!--SECTION-->
+<!--ME--><a name="The_ME_line"></a>
+<h4 class="subsubsection">4.2.11. The ME line</h4>
+The method lines describe experiments defining the transcription
+initiation
+site. The format of the ME line is as follows:
+<pre>ME&nbsp;&nbsp; Method_description [; Qualifier...] [n,...].</pre>
+A complete list of method descriptions is given in Section 4.3.2.
+Qualifiers
+may indicate that an experimental gene transcription system was used,
+that
+data are of low precision (less +/- 5 bp), or that the experiments were
+done with a closely related gene. The number(s) enclosed in square
+brackets
+links the method descriptions to the bibliographic references included
+in the promoter entry. The methods line from the example are:
+<pre>ME&nbsp;&nbsp; Nuclease protection [1,4].<br>ME&nbsp;&nbsp; Nuclease protection; transfected or transformed cells [3].<br>ME&nbsp;&nbsp; Length measurement of an RNA product; low-precision data [1].</pre>
+<!--SECTION-->
+<!--SE--><a name="The_SE_line"></a>
+<h4 class="subsubsection">4.2.12. The SE line</h4>
+The sequence line shows a short sequence segment corresponding to the
+-49
+to +10 region of the promoter. Transcribed and untranscribed
+nucleotides
+are represented by upper and lower case characters, respectively. This
+line type is not meant to provide sequence data but serves as a control
+string for sequence extraction.<br>
+<!--SECTION-->
+<!--FL--><a name="The_FL_line"></a>
+<h4 class="subsubsection">4.2.13. The FL line</h4>
+<div class="subsubsection">The Full length line designates the
+large-scale
+cDNA sequencing projects : NEDO (<a
+ href="/miniepd/current/usrman.html#ref_11">11</a>),
+MGC (<a href="/miniepd/current/usrman.html#ref_12">12</a>),
+<font color="#993399">and
+BDGP </font>(<a
+ href="/miniepd/current/usrman.html#ref_15">15</a>).</div>
+<p><br>
+<!--SECTION-->
+<!--IF--><a name="The_IF_line"></a></p>
+<h4 class="subsubsection">4.2.13. The IF line</h4>
+<div class="subsubsection">The Initiation Frequency lines reflect the
+frequency
+at which each nucleotide within the initiation region is found at the
+5'end
+of bone fide full-length cDNA clone inserts.</div>
+<!--SECTION-->
+<!--TX--><a name="The_TX_line"></a>
+<h4 class="subsubsection">4.2.14. The TX line</h4>
+The TX (TaXonomy) lines define a promoter's location within EPD's
+hierarchical
+classification system (see Section 5). <font color="#000000">Note that
+starting from release 72, the <a
+ href="/miniepd/current/usrman.html#CLASSIFICATION">classification
+system</a> is no longer maintained</font>.<br>
+<!--SECTION-->
+<!--KW--><a name="The_KW_line"></a>
+<h4 class="subsubsection">4.2.15. The KW line</h4>
+The KW lines define a number of <a
+ href="/miniepd/current/keywords.html">keywords
+</a>describing
+an entry.
+<!--SECTION--><br>
+<a name="The_FP,_DO_and_RF_lines"></a>
+<h4 class="subsubsection">4.2.16. The FP, DO and RF lines</h4>
+These lines pertain to the EPD old format, see next Section.&nbsp;<a
+ name="The_//_line"></a>
+<h4 class="subsubsection">4.2.17. The // line</h4>
+The // (terminator) line contains no data or comments. It designates
+the
+end of an entry.
+<br>
+<a name="Line_types_retained_from_the_old_format"></a>
+<h3 class="subsection">4.3. Line types retained from the old format</h3>
+The last six lines of a entry present essential information in the more
+concise, old format. A original description of the old format follows:
+Each entry starts with an FP line that contains a position reference to
+a transcription initiation site, and ends with a terminator (//).Below
+is an example of a promoter entry:
+<pre>FP   Hs c-myc         P2+:+S  EU:NC_000008.9       1+ 128817660; 11148.053 010*2<br>XX<br>DO&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Experimental evidence: 4,4#,&lt;2&gt;<br>DO&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Expression/Regulation: +mitogen<br>RF&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Cell34:779&nbsp;&nbsp;&nbsp;&nbsp; EMBOJ2:2375&nbsp;&nbsp;&nbsp; MCB7:1393&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; MCB7:2988<br>//</pre>
+<!--SECTION-->
+<!--FP--><a name="The_FP_line"></a>
+<h4 class="subsubsection">4.3.1. The FP line</h4>
+The FP line contains the following fields and subfields:
+<br>
+<table style="width: 557px; height: 829px;">
+  <caption>&nbsp; <br>
+  </caption><tbody>
+  </tbody><tbody>
+  </tbody><tbody>
+  </tbody> <tbody>
+    <tr>
+      <td>
+      <ul style="list-style-type: none;">
+        <li> <b>columns</b></li>
+      </ul>
+      </td>
+      <td>
+      <ul style="list-style-type: none;">
+        <li> <b>data type</b></li>
+      </ul>
+      </td>
+    </tr>
+    <tr>
+      <td>
+      <ul style="list-style-type: none;">
+        <li>1- 2&nbsp;</li>
+        <li>3- 5&nbsp;</li>
+        <li>6-30&nbsp;</li>
+        <ul style="list-style-type: none;">
+          <li>6-25&nbsp;</li>
+          <li>26-26&nbsp;</li>
+          <li>27-27&nbsp;</li>
+          <li>28-28&nbsp;</li>
+          <li>29-30&nbsp;</li>
+        </ul>
+        <li>31-55&nbsp;</li>
+        <ul style="list-style-type: none;">
+          <li>31-51&nbsp;</li>
+          <li>31-32&nbsp;</li>
+          <li>33-33&nbsp;</li>
+          <li>34-51&nbsp;</li>
+          <li>52-52&nbsp;</li>
+          <li>53-53&nbsp;</li>
+          <li>54-63&nbsp;</li>
+        </ul>
+        <li>64-64&nbsp;</li>
+        <li>65-70&nbsp;</li>
+        <li>71-71&nbsp;</li>
+        <li>72-74&nbsp;</li>
+        <li>75-75&nbsp;</li>
+        <li>76-80&nbsp;</li>
+        <ul style="list-style-type: none;">
+          <li>76-78&nbsp;</li>
+          <li>79-79&nbsp;</li>
+          <li>80-80&nbsp;</li>
+        </ul>
+      </ul>
+      </td>
+      <td>
+      <ul style="list-style-type: none;">
+        <li>"FP"&nbsp;</li>
+        <li>(blank)&nbsp;</li>
+        <li>description:&nbsp;</li>
+        <ul style="list-style-type: none;">
+          <li>promoter name&nbsp;</li>
+          <li>":&nbsp;"</li>
+          <li>independent subset status (see <a
+ href="/miniepd/current/usrman.html#HOMOLOGOUS_PROMOTERS">section
+6</a>)&nbsp;</li>
+          <li>type of initiation site (see <a
+ href="/miniepd/current/usrman.html#ASSIGNMENT_OF_TRANSCRIPTION_INITIATION_SITE">section
+3</a>)&nbsp;</li>
+          <li>(blank)&nbsp;</li>
+        </ul>
+        <li>functional position reference:&nbsp;</li>
+        <ul style="list-style-type: none;">
+          <li>sequence reference:&nbsp;</li>
+          <li>genome db code&nbsp;</li>
+          <li>":"&nbsp;</li>
+          <li>genome db entry accession number&nbsp;</li>
+          <li>sequence type (0 = circular, 1 = linear)&nbsp;</li>
+          <li>strand (+ or -)&nbsp;</li>
+          <li>position number&nbsp;</li>
+        </ul>
+        <li>";"&nbsp;</li>
+        <li>entry code&nbsp;</li>
+        <li>"."&nbsp;</li>
+        <li>homology group number (see <a
+ href="/miniepd/current/usrman.html#HOMOLOGOUS_PROMOTERS">section
+6</a>)&nbsp;</li>
+        <li>(blank)&nbsp;</li>
+        <li>alternative promoter identification code:&nbsp;</li>
+        <ul style="list-style-type: none;">
+          <li>gene number&nbsp;</li>
+          <li>"*"&nbsp;</li>
+          <li>Initiation site number&nbsp;</li>
+        </ul>
+      </ul>
+      </td>
+    </tr>
+  </tbody>
+</table>
+<a name="Explanations"></a>Explanations:
+<ul>
+  <li>The promoter name begins with a species code usually followed by
+a gene
+locus or gene product name. Species codes consist of the initials of
+genus
+and species name. Occasionally, three characters are required to
+generate
+unique codes. Standard abbreviations identify viruses. The full names
+of
+the organisms are given in appendix B.1. Subspecies or strains are
+specified
+in parentheses. <font color="#000000">Chromosomal locations (genetic
+or
+cytogenetic loci, genomic map units, etc.) may appear in square
+brackets
+immediately following species codes. Many gene products are referred to
+by abbreviations explained in appendix B.3. Alternative promoters are
+identified
+by right-justified "P" and a digit indicating the corresponding
+initiation
+site numbered sequentially from 5' to 3'. An optional "E" and digit
+refers
+to the corresponding 5'exons, if known. Identical numbers indicate
+3'co-terminal
+exons. The strongest initiation site is marked by trailing + if known
+(see
+also <a href="/miniepd/current/AP.html">List of
+alternative
+promoters</a>)</font></li>
+  <li>genome db codes currently used are 'EM' for EMBL database, and
+'EU' for genome contigs or chromosomal genome assemblies of the RefSeq
+database.</li>
+  <li>The EMBL accession number always relates to the first EMBL
+cross-reference.
+This one is usually the longest promoter region except when the entry
+is
+cancelled from the EMBL database, but still present in GenBank or DDBJ.</li>
+  <li>The sequence type indicates whether the sequence is circular or
+linear.
+A sequence comprising exactly one repeat unit of a tandem repeat
+cluster
+is also considered circular. Note that the annotation as circular or
+linear
+sequences in EPD is not always in agreement with the corresponding
+annotation
+in EMBL.</li>
+  <li>The entry code is a five-digit number which is the only part of a
+promoter
+entry that is stable from release to release.</li>
+  <li>Alternative promoter identification code: Genes represented by
+multiple
+promoter entries in EPD are assigned a promoters group number. The
+corresponding
+initiation sites are numbered sequentially from 5' to 3'.</li>
+</ul>
+<!--SECTION-->
+<!--DO--><a name="Documentation"></a>
+<h4 class="subsubsection">4.3.2. DO lines: Documentation</h4>
+Documentation of promoter entries is presented on lines starting with
+"DO".
+They are essentially free format and so far not processed by specific
+programs.
+In the present release, there are two DO lines per entry, the first
+referring
+to the transcript mapping experiments that define the promoter, the
+second
+giving information about expression and regulation.The varies
+experimental
+techniques are identified by number codes.The "Medline's number" and/or
+"example" in brackets are linked, respectively, to the abstract and/ or
+to the full text article describing the related experiment.
+<br>
+<a name="codes"></a><br>
+<table>
+  <caption>&nbsp; <br>
+  </caption><tbody>
+  </tbody><tbody>
+  </tbody><tbody>
+  </tbody> <tbody>
+    <tr>
+      <th>codes</th>
+      <th>experiments</th>
+    </tr>
+    <tr>
+      <td width="35">1</td>
+      <td>Direct RNA sequencing (<a
+ href="https://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=pubmed&amp;dopt=Abstract&amp;list_uids=1634116">1634116</a>)</td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td valign="top">Length measurement of an RNA product (<a
+ href="https://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=pubmed&amp;dopt=Abstract&amp;list_uids=1989694">1989694</a>)</td>
+    </tr>
+    <tr>
+      <td valign="top">3</td>
+      <td>Nuclease protection : Length measurement of a
+nuclease-protected complementary
+RNA or DNA fragment (<a
+ href="https://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=pubmed&amp;dopt=Abstract&amp;list_uids=2845126">2845126</a>)
+(<a
+ href="https://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=pubmed&amp;dopt=Abstract&amp;list_uids=8294473">8294473</a>)</td>
+    </tr>
+    <tr>
+      <td valign="top">4</td>
+      <td>RNA sequencing by primer extension : by dideoxy-terminated
+primer extension
+(<a
+ href="https://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=pubmed&amp;dopt=Abstract&amp;list_uids=3396543">3396543</a>)</td>
+    </tr>
+    <tr>
+      <td>5</td>
+      <td>Sequencing of a full-length cDNA (<a
+ href="https://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=pubmed&amp;dopt=Abstract&amp;list_uids=8294473">8294473</a>)</td>
+    </tr>
+    <tr>
+      <td valign="top">6</td>
+      <td>Primer extension : Length measurement of a primer extension
+product&nbsp;
+(<a
+ href="https://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=pubmed&amp;dopt=Abstract&amp;list_uids=10187799">10187799</a>
+, <a href="http://www.jbc.org/cgi/content/full/274/15/10154/F3">example</a>)
+(<a
+ href="https://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=pubmed&amp;dopt=Abstract&amp;list_uids=9880555">9880555</a>
+, <a href="http://www.jbc.org/cgi/content/full/274/3/1736/F2">example</a>)</td>
+    </tr>
+    <tr>
+      <td>7</td>
+      <td>DNA sequencing of a full-length processed pseudogene (<a
+ href="https://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=pubmed&amp;dopt=Abstract&amp;list_uids=3584116">3584116</a>)</td>
+    </tr>
+    <tr>
+      <td valign="top">8</td>
+      <td>Reverse direction primer extension with homologous sequence
+ladder
+: Length measurement of an in vitro synthesised DNA primed upstream of
+the initiation site and blocked by the 5'end of the RNA hybridized to
+the
+template (<a
+ href="https://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=pubmed&amp;dopt=Abstract&amp;list_uids=2451027">2451027</a>)</td>
+    </tr>
+    <tr>
+      <td>9</td>
+      <td>Rapid amplification of cDNA ends (RACE) (<a
+ href="https://www.ncbi.nlm.nih.gov:80/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=9116864&amp;dopt=Books">9116864</a>)</td>
+    </tr>
+    <tr>
+      <td>10</td>
+      <td>RNA sequencing, type not specifed</td>
+    </tr>
+    <tr>
+      <td>11</td>
+      <td>Oligo-capping : artificial capping of mRNA followed by
+sequencing of
+the 5' end of cDNA (<a
+ href="https://www.ncbi.nlm.nih.gov:80/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=11375929&amp;dopt=Books">11375929</a>,
+      <a
+ href="https://www.ncbi.nlm.nih.gov:80/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=11337467&amp;dopt=Books">11337467
+and examples)</a></td>
+    </tr>
+    <tr>
+      <td>12</td>
+      <td>Mammalian gene collection (MGC) full-length cDNA cloning (<a
+ href="https://www.ncbi.nlm.nih.gov:80/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=10521335&amp;dopt=Books">10521335
+and example)</a></td>
+    </tr>
+    <tr>
+      <td>13</td>
+      <td>5' end confirmed by alignment of first 100 downstream
+nucleotides to
+EST database.</td>
+    </tr>
+    <tr>
+      <td>14</td>
+      <td>Oligo-capping: Berkeley Drosophila Genome Project (<a
+ href="https://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=pubmed&amp;dopt=Abstract&amp;list_uids=12537569">12537569</a>)</td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;">15</td>
+      <td style="vertical-align: top;">Oligo-capping: Rice full-length
+cDNA cloning
+(<a
+ href="https://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=pubmed&amp;dopt=Abstract&amp;list_uids=12869764&amp;query_hl=2">12869764</a>)</td>
+    </tr>
+  </tbody>
+</table>
+<p>Special characters appended to the number codes designate an
+experimental
+gene expression system where the RNA for the corresponding experiments
+was synthesized.
+<br>
+<table>
+  <caption>&nbsp; <br>
+  </caption><tbody>
+  </tbody><tbody>
+  </tbody><tbody>
+  </tbody> <tbody>
+    <tr>
+      <td width="35">*</td>
+      <td>RNA POL II in vitro system</td>
+    </tr>
+    <tr>
+      <td>o</td>
+      <td>injected amphibian oocytes</td>
+    </tr>
+    <tr>
+      <td>#</td>
+      <td>transfected or transformed cells, injected neurons</td>
+    </tr>
+    <tr>
+      <td>!</td>
+      <td>transgenic organisms</td>
+    </tr>
+    <tr>
+      <td><br>
+      </td>
+      <td><br>
+      </td>
+    </tr>
+    <tr>
+      <td>r</td>
+      <td>experiments performed with closely related gene</td>
+    </tr>
+    <tr>
+      <td valign="top">h</td>
+      <td>homologous sequence ladder used for length measurement
+of&nbsp; nuclease
+protection or primer extension product</td>
+    </tr>
+    <tr>
+      <td>l</td>
+      <td>low-precision data (error &gt; +/- 5 bp)</td>
+    </tr>
+  </tbody>
+</table>
+Explanations and additional conventions:
+</p>
+<ul>
+  <li>The full-length assumption of a cDNA clone or a proccessed
+pseudogene
+is
+based on consistency with accompanying nuclease-protection or primer
+extension
+data or, alternatively, the existence of multiple 5'coterminal clones
+or
+pseudogenes.</li>
+</ul>
+The information on expression/regulation may include indication of
+developmental
+stages, tissues, cell types, cell cycle stages, and various regulatory
+features.Conventions:
+<ul>
+  <li>Semicolon delimits the two fields : expression and regulation.</li>
+  <li>Comma delimits alternative keywords (e.g. liver, kidney)</li>
+  <li>"+" means "induced by" or "strongly expressed in".</li>
+  <li>"-" means "repressed by" or "weakly expressed in".</li>
+  <li>"~" means "modulated by".</li>
+  <li>Cell cycle stages are given in square brackets.</li>
+</ul>
+<!--SECTION-->
+<a name="Literature_references"></a>
+<h4 class="subsubsection">4.3.3. RF line: Literature references</h4>
+<div class="subsubsection">The first four references from the RN, RX,
+RA,
+RT and RL lines are repeated in a highly condensed form. Each reference
+is spaced by 15 letters and indicates journal, volume, and starting
+page
+of the referred article (maximal 14 letters). The journal code
+explained
+in Appendix B.2.</div>
+<p><br>
+They primarily point to the articles where the experimental promoter
+evidence is presented. Additional potential subjects are homology to
+other
+promoters, gene expression and regulation, nomenclature. Papers
+containing
+only sequence data are usually not referred to because they are easy to
+find via the corresponding EMBL sequence entry descriptions.
+<!--SECTION--><!--MISC--><br>
+<a name="Miscellaneous"></a></p>
+<h4 class="subsubsection">4.3.4. Miscellaneous</h4>
+<ul>
+  <li>Greek letters are sometimes represented by corresponding latin
+letters
+followed by apostrophe:</li>
+  <br>
+  <table>
+    <caption>&nbsp; <br>
+    </caption><tbody>
+    </tbody><tbody>
+    </tbody><tbody>
+    </tbody> <tbody>
+      <tr>
+        <td>a' = alpha</td>
+        <td>b' = beta</td>
+        <td>g' = gamma</td>
+        <td>d' = delta</td>
+        <td>e' = epsilon</td>
+      </tr>
+      <tr>
+        <td>z' = zeta</td>
+        <td>h' = eta</td>
+        <td>th'= theta</td>
+        <td>k' = kappa</td>
+        <td>l' = lambda</td>
+      </tr>
+      <tr>
+        <td>n' = nu</td>
+        <td>r' = rho</td>
+      </tr>
+    </tbody>
+  </table>
+  <li>Sub- and superscripts are sometimes indicated by preceding "_"
+and "^",
+respectively.</li>
+</ul>
+<!--SECTION-->
+<!--Bulk_format-->
+<h3 class="subsection"><a
+ name="Distinct_format_of_preliminary_entries_in_epd_bulk.dat"></a></h3>
+<h3 class="subsection">
+4.4. Distinct format of 'preliminary' entries in epd_bulk.dat</h3>
+<h4>
+4.4.1. The title line:</h4>
+<pre>TI&nbsp;&nbsp; epd83&nbsp;&nbsp;&nbsp;&nbsp; Bulk Section Eukaryotic Promoter Database / Release 83 EP</pre>
+<h4 class="subsubsection">
+4.4.2. The ID line</h4>
+The identification line is always the first line of an entry. The form
+of the ID line in 'epd_bulk.dat' is:
+<pre>ID&nbsp;&nbsp; OS_bAAAA&nbsp;&nbsp;&nbsp;&nbsp; preliminary; undefined; TAXONOMIC DIVISION.</pre>
+<ul>
+  <li>An unique entry identifier "<span style="font-family: monospace;">OS_bAAAA</span>"
+is contructed using the species identification code ('OS') with at most
+4 alphanumeric characters representing the biological source of the
+promoter
+and a 'b' (for bulk) followed by an arbitrary 4 letter code</li>
+  <li>"preliminary" <i>data class</i> field indicates that the entry
+has not
+(yet) undergone all quality checks necessary for being classified as
+"standard".</li>
+  <li>"undefined" as <i>initiation site type</i> due to insufficient
+data to
+define transcription initiation patterns (<a
+ href="/miniepd/current/usrman.html#ASSIGNMENT_OF_TRANSCRIPTION_INITIATION_SITE">Section
+3</a>).</li>
+  <li> <i>TAXONOMIC DIVISION</i> are</li>
+  <ul>
+    <li>PLN for plant</li>
+    <li>NEM for nematode</li>
+    <li>ART for arthropode</li>
+    <li>MLS for mollusc</li>
+    <li>ECH for echinoderm</li>
+    <li>VRT for vertebrates.</li>
+  </ul>
+Note that these codes relate to the organism in which the promoter is
+expressed,
+not to the source organism in which the promoter is replicated as
+defined
+on the OS line.
+</ul>
+The ID line is terminated by a period.
+<h4 class="subsubsection">4.4.3. The AC line</h4>
+<pre>AC&nbsp;&nbsp; EP00001;</pre>
+The accession number consists of the character string "<tt>EP</tt>"
+followed
+by 5 digits. Previously the first two digits of the AC designated the
+release
+number of initial appearance of the specific entry followed by the EPD
+entry order. AC numbers in 'epd_bulk.dat' are continuous numbers,
+excluding
+ACs already used for entries in the main file 'epd.dat'.
+<!--SECTION--><!--CLASSIF-->
+<p><a name="CLASSIFICATION"></a></p>
+<h2 class="section">5 CLASSIFICATION</h2>
+<div class="MsoNormal"><b><font color="#000000">Starting from release
+72,
+the classification system is no longer maintained. New entries are
+presently
+added by default to an '?Unclassified' category. The classification
+system
+might still provide valuable information for entries added before
+release
+72. However for any category, consider the possible existence of
+additional,
+potentially corresponding EPD entries in the default categories.</font></b></div>
+<p><br>
+<i>The entries of the Eukaryotic Promoter Database are embedded
+in a hierarchical
+<a href="/miniepd/current/epd_classif.html">classification</a>
+system. A promoter's taxonomic location is made clear by interspersed
+group
+headings. The example shown below is taken from top of the database. A
+contrasting format has been chosen to emphasize the very different
+nature
+of this information.</i>
+</p>
+<pre><i>*----------------------------------------------------------------------*<br>*&nbsp;&nbsp;&nbsp; 1. Plant promoters&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; *<br>*----------------------------------------------------------------------*<br>*&nbsp;&nbsp;&nbsp; 1.1. Chromosomal genes&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; *<br>*----------------------------------------------------------------------*<br>*&nbsp;&nbsp;&nbsp; 1.1.1. Small nuclear RNAs&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; *<br>*----------------------------------------------------------------------*</i></pre>
+<i>A group heading consists of a series of node numbers and a title.
+The
+highest classification level distinguishes between promoters active in
+major eukaryotic taxa (phyla). Further below, grouping considers
+replicon
+type and functional properties of gene products. On the lowest level,
+homology
+(as defined in section 6) is the criterion. A survey of the upper part
+of the classification pyramid is presented in appendix A.The proposed
+classification
+system has a highly tentative character as it is often unclear how a
+new
+promoter should be classified, especially if the gene product is a
+multifunctional
+protein. Users should therefore not be surprised or discouraged if they
+don't find a promoter at the initially expected place.</i>
+<br>
+<!--SECTION-->
+<!--HG--><a name="HOMOLOGOUS_PROMOTERS"></a>
+<h2 class="section">6 HOMOLOGOUS PROMOTERS</h2>
+Homology is defined as sequence similarity due to common phylogenetic
+origin.
+In EPD, two promoters are considered homologous if they exhibit
+&gt;=50% sequence
+similarity between -79 and +20. Similarity is calculated from optimal
+alignments
+generated with the aid of the UWGCG subroutine ShiftAlign (<a
+ href="/miniepd/current/usrman.html#ref_13">13</a>)
+using the following symbol comparison table:
+<center><br>
+<table>
+  <caption>&nbsp;
+  <center>
+  <p></p>
+  </center>
+  </caption><tbody>
+  </tbody><tbody>
+  </tbody><tbody>
+  </tbody> <tbody>
+    <tr>
+      <td>A</td>
+      <td>C</td>
+      <td>G</td>
+      <td>N</td>
+      <td>T</td>
+      <td><br>
+      </td>
+    </tr>
+    <tr>
+      <td>1.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.5</td>
+      <td>0.0</td>
+      <td>A</td>
+    </tr>
+    <tr>
+      <td><br>
+      </td>
+      <td>1.0</td>
+      <td>0.0</td>
+      <td>0.5</td>
+      <td>0.0</td>
+      <td>C</td>
+    </tr>
+    <tr>
+      <td><br>
+      </td>
+      <td><br>
+      </td>
+      <td>1.0</td>
+      <td>0.5</td>
+      <td>0.0</td>
+      <td>G</td>
+    </tr>
+    <tr>
+      <td><br>
+      </td>
+      <td><br>
+      </td>
+      <td><br>
+      </td>
+      <td>0.5</td>
+      <td>0.5</td>
+      <td>N</td>
+    </tr>
+    <tr>
+      <td><br>
+      </td>
+      <td><br>
+      </td>
+      <td><br>
+      </td>
+      <td><br>
+      </td>
+      <td>1.0</td>
+      <td>T</td>
+    </tr>
+  </tbody>
+</table>
+</center>
+<p>Gap weight and gap length weight are specified as 3 and 0,
+respectively.
+Terminal gaps are ignored. Percent similarity is understood as
+alignment
+score divided by segment length, times 100. Groups of homologous
+promoters
+are identified by homology group numbers (see 4.2.1.). Definition of
+these
+groups is based on similarity scores as defined above and a tree
+generation
+method called UPGMA (<a
+ href="/miniepd/current/usrman.html#ref_14">14</a>)<font
+ color="#000000">.
+In a few cases, similarities </font>between 50% and 56% were ignored<font
+ color="#000000">
+if the protein sequences of the corresponding genes were not related.
+Similarities
+were also ignored between alternative promoter sequences that are
+spaced
+by less than 50 bp</font>. A subset of "independent" promoters is
+marked
+by "+" in column 27 of the FP line. This set contains only one member
+per
+homology group (usually, the promoter with the longest upstream
+sequence
+available) and is intended to be used for statistical analysis of
+functional
+patterns where it is important to avoid bias by multiples of closely
+related
+sequences.
+<!--SECTION--><br>
+<a name="PROMOTER_SEQUENCE_RETRIEVAL"></a></p>
+<h2 class="section">7 PROMOTER SEQUENCE RETRIEVAL</h2>
+Promoter sequence listings have not been incorporated into EPD for two
+reasons: (i) to avoid duplication of data already existing elsewhere in
+the EMBL data library, and (ii) to encourage usage of FPS-dependent
+sequence
+retrieval programs which enables the user to specify suitable 5'- and
+3'boundaries
+of the requested sequence segments himself. Effort is under way to
+motivate
+producers of standard nucleotide sequence analysis packages to provide
+such tools in the future. In the meantime, users with some programming
+experience will find it easy to write their own routines. Our local
+sequence
+extraction programs run in a UWGCG environment (<a
+ href="/miniepd/current/usrman.html#ref_13">13</a>)
+and have been implemented at several sites in Europe and the United
+States.
+They are documented and freely available on request.
+<!--SECTION--><!--REFS--><br>
+<a name="REFERENCES"></a>
+<h2 class="section">8 REFERENCES</h2>
+<ol>
+  <a name="ref_1"></a><li>Bucher, P. &amp; Trifonov, E.N., <i>Compilation
+and analysis of eukaryotic
+POL II promoter sequences</i>, Nucl. Acids Res. <b>14</b>, 10009-10026
+(1986). (<a
+ href="https://www.ncbi.nlm.nih.gov/entrez/query.fcgi?db=PubMed&amp;cmd=Retrieve&amp;dopt=Citation&amp;list_uids=3808945">3808945</a>)</li>
+  <br>
+  <a name="ref_2"></a><li>Bucher, P. &amp; Bryan, B., <i>Signal search
+analysis: a new method to
+localize and characterize functionally important DNA sequences</i>,
+Nucl.
+Acids Res. <b>12</b>, 287-305 (1984). (<a
+ href="https://www.ncbi.nlm.nih.gov/entrez/query.fcgi?db=PubMed&amp;cmd=Retrieve&amp;dopt=Citation&amp;list_uids=84118736">84118736</a>)</li>
+  <br>
+  <a name="ref_3"></a><li>Stoesser, G., Tuli,M.A., Lopez, R. and Sterk,
+P., <i>The EMBL
+nucleotide
+sequence database</i>, Nucleic Acids. Res., <b>27</b>,<b> </b>18-24
+(1999).
+(<a
+ href="https://www.ncbi.nlm.nih.gov/entrez/query.fcgi?db=PubMed&amp;cmd=Retrieve&amp;dopt=Citation&amp;list_uids=99063644">99063644</a>)</li>
+  <br>
+  <a name="ref_4"></a><li>Benson, D.A., Boguski, M.S., Lipman, D.J.,
+Ostell, J., Ouellette
+B.F.F,&nbsp;
+Rapp, B:A: and Wheeler, D.L., <i>GenBank,</i> Nucleic Acids. Res., <b>27</b>,
+12-17 (1999). (<a
+ href="https://www.ncbi.nlm.nih.gov/entrez/query.fcgi?db=PubMed&amp;cmd=Retrieve&amp;dopt=Citation&amp;list_uids=99063643">99063643</a>)</li>
+  <br>
+  <a name="ref_5"></a><li>Sugawara,&nbsp; H., Miyazaki, S., Gojobori,
+T. and Tateno, Y.,<i>DNA
+Data
+Bank of Japan dealing with large-scale data submission</i>, Nucleic
+Acids.
+Res., <b>27</b>, 25-28 (1999). (<a
+ href="https://www.ncbi.nlm.nih.gov/entrez/query.fcgi?db=PubMed&amp;cmd=Retrieve&amp;dopt=Citation&amp;list_uids=99063645">99063645</a>)</li>
+  <br>
+  <a name="ref_6"></a><li>Bairoch, A. and Apweiler, R., <i>The
+SWISS-PROT protein sequence data
+bank
+and its supplement TrEMBL in 1999</i>, Nucleic Acids Res., <b>27</b>,
+49-54
+(1999). (<a
+ href="https://www.ncbi.nlm.nih.gov/entrez/query.fcgi?db=PubMed&amp;cmd=Retrieve&amp;dopt=Citation&amp;list_uids=99063650">99063650</a>)</li>
+  <br>
+  <a name="ref_7"></a><li>Heinemeyer, T., Chen, X., Karas, H., Kel,
+A.E., Kel, O.V., Liebich, I.,
+Meinhardt, T., Reuter, I., Schacherer, F. and Wingender, E., <i>Expanding
+the TRANSFAC database towards an expert system of regulatory molecular
+mechanisms</i>, Nucleic Acids. Res., <b>27</b>,<b> </b>318-322
+(1999).
+(<a
+ href="https://www.ncbi.nlm.nih.gov/entrez/query.fcgi?db=PubMed&amp;cmd=Retrieve&amp;dopt=Citation&amp;list_uids=99063727">99063727</a>)</li>
+  <br>
+  <a name="ref_8"></a><li>The FlyBase consortium, <i>The FlyBase
+database of the drosophilia
+genome
+projects and community litterature</i>, Nucleic Acids. Res., <b>27</b>,85-88
+(1999). (<a
+ href="https://www.ncbi.nlm.nih.gov/entrez/query.fcgi?db=PubMed&amp;cmd=Retrieve&amp;dopt=Citation&amp;list_uids=99063659">99063659</a>)</li>
+  <br>
+  <a name="ref_9"></a><li>Pearson, P., Francomano, C., Foster, P.,
+Bocchini, C., Li, P. and
+McKusick,
+V., <i>The status of online Mendelian inheritance in man (OMIM) medio
+1994, </i>Nucleic
+Acids Res., <b>22</b>, 3470-3473 (1994). (<a
+ href="https://www.ncbi.nlm.nih.gov/entrez/query.fcgi?db=PubMed&amp;cmd=Retrieve&amp;dopt=Citation&amp;list_uids=95023074">95023074</a>)</li>
+  <br>
+  <a name="ref_10"></a><li>Blake, J.A., Richardson, J.E., Davisson,
+M.T., Eppig, J.T. and the
+Mouse
+Genome Database Group, <i>The Mouse Genome Database (MGD): genetic and
+genomic information about the laboratory mouse</i>, Nucleic Acids Res.,
+    <b>27</b>,
+95-98 (1999). (<a
+ href="https://www.ncbi.nlm.nih.gov/entrez/query.fcgi?db=PubMed&amp;cmd=Retrieve&amp;dopt=Citation&amp;list_uids=99063661">99063661</a>)</li>
+  <br>
+  <a name="ref_11"></a><li>Suzuki Y., Yamashita R., Nakai K., Sugano
+S., <i>DBTSS: database of
+human
+transcriptional start sites and full-length cDNAs. </i>Nucleic Acids
+Res. <b>30</b>(1):328-331(2002).
+(<a
+ href="https://www.ncbi.nlm.nih.gov:80/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=11752328&amp;dopt=Books">11752328</a>)</li>
+  <br>
+  <a name="ref_12"></a><li>Strausberg, R.L., Feingold, E.A., Klausner,
+R.D., Collins, F.S., <i>The
+Mammalian Gene Collection. </i>Science, <b>286</b>, 455-457 (1999). (<a
+ href="https://www.ncbi.nlm.nih.gov:80/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=10521335&amp;dopt=Books">10521335)</a></li>
+  <br>
+  <a name="ref_13"></a><li>Devereux,J., Haeberli,P., &amp; Smithies,O. <i>A
+comprehensive set of
+sequence
+analysis programs for the VAX</i>, Nucl. Acids Res. <b>12</b>, 387-395
+(1984). (<a
+ href="https://www.ncbi.nlm.nih.gov/entrez/query.fcgi?db=PubMed&amp;cmd=Retrieve&amp;dopt=Citation&amp;list_uids=84118744">84118744</a>)</li>
+  <br>
+  <a name="ref_14"></a><li>Sneath,H.A. &amp; Sokal,R.R., <i>Numerical
+taxonomy</i>, W.H.
+Freemann,
+San Francisco, London (1973).</li>
+  <br>
+  <a name="ref_15"></a><li>Stapleton M., Liao GC., Brokstein P., Hong
+L., Carninci P., Shiraki T.,
+Hayashizaki Y., Champe M., Pacleb J., Wan K., Yu C., Carlson J., George
+R., Celniker S., and Rubin GM., <i>The Drosophila Gene Collection:
+Identification
+of Putative Full-Length cDNAs for 70% of D. melanogaster Genes. </i>Genome
+Res., <b>12</b>:1294-1300 (2002). (<a
+ href="https://www.ncbi.nlm.nih.gov/entrez/query.fcgi?db=PubMed&amp;cmd=Retrieve&amp;dopt=Citation&amp;list_uids=12176937">12176937</a>)</li>
+  <br>
+  <a name="ref_16"></a><li>Schmid C.D., Praz V., Delorenzi M.,
+P&eacute;rier R., and Bucher
+P.,&nbsp;<span style="font-style: italic;">The
+Eukaryotic Promoter Database EPD: the impact of in silico primer
+extension.</span>
+Nucleic Acids Res. <b>32,</b> D82-5 (2004). (<a
+ href="https://www.ncbi.nlm.nih.gov/entrez/query.fcgi?db=PubMed&amp;cmd=Retrieve&amp;dopt=Citation&amp;list_uids=14681364">14681364</a>)</li>
+<!--SECTION--> <br>
+&nbsp;
+</ol>
+<a name="SURVEY_OF_RELEASE"></a>
+<h2 class="section">A.&nbsp; APPENDIX A : <a
+ href="/miniepd/current/SURVEY.html">SURVEY
+OF RELEASE</a></h2>
+<p><br>
+<a name="APPENDIXB"></a></p>
+<h2 class="section">B.&nbsp; APPENDIX B : CODES AND ABBREVIATIONS</h2>
+<a name="SPECIES_CODES"></a>
+<h3 class="subappendix">B.1. SPECIES CODES</h3>
+<center><br>
+<table>
+  <caption>&nbsp;
+  <center>
+  <p></p>
+  </center>
+  </caption><tbody>
+  </tbody><tbody>
+  </tbody><tbody>
+  </tbody> <tbody>
+    <tr>
+      <td><b>Code</b></td>
+      <th><i>Scientific name</i> (English name)</th>
+    </tr>
+    <tr>
+      <td>AAV2</td>
+<!--#https://www.ncbi.nlm.nih.gov/htbin-post/Taxonomy/wgetorg?name=Adeno-associated%20virus%202&amp;srchmode=1-->
+      <td><i><a
+ href="https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?mode=Undef&amp;name=Adeno-associated+virus&amp;lvl=0&amp;srchmode=1">Adeno-associated
+virus 2</a></i></td>
+    </tr>
+    <tr>
+      <td>Ac</td>
+      <td><i><a
+ href="https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?mode=Undef&amp;name=Aplysia+californica&amp;lvl=0&amp;srchmode=1">Aplysia
+californica</a></i> (California sea hare)</td>
+    </tr>
+    <tr>
+      <td>AcNPV</td>
+      <td><i><a
+ href="https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?mode=Undef&amp;name=Autographa+californica+nuclear+polyhedrosis+virus&amp;lvl=0&amp;srchmode=1">Autographa
+californica nuclear polyhedrosis virus</a></i></td>
+    </tr>
+    <tr>
+      <td>Ad2</td>
+      <td><i><a
+ href="https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?mode=Undef&amp;name=Human+adenovirus+type+2&amp;lvl=0&amp;srchmode=1">Human
+adenovirus type 2</a></i></td>
+    </tr>
+    <tr>
+      <td>Ad5</td>
+      <td><i><a
+ href="https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?mode=Undef&amp;name=Human+adenovirus+type+5&amp;lvl=0&amp;srchmode=1">Human
+adenovirus type 5</a></i></td>
+    </tr>
+    <tr>
+      <td>Ad7</td>
+      <td><i><a
+ href="https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?mode=Undef&amp;name=Human+adenovirus+type+7&amp;lvl=0&amp;srchmode=1">Human
+adenovirus type 7</a></i></td>
+    </tr>
+    <tr>
+      <td>Ad12</td>
+      <td><i><a
+ href="https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?mode=Undef&amp;name=Human+adenovirus+type+12&amp;lvl=0&amp;srchmode=1">Human
+adenovirus type 12</a></i></td>
+    </tr>
+    <tr>
+      <td>Ag</td>
+      <td><i><a
+ href="https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?mode=Undef&amp;name=Ateles+geoffroyi&amp;lvl=0&amp;srchmode=1">Ateles
+geoffroyi</a></i> (black-handed spider monkey)</td>
+    </tr>
+    <tr>
+      <td>ALV</td>
+      <td><i><a
+ href="https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?mode=Undef&amp;name=Avian+leukosis+virus&amp;lvl=0&amp;srchmode=1">Avian
+leukosis virus</a></i></td>
+    </tr>
+    <tr>
+      <td>Am</td>
+      <td><i><a
+ href="https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?mode=Undef&amp;name=Antirrhinum+majus&amp;lvl=0&amp;srchmode=1">Antirrhinum
+majus</a></i> (snapdragon)</td>
+    </tr>
+    <tr>
+      <td>Ab-MLV</td>
+      <td><i><a
+ href="https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?mode=Undef&amp;name=Abelson+murine+leukemia+virus&amp;lvl=0&amp;srchmode=1">Abelson
+murine leukemia virus</a></i></td>
+    </tr>
+    <tr>
+      <td>Apo</td>
+      <td><i><a
+ href="https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?mode=Undef&amp;name=Antheraea+polyphemus&amp;lvl=0&amp;srchmode=1">Antheraea
+polyphemus</a></i> (polyphemus moth)</td>
+    </tr>
+    <tr>
+      <td>Ap</td>
+      <td><i><a
+ href="https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?mode=Undef&amp;name=Anas+platyrhynchos&amp;lvl=0&amp;srchmode=1">Anas
+platyrhynchos</a></i> (mallard, domestic duck)</td>
+    </tr>
+    <tr>
+      <td>As</td>
+      <td><i><a
+ href="https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?mode=Undef&amp;name=Avena+sativa&amp;lvl=0&amp;srchmode=1">Avena
+sativa</a></i> (oat)</td>
+    </tr>
+    <tr>
+      <td>At</td>
+      <td><i><a
+ href="https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?mode=Undef&amp;name=Agrobacterium+tumefaciens&amp;lvl=0&amp;srchmode=1">Agrobacterium
+tumefaciens</a></i></td>
+    </tr>
+    <tr>
+      <td>Ath</td>
+      <td><i><a
+ href="https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?mode=Undef&amp;name=Arabidopsis+thaliana&amp;lvl=0&amp;srchmode=1">Arabidopsis
+thaliana</a></i> (thale cress)</td>
+    </tr>
+    <tr>
+      <td>Atr</td>
+      <td><i><a
+ href="https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?mode=Undef&amp;name=Aotus+trivirgatus&amp;lvl=0&amp;srchmode=1">Aotus
+trivirgatus</a></i> (douroucouli)</td>
+    </tr>
+    <tr>
+      <td>Ay</td>
+      <td><i><a
+ href="https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?mode=Undef&amp;name=Antheraea+yamamai&amp;lvl=0&amp;srchmode=1">Antheraea
+yamamai</a></i></td>
+    </tr>
+    <tr>
+      <td>B19</td>
+      <td><i><a
+ href="https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?mode=Undef&amp;name=Human+parvovirus+B19&amp;lvl=0&amp;srchmode=1">Human
+parvovirus B19</a></i></td>
+    </tr>
+    <tr>
+      <td>Be</td>
+      <td><i><a
+ href="https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?mode=Undef&amp;name=Bertholletia+excelsa&amp;lvl=0&amp;srchmode=1">Bertholletia
+excelsa</a></i> (Brazil nut)</td>
+    </tr>
+    <tr>
+      <td>BKV</td>
+      <td><i><a
+ href="https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?mode=Undef&amp;name=Papovavirus+BKV&amp;lvl=0&amp;srchmode=1">Papovavirus
+BKV</a></i></td>
+    </tr>
+    <tr>
+      <td>BLV</td>
+      <td><i><a
+ href="https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?mode=Undef&amp;name=Bovine+leukemia+virus&amp;lvl=0&amp;srchmode=1">Bovine
+leukemia virus</a></i></td>
+    </tr>
+    <tr>
+      <td>Bm</td>
+      <td><i><a
+ href="https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?mode=Undef&amp;name=Bombyx+mori&amp;lvl=0&amp;srchmode=1">Bombyx
+mori</a></i> (silkworm)</td>
+    </tr>
+    <tr>
+      <td>Bn</td>
+      <td><i><a
+ href="https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?mode=Undef&amp;name=Brassica+napus&amp;lvl=0&amp;srchmode=1">Brassica
+napus</a></i> (rape)</td>
+    </tr>
+    <tr>
+      <td>BPV1</td>
+      <td><i><a
+ href="https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?mode=Undef&amp;name=Bovine+papillomavirus+type+1&amp;lvl=0&amp;srchmode=1">Bovine
+papillomavirus type 1</a></i></td>
+    </tr>
+    <tr>
+      <td>Bt</td>
+      <td><i><a
+ href="https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?mode=Undef&amp;name=Bos+taurus&amp;lvl=0&amp;srchmode=1">Bos
+taurus</a></i> (cattle)</td>
+    </tr>
+    <tr>
+      <td>CaMV</td>
+      <td><i><a
+ href="https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?mode=Undef&amp;name=Cauliflower+mosaic+virus&amp;lvl=0&amp;srchmode=1">Cauliflower
+mosaic virus</a></i></td>
+    </tr>
+    <tr>
+      <td>Cco</td>
+      <td><i><a
+ href="https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?mode=Undef&amp;name=Coturnix+coturnix&amp;lvl=0&amp;srchmode=1">Coturnix
+coturnix</a></i> (quail)</td>
+    </tr>
+    <tr>
+      <td>Ce</td>
+      <td><i><a
+ href="https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?mode=Undef&amp;name=Caenorhabditis+elegans&amp;lvl=0&amp;srchmode=1">Caenorhabditis
+elegans</a></i></td>
+    </tr>
+    <tr>
+      <td>Cg</td>
+      <td><i><a
+ href="https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?mode=Undef&amp;name=Canavalia+gladiata&amp;lvl=0&amp;srchmode=1">Canavalia
+gladiata</a></i> (sword bean)</td>
+    </tr>
+    <tr>
+      <td>Cgr</td>
+      <td><i><a
+ href="https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?mode=Undef&amp;name=Cricetulus+griseus&amp;lvl=0&amp;srchmode=1">Cricetulus
+griseus</a></i> (Chinese hamster)</td>
+    </tr>
+    <tr>
+      <td>Ch</td>
+      <td><i><a
+ href="https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?mode=Undef&amp;name=Capra+hircus&amp;lvl=0&amp;srchmode=1">Capra
+hircus</a></i> (goat)</td>
+    </tr>
+    <tr>
+      <td>Cl</td>
+      <td><i><a
+ href="https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?mode=Undef&amp;name=Canis+lupus&amp;lvl=0&amp;srchmode=1">Canis
+lupus</a></i> (gray wolf)</td>
+    </tr>
+    <tr>
+      <td>Cm</td>
+      <td><i><a
+ href="https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?mode=Undef&amp;name=Cairina+moschata&amp;lvl=0&amp;srchmode=1">Cairina
+moschata</a></i> (muscovy duck)</td>
+    </tr>
+    <tr>
+      <td>Cp</td>
+      <td><i><a
+ href="https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?mode=Undef&amp;name=Cavia+porcellus&amp;lvl=0&amp;srchmode=1">Cavia
+porcellus</a></i> (domestic guinea pig)</td>
+    </tr>
+    <tr>
+      <td>Cpe</td>
+      <td><i><a
+ href="https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?mode=Undef&amp;name=Cucurbita+pepo&amp;lvl=0&amp;srchmode=1">Cucurbita
+pepo</a></i> (zucchini)</td>
+    </tr>
+    <tr>
+      <td>Ct</td>
+      <td><i><a
+ href="https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?mode=Undef&amp;name=Chironomus+thummi&amp;lvl=0&amp;srchmode=1">Chironomus
+thummi</a></i> (midge)</td>
+    </tr>
+    <tr>
+      <td>Cte</td>
+      <td><i><a
+ href="https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?mode=Undef&amp;name=Chironomus+tentans&amp;lvl=0&amp;srchmode=1">Chironomus
+tentans</a></i></td>
+    </tr>
+    <tr>
+      <td>Dc</td>
+      <td><i><a
+ href="https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?mode=Undef&amp;name=Daucus+carota&amp;lvl=0&amp;srchmode=1">Daucus
+carota</a></i> (carrot)</td>
+    </tr>
+    <tr>
+      <td>Df</td>
+      <td><i><a
+ href="https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?mode=Undef&amp;name=Drosophila+funebris&amp;lvl=0&amp;srchmode=1">Drosophila
+funebris</a></i> (fruit fly)</td>
+    </tr>
+    <tr>
+      <td>Dh</td>
+      <td><i><a
+ href="https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?mode=Undef&amp;name=Drosophila+hydei&amp;lvl=0&amp;srchmode=1">Drosophila
+hydei</a></i> (fruit fly)</td>
+    </tr>
+    <tr>
+      <td>DHBV</td>
+      <td><i><a
+ href="https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?mode=Undef&amp;name=Duck+hepatitis+B+virus&amp;lvl=0&amp;srchmode=1">Duck
+hepatitis B virus</a></i></td>
+    </tr>
+    <tr>
+      <td>Dm</td>
+      <td><i><a
+ href="https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?mode=Undef&amp;name=Drosophila+melanogaster&amp;lvl=0&amp;srchmode=1">Drosophila
+melanogaster</a></i> (fruit fly)</td>
+    </tr>
+    <tr>
+      <td>Dma</td>
+      <td><i><a
+ href="https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?mode=Undef&amp;name=Drosophila+mauritiana&amp;lvl=0&amp;srchmode=1">Drosophila
+mauritiana</a></i> (fruit fly)</td>
+    </tr>
+    <tr>
+      <td>Dmo</td>
+      <td><i><a
+ href="https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?mode=Undef&amp;name=Drosophila+mojavensis&amp;lvl=0&amp;srchmode=1">Drosophila
+mojavensis</a></i> (fruit fly)</td>
+    </tr>
+    <tr>
+      <td>Dmu</td>
+      <td><i><a
+ href="https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?mode=Undef&amp;name=Drosophila+mulleri&amp;lvl=0&amp;srchmode=1">Drosophila
+mulleri</a></i> (fruit fly)</td>
+    </tr>
+    <tr>
+      <td>Do</td>
+      <td><i><a
+ href="https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?mode=Undef&amp;name=Drosophila+orena&amp;lvl=0&amp;srchmode=1">Drosophila
+orena</a></i> (fruit fly)</td>
+    </tr>
+    <tr>
+      <td>Dp</td>
+      <td><i><a
+ href="https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?mode=Undef&amp;name=Drosophila+pseudoobscura&amp;lvl=0&amp;srchmode=1">Drosophila
+pseudoobscura</a></i> (fruit fly)</td>
+    </tr>
+    <tr>
+      <td>Ds</td>
+      <td><i><a
+ href="https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?mode=Undef&amp;name=Drosophila+simulans&amp;lvl=0&amp;srchmode=1">Drosophila
+simulans</a></i> (fruit fly)</td>
+    </tr>
+    <tr>
+      <td>Dse</td>
+      <td><i><a
+ href="https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?mode=Undef&amp;name=Drosophila+sechellia&amp;lvl=0&amp;srchmode=1">Drosophila
+sechellia</a></i> (fruit fly)</td>
+    </tr>
+    <tr>
+      <td>Dv</td>
+      <td><i><a
+ href="https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?mode=Undef&amp;name=Drosophila+virilis&amp;lvl=0&amp;srchmode=1">Drosophila
+virilis</a></i> (fruit fly)</td>
+    </tr>
+    <tr>
+      <td>EBV</td>
+      <td><i><a
+ href="https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?mode=Undef&amp;name=Human+herpesvirus+4&amp;lvl=0&amp;srchmode=1">Human
+herpesvirus 4</a></i> (Epstein-Barr virus)</td>
+    </tr>
+    <tr>
+      <td>Ec</td>
+      <td><i><a
+ href="https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?mode=Undef&amp;name=Equus+caballus&amp;lvl=0&amp;srchmode=1">Equus
+caballus</a></i> (horse)</td>
+    </tr>
+    <tr>
+      <td>FBJ-MSV</td>
+      <td><i><a
+ href="https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?mode=Undef&amp;name=Murine+osteosarcoma+virus&amp;lvl=0&amp;srchmode=1">Murine
+osteosarcoma virus</a></i> (Finkel-Biskis-Jinkins)</td>
+    </tr>
+    <tr>
+      <td>FBR-MSV</td>
+      <td><i><a
+ href="https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?mode=Undef&amp;name=Murine+osteosarcoma+virus&amp;lvl=0&amp;srchmode=1">Murine
+osteosarcoma virus</a></i> (Finkel-Biskis-Reilly)</td>
+    </tr>
+    <tr>
+      <td>F-MCF</td>
+      <td><i><a
+ href="https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?mode=Undef&amp;name=Friend+mink+cell+focus-forming+virus&amp;lvl=0&amp;srchmode=1">Friend
+mink cell focus-forming virus</a></i> (Murine)</td>
+    </tr>
+    <tr>
+      <td>Fs</td>
+      <td><i><a
+ href="https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?mode=Undef&amp;name=Felis+silvestris&amp;lvl=0&amp;srchmode=1">Felis
+silvestris</a></i> (wild cat)</td>
+    </tr>
+    <tr>
+      <td>F-SFFV</td>
+      <td><i><a
+ href="https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?mode=Undef&amp;name=Friend+spleen+focus-forming+virus&amp;lvl=0&amp;srchmode=1">Friend
+spleen focus-forming virus</a></i></td>
+    </tr>
+    <tr>
+      <td>Ft</td>
+      <td><i><a
+ href="https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?mode=Undef&amp;name=Flaveria+trinervia&amp;lvl=0&amp;srchmode=1">Flaveria
+trinervia</a></i></td>
+    </tr>
+    <tr>
+      <td>GA-FeLV</td>
+      <td><i><a
+ href="https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?mode=Undef&amp;name=Gardner-Arnstein+feline+leukemia+oncovirus+B&amp;lvl=0&amp;srchmode=1">Gardner-Arnstein
+feline leukemia oncovirus B</a></i></td>
+    </tr>
+    <tr>
+      <td>GALV</td>
+      <td><i><a
+ href="https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?mode=Undef&amp;name=Gibbon+ape+leukemia+virus&amp;lvl=0&amp;srchmode=1">Gibbon
+ape leukemia virus</a></i></td>
+    </tr>
+    <tr>
+      <td>Gg</td>
+      <td><i><a
+ href="https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?mode=Undef&amp;name=Gallus+gallus&amp;lvl=0&amp;srchmode=1">Gallus
+gallus</a></i> (chicken)</td>
+    </tr>
+    <tr>
+      <td>Ggo</td>
+      <td><i><a
+ href="https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?mode=Undef&amp;name=Gorilla+gorilla&amp;lvl=0&amp;srchmode=1">Gorilla
+gorilla</a></i> (gorilla)</td>
+    </tr>
+    <tr>
+      <td>Gm</td>
+      <td><i><a
+ href="https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?mode=Undef&amp;name=Glycine+max&amp;lvl=0&amp;srchmode=1">Glycine
+max</a></i> (soybean)</td>
+    </tr>
+    <tr>
+      <td>GSHV</td>
+      <td><i><a
+ href="https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?mode=Undef&amp;name=Ground+squirrel+hepatitis+virus&amp;lvl=0&amp;srchmode=1">Ground
+squirrel hepatitis virus</a></i></td>
+    </tr>
+    <tr>
+      <td>H-1</td>
+      <td><i><a
+ href="https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?mode=Undef&amp;name=Parvovirus+H1&amp;lvl=0&amp;srchmode=1">Parvovirus
+H1</a></i> (Murine)</td>
+    </tr>
+    <tr>
+      <td>Ha</td>
+      <td><i><a
+ href="https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?mode=Undef&amp;name=Helianthus+annuus&amp;lvl=0&amp;srchmode=1">Helianthus
+annuus</a></i> (common sunflower)</td>
+    </tr>
+    <tr>
+      <td>Hb</td>
+      <td><i><a
+ href="https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?mode=Undef&amp;name=Hevea+brasiliensis&amp;lvl=0&amp;srchmode=1">Hevea
+brasiliensis</a></i> (para rubber tree)</td>
+    </tr>
+    <tr>
+      <td>HBV</td>
+      <td><i><a
+ href="https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?mode=Undef&amp;name=Human+hepatitis+B+virus&amp;lvl=0&amp;srchmode=1">Human
+hepatitis B virus</a></i></td>
+    </tr>
+    <tr>
+      <td>HCMV</td>
+      <td><i><a
+ href="https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?mode=Undef&amp;name=Human+cytomegalovirus&amp;lvl=0&amp;srchmode=1">Human
+cytomegalovirus</a></i></td>
+    </tr>
+    <tr>
+      <td>Hg</td>
+      <td><i><a
+ href="https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?mode=Undef&amp;name=Halichoerus+grypus&amp;lvl=0&amp;srchmode=1">Halichoerus
+grypus</a></i> (grey seal)</td>
+    </tr>
+    <tr>
+      <td>HIV-1</td>
+      <td><i><a
+ href="https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?mode=Undef&amp;name=Human+immunodeficiency+virus+type+1&amp;lvl=0&amp;srchmode=1">Human
+immunodeficiency virus type 1</a></i></td>
+    </tr>
+    <tr>
+      <td>HIV-2</td>
+      <td><i><a
+ href="https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?mode=Undef&amp;name=Human+immunodeficiency+virus+type+2&amp;lvl=0&amp;srchmode=1">Human
+immunodeficiency virus type 2</a></i></td>
+    </tr>
+    <tr>
+      <td>HPV16</td>
+      <td><i><a
+ href="https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?mode=Undef&amp;name=Human+papillomavirus+type+16&amp;lvl=0&amp;srchmode=1">Human
+papillomavirus type 16</a></i></td>
+    </tr>
+    <tr>
+      <td>HPV18</td>
+      <td><i><a
+ href="https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?mode=Undef&amp;name=Human+papillomavirus+type+18&amp;lvl=0&amp;srchmode=1">Human
+papillomavirus type 18</a></i></td>
+    </tr>
+    <tr>
+      <td>Hs</td>
+      <td><i><a
+ href="https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?mode=Undef&amp;name=Homo+sapiens&amp;lvl=0&amp;srchmode=1">Homo
+sapiens</a></i> (human)</td>
+    </tr>
+    <tr>
+      <td>HSV-1</td>
+      <td><i><a
+ href="https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?mode=Undef&amp;name=Human+herpesvirus+1&amp;lvl=0&amp;srchmode=1">Human
+herpesvirus 1</a></i></td>
+    </tr>
+    <tr>
+      <td>HSV-2</td>
+      <td><i><a
+ href="https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?mode=Undef&amp;name=Human+herpesvirus+2&amp;lvl=0&amp;srchmode=1">Human
+herpesvirus 2</a></i></td>
+    </tr>
+    <tr>
+      <td>HTLV-I</td>
+      <td><i><a
+ href="https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?mode=Undef&amp;name=Human+T-cell+leukemia+virus+type+I&amp;lvl=0&amp;srchmode=1">Human
+T-cell leukemia virus type I</a></i></td>
+    </tr>
+    <tr>
+      <td>HTLV-II</td>
+      <td><i><a
+ href="https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?mode=Undef&amp;name=Human+T-cell+leukemia+virus+type+II&amp;lvl=0&amp;srchmode=1">Human
+T-cell leukemia virus type II</a></i></td>
+    </tr>
+    <tr>
+      <td>Hv</td>
+      <td><i><a
+ href="https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?mode=Undef&amp;name=Hordeum+vulgare&amp;lvl=0&amp;srchmode=1">Hordeum
+vulgare</a></i> (barley)</td>
+    </tr>
+    <tr>
+      <td>HVS</td>
+      <td><i><a
+ href="https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?mode=Undef&amp;name=Herpesvirus+saimiri&amp;lvl=0&amp;srchmode=1">Herpesvirus
+saimiri</a></i></td>
+    </tr>
+    <tr>
+      <td>JCV</td>
+      <td><i><a
+ href="https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?mode=Undef&amp;name=human+polyomavirus+JCV&amp;lvl=0&amp;srchmode=1">Human
+polyomavirus JCV</a></i></td>
+    </tr>
+    <tr>
+      <td>Le</td>
+      <td><i><a
+ href="https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?mode=Undef&amp;name=Lycopersicon+esculentum&amp;lvl=0&amp;srchmode=1">Lycopersicon
+esculentum</a></i> (tomato)</td>
+    </tr>
+    <tr>
+      <td>Leu</td>
+      <td><i><a
+ href="https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?mode=Undef&amp;name=Lepus+europaeus&amp;lvl=0&amp;srchmode=1">Lepus
+europaeus</a></i> (European hare)</td>
+    </tr>
+    <tr>
+      <td>Lm</td>
+      <td><i><a
+ href="https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?mode=Undef&amp;name=Locusta+migratoria&amp;lvl=0&amp;srchmode=1">Locusta
+migratoria</a></i> (migratory locust)</td>
+    </tr>
+    <tr>
+      <td>Lp</td>
+      <td><i><a
+ href="https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?mode=Undef&amp;name=Lytechinus+pictus&amp;lvl=0&amp;srchmode=1">Lytechinus
+pictus</a></i> (painted urchin)</td>
+    </tr>
+    <tr>
+      <td>Lpe</td>
+      <td><i><a
+ href="https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?mode=Undef&amp;name=Lycopersicon+peruvianum&amp;lvl=0&amp;srchmode=1">Lycopersicon
+peruvianum</a></i> (Peruvian tomato)</td>
+    </tr>
+    <tr>
+      <td>Lv</td>
+      <td><i><a
+ href="https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?mode=Undef&amp;name=Lytechinus+variegatus&amp;lvl=0&amp;srchmode=1">Lytechinus
+variegatus</a></i> (green urchin)</td>
+    </tr>
+    <tr>
+      <td>Ma</td>
+      <td><i><a
+ href="https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?mode=Undef&amp;name=Mesocricetus+auratus&amp;lvl=0&amp;srchmode=1">Mesocricetus
+auratus</a></i> (golden hamster)</td>
+    </tr>
+    <tr>
+      <td>Mc</td>
+      <td><i><a
+ href="https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?mode=Undef&amp;name=Macaca+fascicularis&amp;lvl=0&amp;srchmode=1">Macaca
+fascicularis</a></i> (crab-eating macaque)</td>
+    </tr>
+    <tr>
+      <td>MCMV</td>
+      <td><i><a
+ href="https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?mode=Undef&amp;name=Murine+cytomegalovirus&amp;lvl=0&amp;srchmode=1">Murine
+cytomegalovirus</a></i></td>
+    </tr>
+    <tr>
+      <td>MLV_AKV</td>
+      <td><i><a
+ href="https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?mode=Undef&amp;name=AKV+murine+leukemia+virus&amp;lvl=0&amp;srchmode=1">AKV
+murine leukemia virus</a></i></td>
+    </tr>
+    <tr>
+      <td>MLVxeno</td>
+      <td><i><a
+ href="https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?mode=Undef&amp;name=Xenotropic+murine+leukemia+virus&amp;lvl=0&amp;srchmode=1">Xenotropic
+murine leukemia virus</a></i></td>
+    </tr>
+    <tr>
+      <td>Mm</td>
+      <td><i><a
+ href="https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?mode=Undef&amp;name=Mus+musculus&amp;lvl=0&amp;srchmode=1">Mus
+musculus</a></i> (house mouse)</td>
+    </tr>
+    <tr>
+      <td>M-MLV</td>
+      <td><i><a
+ href="https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?mode=Undef&amp;name=Moloney+murine+leukemia+virus&amp;lvl=0&amp;srchmode=1">Moloney
+murine leukemia virus</a></i></td>
+    </tr>
+    <tr>
+      <td>M-MSV</td>
+      <td><i><a
+ href="https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?mode=Undef&amp;name=Moloney+murine+sarcoma+virus&amp;lvl=0&amp;srchmode=1">Moloney
+murine sarcoma virus</a></i></td>
+    </tr>
+    <tr>
+      <td>MMTV</td>
+      <td><i><a
+ href="https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?mode=Undef&amp;name=Mouse+mammary+tumor+virus&amp;lvl=0&amp;srchmode=1">Mouse
+mammary tumor virus</a></i></td>
+    </tr>
+    <tr>
+      <td>Ms</td>
+      <td><i><a
+ href="https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?mode=Undef&amp;name=Medicago+sativa&amp;lvl=0&amp;srchmode=1">Medicago
+sativa</a></i> (alfalfa)</td>
+    </tr>
+    <tr>
+      <td>MSV</td>
+      <td><i><a
+ href="https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?mode=Undef&amp;name=Maize+streak+virus&amp;lvl=0&amp;srchmode=1">Maize
+streak virus</a></i></td>
+    </tr>
+    <tr>
+      <td>Np</td>
+      <td><i><a
+ href="https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?mode=Undef&amp;name=Nicotiana+plumbaginifolia&amp;lvl=0&amp;srchmode=1">Nicotiana
+plumbaginifolia</a></i> (curled-leaved tobacco)</td>
+    </tr>
+    <tr>
+      <td>Ns</td>
+      <td><i><a
+ href="https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?mode=Undef&amp;name=Nicotiana+sylvestris&amp;lvl=0&amp;srchmode=1">Nicotiana
+sylvestris</a></i> (wood tobacco)</td>
+    </tr>
+    <tr>
+      <td>Nt</td>
+      <td><i><a
+ href="https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?mode=Undef&amp;name=Nicotiana+tabacum&amp;lvl=0&amp;srchmode=1">Nicotiana
+tabacum</a></i> (common tobacco)</td>
+    </tr>
+    <tr>
+      <td>Nto</td>
+      <td><i><a
+ href="https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?mode=Undef&amp;name=Nicotiana+tomentosiformis&amp;lvl=0&amp;srchmode=1">Nicotiana
+tomentosiformis</a></i></td>
+    </tr>
+    <tr>
+      <td>Oa</td>
+      <td><i><a
+ href="https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?mode=Undef&amp;name=Ovis+aries&amp;lvl=0&amp;srchmode=1">Ovis
+aries</a></i> (sheep)</td>
+    </tr>
+    <tr>
+      <td>Oc</td>
+      <td><i><a
+ href="https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?mode=Undef&amp;name=Oryctolagus+cuniculus&amp;lvl=0&amp;srchmode=1">Oryctolagus
+cuniculus</a></i> (rabbit)</td>
+    </tr>
+    <tr>
+      <td>Os</td>
+      <td><i><a
+ href="https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?mode=Undef&amp;name=Oryza+sativa&amp;lvl=0&amp;srchmode=1">Oryza
+sativa</a></i> (rice)</td>
+    </tr>
+    <tr>
+      <td>Ph</td>
+      <td><i><a
+ href="https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?mode=Undef&amp;name=Petunia+hybrida&amp;lvl=0&amp;srchmode=1">Petunia
+hybrida</a></i> (e.g. Petunia strain Mitchell)</td>
+    </tr>
+    <tr>
+      <td>Pa</td>
+      <td><i><a
+ href="https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?mode=Undef&amp;name=Papio+anubis&amp;lvl=0&amp;srchmode=1">Papio
+anubis</a></i> (olive baboon)</td>
+    </tr>
+    <tr>
+      <td>Pc</td>
+      <td><i><a
+ href="https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?mode=Undef&amp;name=Petroselinum+crispum&amp;lvl=0&amp;srchmode=1">Petroselinum
+crispum</a></i> (parsley)</td>
+    </tr>
+    <tr>
+      <td>Pl</td>
+      <td><i><a
+ href="https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?mode=Undef&amp;name=Paracentrotus+lividus&amp;lvl=0&amp;srchmode=1">Paracentrotus
+lividus</a></i> (common urchin)</td>
+    </tr>
+    <tr>
+      <td>Pm</td>
+      <td><i><a
+ href="https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?mode=Undef&amp;name=Psammechinus+miliaris&amp;lvl=0&amp;srchmode=1">Psammechinus
+miliaris</a></i> (sand urchin)</td>
+    </tr>
+    <tr>
+      <td>Polyoma</td>
+      <td><i><a
+ href="https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?mode=Undef&amp;name=Mouse+polyomavirus&amp;lvl=0&amp;srchmode=1">Mouse
+polyomavirus</a></i></td>
+    </tr>
+    <tr>
+      <td>Ppy</td>
+      <td><i><a
+ href="https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?mode=Undef&amp;name=Photinus+pyralis&amp;lvl=0&amp;srchmode=1">Photinus
+pyralis</a></i> (North American firefly)</td>
+    </tr>
+    <tr>
+      <td>Pp</td>
+      <td><i><a
+ href="https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?mode=Undef&amp;name=Pongo+pygmaeus&amp;lvl=0&amp;srchmode=1">Pongo
+pygmaeus</a></i> (orangutan)</td>
+    </tr>
+    <tr>
+      <td>Ps</td>
+      <td><i><a
+ href="https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?mode=Undef&amp;name=Pisum+sativum&amp;lvl=0&amp;srchmode=1">Pisum
+sativum</a></i> (pea)</td>
+    </tr>
+    <tr>
+      <td>Pt</td>
+      <td><i><a
+ href="https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?mode=Undef&amp;name=Pan+troglodytes&amp;lvl=0&amp;srchmode=1">Pan
+troglodytes</a></i> (chimpanzee)</td>
+    </tr>
+    <tr>
+      <td>Pth</td>
+      <td><i><a
+ href="https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?mode=Undef&amp;name=Pinus+thunbergii&amp;lvl=0&amp;srchmode=1">Pinus
+thunbergii</a></i> (Japanese black pine)</td>
+    </tr>
+    <tr>
+      <td>Pv</td>
+      <td><i><a
+ href="https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?mode=Undef&amp;name=Phaseolus+vulgaris&amp;lvl=0&amp;srchmode=1">Phaseolus
+vulgaris</a></i> (kidney bean)</td>
+    </tr>
+    <tr>
+      <td>RAV2</td>
+      <td><i><a
+ href="https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?mode=Undef&amp;name=Rous+associated+virus+type+2&amp;lvl=0&amp;srchmode=1">Rous
+associated virus type 2</a></i> (Avian)</td>
+    </tr>
+    <tr>
+      <td>Rc</td>
+      <td><i><a
+ href="https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?mode=Undef&amp;name=Ricinus+communis&amp;lvl=0&amp;srchmode=1">Ricinus
+communis</a></i> (castor bean)</td>
+    </tr>
+    <tr>
+      <td>R-MCF</td>
+      <td><i><a
+ href="https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?mode=Undef&amp;name=Rauscher+mink+cell+focus-forming+virus&amp;lvl=0&amp;srchmode=1">Rauscher
+mink cell focus-forming virus</a></i></td>
+    </tr>
+    <tr>
+      <td>Rn</td>
+      <td><i><a
+ href="https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?mode=Undef&amp;name=Rattus+norvegicus&amp;lvl=0&amp;srchmode=1">Rattus
+norvegicus</a></i> (Norway rat)</td>
+    </tr>
+    <tr>
+      <td>RSV</td>
+      <td><i><a
+ href="https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?mode=Undef&amp;name=Rous+sarcoma+virus&amp;lvl=0&amp;srchmode=1">Rous
+sarcoma virus</a></i> (Avian)&nbsp;</td>
+    </tr>
+    <tr>
+      <td>Sa</td>
+      <td><i><a
+ href="https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?mode=Undef&amp;name=Sinapis+alba&amp;lvl=0&amp;srchmode=1">Sinapis
+alba</a></i> (white mustard)</td>
+    </tr>
+    <tr>
+      <td>SA7P</td>
+      <td><i><a
+ href="https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?mode=Undef&amp;name=Simian+adenovirus+&amp;lvl=0&amp;srchmode=1">Simian
+adenovirus (7P)</a></i></td>
+    </tr>
+    <tr>
+      <td>Sd</td>
+      <td><i><a
+ href="https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?mode=Undef&amp;name=Strongylocentrotus+droebachiensis&amp;lvl=0&amp;srchmode=1">Strongylocentrotus
+droebachiensis</a></i></td>
+    </tr>
+    <tr>
+      <td>Se</td>
+      <td><i><a
+ href="https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?mode=Undef&amp;name=Nannospalax+ehrenbergi&amp;lvl=0&amp;srchmode=1">Nannospalax
+ehrenbergi </a></i> (Ehrenberg's mole-rat)</td>
+    </tr>
+    <tr>
+      <td>Sg</td>
+      <td><i><a
+ href="https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?mode=Undef&amp;name=Oncorhynchus+mykiss&amp;lvl=0&amp;srchmode=1">Oncorhynchus
+mykiss</a></i> (rainbow trout)</td>
+    </tr>
+    <tr>
+      <td>SIV</td>
+      <td><i><a
+ href="https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?mode=Undef&amp;name=Simian+immunodeficiency+virus+&amp;lvl=0&amp;srchmode=1">Simian
+immunodeficiency virus</a></i></td>
+    </tr>
+    <tr>
+      <td>SNV</td>
+      <td><i><a
+ href="https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?mode=Undef&amp;name=Spleen+necrosis+virus&amp;lvl=0&amp;srchmode=1">Spleen
+necrosis virus</a></i></td>
+    </tr>
+    <tr>
+      <td>So</td>
+      <td><i><a
+ href="https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?mode=Undef&amp;name=Spinacia+oleracea&amp;lvl=0&amp;srchmode=1">Spinacia
+oleracea</a></i></td>
+    </tr>
+    <tr>
+      <td>Sp</td>
+      <td><i><a
+ href="https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?mode=Undef&amp;name=Strongylocentrotus+purpuratus&amp;lvl=0&amp;srchmode=1">Strongylocentrotus
+purpuratus</a></i></td>
+    </tr>
+    <tr>
+      <td>Spe</td>
+      <td><i><a
+ href="https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?mode=Undef&amp;name=Sarcophaga+peregrina&amp;lvl=0&amp;srchmode=1">Sarcophaga
+peregrina</a></i></td>
+    </tr>
+    <tr>
+      <td>Sr</td>
+      <td><i><a
+ href="https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?mode=Undef&amp;name=Sesbania+rostrata&amp;lvl=0&amp;srchmode=1">Sesbania
+rostrata</a></i></td>
+    </tr>
+    <tr>
+      <td>SRV-1</td>
+      <td><i><a
+ href="https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?mode=Undef&amp;name=Simian+AIDS+retrovirus+SRV-1&amp;lvl=0&amp;srchmode=1">Simian
+AIDS retrovirus SRV-1</a></i></td>
+    </tr>
+    <tr>
+      <td>Ss</td>
+      <td><i><a
+ href="https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?mode=Undef&amp;name=Sus+scrofa&amp;lvl=0&amp;srchmode=1">Sus
+scrofa</a></i> (pig)</td>
+    </tr>
+    <tr>
+      <td>SSV</td>
+      <td><i><a
+ href="https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?mode=Undef&amp;name=Simian+sarcoma+virus&amp;lvl=0&amp;srchmode=1">Simian
+sarcoma virus</a></i></td>
+    </tr>
+    <tr>
+      <td>St</td>
+      <td><i><a
+ href="https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?mode=Undef&amp;name=Solanum+tuberosum&amp;lvl=0&amp;srchmode=1">Solanum
+tuberosum</a></i> (potato)</td>
+    </tr>
+    <tr>
+      <td>Sv</td>
+      <td><i><a
+ href="https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?mode=Undef&amp;name=Sorghum+bicolor&amp;lvl=0&amp;srchmode=1">Sorghum
+bicolor (sorghum)</a></i></td>
+    </tr>
+    <tr>
+      <td>SV40</td>
+      <td><i><a
+ href="https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?mode=Undef&amp;name=Simian+virus+40&amp;lvl=0&amp;srchmode=1">Simian
+virus 40</a></i></td>
+    </tr>
+    <tr>
+      <td>Ta</td>
+      <td><i><a
+ href="https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?mode=Undef&amp;name=Triticum+aestivum&amp;lvl=0&amp;srchmode=1">Triticum
+aestivum</a></i> (wheat)</td>
+    </tr>
+    <tr>
+      <td>Visna</td>
+      <td><i><a
+ href="https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?mode=Undef&amp;name=Visna+lentivirus&amp;lvl=0&amp;srchmode=1">Visna
+lentivirus</a></i></td>
+    </tr>
+    <tr>
+      <td>Xb</td>
+      <td><i><a
+ href="https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?mode=Undef&amp;name=Xenopus+borealis&amp;lvl=0&amp;srchmode=1">Xenopus
+borealis</a></i> (Kenyan clawed frog)</td>
+    </tr>
+    <tr>
+      <td>Xl</td>
+      <td><i><a
+ href="https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?mode=Undef&amp;name=Xenopus+laevis&amp;lvl=0&amp;srchmode=1">Xenopus
+laevis</a></i> (African clawed frog)</td>
+    </tr>
+    <tr>
+      <td>Xt</td>
+      <td><i><a
+ href="https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?mode=Undef&amp;name=Xenopus+tropicalis&amp;lvl=0&amp;srchmode=1">Xenopus
+tropicalis</a></i> (western clawed frog)</td>
+    </tr>
+    <tr>
+      <td>Zm</td>
+      <td><i><a
+ href="https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?mode=Undef&amp;name=Zea+mays&amp;lvl=0&amp;srchmode=1">Zea
+mays</a></i> (maize)</td>
+    </tr>
+  </tbody>
+</table>
+</center>
+<a name="JOURNAL_CODES"></a>
+<h3 class="subappendix">B.2. JOURNAL CODES</h3>
+<center><br>
+<table>
+  <caption>&nbsp;
+  <center>
+  <p></p>
+  </center>
+  </caption><tbody>
+  </tbody><tbody>
+  </tbody><tbody>
+  </tbody> <tbody>
+    <tr>
+      <th>Code</th>
+      <th>Journal name</th>
+    </tr>
+    <tr>
+      <td>ARB</td>
+      <td>Annual Review of Biochemistry</td>
+    </tr>
+    <tr>
+      <td>ARP</td>
+      <td>Annual Review of Physiology</td>
+    </tr>
+    <tr>
+      <td>BBA</td>
+      <td>Biochimica Biophysica Acta</td>
+    </tr>
+    <tr>
+      <td>BBRC</td>
+      <td>Biochemical and Biophysical Research Communications</td>
+    </tr>
+    <tr>
+      <td>Bch</td>
+      <td>Biochemistry</td>
+    </tr>
+    <tr>
+      <td>Bchi</td>
+      <td>Biochimie</td>
+    </tr>
+    <tr>
+      <td>BchJ</td>
+      <td>Biochemical Journal</td>
+    </tr>
+    <tr>
+      <td>BCHS</td>
+      <td>Biological Chemistry Hoppe-Seyler</td>
+    </tr>
+    <tr>
+      <td>BrJR</td>
+      <td>British Journal of Rheumatology</td>
+    </tr>
+    <tr>
+      <td>BrainR</td>
+      <td>Brain Research</td>
+    </tr>
+    <tr>
+      <td>Btech</td>
+      <td>Biotechnology</td>
+    </tr>
+    <tr>
+      <td>CanR</td>
+      <td>Cancer Research</td>
+    </tr>
+    <tr>
+      <td>Cell</td>
+      <td>Cell</td>
+    </tr>
+    <tr>
+      <td>CGD</td>
+      <td>Cell Growth Differentiation</td>
+    </tr>
+    <tr>
+      <td>Chrom</td>
+      <td>Chromosoma</td>
+    </tr>
+    <tr>
+      <td>CSHS</td>
+      <td>Cold Spring Harbor Symposia on Quantitative Biology</td>
+    </tr>
+    <tr>
+      <td>CTMI</td>
+      <td>Current Topics in Microbiology and Immunology</td>
+    </tr>
+    <tr>
+      <td>CurG</td>
+      <td>Current Genetics</td>
+    </tr>
+    <tr>
+      <td>DCB</td>
+      <td>DNA and Cell Biology</td>
+    </tr>
+    <tr>
+      <td>DevB</td>
+      <td>Developmental Biology</td>
+    </tr>
+    <tr>
+      <td>Diab</td>
+      <td>Diabetes</td>
+    </tr>
+    <tr>
+      <td>DNA</td>
+      <td>DNA</td>
+    </tr>
+    <tr>
+      <td>ECR</td>
+      <td>Experimental Cell Research</td>
+    </tr>
+    <tr>
+      <td>EJBc</td>
+      <td>European Journal of Biochemistry</td>
+    </tr>
+    <tr>
+      <td>EJCB</td>
+      <td>European Journal of Cellular Biology</td>
+    </tr>
+    <tr>
+      <td>EMBOJ</td>
+      <td>EMBO Journal</td>
+    </tr>
+    <tr>
+      <td>EMBOR</td>
+      <td>EMBO Reports</td>
+    </tr>
+    <tr>
+      <td>Evo</td>
+      <td>Evolution</td>
+    </tr>
+    <tr>
+      <td>FEBS</td>
+      <td>FEBS Letters</td>
+    </tr>
+    <tr>
+      <td>GDev</td>
+      <td>Genes and Development</td>
+    </tr>
+    <tr>
+      <td>Gene</td>
+      <td>Gene</td>
+    </tr>
+    <tr>
+      <td>GChC</td>
+      <td>Genes Chromosomes Cancer</td>
+    </tr>
+    <tr>
+      <td>GnmR</td>
+      <td>Genome Research</td>
+    </tr>
+    <tr>
+      <td>Gnms</td>
+      <td>Genomics</td>
+    </tr>
+    <tr>
+      <td>Gnts</td>
+      <td>Genetics</td>
+    </tr>
+    <tr>
+      <td>HGEN</td>
+      <td>Human Genetics</td>
+    </tr>
+    <tr>
+      <td>IJCa</td>
+      <td>International Journal of Cancer</td>
+    </tr>
+    <tr>
+      <td>ImTo</td>
+      <td>Immunology Today</td>
+    </tr>
+    <tr>
+      <td>JBC</td>
+      <td>Journal of Biological Chemistry</td>
+    </tr>
+    <tr>
+      <td>JBch</td>
+      <td>Journal of Biochemistry</td>
+    </tr>
+    <tr>
+      <td>JCB</td>
+      <td>Journal of Cell Biology</td>
+    </tr>
+    <tr>
+      <td>JEM</td>
+      <td>Journal of Experimental Medicine</td>
+    </tr>
+    <tr>
+      <td>JGV</td>
+      <td>Journal of General Virology</td>
+    </tr>
+    <tr>
+      <td>JI</td>
+      <td>Journal of Immunology</td>
+    </tr>
+    <tr>
+      <td>JMAG</td>
+      <td>Journal of Molecular and Applied Genetics</td>
+    </tr>
+    <tr>
+      <td>JMB</td>
+      <td>Journal of Molecular Biology</td>
+    </tr>
+    <tr>
+      <td>JME</td>
+      <td>Journal of Molecular Evolution</td>
+    </tr>
+    <tr>
+      <td>JMEnd</td>
+      <td>Journal of Molecular Endocrinology</td>
+    </tr>
+    <tr>
+      <td>JNeSc</td>
+      <td>Journal of Neuroscience</td>
+    </tr>
+    <tr>
+      <td>JVir</td>
+      <td>Journal of Virology</td>
+    </tr>
+    <tr>
+      <td>MB</td>
+      <td>Molecular Biology</td>
+    </tr>
+    <tr>
+      <td>MBE</td>
+      <td>Molecular Biology and Evolution</td>
+    </tr>
+    <tr>
+      <td>MBM</td>
+      <td>Molecular Biology and Medicine</td>
+    </tr>
+    <tr>
+      <td>MBR</td>
+      <td>Molecular Biology Reports</td>
+    </tr>
+    <tr>
+      <td>MCB</td>
+      <td>Molecular and Cellular Biology</td>
+    </tr>
+    <tr>
+      <td>MCEnd</td>
+      <td>Molecular and Cellular Endocrinology</td>
+    </tr>
+    <tr>
+      <td>MEnd</td>
+      <td>Molecular Endocrinology</td>
+    </tr>
+    <tr>
+      <td>MImm</td>
+      <td>Molecular Immunology</td>
+    </tr>
+    <tr>
+      <td>MEnz</td>
+      <td>Methods in Enzymology</td>
+    </tr>
+    <tr>
+      <td>MGG</td>
+      <td>Molecular and General Genetics</td>
+    </tr>
+    <tr>
+      <td>MNeub</td>
+      <td>Molecular Neurobiology</td>
+    </tr>
+    <tr>
+      <td>MPMI</td>
+      <td>Molecular Plant-Microbe Interactions</td>
+    </tr>
+    <tr>
+      <td>NAR</td>
+      <td>Nucleic Acids Research</td>
+    </tr>
+    <tr>
+      <td>Nat</td>
+      <td>Nature</td>
+    </tr>
+    <tr>
+      <td>Oncg</td>
+      <td>Oncogene</td>
+    </tr>
+    <tr>
+      <td>OncR</td>
+      <td>Oncogene Research</td>
+    </tr>
+    <tr>
+      <td>Pla</td>
+      <td>Planta</td>
+    </tr>
+    <tr>
+      <td>PlJ</td>
+      <td>Plant Journal</td>
+    </tr>
+    <tr>
+      <td>PMB</td>
+      <td>Plant Molecular Biology</td>
+    </tr>
+    <tr>
+      <td>PSL</td>
+      <td>Plant Science Letters</td>
+    </tr>
+    <tr>
+      <td>RPHR</td>
+      <td>Recent Progress in Hormone Research</td>
+    </tr>
+    <tr>
+      <td>PNAS</td>
+      <td>Proceedings of the National Academy of Sciences of the United
+States
+of America</td>
+    </tr>
+    <tr>
+      <td>Sci</td>
+      <td>Science</td>
+    </tr>
+    <tr>
+      <td>SCMG</td>
+      <td>Somatic Cell and Molecular Genetics</td>
+    </tr>
+    <tr>
+      <td>TiG</td>
+      <td>Trends in Genetics</td>
+    </tr>
+    <tr>
+      <td>Vir</td>
+      <td>Virology</td>
+    </tr>
+    <tr>
+      <td>VirR</td>
+      <td>Virus Research</td>
+    </tr>
+  </tbody>
+</table>
+</center>
+<a name="ABBREVIATIONS"></a>
+<h3 class="subappendix">B.3.&nbsp; ABBREVIATIONS</h3>
+<center><br>
+<table>
+  <caption>&nbsp;
+  <center>
+  <p></p>
+  </center>
+  </caption><tbody>
+  </tbody><tbody>
+  </tbody><tbody>
+  </tbody> <tbody>
+    <tr>
+      <td>1-25OH2D3</td>
+      <td>1,25-(OH)_2 vitamin D_3</td>
+    </tr>
+    <tr>
+      <td>20-OHE</td>
+      <td>20-Hydroxyecdysone</td>
+    </tr>
+    <tr>
+      <td>4CL</td>
+      <td>4-coumarate coenzyme A ligase</td>
+    </tr>
+    <tr>
+      <td>a1</td>
+      <td>Gene locus 1 involved in anthocyanin biosynthesis</td>
+    </tr>
+    <tr>
+      <td>abd-g.</td>
+      <td>Abdominal ganglion</td>
+    </tr>
+    <tr>
+      <td>abl</td>
+      <td>Abelson murine leukemia virus oncogene</td>
+    </tr>
+    <tr>
+      <td>ACC</td>
+      <td>1-aminocyclopropane-1-carboxylic acid</td>
+    </tr>
+    <tr>
+      <td>AChR</td>
+      <td>Acetylcholin receptor</td>
+    </tr>
+    <tr>
+      <td>ACP</td>
+      <td>b'-ketoacyl-acyl carrier protein of fatty acid synthase</td>
+    </tr>
+    <tr>
+      <td>ACTH</td>
+      <td>Adrenocorticotropic hormone</td>
+    </tr>
+    <tr>
+      <td>ADA</td>
+      <td>Adenosine deaminase</td>
+    </tr>
+    <tr>
+      <td>ADH</td>
+      <td>Alcohol dehydrogenase</td>
+    </tr>
+    <tr>
+      <td>ADPg-s</td>
+      <td>GT ADPglucose-starch glucosyltransferase</td>
+    </tr>
+    <tr>
+      <td>adult-HA</td>
+      <td>Adult hermaphrodite</td>
+    </tr>
+    <tr>
+      <td>AFW1</td>
+      <td>Adult fast-white (myosin heavy chain) 1</td>
+    </tr>
+    <tr>
+      <td>Ag</td>
+      <td>Antigen</td>
+    </tr>
+    <tr>
+      <td>(AGM)</td>
+      <td>"from african green monkey"</td>
+    </tr>
+    <tr>
+      <td>AGP</td>
+      <td>Acid glycoprotein</td>
+    </tr>
+    <tr>
+      <td>AGPP</td>
+      <td>ADP glucose pyrophosphorylase</td>
+    </tr>
+    <tr>
+      <td>AIRS</td>
+      <td>Aminoimidazole ribonucleotide synthase</td>
+    </tr>
+    <tr>
+      <td>ALA-synt.</td>
+      <td>5-Aminolevulinate synthase</td>
+    </tr>
+    <tr>
+      <td>ALDH_2</td>
+      <td>Aldehyde dehydrogenase 2</td>
+    </tr>
+    <tr>
+      <td>AlkExo</td>
+      <td>Alkaline exonuclease</td>
+    </tr>
+    <tr>
+      <td>Amy</td>
+      <td>Amylase</td>
+    </tr>
+    <tr>
+      <td>antp</td>
+      <td>"antennapedia" locus</td>
+    </tr>
+    <tr>
+      <td>aP2</td>
+      <td>Adipocyte homologue of myelin P2</td>
+    </tr>
+    <tr>
+      <td>apolipop.</td>
+      <td>Apolipoprotein</td>
+    </tr>
+    <tr>
+      <td>apoVLDLII</td>
+      <td>Very low densitiy apolipoprotein II</td>
+    </tr>
+    <tr>
+      <td>APRT</td>
+      <td>Adenine phosphoribosyltransferase</td>
+    </tr>
+    <tr>
+      <td>AR</td>
+      <td>Adrenergic receptor</td>
+    </tr>
+    <tr>
+      <td>ARF</td>
+      <td>ADP-ribosylation factor</td>
+    </tr>
+    <tr>
+      <td>arg</td>
+      <td>Arginine</td>
+    </tr>
+    <tr>
+      <td>AS</td>
+      <td>Argininosuccinate synthetase</td>
+    </tr>
+    <tr>
+      <td>AS-C</td>
+      <td>"achaete-scute" complex locus</td>
+    </tr>
+    <tr>
+      <td>AspAT</td>
+      <td>Aspartate aminotransferase</td>
+    </tr>
+    <tr>
+      <td>ass.</td>
+      <td>Associated</td>
+    </tr>
+    <tr>
+      <td>AT</td>
+      <td>Antitrypsin</td>
+    </tr>
+    <tr>
+      <td>ATIII</td>
+      <td>Antithrombin III</td>
+    </tr>
+    <tr>
+      <td>ATCase</td>
+      <td>Aspartate transcarbamylase</td>
+    </tr>
+    <tr>
+      <td>ATP</td>
+      <td>Adenosinetriphosphate</td>
+    </tr>
+    <tr>
+      <td>awd</td>
+      <td>"abnormal wing disk" locus</td>
+    </tr>
+    <tr>
+      <td>BB</td>
+      <td>Bowman-Birk (protease inhibitor)</td>
+    </tr>
+    <tr>
+      <td>BCKDHA</td>
+      <td>Branched-chain alpha-keto acid dehydrogenase complex</td>
+    </tr>
+    <tr>
+      <td>Bcl-2</td>
+      <td>B-cell leukemia/lymphoma 2 proto-oncogene</td>
+    </tr>
+    <tr>
+      <td>BMMC</td>
+      <td>Bone marrow-derived mast cell</td>
+    </tr>
+    <tr>
+      <td>BPTI</td>
+      <td>Bovine pancreatic trypsin inhibitor</td>
+    </tr>
+    <tr>
+      <td>BSF</td>
+      <td>B-cell stimulating factor</td>
+    </tr>
+    <tr>
+      <td>bsg25D</td>
+      <td>Blastoderm specific locus 25D</td>
+    </tr>
+    <tr>
+      <td>c-</td>
+      <td>Cellular protooncogene ..</td>
+    </tr>
+    <tr>
+      <td>c1</td>
+      <td>Regulatory locus of anthocyanin synthesis (maize)</td>
+    </tr>
+    <tr>
+      <td>C4BP</td>
+      <td>Complement component C4-binding protein</td>
+    </tr>
+    <tr>
+      <td>CA</td>
+      <td>Carbonic anhydrase</td>
+    </tr>
+    <tr>
+      <td>CAD</td>
+      <td>Carbamoyl-phosphate synthetase
+(glutamine-hydrolysing)/aspartate carbamoyl
+transferase/dihydroorotase</td>
+    </tr>
+    <tr>
+      <td>cab</td>
+      <td>Chlorophyll a/b-binding protein</td>
+    </tr>
+    <tr>
+      <td>cAMP</td>
+      <td>Cyclic AMP (Adenosinemonophosphate)</td>
+    </tr>
+    <tr>
+      <td>card-m.</td>
+      <td>Cardiac muscle</td>
+    </tr>
+    <tr>
+      <td>cc-ind.</td>
+      <td>Cell cycle-independent</td>
+    </tr>
+    <tr>
+      <td>CD3</td>
+      <td>T-cell differentiation antigen CD3</td>
+    </tr>
+    <tr>
+      <td>CD4</td>
+      <td>T-cell differentiation antigen CD4</td>
+    </tr>
+    <tr>
+      <td>CD8</td>
+      <td>T-cell differentiation antigen CD8</td>
+    </tr>
+    <tr>
+      <td>CEA</td>
+      <td>Carcinoembryonic antigen</td>
+    </tr>
+    <tr>
+      <td>CG</td>
+      <td>Chorionic gonadotropin</td>
+    </tr>
+    <tr>
+      <td>CNS</td>
+      <td>Central nervous system</td>
+    </tr>
+    <tr>
+      <td>CNTF</td>
+      <td>Ciliary neurotrophic factor</td>
+    </tr>
+    <tr>
+      <td>car.</td>
+      <td>Cartilage</td>
+    </tr>
+    <tr>
+      <td>col.</td>
+      <td>Collagen</td>
+    </tr>
+    <tr>
+      <td>conglyc.</td>
+      <td>Conglycinin</td>
+    </tr>
+    <tr>
+      <td>cor.</td>
+      <td>Cornea</td>
+    </tr>
+    <tr>
+      <td>cotyl.</td>
+      <td>Cotyledon</td>
+    </tr>
+    <tr>
+      <td>cp</td>
+      <td>Cytoplasm(ic)</td>
+    </tr>
+    <tr>
+      <td>CPS</td>
+      <td>Carbamyl-phosphate synthetase</td>
+    </tr>
+    <tr>
+      <td>CRF</td>
+      <td>Corticotropin-releasing factor</td>
+    </tr>
+    <tr>
+      <td>CRP</td>
+      <td>C-reactive protein</td>
+    </tr>
+    <tr>
+      <td>cs</td>
+      <td>Cytosol(ic)</td>
+    </tr>
+    <tr>
+      <td>CSF</td>
+      <td>Colony stimulating facter</td>
+    </tr>
+    <tr>
+      <td>cyt</td>
+      <td>Cytokinin gene (coding for isopentenyltransferase)</td>
+    </tr>
+    <tr>
+      <td>DAF</td>
+      <td>Decay-accelerating factor</td>
+    </tr>
+    <tr>
+      <td>dbp</td>
+      <td>DNA binding protein</td>
+    </tr>
+    <tr>
+      <td>DDC</td>
+      <td>DOPA decarboxylase</td>
+    </tr>
+    <tr>
+      <td>DDH</td>
+      <td>Dihydrodiol dehydrogenase</td>
+    </tr>
+    <tr>
+      <td>dep.</td>
+      <td>dependent</td>
+    </tr>
+    <tr>
+      <td>dev.</td>
+      <td>Development(ally)</td>
+    </tr>
+    <tr>
+      <td>DHFR</td>
+      <td>Dihydrofolate reductase</td>
+    </tr>
+    <tr>
+      <td>diff.</td>
+      <td>differentiation, differentiated</td>
+    </tr>
+    <tr>
+      <td>DL/R</td>
+      <td>Left and right duplicated region</td>
+    </tr>
+    <tr>
+      <td>dnc</td>
+      <td>"dunce" locus</td>
+    </tr>
+    <tr>
+      <td>dUTPase</td>
+      <td>Deoxyuridinetriphosphatase</td>
+    </tr>
+    <tr>
+      <td>E</td>
+      <td>1. Early, 2. Erythroid cell-specific</td>
+    </tr>
+    <tr>
+      <td>E8</td>
+      <td>Ethylene inducible gene during fruit ripening 8</td>
+    </tr>
+    <tr>
+      <td>EAS</td>
+      <td>5-epi-aristolochene synthase (sesquiterpene cyclase)</td>
+    </tr>
+    <tr>
+      <td>EBNA</td>
+      <td>Epstein-Barr virus nuclear antigens</td>
+    </tr>
+    <tr>
+      <td>ecd-ind.</td>
+      <td>Ecdysone-inducible</td>
+    </tr>
+    <tr>
+      <td>EDF</td>
+      <td>Eosinophil differentiation factor</td>
+    </tr>
+    <tr>
+      <td>EFW1</td>
+      <td>Embryonic fast-white (myosin heavy chain) 1</td>
+    </tr>
+    <tr>
+      <td>EGF</td>
+      <td>Epidermal growth factor</td>
+    </tr>
+    <tr>
+      <td>EIa</td>
+      <td>Adenovirus early Ia region (transactivating element)</td>
+    </tr>
+    <tr>
+      <td>Eip</td>
+      <td>Ecdysone-induced protein</td>
+    </tr>
+    <tr>
+      <td>ELH</td>
+      <td>Egg-laying hormone</td>
+    </tr>
+    <tr>
+      <td>em</td>
+      <td>Embryo, embryonic</td>
+    </tr>
+    <tr>
+      <td>epithel</td>
+      <td>epithelial or epithelium</td>
+    </tr>
+    <tr>
+      <td>EPSP</td>
+      <td>5-Enolpyruvylshikimate-3-phosphate</td>
+    </tr>
+    <tr>
+      <td>erbA,B</td>
+      <td>(Avian) erythroblastosis virus oncogene A,B</td>
+    </tr>
+    <tr>
+      <td>E-resp.</td>
+      <td>Estrogen-responsive</td>
+    </tr>
+    <tr>
+      <td>ERV3</td>
+      <td>Endogenous retrovirus 3</td>
+    </tr>
+    <tr>
+      <td>E.Tn</td>
+      <td>Early transposon</td>
+    </tr>
+    <tr>
+      <td>et-hypocot.</td>
+      <td>Etiolated hypocotyl</td>
+    </tr>
+    <tr>
+      <td>ev1</td>
+      <td>(Avian) endogenous virus 1</td>
+    </tr>
+    <tr>
+      <td>eve</td>
+      <td>"even-skipped" locus</td>
+    </tr>
+    <tr>
+      <td>exch.</td>
+      <td>Exchanger</td>
+    </tr>
+    <tr>
+      <td>f.</td>
+      <td>Factor</td>
+    </tr>
+    <tr>
+      <td>fib.</td>
+      <td>Fibers</td>
+    </tr>
+    <tr>
+      <td>fibrob.</td>
+      <td>Fibroblasts</td>
+    </tr>
+    <tr>
+      <td>FMRFamide</td>
+      <td>Phe-Met-Arg-Phe-NH(2) neuropeptide</td>
+    </tr>
+    <tr>
+      <td>FNR</td>
+      <td>Ferredoxin-(NADP+)-oxidoreductase</td>
+    </tr>
+    <tr>
+      <td>FBP</td>
+      <td>Folate Binding Protein</td>
+    </tr>
+    <tr>
+      <td>fos</td>
+      <td>FBJ (Finkel-Biskis-Jinkins) osteosarcoma virus oncogene</td>
+    </tr>
+    <tr>
+      <td>FSH</td>
+      <td>Follicle stimulating hormone</td>
+    </tr>
+    <tr>
+      <td>ftz</td>
+      <td>"fushi tarazu" locus</td>
+    </tr>
+    <tr>
+      <td>g.</td>
+      <td>Gene</td>
+    </tr>
+    <tr>
+      <td>G0S..</td>
+      <td>G0/G1 switch regulatory gene ..</td>
+    </tr>
+    <tr>
+      <td>G6PD</td>
+      <td>Glucose-6-phosphate dehydrogenase</td>
+    </tr>
+    <tr>
+      <td>GA</td>
+      <td>Gibberellic acid</td>
+    </tr>
+    <tr>
+      <td>GADPH</td>
+      <td>Glyceraldehyde-3-phosphate dehydrogenase</td>
+    </tr>
+    <tr>
+      <td>GARS</td>
+      <td>Glycinamide ribonucleotide synthase</td>
+    </tr>
+    <tr>
+      <td>Gart</td>
+      <td>"Gart" locus (-&gt; GARS, AIRS, GART)</td>
+    </tr>
+    <tr>
+      <td>GART</td>
+      <td>Glycinamide ribonucleotide transformylase</td>
+    </tr>
+    <tr>
+      <td>gC</td>
+      <td>Glycoprotein C</td>
+    </tr>
+    <tr>
+      <td>G-CSF</td>
+      <td>Granulocyte colony stimulating factor</td>
+    </tr>
+    <tr>
+      <td>gD</td>
+      <td>Glycoprotein D</td>
+    </tr>
+    <tr>
+      <td>GdX</td>
+      <td>X-linked gene downstream of G6PD gene</td>
+    </tr>
+    <tr>
+      <td>gE</td>
+      <td>Glycoprotein E</td>
+    </tr>
+    <tr>
+      <td>GFAP</td>
+      <td>Glial fibrillary acidic protein</td>
+    </tr>
+    <tr>
+      <td>g'GT</td>
+      <td>g'-Glutamyl transpeptidase</td>
+    </tr>
+    <tr>
+      <td>gln</td>
+      <td>Glutamine</td>
+    </tr>
+    <tr>
+      <td>globul-12s</td>
+      <td>12s globulin (oat seed storage protein)</td>
+    </tr>
+    <tr>
+      <td>glucc</td>
+      <td>Glucocorticoid</td>
+    </tr>
+    <tr>
+      <td>GLUT1</td>
+      <td>Glucose transporter type 1</td>
+    </tr>
+    <tr>
+      <td>GM-CSF</td>
+      <td>Granulocyte/Macrophage colony stimulating factor</td>
+    </tr>
+    <tr>
+      <td>GnRH</td>
+      <td>Gonadotropin-releasing hormone</td>
+    </tr>
+    <tr>
+      <td>gp</td>
+      <td>Glycoprotein</td>
+    </tr>
+    <tr>
+      <td>GPD</td>
+      <td>Glycerol-3-phosphate dehydrogenase</td>
+    </tr>
+    <tr>
+      <td>GPT</td>
+      <td>UDP-GlcNAc:dolichol phosphate N-acetylglucosamine-1-phosphate
+transferase</td>
+    </tr>
+    <tr>
+      <td>granulo-c</td>
+      <td>Granulocyte</td>
+    </tr>
+    <tr>
+      <td>GRF</td>
+      <td>Growth hormone-releasing factor</td>
+    </tr>
+    <tr>
+      <td>GRP</td>
+      <td>Glycine-rich (cell wall) protein</td>
+    </tr>
+    <tr>
+      <td>GS17</td>
+      <td>Gastrula-specific transcript 17</td>
+    </tr>
+    <tr>
+      <td>GSHPx</td>
+      <td>Gluthathione peroxidase</td>
+    </tr>
+    <tr>
+      <td>G-spec.</td>
+      <td>Gastrula-specific</td>
+    </tr>
+    <tr>
+      <td>GST</td>
+      <td>Gutathione S-transferase</td>
+    </tr>
+    <tr>
+      <td>H</td>
+      <td>1. Heavy chain, 2. Housekeeping-type promoter</td>
+    </tr>
+    <tr>
+      <td>Ha-ras</td>
+      <td>Rat-derived Harvey murine sarcoma virus oncogene</td>
+    </tr>
+    <tr>
+      <td>haptoblob</td>
+      <td>haptoglobin</td>
+    </tr>
+    <tr>
+      <td>hb</td>
+      <td>"hunchbank" locus</td>
+    </tr>
+    <tr>
+      <td>Hc</td>
+      <td>High-cysteine (chorion protein)</td>
+    </tr>
+    <tr>
+      <td>HDC</td>
+      <td>L-histidine decarboxylase</td>
+    </tr>
+    <tr>
+      <td>hematop.</td>
+      <td>hematopoietic</td>
+    </tr>
+    <tr>
+      <td>HGT</td>
+      <td>High-(glycine+tyrosine) keratin</td>
+    </tr>
+    <tr>
+      <td>hist.</td>
+      <td>Histone</td>
+    </tr>
+    <tr>
+      <td>HMG-</td>
+      <td>High mobility group chromosomal protein</td>
+    </tr>
+    <tr>
+      <td>HMG-CoA</td>
+      <td>3-Hydroxy-3-methylglutaryl coenzyme A</td>
+    </tr>
+    <tr>
+      <td>HPRT</td>
+      <td>Hypoxanthine phosphoribosyltransferase</td>
+    </tr>
+    <tr>
+      <td>hs</td>
+      <td>Heatshock</td>
+    </tr>
+    <tr>
+      <td>hsc</td>
+      <td>Constitutive analogue of heatshock gene/protein</td>
+    </tr>
+    <tr>
+      <td>HSF</td>
+      <td>Hepatocyte-stimulating factor</td>
+    </tr>
+    <tr>
+      <td>hsp</td>
+      <td>Heatshock protein</td>
+    </tr>
+    <tr>
+      <td>Ht</td>
+      <td>Testicular histone</td>
+    </tr>
+    <tr>
+      <td>HTF</td>
+      <td>Restriction endonuclease HpaII tiny fragments</td>
+    </tr>
+    <tr>
+      <td>I-FABP</td>
+      <td>Intestinal fatty-acid binding protein</td>
+    </tr>
+    <tr>
+      <td>IAA</td>
+      <td>Indolacetic acid</td>
+    </tr>
+    <tr>
+      <td>IAP</td>
+      <td>Intracisternal A-particles</td>
+    </tr>
+    <tr>
+      <td>ICP</td>
+      <td>Infected cell protein</td>
+    </tr>
+    <tr>
+      <td>IE</td>
+      <td>Immediate early (gene, RNA)</td>
+    </tr>
+    <tr>
+      <td>IF</td>
+      <td>Intermediate filament</td>
+    </tr>
+    <tr>
+      <td>IFI</td>
+      <td>Interferon-induced gene/protein</td>
+    </tr>
+    <tr>
+      <td>IFN</td>
+      <td>Interferon</td>
+    </tr>
+    <tr>
+      <td>Ig</td>
+      <td>Immunoglobulin</td>
+    </tr>
+    <tr>
+      <td>IGF</td>
+      <td>Insulin-like growth factor</td>
+    </tr>
+    <tr>
+      <td>IL</td>
+      <td>Interleukin</td>
+    </tr>
+    <tr>
+      <td>inf.</td>
+      <td>Infected</td>
+    </tr>
+    <tr>
+      <td>inh.</td>
+      <td>Inhibitor</td>
+    </tr>
+    <tr>
+      <td>iNOS</td>
+      <td>Inducible nitric oxide synthase</td>
+    </tr>
+    <tr>
+      <td>IRF</td>
+      <td>Interferon regulatory factor</td>
+    </tr>
+    <tr>
+      <td>ISG</td>
+      <td>Interferon-stimulated gene</td>
+    </tr>
+    <tr>
+      <td>k.</td>
+      <td>Kinase</td>
+    </tr>
+    <tr>
+      <td>keratino-c</td>
+      <td>Keratinocyte</td>
+    </tr>
+    <tr>
+      <td>Ki-ras</td>
+      <td>Rat-derived Kirsten murine sarcoma virus oncogene</td>
+    </tr>
+    <tr>
+      <td>L</td>
+      <td>1. Light chain; 2. Late</td>
+    </tr>
+    <tr>
+      <td>larva-1,2,..</td>
+      <td>First, second, .. instar larva</td>
+    </tr>
+    <tr>
+      <td>LAT..</td>
+      <td>Lycopersicon anther-specific gene ..</td>
+    </tr>
+    <tr>
+      <td>LCAT</td>
+      <td>Lecithin-cholesterol acyltransferase</td>
+    </tr>
+    <tr>
+      <td>lck</td>
+      <td>T-cell- or lymphocyte-specific tyrosine kinase</td>
+    </tr>
+    <tr>
+      <td>LDH</td>
+      <td>Lactate dehydrogenase</td>
+    </tr>
+    <tr>
+      <td>leghem.</td>
+      <td>Leghemoglobin</td>
+    </tr>
+    <tr>
+      <td>LeIF</td>
+      <td>Leukocyte interferon</td>
+    </tr>
+    <tr>
+      <td>leuko-c</td>
+      <td>Leukocyte</td>
+    </tr>
+    <tr>
+      <td>LH</td>
+      <td>Luteinizing hormone</td>
+    </tr>
+    <tr>
+      <td>LHC</td>
+      <td>Light-harvesting complex</td>
+    </tr>
+    <tr>
+      <td>LHRH</td>
+      <td>Luteinizing hormone-releasing factor</td>
+    </tr>
+    <tr>
+      <td>liv.</td>
+      <td>liver</td>
+    </tr>
+    <tr>
+      <td>LMW</td>
+      <td>Low molecular weight</td>
+    </tr>
+    <tr>
+      <td>LPH</td>
+      <td>Lipotropic hormone</td>
+    </tr>
+    <tr>
+      <td>LPS</td>
+      <td>Lipopolysaccharide</td>
+    </tr>
+    <tr>
+      <td>LTR</td>
+      <td>Long Terminal Repeat</td>
+    </tr>
+    <tr>
+      <td>lympho-c</td>
+      <td>Lymphocyte</td>
+    </tr>
+    <tr>
+      <td>lys</td>
+      <td>Lysosomal</td>
+    </tr>
+    <tr>
+      <td>MBP</td>
+      <td>Myelin basic protein</td>
+    </tr>
+    <tr>
+      <td>(MAC)</td>
+      <td>Macaque</td>
+    </tr>
+    <tr>
+      <td>MC</td>
+      <td>Methylcholanthrene</td>
+    </tr>
+    <tr>
+      <td>MCK</td>
+      <td>Muscle-specific creatine kinase</td>
+    </tr>
+    <tr>
+      <td>mGK</td>
+      <td>Submaxillary gland kallikrein</td>
+    </tr>
+    <tr>
+      <td>MHCI/MHCII</td>
+      <td>Class I/II transplantation antigens of major
+histocompatibility complex</td>
+    </tr>
+    <tr>
+      <td>MIF</td>
+      <td>Macrophage migration inhibitory factor</td>
+    </tr>
+    <tr>
+      <td>minipara</td>
+      <td>Miniparamyosin</td>
+    </tr>
+    <tr>
+      <td>mit</td>
+      <td>Mitochondrial</td>
+    </tr>
+    <tr>
+      <td>mono-c</td>
+      <td>Monocyte</td>
+    </tr>
+    <tr>
+      <td>mononuc-c.</td>
+      <td>Mononuclear cells</td>
+    </tr>
+    <tr>
+      <td>MOPC..</td>
+      <td>Mineral oil-induced plasmacytoma</td>
+    </tr>
+    <tr>
+      <td>mos</td>
+      <td>Moloney murine sarcoma virus oncogene</td>
+    </tr>
+    <tr>
+      <td>MP</td>
+      <td>Macrophage</td>
+    </tr>
+    <tr>
+      <td>MPC..</td>
+      <td>Mouse plasma cell tumor</td>
+    </tr>
+    <tr>
+      <td>MRP</td>
+      <td>MIF-related protein (see MIF)</td>
+    </tr>
+    <tr>
+      <td>MSF</td>
+      <td>Megakaryocyte stimulating factor</td>
+    </tr>
+    <tr>
+      <td>msp</td>
+      <td>Major sperm protein gene</td>
+    </tr>
+    <tr>
+      <td>MT</td>
+      <td>Metallothionein</td>
+    </tr>
+    <tr>
+      <td>mst</td>
+      <td>Male-specific transcript</td>
+    </tr>
+    <tr>
+      <td>MUP</td>
+      <td>Major urinary protein</td>
+    </tr>
+    <tr>
+      <td>myb</td>
+      <td>(Avian) myeoloblastosis virus oncogene</td>
+    </tr>
+    <tr>
+      <td>myc</td>
+      <td>Myelocytomatosis virus 29 oncogene</td>
+    </tr>
+    <tr>
+      <td>NCA</td>
+      <td>nonspecific cross-reacting (with -&gt; CEA) antigen</td>
+    </tr>
+    <tr>
+      <td>nerv. sys</td>
+      <td>Nervous system</td>
+    </tr>
+    <tr>
+      <td>neu</td>
+      <td>Ethyl-nitrosurea-induced rat neuroblastoma oncogene</td>
+    </tr>
+    <tr>
+      <td>neuropep.</td>
+      <td>Neuropeptide</td>
+    </tr>
+    <tr>
+      <td>NGF</td>
+      <td>Nerve growth factor</td>
+    </tr>
+    <tr>
+      <td>ninaE</td>
+      <td>"neither inactivation nor afterpotential" locus E</td>
+    </tr>
+    <tr>
+      <td>NMDH</td>
+      <td>NADP-malate dehydrogenase</td>
+    </tr>
+    <tr>
+      <td>NOS</td>
+      <td>Nitric oxide synthase</td>
+    </tr>
+    <tr>
+      <td>nos</td>
+      <td>Nopaline synthetase</td>
+    </tr>
+    <tr>
+      <td>NR</td>
+      <td>Nitrate reductase</td>
+    </tr>
+    <tr>
+      <td>N-ras</td>
+      <td>Neuroblastoma ras-like (-&gt; Ha-ras) oncogene</td>
+    </tr>
+    <tr>
+      <td>NS</td>
+      <td>Nervous system</td>
+    </tr>
+    <tr>
+      <td>OAT</td>
+      <td>Ornithine aminotransferase</td>
+    </tr>
+    <tr>
+      <td>ocs</td>
+      <td>Octopine synthetase</td>
+    </tr>
+    <tr>
+      <td>ODC</td>
+      <td>Ornithine decarboxylase</td>
+    </tr>
+    <tr>
+      <td>Ori</td>
+      <td>Origin of replication</td>
+    </tr>
+    <tr>
+      <td>OTC</td>
+      <td>Ornithine transcarbamylase</td>
+    </tr>
+    <tr>
+      <td>ovalb.</td>
+      <td>Ovalbumin</td>
+    </tr>
+    <tr>
+      <td>p.</td>
+      <td>Protein</td>
+    </tr>
+    <tr>
+      <td>P-450</td>
+      <td>Cytochrome P-450</td>
+    </tr>
+    <tr>
+      <td>p53</td>
+      <td>53K phosphoprotein</td>
+    </tr>
+    <tr>
+      <td>panc.</td>
+      <td>pancreas, pancreatic</td>
+    </tr>
+    <tr>
+      <td>parath.</td>
+      <td>Parathyroid</td>
+    </tr>
+    <tr>
+      <td>PB</td>
+      <td>Phenobarbital</td>
+    </tr>
+    <tr>
+      <td>PBGD</td>
+      <td>Porphobilinogen deaminase</td>
+    </tr>
+    <tr>
+      <td>PCNA</td>
+      <td>Proliferating cell nuclear antigen</td>
+    </tr>
+    <tr>
+      <td>PDEase</td>
+      <td>cAMP phosphodiesterase</td>
+    </tr>
+    <tr>
+      <td>PDGF</td>
+      <td>Platelet-derived growth factor</td>
+    </tr>
+    <tr>
+      <td>PEPCase</td>
+      <td>Phosphoenolpyruvate carboxylase</td>
+    </tr>
+    <tr>
+      <td>PEPCK</td>
+      <td>Phosphoenolpyruvate carboxykinase</td>
+    </tr>
+    <tr>
+      <td>PG</td>
+      <td>Prostaglandin</td>
+    </tr>
+    <tr>
+      <td>PGK</td>
+      <td>3-Phosphoglycerate kinase</td>
+    </tr>
+    <tr>
+      <td>PHA</td>
+      <td>Phytohemagglutinin</td>
+    </tr>
+    <tr>
+      <td>PK</td>
+      <td>Protein kinase</td>
+    </tr>
+    <tr>
+      <td>P_L</td>
+      <td>Late promoter</td>
+    </tr>
+    <tr>
+      <td>PLP</td>
+      <td>Proteolipid protein</td>
+    </tr>
+    <tr>
+      <td>POL</td>
+      <td>Polymerase</td>
+    </tr>
+    <tr>
+      <td>POMC</td>
+      <td>Proopiomelanocortin</td>
+    </tr>
+    <tr>
+      <td>pp..</td>
+      <td>Phosphoprotein ..</td>
+    </tr>
+    <tr>
+      <td>PR1a</td>
+      <td>Pathogenesis-related protein 1a</td>
+    </tr>
+    <tr>
+      <td>PRBP</td>
+      <td>Plasma retinol-binding protein</td>
+    </tr>
+    <tr>
+      <td>PRL</td>
+      <td>Prolactin</td>
+    </tr>
+    <tr>
+      <td>prog.</td>
+      <td>Progesterone</td>
+    </tr>
+    <tr>
+      <td>prolyl</td>
+      <td>4-hydr. Prolyl 4-hydroxylase</td>
+    </tr>
+    <tr>
+      <td>PrP</td>
+      <td>Prion protein</td>
+    </tr>
+    <tr>
+      <td>PSG1,PSG2,.</td>
+      <td>Pregnancy-specific glycoproteins 1,2,.</td>
+    </tr>
+    <tr>
+      <td>PSBP</td>
+      <td>Prostatic steroid binding protein</td>
+    </tr>
+    <tr>
+      <td>PSP</td>
+      <td>Parotid secretory protein</td>
+    </tr>
+    <tr>
+      <td>PTH</td>
+      <td>Parathyroid hormone</td>
+    </tr>
+    <tr>
+      <td>pTiN</td>
+      <td>Nopaline type tumor inducing plasmid</td>
+    </tr>
+    <tr>
+      <td>pTiO</td>
+      <td>Octopine type tumor inducing plasmid</td>
+    </tr>
+    <tr>
+      <td>r</td>
+      <td>"rudimentary" locus</td>
+    </tr>
+    <tr>
+      <td>R</td>
+      <td>1. Regulatory subunit, 2. Erythroid cell-specific</td>
+    </tr>
+    <tr>
+      <td>RAB</td>
+      <td>Gene responsive to ABA</td>
+    </tr>
+    <tr>
+      <td>ras</td>
+      <td>Homologue of -&gt; Ha-ras, Ki-ras, etc.</td>
+    </tr>
+    <tr>
+      <td>rec.</td>
+      <td>Receptor</td>
+    </tr>
+    <tr>
+      <td>red.</td>
+      <td>Reductase</td>
+    </tr>
+    <tr>
+      <td>reg.</td>
+      <td>Regulated</td>
+    </tr>
+    <tr>
+      <td>rep-dep.</td>
+      <td>Replication-dependent</td>
+    </tr>
+    <tr>
+      <td>rig</td>
+      <td>Rat insulinoma gene</td>
+    </tr>
+    <tr>
+      <td>RnBP</td>
+      <td>Renin-binding protein</td>
+    </tr>
+    <tr>
+      <td>RNR1,</td>
+      <td>RNR2 Ribonucleotide reductase large, small subunit</td>
+    </tr>
+    <tr>
+      <td>rp</td>
+      <td>Ribosomal protein</td>
+    </tr>
+    <tr>
+      <td>rTn</td>
+      <td>Retrotransposon</td>
+    </tr>
+    <tr>
+      <td>RuBPCss</td>
+      <td>Ribulose-1,5-biphosphate carboxylase small subunit</td>
+    </tr>
+    <tr>
+      <td>RuBPCA</td>
+      <td>Ribulose-1,5-biphosphate carboxylase/oxygenase activase</td>
+    </tr>
+    <tr>
+      <td>s.</td>
+      <td>Small</td>
+    </tr>
+    <tr>
+      <td>saliv-g.</td>
+      <td>Salivary gland</td>
+    </tr>
+    <tr>
+      <td>SBP</td>
+      <td>Spermine-binding protein</td>
+    </tr>
+    <tr>
+      <td>SC</td>
+      <td>Stem cells</td>
+    </tr>
+    <tr>
+      <td>sem-v.</td>
+      <td>Seminal vesicle</td>
+    </tr>
+    <tr>
+      <td>ser.</td>
+      <td>Serum</td>
+    </tr>
+    <tr>
+      <td>sgs</td>
+      <td>Salivary gland secretion protein</td>
+    </tr>
+    <tr>
+      <td>sis</td>
+      <td>Simian sarcoma virus oncogene</td>
+    </tr>
+    <tr>
+      <td>sk-m.</td>
+      <td>Skeletal muscle</td>
+    </tr>
+    <tr>
+      <td>skel-m.</td>
+      <td>Skeletal muscle</td>
+    </tr>
+    <tr>
+      <td>smooth-m.</td>
+      <td>Smooth muscle</td>
+    </tr>
+    <tr>
+      <td>snRNA</td>
+      <td>Small nuclear RNA</td>
+    </tr>
+    <tr>
+      <td>snRNA</td>
+      <td>Small nuclear ribonucleoprotein</td>
+    </tr>
+    <tr>
+      <td>SOD</td>
+      <td>Superoxide dismutase</td>
+    </tr>
+    <tr>
+      <td>som</td>
+      <td>Somatic</td>
+    </tr>
+    <tr>
+      <td>spat-reg.</td>
+      <td>Spatially regulated</td>
+    </tr>
+    <tr>
+      <td>Spec</td>
+      <td>Strongylocentrotus purpureatus ectoderm enriched RNA</td>
+    </tr>
+    <tr>
+      <td>SPI</td>
+      <td>Serine protease inhibitor</td>
+    </tr>
+    <tr>
+      <td>sry</td>
+      <td>"serendipity" locus</td>
+    </tr>
+    <tr>
+      <td>SV40T</td>
+      <td>Tumor antigen of simian virus 40 (SV40)</td>
+    </tr>
+    <tr>
+      <td>SVS</td>
+      <td>Seminal vesicle secretory protein</td>
+    </tr>
+    <tr>
+      <td>synt.</td>
+      <td>Synthase</td>
+    </tr>
+    <tr>
+      <td>T3d'</td>
+      <td>T-cell antigen receptor-associated T3-complex delta chain</td>
+    </tr>
+    <tr>
+      <td>TAT</td>
+      <td>Tyrosine aminotransferase</td>
+    </tr>
+    <tr>
+      <td>TCDD</td>
+      <td>2,3,7,8-Tetrachlorodibenzo-p-dioxin</td>
+    </tr>
+    <tr>
+      <td>TCGF</td>
+      <td>T-cell growth factor</td>
+    </tr>
+    <tr>
+      <td>TCR</td>
+      <td>T-cell receptor</td>
+    </tr>
+    <tr>
+      <td>TdT</td>
+      <td>Terminal deoxynucleotidyltransferase</td>
+    </tr>
+    <tr>
+      <td>test.</td>
+      <td>testis</td>
+    </tr>
+    <tr>
+      <td>TF</td>
+      <td>Transcription factor</td>
+    </tr>
+    <tr>
+      <td>TGA1a</td>
+      <td>TGACG-specific DNA-binding protein 1a</td>
+    </tr>
+    <tr>
+      <td>TGF-b'</td>
+      <td>Transforming growth factor beta</td>
+    </tr>
+    <tr>
+      <td>TH</td>
+      <td>Tyrosin hydroxylase</td>
+    </tr>
+    <tr>
+      <td>thyr.</td>
+      <td>Thyroxine</td>
+    </tr>
+    <tr>
+      <td>Thy-1.2</td>
+      <td>Thy-1 (thymocyte) antigen/glycoprotein allotype 2</td>
+    </tr>
+    <tr>
+      <td>TIF</td>
+      <td>Trans-inducing factor</td>
+    </tr>
+    <tr>
+      <td>TIM</td>
+      <td>Triosephosphate isomerase</td>
+    </tr>
+    <tr>
+      <td>tis.</td>
+      <td>Tissue</td>
+    </tr>
+    <tr>
+      <td>TM</td>
+      <td>Tropomyosin</td>
+    </tr>
+    <tr>
+      <td>tmr</td>
+      <td>"tumor morphology root" locus</td>
+    </tr>
+    <tr>
+      <td>TNF</td>
+      <td>Tumor necrosis factor</td>
+    </tr>
+    <tr>
+      <td>TnI</td>
+      <td>Troponin I (inhibitory subunit)</td>
+    </tr>
+    <tr>
+      <td>TnT</td>
+      <td>Troponin T (tropomyosin-binding subunit)</td>
+    </tr>
+    <tr>
+      <td>TO</td>
+      <td>Tryptophan oxygenase</td>
+    </tr>
+    <tr>
+      <td>TP1,TP2,.</td>
+      <td>Transition protein 1,2,.</td>
+    </tr>
+    <tr>
+      <td>TPA</td>
+      <td>12-O-tetradecaonyl-phorbol-13-acetate</td>
+    </tr>
+    <tr>
+      <td>TPI</td>
+      <td>Triosephosphate isomerase</td>
+    </tr>
+    <tr>
+      <td>tr.,tr-</td>
+      <td>Transcript</td>
+    </tr>
+    <tr>
+      <td>TRF</td>
+      <td>T-cell replacing factor</td>
+    </tr>
+    <tr>
+      <td>TRH</td>
+      <td>Thyrotropin-releasing hormone</td>
+    </tr>
+    <tr>
+      <td>TS</td>
+      <td>Thymidylate sythetase</td>
+    </tr>
+    <tr>
+      <td>TSH</td>
+      <td>Thyroid stimulating hormone</td>
+    </tr>
+    <tr>
+      <td>T/t</td>
+      <td>Large/small T(tumor) antigen</td>
+    </tr>
+    <tr>
+      <td>Ubx</td>
+      <td>"ultrabithorax" locus</td>
+    </tr>
+    <tr>
+      <td>uPA</td>
+      <td>Urine plasminogen activator</td>
+    </tr>
+    <tr>
+      <td>URO-D</td>
+      <td>Uroporphyrinogen decarboxylase</td>
+    </tr>
+    <tr>
+      <td>Vg1</td>
+      <td>Vegetal hemisphere-specific mRNA 1</td>
+    </tr>
+    <tr>
+      <td>vir-inf.</td>
+      <td>Viral infection</td>
+    </tr>
+    <tr>
+      <td>VL30</td>
+      <td>Retrovirus-like 30s RNA</td>
+    </tr>
+    <tr>
+      <td>VLDL</td>
+      <td>Very low density lipoprotein</td>
+    </tr>
+    <tr>
+      <td>V_NP</td>
+      <td>(Immunoglobulin heavy chain) variable region specific for
+4-hydroxyl-3-nitrophenacetyl</td>
+    </tr>
+    <tr>
+      <td>VP5</td>
+      <td>Virion protein 5 (HSV-1/2: =major capsid protein)</td>
+    </tr>
+    <tr>
+      <td>VSP</td>
+      <td>Virion stimulatory protein</td>
+    </tr>
+    <tr>
+      <td>vWf</td>
+      <td>von Willebrand factor</td>
+    </tr>
+    <tr>
+      <td>Zen</td>
+      <td>"zerknuellt" protein</td>
+    </tr>
+  </tbody>
+</table>
+</center>
+</div> <!-- sib_body -->
+</font>
+<div id='sib_last_update'>Last update November 2016</div>
+<div id='sib_footer'>
+
+  <div id='sib_footer_content'>
+    <script>eval(unescape('%66%75%6E%63%74%69%6F%6E%20%73%65%62%5F%74%72%61%6E%73%70%6F%73%65%32%31%32%33%28%68%29%20%7B%76%61%72%20%73%3D%27%61%6D%6C%69%6F%74%61%3A%6B%73%65%2D%64%70%67%40%6F%6F%6C%67%67%65%6F%72%70%75%2E%73%6F%63%6D%27%3B%76%61%72%20%72%3D%27%27%3B%66%6F%72%28%76%61%72%20%69%3D%30%3B%69%3C%73%2E%6C%65%6E%67%74%68%3B%69%2B%2B%2C%69%2B%2B%29%7B%72%3D%72%2B%73%2E%73%75%62%73%74%72%69%6E%67%28%69%2B%31%2C%69%2B%32%29%2B%73%2E%73%75%62%73%74%72%69%6E%67%28%69%2C%69%2B%31%29%7D%68%2E%68%72%65%66%3D%72%3B%7D%64%6F%63%75%6D%65%6E%74%2E%77%72%69%74%65%28%27%3C%61%20%68%72%65%66%3D%22%23%22%20%6F%6E%4D%6F%75%73%65%4F%76%65%72%3D%22%6A%61%76%61%73%63%72%69%70%74%3A%73%65%62%5F%74%72%61%6E%73%70%6F%73%65%32%31%32%33%28%74%68%69%73%29%22%20%6F%6E%46%6F%63%75%73%3D%22%6A%61%76%61%73%63%72%69%70%74%3A%73%65%62%5F%74%72%61%6E%73%70%6F%73%65%32%31%32%33%28%74%68%69%73%29%22%3E%43%6F%6E%74%61%63%74%20%55%73%3C%2F%61%3E%27%29%3B'));</script><noscript>ask-epd [AT] googlegroups.com</noscript>
+
+    <!-- This part of the footer is _right_ justified -->
+    <div id='sib_footer_right'>
+      <!-- TODO adapt or remove any of the items within the following div block -->
+      <a href="#TOP" id='sib_footer_gototop'>
+        <span style='padding-left: 10px'>Back to the Top</span></a>
+    </div>
+  </div>
+</div>
+</div>
+
+
+</body>
+</html>

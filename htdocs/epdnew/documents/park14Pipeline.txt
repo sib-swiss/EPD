@@ -1,0 +1,86 @@
+######################################################################
+# Get the GEO html file, parse the SRP ID (SRA serie ID), parse the
+# SRX ID (SRA sample ID), then the SRR ID (SRA run ID) and download
+# them. Samples and runs IDs are stored in the two files 'samples' and
+# 'samples2'
+######################################################################
+GSE=GSE49026
+wget -q http://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=$GSE -O $GSE.html
+SRP=$(grep -o 'SRP[0-9]*<' $GSE.html | sort -u | sed 's/<//')
+wget -q http://www.ncbi.nlm.nih.gov/sra?term=$SRP -O $SRP.html
+perl get_srx.pl < $SRP.html > samples
+
+GSE=GSE52355
+wget -q http://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=$GSE -O $GSE.html
+SRP=$(grep -o 'SRP[0-9]*<' $GSE.html | sort -u | sed 's/<//')
+wget -q http://www.ncbi.nlm.nih.gov/sra?term=$SRP -O $SRP.html
+perl get_srx.pl < $SRP.html >> samples
+
+for SRX in $(awk '{print $1}' samples)
+do
+    wget -q http://www.ncbi.nlm.nih.gov/sra/$SRX -O $SRX.html
+    for SRR in $(grep -o 'SRR[0-9][0-9][0-9][0-9][0-9][0-9]' $SRX.html | sort -u);
+    do
+	SRRDIR=$(echo $SRR | awk 'BEGIN{FS=""}{print $1 $2 $3 $4 $5 $6}')
+	wget https://ftp-trace.ncbi.nlm.nih.gov/sra/sra-instant/reads/ByRun/sra/SRR/$SRRDIR/$SRR/$SRR.sra
+	echo "$SRX $SRR" >> samples2
+    done
+done
+
+######################################################################
+# Extract fastq files of each run using fastq-dump (v. 2.3.5 download
+# from
+# http://www.ncbi.nlm.nih.gov/Traces/sra/sra.cgi?cmd=show&f=software&\
+# m=software&s=software ).
+######################################################################
+for FILE in $(ls *.sra)
+do
+    fastq-dump --split-3 $FILE
+done
+
+######################################################################
+# MNase-seq sample (GSM1263832) is paired-end (50bp each), map it the
+# genome using bowtie2 (version 4.6.2) [note that genome index files
+# are store locally, replace their location with another one more
+# appropriate]. The RNA-seq samples are single-end but long (100 bp
+# reads), map them using bowtie2
+######################################################################
+for SAMPLE in $(ls *.fastq | sed -e 's/_[12].fastq//' -e 's/.fastq//' | sort -u)
+do
+    echo $SAMPLE
+    if [ "$SAMPLE" = "SRR1029536" ]; then
+	bowtie2 -p 30 --maxins 500 -x /home/local/db/bowtie2/s_cerevisiae_sacCer3 -1 $SAMPLE\_1.fastq -2 $SAMPLE\_2.fastq -S $SAMPLE.sam
+    else
+	bowtie2 -p 30 -x /home/local/db/bowtie2/s_cerevisiae_sacCer3 -q $SAMPLE.fastq -S $SAMPLE.sam
+    fi
+done
+
+######################################################################
+# Generate SGA files for each samples using samtools (v. , download
+# from http://samtools.sourceforge.net/ ) and ChIP-Seq tools (download
+# from http://sourceforge.net/projects/chip-seq/ )
+######################################################################
+for SRR in $(awk '{print $2}' samples2);
+do
+    SRX=$(awk -v "var=$SRR" '$2==var {print $1}' samples2)
+    NAME=$(awk -v "var=$SRX" '$1==var {print $2}' samples | sed 's/://')
+    FEATURE=$(awk -v "var=$SRX" '$1==var {print $NF}' samples | sed 's/-seq//')
+    echo "Processing $NAME -> $FEATURE"
+    if [ -f $SRR.bed ]; then
+	echo "   bed file already done"
+    else
+	awk 'BEGIN {FS="\t"} $3 != "\*" {print $0}' $SRR.sam > $SRR.clean.sam 2> /dev/null
+	samtools view -bS -o $SRR.bam $SRR.clean.sam 2> /dev/null
+	samtools sort $SRR.bam $SRR.sorted 2> /dev/null
+	bamToBed -i $SRR.sorted.bam > $SRR.bed
+    fi
+    # get rid of the strange chromosome names
+    sed -i 's/^[^ ]*|//g' $SRR.bed
+    bed2sga.pl -a sacCer3 -f $FEATURE < $SRR.bed | sort -s -k1,1 -k3,3n -k4,4 | compactsga > $SRR.sga
+    if [ -f $NAME.sga ]; then
+	mv $NAME.sga temp.sga
+	sort -k1,1 -k3,3n -k4,4 $SRR.sga temp.sga | compactsga > $NAME.sga
+    else
+	mv $SRR.sga $NAME.sga
+    fi
+done

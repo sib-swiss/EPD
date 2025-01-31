@@ -1,0 +1,12 @@
+Name: A. thaliana (Feb 2011 TAIR10/araTha1)
+Status: full
+NCBI Assembly: https://www.ncbi.nlm.nih.gov/assembly/GCF_000001735.3/
+Source: Assembled chromosomes from RefSeq (GCF_000001735.3): ftp://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/000/001/735/GCF_000001735.3_TAIR10/
+NCBI Version: TAIR10
+UCSC Assembly: araTha1
+Local Assembly: araTha1
+Bowtie Idx: a_thaliana_araTha1
+Liftover: none
+RepeatMasker: rmsk/rmsk_araTha1.SGA.gz
+MGA FTP: https://epd.expasy.org/ftp/mga/araTha1/
+UCSC Genome Browser: https://genome-euro.ucsc.edu/cgi-bin/hgTracks?hubUrl=https://epd.expasy.org/epd/ucsc/epdHub/epdHub.txt&genome=araTha1

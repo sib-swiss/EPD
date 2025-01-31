@@ -1,0 +1,7 @@
+#!	sequence	UCSC									
+#!	note	a	tags were centered by 70 bp								
+#	UCSC track name	Track description	Track resolution	Strand	Original dataset	Raw format	Tissue	Stage/Time point	Condition	MGA series name	PMID
+1	H3K4me3	centered H3K4me3 ChIP-seq tags__a	25		GSE86414	SRA	primary remiges			li17	28106042
+2	All CAGE (+)	5' end of CAGE reads	1	+	FANTOM5	FASTQ	all adult tissues merged			lizio17	28873399
+3	All CAGE (-)	5' end of CAGE reads	1	-	FANTOM5	FASTQ	all adult tissues merged			lizio17	28873399
+4	EPDnew promoters	EPDnew promoters v. 001	1__epd							epd	epd

@@ -1,0 +1,12 @@
+Name: S. cerevisiae (Apr 2011 R64/sacCer3)
+Status: full
+NCBI Assembly: https://www.ncbi.nlm.nih.gov/assembly/GCF_000146045.2/
+Source: Assembled chromosomes from RefSeq (GCF_000146045.2): ftp://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/000/146/045/GCF_000146045.2_R64/
+NCBI Version: R64
+UCSC Assembly: sacCer3
+Local Assembly: sacCer3
+Bowtie Idx: s_cerevisiae_sacCer3
+Liftover: sacCer3ToSacCer2
+RepeatMasker: rmsk/rmsk_sacCer3.SGA.gz
+MGA FTP: https://epd.expasy.org/ftp/mga/sacCer3
+UCSC Genome Browser: https://genome-euro.ucsc.edu/cgi-bin/hgTracks?hubUrl=https://epd.expasy.org/epd/ucsc/epdHub/epdHub.txt&genome=sacCer3

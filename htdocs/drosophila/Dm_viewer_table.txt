@@ -1,0 +1,24 @@
+#!	sequence	UCSC									
+#!	note	a	tags were centered by 60 bp								
+#!	note	b	tags were centered by 40 bp								
+#	UCSC track name	Track description	Track resolution	Strand	Original dataset	Raw format	Tissue	Stage/Time point	Condition	MGA series name	PMID
+1	H3K4me3	centered H3K4me3 ChIP-seq tags__a	10		GSM480156	BED	S2 cells			gan10	20398323
+2	Pol2	centered RNA Pol II ChIP-seq tags__b	10		GSM480159	BED	S2 cells			gan10	20398323
+3	All CAGE (+)	5' end of CAGE reads	1	+	SRP001602	SRA	all tissues merged	all stages merged		encode/SRP001602	24985915
+#!	4,17	Selected modENCODE CAGE samples									
+4	(+) Digestive System	5' end of CAGE reads	1	+	SRX142925,SRX142927	SRA	digestive system	adult		encode/SRP001602	24985915
+5	(+) Embryo	5' end of CAGE reads	1	+	SRP001602	SRA		mixed embryos		encode/SRP001602	24985915
+6	(+) Head	5' end of CAGE reads	1	+	SRP001602	SRA	head	adult		encode/SRP001602	24985915
+7	(+) Larvae	5' end of CAGE reads	1	+	SRP001602	SRA		mixed larvae		encode/SRP001602	24985915
+8	(+) Ovaries	5' end of CAGE reads	1	+	SRX142920,SRX142928	SRA	ovaries	adult		encode/SRP001602	24985915
+9	(+) Pupae	5' end of CAGE reads	1	+	SRX142945,SRX142955	SRA		mixed pupae		encode/SRP001602	24985915
+10	(+) Testes	5' end of CAGE reads	1	+	SRX142924	SRA	testes	adult		encode/SRP001602	24985915
+11	(-) Digestive System	5' end of CAGE reads	1	-	SRX142925,SRX142927	SRA	digestive system	adult		encode/SRP001602	24985915
+12	(-) Embryo	5' end of CAGE reads	1	-	SRP001602	SRA		mixed embryos		encode/SRP001602	24985915
+13	(-) Head	5' end of CAGE reads	1	-	SRP001602	SRA	head	adult		encode/SRP001602	24985915
+14	(-) Larvae	5' end of CAGE reads	1	-	SRP001602	SRA		mixed larvae		encode/SRP001602	24985915
+15	(-) Ovaries	5' end of CAGE reads	1	-	SRX142920,SRX142928	SRA	ovaries	adult		encode/SRP001602	24985915
+16	(-) Pupae	5' end of CAGE reads	1	-	SRX142945,SRX142955	SRA		mixed pupae		encode/SRP001602	24985915
+17	(-) Testes	5' end of CAGE reads	1	-	SRX142924	SRA	testes	adult		encode/SRP001602	24985915
+18	All CAGE (-)	5' end of CAGE reads	1	-	SRP001602	SRA	all tissues merged	all stages merged		encode/SRP001602	24985915
+19	EPDnew promoters	EPDnew promoters v. 005	1__epd							epd	epd

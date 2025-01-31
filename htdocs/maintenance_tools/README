@@ -1,0 +1,21 @@
+- interface: if the black footer overlaps the left menu, increase min-height
+in the next to last <div> in "header.php"
+
+- files to update when new EPD release is not just another version:
+    - epd.conf
+    - menu.php
+    - EPDnew_select.php
+    - EPDnew_database.php
+    - epdNew2genome.php
+    - docserv.conf
+    - epd.js
+    - cgi-bin/plot_gene.php (if new organism, add background freq.)
+
+- db creation with mysql fails if DROP commands are used on tables that do
+not exist (e.g. if new organism) => comment out DROP commands
+
+- backup of 'htdocs' to machine 1 without the bigWig files
+rsync -avz --delete --delete-excluded --exclude '*.bw' htdocs grbuchersrv1:/local/ccguser/epd_http/
+
+- to generate database PHP files, look at "Hs_QC.html" in htdocs/human directory to see how to specify alternate assemblies, viewers, etc.; run "make_database_template.pl -a <assembly>" (in home/pameylan/home.vital-it/bin) in the directory where the "Xx_QC.html" resides
+

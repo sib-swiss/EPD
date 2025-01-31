@@ -1,0 +1,12 @@
+Name: M. musculus (March 2012 GRCm38/mm10)
+Status: full
+NCBI Assembly: https://www.ncbi.nlm.nih.gov/assembly/GCF_000001635.20/
+Source: Assembled chromosomes from RefSeq (GCF_000001635.20): ftp://ftp.ncbi.nih.gov/genomes/Mus_musculus/ARCHIVE/BUILD.38.1/
+NCBI Version: GRCm38
+UCSC Assembly: mm10
+Local Assembly: mm10
+Bowtie Idx: m_musculus_mm10
+Liftover: mm10ToMm9, mm10ToHg19, mm10ToHg38, mm10ToBosTau8, mm10ToCanFam3, mm10ToGalGal5, mm10ToDanRer10, mm10ToDanRer7, mm10ToOviAri3, mm10ToOreNil2, mm10ToPanTro5, mm10ToRn5, mm10ToRn6, mm10ToSusScr3, mm10ToRheMac8, mm10ToMm39
+RepeatMasker: rmsk/rmsk_mm10.SGA.gz
+MGA FTP: https://epd.expasy.org/ftp/mga/mm10/
+UCSC Genome Browser: https://genome-euro.ucsc.edu/cgi-bin/hgTracks?hubUrl=https://epd.expasy.org/epd/ucsc/epdHub/epdHub.txt&genome=mm10

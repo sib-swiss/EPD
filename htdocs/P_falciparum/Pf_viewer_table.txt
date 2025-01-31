@@ -1,0 +1,33 @@
+#!	sequence	EPD	https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/000/002/765/GCF_000002765.4_ASM276v2/								
+#!	abbrev	IDC	intraerythrocytic developmental cycle								
+#!	note	a	the midpoint between paired-end fragments was calculated								
+#!	note	b	GC content is computed every 5 bp with a 20-bp window								
+#	UCSC track name	Track description	Track resolution	Strand	Original dataset	Raw format	Tissue	Stage/Time point	Condition	MGA series name	PMID
+1	All MNase	centered MNase-seq tags__a	10		GSE66185	SRA		all time points merged		kensche16	26578577
+#!	2,9	MNase tags at various time points									
+2	MNase at 5h	centered MNase-seq tags	10		GSM1616484	SRA		IDC-5 h		kensche16	26578577
+3	MNase at 10h	centered MNase-seq tags	10		GSM1616485	SRA		IDC-10 h		kensche16	26578577
+4	MNase at 15h	centered MNase-seq tags	10		GSM1616486	SRA		IDC-15 h		kensche16	26578577
+5	MNase at 20h	centered MNase-seq tags	10		GSM1616487	SRA		IDC-20 h		kensche16	26578577
+6	MNase at 25h	centered MNase-seq tags	10		GSM1616488	SRA		IDC-25 h		kensche16	26578577
+7	MNase at 30h	centered MNase-seq tags	10		GSM1616489	SRA		IDC-30 h		kensche16	26578577
+8	MNase at 35h	centered MNase-seq tags	10		GSM1616490	SRA		IDC-35 h		kensche16	26578577
+9	MNase at 40h	centered MNase-seq tags	10		GSM1616491, GSM1616492	SRA		IDC-40 h		kensche16	26578577
+10	All CAGE (+)	5' end of CAGE reads	1	+	GSE68982	BEDGRAPH		all time points merged		adjalley16	26947071
+11	All CAGE (-)	5' end of CAGE reads	1	-	GSE68982	BEDGRAPH		all time points merged		adjalley16	26947071
+#!	12,23	CAGE tags at various time points									
+12	CAGE at 2h (+)	5' end of CAGE reads	1	+	GSM1689659, GSM1689665	BEDGRAPH		IDC-2 h		adjalley16	26947071
+13	CAGE at 10h (+)	5' end of CAGE reads	1	+	GSM1689660, GSM1689666	BEDGRAPH		IDC-10 h		adjalley16	26947071
+14	CAGE at 18h (+)	5' end of CAGE reads	1	+	GSM1689661, GSM1689667	BEDGRAPH		IDC-18 h		adjalley16	26947071
+15	CAGE at 26h (+)	5' end of CAGE reads	1	+	GSM1689662, GSM1689668	BEDGRAPH		IDC-26 h		adjalley16	26947071
+16	CAGE at 34h (+)	5' end of CAGE reads	1	+	GSM1689663, GSM1689669	BEDGRAPH		IDC-34 h		adjalley16	26947071
+17	CAGE at 42h (+)	5' end of CAGE reads	1	+	GSM1689664, GSM1689670	BEDGRAPH		IDC-42 h		adjalley16	26947071
+18	CAGE at 2h (-)	5' end of CAGE reads	1	-	GSM1689659, GSM1689665	BEDGRAPH		IDC-2 h		adjalley16	26947071
+19	CAGE at 10h (-)	5' end of CAGE reads	1	-	GSM1689660, GSM1689666	BEDGRAPH		IDC-10 h		adjalley16	26947071
+20	CAGE at 18h (-)	5' end of CAGE reads	1	-	GSM1689661, GSM1689667	BEDGRAPH		IDC-18 h		adjalley16	26947071
+21	CAGE at 26h (-)	5' end of CAGE reads	1	-	GSM1689662, GSM1689668	BEDGRAPH		IDC-26 h		adjalley16	26947071
+22	CAGE at 34h (-)	5' end of CAGE reads	1	-	GSM1689663, GSM1689669	BEDGRAPH		IDC-34 h		adjalley16	26947071
+23	CAGE at 42h (-)	5' end of CAGE reads	1	-	GSM1689664, GSM1689670	BEDGRAPH		IDC-42 h		adjalley16	26947071
+24	EPDnew promoters	EPDnew promoters v. 001								epd	epd
+25	GC content (%)	GC content in a 20-bp window	5__b								
+26	RefSeq genes	RefSeq gene annotation	1		https://ftp.ncbi.nlm.nih.gov//genomes/all/GCF/000/002/765/GCF_000002765.4_ASM276v2/GCF_000002765.4_ASM276v2_genomic.gff.gz	GFF					22121212

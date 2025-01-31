@@ -1,0 +1,199 @@
+cff-version: 1.2.0
+abstract: The Eukaryotic Promoter Database EPD.
+authors:
+  - family-names: Junier
+    given-names: Thomas
+    orcid: 0000-0002-4015-5969
+  - family-names: Moretti
+    given-names: Sébastien
+    orcid: 0000-0003-3947-488X
+  - family-names: Bucher
+    given-names: Philipp
+    orcid: 0000-0003-4824-885X
+title: The Eukaryotic Promoter Database EPD
+version: Nov 2023
+identifiers:
+  - type: git
+    value: https://github.com/sib-swiss/EPD
+    description: The Eukaryotic Promoter Database EPD website
+  - type: Zenodo
+    value: https://zenodo.org/records/10149386
+    description: EPDnew: FTP directory, Nov 2023
+date-released: "2023-11-17"
+keywords:
+  - Eukaryotic Promoters
+  - POL II promoters
+  - experimentally validated promoters
+  - TSS-mapping
+  - CAGE
+  - Oligocapping
+  - eukaryotic transcription signals
+license: "GNU GPLv3"
+doi: 
+references:
+  - authors:
+      - family-names: Meylan
+        given-names: Patrick
+      - family-names: Dreos
+        given-names: René
+      - family-names: Ambrosini
+        given-names: Giovanna
+      - family-names: Groux
+        given-names: Romain
+      - family-names: Bucher
+        given-names: Philipp
+    doi: 10.1093/nar/gkz1014
+    journal: "Nucleic Acids Res"
+    start: D65
+    title: "EPD in 2020: enhanced data visualization and extension to ncRNA promoters"
+    type: article
+    volume: 48
+    year: 2020
+  - authors:
+      - family-names: Dreos
+        given-names: René
+      - family-names: Ambrosini
+        given-names: Giovanna
+      - family-names: Groux
+        given-names: Romain
+      - family-names: Périer
+        given-names: Rouaïda Cavin
+      - family-names: Bucher
+        given-names: Philipp
+    doi: 10.1093/nar/gkw1069
+    journal: "Nucleic Acids Res"
+    start: D51
+    title: "The eukaryotic promoter database in its 30th year: focus on non-vertebrate organisms"
+    type: article
+    volume: 45
+    year: 2017
+  - authors:
+      - family-names: Dreos
+        given-names: René
+      - family-names: Ambrosini
+        given-names: Giovanna
+      - family-names: Périer
+        given-names: Rouaïda Cavin
+      - family-names: Bucher
+        given-names: Philipp
+    doi: 10.1093/nar/gku1111
+    journal: "Nucleic Acids Res"
+    start: D92
+    title: "The Eukaryotic Promoter Database: expansion of EPDnew and new promoter analysis tools"
+    type: article
+    volume: 43
+    year: 2014
+  - authors:
+      - family-names: Dreos
+        given-names: René
+      - family-names: Ambrosini
+        given-names: Giovanna
+      - family-names: Périer
+        given-names: Rouaïda Cavin
+      - family-names: Bucher
+        given-names: Philipp
+    doi: 10.1093/nar/gks1233
+    journal: "Nucleic Acids Res"
+    start: D157
+    title: "EPD and EPDnew, high-quality promoter resources in the next-generation sequencing era"
+    type: article
+    volume: 41
+    year: 2013
+  - authors:
+      - family-names: Schmid
+        given-names: Christoph D.
+      - family-names: Périer
+        given-names: Rouaïda
+      - family-names: Praz
+        given-names: Viviane
+      - family-names: Bucher
+        given-names: Philipp
+    doi: 10.1093/nar/gkj146
+    journal: "Nucleic Acids Res"
+    start: D82
+    title: "EPD in its twentieth year: towards complete promoter coverage of selected model organisms"
+    type: article
+    volume: 34
+    year: 2006
+  - authors:
+      - family-names: Schmid
+        given-names: Christoph D.
+      - family-names: Praz
+        given-names: Viviane
+      - family-names: Delorenzi
+        given-names: Mauro
+      - family-names: Périer
+        given-names: Rouaïda
+      - family-names: Bucher
+        given-names: Philipp
+    doi: 10.1093/nar/gkh122
+    journal: "Nucleic Acids Res"
+    start: D82
+    title: "The Eukaryotic Promoter Database EPD: the impact of in silico primer extension"
+    type: article
+    volume: 32
+    year: 2004
+  - authors:
+      - family-names: Praz
+        given-names: Viviane
+      - family-names: Périer
+        given-names: Rouaïda
+      - family-names: Bonnard
+        given-names: Claude
+      - family-names: Bucher
+        given-names: Philipp
+    doi: 10.1093/nar/30.1.322
+    journal: "Nucleic Acids Res"
+    start: 322
+    title: "The Eukaryotic Promoter Database, EPD: new entry types and links to gene expression data"
+    type: article
+    volume: 30
+    year: 2002
+  - authors:
+      - family-names: Périer
+        given-names: Rouaïda Cavin
+      - family-names: Praz
+        given-names: Viviane
+      - family-names: Junier
+        given-names: Thomas
+      - family-names: Bonnard
+        given-names: Claude
+      - family-names: Bucher
+        given-names: Philipp
+    doi: 10.1093/nar/28.1.302
+    journal: "Nucleic Acids Res"
+    start: 302
+    title: "The Eukaryotic Promoter Database (EPD)"
+    type: article
+    volume: 28
+    year: 2000
+  - authors:
+      - family-names: Périer
+        given-names: Rouaïda Cavin
+      - family-names: Junier
+        given-names: Thomas
+      - family-names: Bonnard
+        given-names: Claude
+      - family-names: Bucher
+        given-names: Philipp
+    doi: 10.1093/nar/27.1.307
+    journal: "Nucleic Acids Res"
+    start: 307
+    title: "The Eukaryotic Promoter Database EPD: Recent Developments"
+    type: article
+    volume: 27
+    year: 1999
+  - authors:
+      - family-names: Périer
+        given-names: Rouaïda Cavin
+      - family-names: Junier
+        given-names: Thomas
+      - family-names: Bucher
+        given-names: Philipp
+    doi: 10.1093/nar/26.1.353
+    journal: "Nucleic Acids Res"
+    start: 353
+    title: "The Eukaryotic Promoter Database EPD"
+    type: article
+    volume: 26
+    year: 1998

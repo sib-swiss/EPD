@@ -1,0 +1,69 @@
+# Get the raw data:
+wget https://ftp-trace.ncbi.nlm.nih.gov/sra/sra-instant/reads/ByExp/sra/SRX/SRX156/SRX156356/SRR516560/SRR516560.sra -O SRR516560_prim20_embryo.sra
+wget https://ftp-trace.ncbi.nlm.nih.gov/sra/sra-instant/reads/ByExp/sra/SRX/SRX156/SRX156356/SRR516561/SRR516561.sra -O SRR516561_prim20_embryo.sra
+wget https://ftp-trace.ncbi.nlm.nih.gov/sra/sra-instant/reads/ByExp/sra/SRX/SRX156/SRX156355/SRR516559/SRR516559.sra -O SRR516559_prim6_embryo.sra
+wget https://ftp-trace.ncbi.nlm.nih.gov/sra/sra-instant/reads/ByExp/sra/SRX/SRX156/SRX156352/SRR516557/SRR516557.sra -O SRR516557_14somites_embryo.sra
+wget https://ftp-trace.ncbi.nlm.nih.gov/sra/sra-instant/reads/ByExp/sra/SRX/SRX156/SRX156352/SRR516558/SRR516558.sra -O SRR516558_14somites_embryo.sra
+wget https://ftp-trace.ncbi.nlm.nih.gov/sra/sra-instant/reads/ByExp/sra/SRX/SRX156/SRX156350/SRR516555/SRR516555.sra -O SRR516555_shield_embryo.sra
+wget https://ftp-trace.ncbi.nlm.nih.gov/sra/sra-instant/reads/ByExp/sra/SRX/SRX156/SRX156350/SRR516556/SRR516556.sra -O SRR516556_shield_embryo.sra
+wget https://ftp-trace.ncbi.nlm.nih.gov/sra/sra-instant/reads/ByExp/sra/SRX/SRX156/SRX156349/SRR516554/SRR516554.sra -O SRR516554_dome30_epiboly_embryo.sra
+wget https://ftp-trace.ncbi.nlm.nih.gov/sra/sra-instant/reads/ByExp/sra/SRX/SRX156/SRX156347/SRR516552/SRR516552.sra -O SRR516552_sphere-dome_embryo.sra
+wget https://ftp-trace.ncbi.nlm.nih.gov/sra/sra-instant/reads/ByExp/sra/SRX/SRX156/SRX156347/SRR516553/SRR516553.sra -O SRR516553_sphere-dome_embryo.sra
+wget https://ftp-trace.ncbi.nlm.nih.gov/sra/sra-instant/reads/ByExp/sra/SRX/SRX156/SRX156338/SRR516551/SRR516551.sra -O SRR516551_oblong_embryo.sra
+wget https://ftp-trace.ncbi.nlm.nih.gov/sra/sra-instant/reads/ByExp/sra/SRX/SRX156/SRX156337/SRR516550/SRR516550.sra -O SRR516550_high_embryo.sra
+wget https://ftp-trace.ncbi.nlm.nih.gov/sra/sra-instant/reads/ByExp/sra/SRX/SRX156/SRX156336/SRR516549/SRR516549.sra -O SRR516549_512_cells_embryo.sra
+wget https://ftp-trace.ncbi.nlm.nih.gov/sra/sra-instant/reads/ByExp/sra/SRX/SRX156/SRX156334/SRR516548/SRR516548.sra -O SRR516548_64_cells_embryo.sra
+wget https://ftp-trace.ncbi.nlm.nih.gov/sra/sra-instant/reads/ByExp/sra/SRX/SRX156/SRX156325/SRR516547/SRR516547.sra -O SRR516547_fertilized_egg.sra
+wget https://ftp-trace.ncbi.nlm.nih.gov/sra/sra-instant/reads/ByExp/sra/SRX/SRX156/SRX156307/SRR516545/SRR516545.sra -O SRR516545_unfertilized_egg.sra
+wget https://ftp-trace.ncbi.nlm.nih.gov/sra/sra-instant/reads/ByExp/sra/SRX/SRX156/SRX156307/SRR516546/SRR516546.sra -O SRR516546_unfertilized_egg.sra
+
+# Extract fastq:
+for FILE in *.sra;
+do
+  /Home/rdreos/lib/sratoolkit.2.3.3-2-centos_linux64/bin/fastq-dump $FILE;
+done
+
+# Map reads to genome:
+for FILE in $(ls *.fastq | sed 's/.fastq//g');
+do
+  LENGTH=$(head -1 $FILE.fastq | grep -o "length=[0-9]*" | sed 's/length=//')
+  bowtie --best --strata -m1 --sam -l $LENGTH -p 4 -n 3 /home/local/bowtie/data/genomes/d_rerio_ncbiZv9 -q $FILE.fastq > $FILE.sam
+done
+
+# Make bed files:
+for SAMPLE in $(ls *.sam | sed 's/.sam//g');
+  do
+  echo "Processing sample $SAMPLE";
+  echo "   Cleaning mapping file..."
+  awk 'BEGIN {FS="\t"} $3 != "\*" {print $0}' $SAMPLE.sam > $SAMPLE.clean.sam 2>/dev/null
+  echo "   Converting sam to bam..."
+  samtools view -bS -o $SAMPLE.bam $SAMPLE.clean.sam 2>/dev/null
+  echo "   Sorting bam file..."
+  samtools sort $SAMPLE.bam $SAMPLE.sorted 2>/dev/null
+  echo "   Converting bam to bed..."
+  bamToBed -i $SAMPLE.sorted.bam > $SAMPLE.bed 2>/dev/null
+  echo "   Deleting files..."
+  rm $SAMPLE.clean.sam $SAMPLE.bam $SAMPLE.sorted.bam
+done;
+
+# make sga file:
+for SAMPLE in $(ls *.bed | sed 's/.bed//g');
+  do
+  echo "Processing sample $SAMPLE";
+  awk 'BEGIN{FS=OFS="\t"} $6 == "+"{print $1,"CAGE",$2+1,$6,"1"} $6 == "-"{print $1,"CAGE",$3,$6,"1"}' $SAMPLE.bed | sort -s -k1,1 -k3,3n -k4,4 | compactsga > $SAMPLE.sga
+done
+
+# join sga file that belong to the same sample:
+sort -m -s -k1,1 -k3,3n -k4,4 SRR516545_unfertilized_egg.sga SRR516546_unfertilized_egg.sga | compactsga > ../unfertilized_egg.sga
+sort -m -s -k1,1 -k3,3n -k4,4 SRR516552_sphere-dome_embryo.sga SRR516553_sphere-dome_embryo.sga > ../sphere-dome_embryo.sga
+sort -m -s -k1,1 -k3,3n -k4,4 SRR516555_shield_embryo.sga SRR516556_shield_embryo.sga > ../shield_embryo.sga
+sort -m -s -k1,1 -k3,3n -k4,4 SRR516557_14somites_embryo.sga SRR516558_14somites_embryo.sga > ../14somites_embryo.sga
+sort -m -s -k1,1 -k3,3n -k4,4 SRR516560_prim20_embryo.sga SRR516561_prim20_embryo.sga > ../prim20_embryo.sga
+cp SRR516547_fertilized_egg.sga ../fertilized_egg.sga
+cp SRR516548_64_cells_embryo.sga ../64_cells_embryo.sga
+cp SRR516549_512_cells_embryo.sga ../512_cells_embryo.sga
+cp SRR516550_high_embryo.sga ../high_embryo.sga
+cp SRR516551_oblong_embryo.sga ../oblong_embryo.sga
+cp SRR516554_dome30_epiboly_embryo.sga ../dome30_epiboly_embryo.sga
+cp SRR516559_prim6_embryo.sga ../prim6_embryo.sga
+

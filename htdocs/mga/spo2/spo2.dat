@@ -1,0 +1,11 @@
+Name: S. pombe (Aug 2015 ASM294v2/spo2)
+Status: full
+NCBI Assembly: https://www.ncbi.nlm.nih.gov/assembly/GCF_000002945.1/
+Source: Assembled chromosomes from RefSeq (GCF_000002945.1): ftp://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/000/002/945/GCF_000002945.1_ASM294v2/
+NCBI Version: ASM294v2
+UCSC Assembly: none
+Local Assembly: spo2
+Liftover: none
+RepeatMasker: none
+MGA FTP: https://epd.expasy.org/ftp/mga/spo2/
+UCSC Genome Browser: https://genome-euro.ucsc.edu/cgi-bin/hgTracks?hubUrl=https://epd.expasy.org/epd/ucsc/epdHub/epdHub.txt&genome=spo2

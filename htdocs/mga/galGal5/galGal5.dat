@@ -1,0 +1,12 @@
+Name: G. gallus (Dec 2015 Gallus_gallus-5.0/galGal5)
+Status: full
+NCBI Assembly: https://www.ncbi.nlm.nih.gov/assembly/GCF_000002315.4/
+Source: Assembled chromosomes from RefSeq (GCF_000002315.4): ftp://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/000/002/315/GCF_000002315.4_Gallus_gallus-5.0/
+NCBI Version: Gallus_gallus-5.0
+UCSC Assembly: galGal5
+Local Assembly: galGal5
+Bowtie Idx: g_gallus_galGal5
+Liftover: galGal5ToDanRer10, galGal5ToHg38, galGal5ToMm10, galGal5ToRn6, galGal5ToXenTro9
+RepeatMasker: rmsk/rmsk_galGal5.SGA.gz
+MGA FTP: https://epd.expasy.org/ftp/mga/galGal5/
+UCSC Genome Browser: https://genome-euro.ucsc.edu/cgi-bin/hgTracks?hubUrl=https://epd.expasy.org/epd/ucsc/epdHub/epdHub.txt&genome=galGal5

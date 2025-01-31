@@ -1,0 +1,12 @@
+Name: C. elegans (May 2008 WS190/ce6)
+Staus: full
+NCBI Assembly: https://www.ncbi.nlm.nih.gov/assembly/GCF_000002985.1/
+Source: Assembled chromosomes from RefSeq (GCF_000002985.1_WS190): ftp://ftp.ncbi.nih.gov/genomes/refseq/invertebrate/Caenorhabditis_elegans/all_assembly_versions/GCF_000002985.1_WS190/
+NCBI Version: WS190
+UCSC Assembly: ce6
+Local Assembly: ce6
+Bowtie Idx: c_elegans_ce6
+Liftover: ce6ToCe4, ce6ToCe10
+RepeatMasker: rmsk/rmsk_ce6.SGA.gz
+MGA FTP: https://epd.expasy.org/ftp/mga/ce6/
+UCSC Genome Browser: https://genome-euro.ucsc.edu/cgi-bin/hgTracks?hubUrl=https://epd.expasy.org/epd/ucsc/epdHub/epdHub.txt&genome=ce6

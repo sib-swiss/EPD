@@ -1,0 +1,253 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<head>
+<title>TSS assembly pipeline for Dm_EPDnew_001
+</title>
+</head>
+<body style="font-size: 12px">
+<H2>TSS assembly pipeline for Dm_EPDnew_001</H2>
+<P>
+<h3>Introduction</h3> This document provides a technical description
+of the transcription start site assembly pipeline that was used to
+generate EPDnew version 001 for Drosophila melanogaster genome
+assembly dm3.
+<p>
+<h3>Source Data</h3>
+
+<table border=1 cellpadding=5>
+<tr>
+<td>Description</td>
+<td>URLs</td>
+</tr>
+
+<tr>
+<td>ENSEMBL64</td> <td>Source URL: <a
+href="http://sep2011.archive.ensembl.org">http://sep2011.archive.ensembl.org</a>
+<br>MGA doc: <a
+href="https://epd.expasy.org/mga/dm3/ensembl64/ensembl64.html">
+/mga/dm3/ensembl64/ensembl64.html</a> <br>MGA
+data: <a
+href="https://epd.expasy.org/ftp/mga/dm3/ensembl64/dm3_ENSEMBL64.sga.gz">
+/ftp/mga/dm3/ensembl64/dm3_ENSEMBL64.sga.gz</a></td>
+</td> </tr>
+
+<tr>
+<td>MachiBase</td> <td>Source URL<a
+href="http://machibase.gi.k.u-tokyo.ac.jp/">http://machibase.gi.k.u-tokyo.ac.jp/</a>
+<br>MGA doc: <a
+href="https://epd.expasy.org/mga/dm3/machibase/machibase.html">
+/mga/dm3/machibase/machibase.html</a> <br>MGA
+data: <a
+href="https://epd.expasy.org/ftp/mga/dm3/machibase/all_oligocap.sga.gz">
+/ftp/mga/dm3/machibase/all_oligocap.sga.gz</a></td>
+</td> </tr>
+
+<tr>
+<td>CAGE data from Hoskins et a. 2012.
+<a href="http://www.ncbi.nlm.nih.gov/pubmed/21177961">PMID: 21177961</a></td>
+<td><br>Source URL: <a href="http://genome.cshlp.org/content/21/2/182/suppl/DC1">
+http://genome.cshlp.org/content/21/2/182/suppl/DC1</a>
+<br>MGA doc: <a href="https://epd.expasy.org/mga/dm3/hoskins11/hoskins11.html">
+/mga/dm3/hoskins11/hoskins11.html</a>
+<br>MGA data: <a href="https://epd.expasy.org/ftp/mga/dm3/hoskins11/embryo_cage.sga.gz">
+/ftp/mga/dm3/hoskins11/embryo_cage.sga.gz</a></td>
+</td>
+</tr>
+
+<tr>
+<td>H3K4me3 in S2 cells from Gan et al. 2010.  <a
+href="http://www.ncbi.nlm.nih.gov/pubmed/20398323">PMID:
+20398323</a></td> <td>Source URL: <a
+href="http://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSM480156">
+http://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSM480156</a>
+<br>MGA doc: <a
+href="https://epd.expasy.org/mga/dm3/gan10/gan10.html">
+/mga/dm3/gan10/gan10.html</a> <br>MGA data: <a
+href="https://epd.expasy.org/ftp/mga/dm3/gan10/GSM480156_dm3-S2-H3K4me3.sga.gz">
+/ftp/mga/dm3/gan10/GSM480156_dm3-S2-H3K4me3.sga.gz</a></td>
+</td> </tr>
+
+</table>
+
+<h3>Assembly pipeline overview</h3>
+<p>
+<center>
+<table border=1 cellpadding=10><tr><td>
+<img src="./tss_assembly_pipeline_dm3_1.jpg">
+</td></tr></table></center>
+<p>
+<h3>Description of procedures and intermediate data files</h3>
+
+<h4>1. Biomart Download</h4>
+
+Data was downloaded from <a
+href="sep2011.archive.ensembl.org/biomart/martview/">
+sep2011.archive.ensembl.org/biomart/martview/</a> selecting the
+following attributes:<br><br>
+
+<ol>
+<li>Ensembl Gene ID</li>
+<li>Ensembl Transcript ID</li>
+<li>Chromosome Name</li>
+<li>Strand</li>
+<li>Transcript Start (bp)</li>
+<li>Transcript End (bp)</li>
+<li>Gene Start (bp)</li>
+<li>Gene End (bp)</li>
+<li>Status (transcript) </li>
+<li>Status (gene) </li>
+<li>Associated Gene Name</li>
+</ol>
+
+Then, transcrips have been filtered according to the following rules:
+
+<ol>
+<li>We selected transcripts of protein coding genes only</li>
+<li>Transcript length > 0 [Transcript Start different from Transcript
+    End]</li>
+<li>Transcript lies on full chromosomes</li>
+<li>Gene must have a 5' UTR [Transcript Start different from Gene
+    Start]</li>
+<li>Genes must be annotated [Associated Gene Name present]</li>
+<li>Gene and transcripts status known</li>
+</ol>
+
+Gene names were taken from the field "Associated Gene Name". Since the
+EPD format doesn't allow gene names longer than 18 characters,
+we whether the names repsected this limitation.<br>
+
+Transcripts were merged under a unique ID if they shared the same TSS
+position. As a conseguence of this, 17897 uniquely mapped promoters
+were present in this list from the original 23850 transcrips present
+in the ENSEMBL database.
+
+<h4>2. EMBL TSS collection</h4>
+
+The EMBL TSS collection is stored as a tab-deliminatec text file
+conforming to the SGA format under the name:
+
+<ul>
+<i>filename</i>.
+</ul>
+
+The six field contain the following kinds of information:
+
+<ul>
+<li>NCBI/RefSeq chromosome id</li>
+<li>"TSS"</li>
+<li>position</li>
+<li>strand ("+" or "-")</li>
+<li>"1"</li>
+<li>gene name.</li>
+</ul>
+Note that the second and forth fields are invariant.
+
+(To be clarified: This file is probably not identical to the
+corresponding file from the SGA archive.)
+
+<h4>3. Data import from MachiBase</h4>
+
+MachiBase data were generated with the oligo-capping technology. The
+source data were downloaded from:
+
+<ul>
+<a href="http://download.utgenome.org/pub/machibase/tssExp.tar.gz">
+http://download.utgenome.org/pub/machibase/tssExp.tar.gz</a>
+</ul>
+
+According to the readme file included in the tar archive, the 5'end
+tags were mapped to the Drosophila genome using BLAT as alignment tool
+allowing for up to three mismatches.
+
+<h4>4. oligocap tags</h4>
+
+The compressed version of this file is available from the MGA
+archive (see above) under the name:
+
+<ul>
+<i>all_oligocap.sga.gz</i>.
+</ul>
+
+
+<h4>5. Data import from Genome Research</h4>
+
+Mapped sequence tags were extracted from Supplementary Data File 1
+available from Genome Research at:
+</p><ul>
+<a href="http://genome.cshlp.org/content/21/2/182/suppl/DC1">
+http://genome.cshlp.org/content/21/2/182/suppl/DC1</a>
+</ul>
+<p>
+The downloaded source file is in SAM format and has been generated
+with the tag mapping program StatMap as described in the article cyted
+above. We extracted all tags with mapping quality scores greater or
+equal to 30.
+
+<H4>6. CAGE tags</h4>
+
+The compressed version of this file is available from our ftp site
+(see above link) with the name:
+
+<ul>
+<i>embryo_cage.sga.gz</i>
+</ul>
+
+<h4>7. Data import from GEO</h4>
+
+BED files for the GEO serie GSE19325 were downloaded from <a
+href="https://ftp.ncbi.nih.gov/pub/geo/DATA/supplementary/series/GSE19325/GSE19325_RAW.tar">
+GEO ftp site</a> and converted into SGA file using in house software.
+
+<h4>8. H3K4me3 tags</H4>
+
+The compressed version of this file is available from our ftp site
+(see above link) with the name:
+
+<ul>
+<i>GSM480156_dm3-S2-H3K4me3.sga.gz</i>
+</ul>
+
+<H4>9. mRNA 5' tags peak calling</H4>
+
+CAGE tags and oligocap tags have been merged into a unique file with
+the following command:
+
+<ul>
+sort -m -s -k1,1 -k3,3n -k4,4 embryo_cage.sga all_oligocap.sga &gt; all_data.sga
+</ul>
+
+Peak calling for the merged file has been carried out using <a
+href="https://epd.expasy.org/chipseq/chip_peak.php">ChIP-Peak</a>
+on-line tool with the following parameters:
+
+<ul>
+<li>Window width = 100</li>
+<li>Vicinity range = 200</li>
+<li>Peak refine = Y</li>
+<li>Count cutoff = 9999999</li>
+<li>Threshold = 8</li>
+</ul>
+
+<h4>11. TSS validation and shifting</h4>
+
+ENSEMBL annotated TSS were validated if an mRNA peak was located 50 bp
+upstream or downstream its position. Validated TSS have been shifted
+to the nearest base with the higher tag density. After this step, the
+total number of validated promoters was 10389.
+
+<h4>12. ENSEMBL not-validated TSS</h4>
+
+The total number of non mRNA validated TSS was 7508.
+
+<h4>13. H3K4me3 signature validation</h4>
+
+H3K4me3 histone mark was used as a marker for promoter validation. The
+7508 promoters that were not validated by mRNA signature were scored
+according to the presence of H3K4me3 histon mark near the TSS. This
+procedure recover more than 2000 promoters bringing the total number
+of validated promoters to 12435.
+
+<br><br>
+
+</body>

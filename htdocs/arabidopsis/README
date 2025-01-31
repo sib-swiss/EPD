@@ -1,0 +1,21 @@
+This file contains an action plan for A. thaliana EPDnew release with
+informations on variables that are usefull in this context:
+
+Assembly used: at10
+
+Reference Gene List: TAIR10 (protein coding genes annotated in gff
+                     format)
+
+Genome annotation files: EPDnew and TAIR10 promoters
+
+UCSC browser link: there is an hub in UCSC GB (Plants) that support
+                   at10 (araTha1). It has a RepeatMasker track.
+
+Other browsers: there is the TAIR GBrowser. Given the fact that in the
+                field anyone uses TAIR, this might be the browser of
+                choice. It is not UCSC-based but it accept all normal
+                formats for custom tracks (bed, bw, ...) but I am not
+                sure how it works for the upload (can I make it in the
+                link or do I have to go trough a submit button?). Need
+                to check!
+

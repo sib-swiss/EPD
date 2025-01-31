@@ -1,0 +1,6 @@
+#!	sequence	EPD	https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/000/002/195/GCF_000002195.4_Amel_4.5/								
+#	UCSC track name	Track description	Track resolution	Strand	Original dataset	Raw format	Tissue	Stage/Time point	Condition	MGA series name	PMID
+1	All CAGE (+)	5' end of CAGE reads	1	+	GSM1568470,GSM1568471	SRA				khamis15	26073445
+2	All CAGE (-)	5' end of CAGE reads	1	-	GSM1568470,GSM1568471	SRA				khamis15	26073445
+3	EPDnew promoters	EPDnew promoters v. 001	1__epd							epd	epd
+4	RefSeq genes	RefSeq gene annotation	1	n/a	https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/000/002/195/GCF_000002195.4_Amel_4.5/GCF_000002195.4_Amel_4.5_genomic.gff.gz	GFF					22121212

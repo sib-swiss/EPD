@@ -1,0 +1,362 @@
+
+<?php include("../header.php"); ?>
+
+
+
+<center>
+<h3>
+GC-box base frequency table and weigth matrix</h3></center>
+
+<center>(from Bucher 1990, J. Mol. Biol. 212, 563-578, Table 6)</center>
+
+<center><table BORDER CELLPADDING=5 BGCOLOR="#FFFFFF" NOSAVE >
+<tr>
+<td>Position</td>
+
+<td ALIGN=RIGHT>-6</td>
+
+<td ALIGN=RIGHT>-5</td>
+
+<td ALIGN=RIGHT>-4</td>
+
+<td ALIGN=RIGHT>-3</td>
+
+<td ALIGN=RIGHT>-2</td>
+
+<td ALIGN=RIGHT>-1</td>
+
+<td ALIGN=RIGHT>0</td>
+
+<td ALIGN=RIGHT>1</td>
+
+<td ALIGN=RIGHT>2</td>
+
+<td ALIGN=RIGHT>3</td>
+
+<td ALIGN=RIGHT>4</td>
+
+<td ALIGN=RIGHT>5</td>
+
+<td ALIGN=RIGHT>6</td>
+
+<td ALIGN=RIGHT>7</td>
+</tr>
+
+<tr>
+<td></td>
+</tr>
+
+<tr>
+<td ALIGN=CENTER># A</td>
+
+<td ALIGN=RIGHT>102</td>
+
+<td ALIGN=RIGHT>97</td>
+
+<td ALIGN=RIGHT>50</td>
+
+<td ALIGN=RIGHT>67</td>
+
+<td ALIGN=RIGHT>0</td>
+
+<td ALIGN=RIGHT>2</td>
+
+<td ALIGN=RIGHT>54</td>
+
+<td ALIGN=RIGHT>46</td>
+
+<td ALIGN=RIGHT>1</td>
+
+<td ALIGN=RIGHT>79</td>
+
+<td ALIGN=RIGHT>23</td>
+
+<td ALIGN=RIGHT>0</td>
+
+<td ALIGN=RIGHT>20</td>
+
+<td ALIGN=RIGHT>40</td>
+</tr>
+
+<tr>
+<td ALIGN=CENTER># C</td>
+
+<td ALIGN=RIGHT>40</td>
+
+<td ALIGN=RIGHT>31</td>
+
+<td ALIGN=RIGHT>6</td>
+
+<td ALIGN=RIGHT>1</td>
+
+<td ALIGN=RIGHT>0</td>
+
+<td ALIGN=RIGHT>0</td>
+
+<td ALIGN=RIGHT>170</td>
+
+<td ALIGN=RIGHT>1</td>
+
+<td ALIGN=RIGHT>3</td>
+
+<td ALIGN=RIGHT>0</td>
+
+<td ALIGN=RIGHT>17</td>
+
+<td ALIGN=RIGHT>166</td>
+
+<td ALIGN=RIGHT>86</td>
+
+<td ALIGN=RIGHT>24</td>
+</tr>
+
+<tr>
+<td ALIGN=CENTER># G</td>
+
+<td ALIGN=RIGHT>50</td>
+
+<td ALIGN=RIGHT>112</td>
+
+<td ALIGN=RIGHT>154</td>
+
+<td ALIGN=RIGHT>206</td>
+
+<td ALIGN=RIGHT>274</td>
+
+<td ALIGN=RIGHT>272</td>
+
+<td ALIGN=RIGHT>0</td>
+
+<td ALIGN=RIGHT>224</td>
+
+<td ALIGN=RIGHT>222</td>
+
+<td ALIGN=RIGHT>171</td>
+
+<td ALIGN=RIGHT>192</td>
+
+<td ALIGN=RIGHT>35</td>
+
+<td ALIGN=RIGHT>52</td>
+
+<td ALIGN=RIGHT>109</td>
+</tr>
+
+<tr>
+<td ALIGN=CENTER># T</td>
+
+<td ALIGN=RIGHT>82</td>
+
+<td ALIGN=RIGHT>34</td>
+
+<td ALIGN=RIGHT>64</td>
+
+<td ALIGN=RIGHT>0</td>
+
+<td ALIGN=RIGHT>0</td>
+
+<td ALIGN=RIGHT>0</td>
+
+<td ALIGN=RIGHT>50</td>
+
+<td ALIGN=RIGHT>3</td>
+
+<td ALIGN=RIGHT>48</td>
+
+<td ALIGN=RIGHT>24</td>
+
+<td ALIGN=RIGHT>42</td>
+
+<td ALIGN=RIGHT>73</td>
+
+<td ALIGN=RIGHT>116</td>
+
+<td ALIGN=RIGHT>101</td>
+</tr>
+
+<tr>
+<td></td>
+</tr>
+
+<tr>
+<td ALIGN=CENTER>W(A)</td>
+
+<td ALIGN=RIGHT>0.00</td>
+
+<td ALIGN=RIGHT>0.00</td>
+
+<td ALIGN=RIGHT>-0.52</td>
+
+<td ALIGN=RIGHT>-0.39</td>
+
+<td ALIGN=RIGHT>-4.07</td>
+
+<td ALIGN=RIGHT>-3.42</td>
+
+<td ALIGN=RIGHT>-1.05</td>
+
+<td ALIGN=RIGHT>-1.09</td>
+
+<td ALIGN=RIGHT>-3.57</td>
+
+<td ALIGN=RIGHT>-0.03</td>
+
+<td ALIGN=RIGHT>-1.35</td>
+
+<td ALIGN=RIGHT>-3.98</td>
+
+<td ALIGN=RIGHT>-1.56</td>
+
+<td ALIGN=RIGHT>-0.72</td>
+</tr>
+
+<tr>
+<td ALIGN=CENTER>W(C)</td>
+
+<td ALIGN=RIGHT>-0.95</td>
+
+<td ALIGN=RIGHT>-1.12</td>
+
+<td ALIGN=RIGHT>-2.26</td>
+
+<td ALIGN=RIGHT>-3.25</td>
+
+<td ALIGN=RIGHT>-3.80</td>
+
+<td ALIGN=RIGHT>-4.23</td>
+
+<td ALIGN=RIGHT>0.00</td>
+
+<td ALIGN=RIGHT>-3.67</td>
+
+<td ALIGN=RIGHT>-3.05</td>
+
+<td ALIGN=RIGHT>-3.52</td>
+
+<td ALIGN=RIGHT>-1.90</td>
+
+<td ALIGN=RIGHT>0.00</td>
+
+<td ALIGN=RIGHT>-0.42</td>
+
+<td ALIGN=RIGHT>-1.45</td>
+</tr>
+
+<tr>
+<td ALIGN=CENTER>W(G)</td>
+
+<td ALIGN=RIGHT>-1.16</td>
+
+<td ALIGN=RIGHT>-0.38</td>
+
+<td ALIGN=RIGHT>0.00</td>
+
+<td ALIGN=RIGHT>0.00</td>
+
+<td ALIGN=RIGHT>0.00</td>
+
+<td ALIGN=RIGHT>0.00</td>
+
+<td ALIGN=RIGHT>-4.58</td>
+
+<td ALIGN=RIGHT>0.00</td>
+
+<td ALIGN=RIGHT>0.00</td>
+
+<td ALIGN=RIGHT>0.00</td>
+
+<td ALIGN=RIGHT>0.00</td>
+
+<td ALIGN=RIGHT>-1.83</td>
+
+<td ALIGN=RIGHT>-1.09</td>
+
+<td ALIGN=RIGHT>-0.27</td>
+</tr>
+
+<tr>
+<td ALIGN=CENTER>W(T)</td>
+
+<td ALIGN=RIGHT>-0.10</td>
+
+<td ALIGN=RIGHT>-1.00</td>
+
+<td ALIGN=RIGHT>-0.15</td>
+
+<td ALIGN=RIGHT>-3.75</td>
+
+<td ALIGN=RIGHT>-3.93</td>
+
+<td ALIGN=RIGHT>-4.02</td>
+
+<td ALIGN=RIGHT>-0.98</td>
+
+<td ALIGN=RIGHT>-3.34</td>
+
+<td ALIGN=RIGHT>-0.69</td>
+
+<td ALIGN=RIGHT>-1.14</td>
+
+<td ALIGN=RIGHT>-0.83</td>
+
+<td ALIGN=RIGHT>-0.56</td>
+
+<td ALIGN=RIGHT>0.00</td>
+
+<td ALIGN=RIGHT>0.00</td>
+</tr>
+
+<tr>
+<td>Consensus</td>
+
+<td ALIGN=CENTER>a/t</td>
+
+<td ALIGN=CENTER>a/g</td>
+
+<td ALIGN=CENTER>g/t/a</td>
+
+<td ALIGN=CENTER>G/a</td>
+
+<td ALIGN=CENTER>G</td>
+
+<td ALIGN=CENTER>G</td>
+
+<td ALIGN=CENTER>C/t/a</td>
+
+<td ALIGN=CENTER>G/a</td>
+
+<td ALIGN=CENTER>G/t</td>
+
+<td ALIGN=CENTER>g/a/t</td>
+
+<td ALIGN=CENTER>g/t</td>
+
+<td ALIGN=CENTER>c/t</td>
+
+<td ALIGN=CENTER>t/c</td>
+
+<td ALIGN=CENTER>t/g</td>
+</tr>
+
+<tr>
+<td></td>
+</tr>
+
+<tr>
+<td ALIGN=CENTER COLSPAN="10">Preferred region: Position 0 between -164
+and +1 relative to transcription start site.</td>
+
+<td ALIGN=CENTER COLSPAN="6">Optimizid cut-off value: -4.90 (88.0%)</td>
+</tr>
+</table></center>
+
+<!-- ######### Insert the footer #########-->
+<?php readfile("../footer.html"); ?>
+
+
+
+
+
+</body>
+</html>
+

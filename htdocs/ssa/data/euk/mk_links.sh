@@ -1,0 +1,24 @@
+cd AMe/am5;  ls -l /local/ssa/data/euk/AMe/am5  | sed 's=^.*genome=ln -s ../../genome=' | sh; cd /var/vhosts/sib.swiss/MINIEPD/htdocs/ssa/data/euk
+cd At;       ls -l /local/ssa/data/euk/At       | sed 's=^.*genome=ln -s    ../genome=' | sh; cd /var/vhosts/sib.swiss/MINIEPD/htdocs/ssa/data/euk
+cd CFa/cfa3; ls -l /local/ssa/data/euk/CFa/cfa3 | sed 's=^.*genome=ln -s ../../genome=' | sh; cd /var/vhosts/sib.swiss/MINIEPD/htdocs/ssa/data/euk
+cd Ce/ce6;   ls -l /local/ssa/data/euk/Ce/ce6   | sed 's=^.*genome=ln -s ../../genome=' | sh; cd /var/vhosts/sib.swiss/MINIEPD/htdocs/ssa/data/euk
+cd Ce/ce10;  ls -l /local/ssa/data/euk/Ce/ce10  | sed 's=^.*genome=ln -s ../../genome=' | sh; cd /var/vhosts/sib.swiss/MINIEPD/htdocs/ssa/data/euk
+cd Ce/ce11;  ls -l /local/ssa/data/euk/Ce/ce11  | sed 's=^.*genome=ln -s ../../genome=' | sh; cd /var/vhosts/sib.swiss/MINIEPD/htdocs/ssa/data/euk
+cd Dm/dm6;   ls -l /local/ssa/data/euk/Dm/dm6   | sed 's=^.*genome=ln -s ../../genome=' | sh; cd /var/vhosts/sib.swiss/MINIEPD/htdocs/ssa/data/euk
+cd Dm/dm3;   ls -l /local/ssa/data/euk/Dm/dm3   | sed 's=^.*genome=ln -s ../../genome=' | sh; cd /var/vhosts/sib.swiss/MINIEPD/htdocs/ssa/data/euk
+cd Dr/zv7;   ls -l /local/ssa/data/euk/Dr/zv7   | sed 's=^.*genome=ln -s ../../genome=' | sh; cd /var/vhosts/sib.swiss/MINIEPD/htdocs/ssa/data/euk
+cd Dr/zv6;   ls -l /local/ssa/data/euk/Dr/zv6   | sed 's=^.*genome=ln -s ../../genome=' | sh; cd /var/vhosts/sib.swiss/MINIEPD/htdocs/ssa/data/euk
+cd Dr/z10;   ls -l /local/ssa/data/euk/Dr/z10   | sed 's=^.*genome=ln -s ../../genome=' | sh; cd /var/vhosts/sib.swiss/MINIEPD/htdocs/ssa/data/euk
+cd GGa/gg5;  ls -l /local/ssa/data/euk/GGa/gg5  | sed 's=^.*genome=ln -s ../../genome=' | sh; cd /var/vhosts/sib.swiss/MINIEPD/htdocs/ssa/data/euk
+cd Hs/hg38;  ls -l /local/ssa/data/euk/Hs/hg38  | sed 's=^.*genome=ln -s ../../genome=' | sh; cd /var/vhosts/sib.swiss/MINIEPD/htdocs/ssa/data/euk
+cd Hs/hg19;  ls -l /local/ssa/data/euk/Hs/hg19  | sed 's=^.*genome=ln -s ../../genome=' | sh; cd /var/vhosts/sib.swiss/MINIEPD/htdocs/ssa/data/euk
+cd Hs/hg18 ; ls -l /local/ssa/data/euk/Hs/hg18  | sed 's=^.*genome=ln -s ../../genome=' | sh; cd /var/vhosts/sib.swiss/MINIEPD/htdocs/ssa/data/euk
+cd Mm/mm10;  ls -l /local/ssa/data/euk/Mm/mm10  | sed 's=^.*genome=ln -s ../../genome=' | sh; cd /var/vhosts/sib.swiss/MINIEPD/htdocs/ssa/data/euk
+cd Mm/mm9;   ls -l /local/ssa/data/euk/Mm/mm9   | sed 's=^.*genome=ln -s ../../genome=' | sh; cd /var/vhosts/sib.swiss/MINIEPD/htdocs/ssa/data/euk
+cd Mm/mm8;   ls -l /local/ssa/data/euk/Mm/mm8   | sed 's=^.*genome=ln -s ../../genome=' | sh; cd /var/vhosts/sib.swiss/MINIEPD/htdocs/ssa/data/euk
+cd PFa/pfa2; ls -l /local/ssa/data/euk/PFa/pfa2 | sed 's=^.*genome=ln -s ../../genome=' | sh; cd /var/vhosts/sib.swiss/MINIEPD/htdocs/ssa/data/euk
+cd RMa/rm8;  ls -l /local/ssa/data/euk/RMa/rm8  | sed 's=^.*genome=ln -s ../../genome=' | sh; cd /var/vhosts/sib.swiss/MINIEPD/htdocs/ssa/data/euk
+cd Rn/rn6;   ls -l /local/ssa/data/euk/Rn/rn6   | sed 's=^.*genome=ln -s ../../genome=' | sh; cd /var/vhosts/sib.swiss/MINIEPD/htdocs/ssa/data/euk
+cd SCe/sce3; ls -l /local/ssa/data/euk/SCe/sce3 | sed 's=^.*genome=ln -s ../../genome=' | sh; cd /var/vhosts/sib.swiss/MINIEPD/htdocs/ssa/data/euk
+cd SPo/spo2; ls -l /local/ssa/data/euk/SPo/spo2 | sed 's=^.*genome=ln -s ../../genome=' | sh; cd /var/vhosts/sib.swiss/MINIEPD/htdocs/ssa/data/euk
+cd Zma;      ls -l /local/ssa/data/euk/Zma      | sed 's=^.*genome=ln -s    ../genome=' | sh; cd /var/vhosts/sib.swiss/MINIEPD/htdocs/ssa/data/euk    

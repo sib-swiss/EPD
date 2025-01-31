@@ -1,0 +1,135 @@
+######################################################################
+# Get the GEO html file, parse the SRP ID (SRA serie ID), parse the
+# SRX ID (SRA sample ID), then the SRR ID (SRA run ID) and download
+# them. Samples and runs IDs are stored in the two files 'samples' and
+# 'samples2'
+######################################################################
+GSE=GSE39128
+wget -q http://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=$GSE -O $GSE.html
+SRP=$(grep -o 'SRP[0-9]*<' $GSE.html | sort -u | sed 's/<//')
+wget -q http://www.ncbi.nlm.nih.gov/sra?term=$SRP -O $SRP.html
+perl get_srx.pl < $SRP.html > samples
+
+# delete from this list the control samples nypgal and nypd
+sed -i '/nyp/d' samples
+
+for SRX in $(awk '{print $1}' samples)
+do
+    wget -q http://www.ncbi.nlm.nih.gov/sra/$SRX -O $SRX.html
+    for SRR in $(grep -o 'SRR[0-9]*' $SRX.html | sort -u);
+    do
+	SRRDIR=$(echo $SRR | awk 'BEGIN{FS=""}{print $1 $2 $3 $4 $5 $6}')
+	wget https://ftp-trace.ncbi.nlm.nih.gov/sra/sra-instant/reads/ByRun/sra/SRR/$SRRDIR/$SRR/$SRR.sra
+	echo "$SRX $SRR" >> samples2
+    done
+done
+
+######################################################################
+# Extract fastq files of each run using fastq-dump (v. 2.3.5 download
+# from
+# http://www.ncbi.nlm.nih.gov/Traces/sra/sra.cgi?cmd=show&f=software&\
+# m=software&s=software ).
+######################################################################
+for FILE in $(ls *.sra)
+do
+    fastq-dump --split-3 $FILE
+done
+
+######################################################################
+# The protocol to construct the sequencing library is quite different
+# from the normal TSS mapping promotocol. In this case, it in designed
+# to map both ends of a transcript. To do so, it links them using an
+# adapter. Sequencing adapters (with barcodes) are then added within
+# the transcript resulting in reads that start on the transcript, goes
+# towards the ends and cover the adapter. This results in the 5' end
+# being sequence on the reverse, with the TSS located in the middle of
+# the reads. Since I am only interested in the 5' ends, I have to map
+# the adapter to the reads (the reverse-complement of it), extract the
+# sequence before its starting point (this is the TSS) and get the
+# reverse complement of it. I have to check if I have to trim the
+# sequencing barcodes that, in this scenario, will be at the end of
+# the resulting reads. This seems to be the case. Looking at the reads
+# there is a barcode of 7 nucleotides at the beginning of each read.
+
+# These are 4 adapters that has been used:
+# Intromolecular (A-B format) AAAAAACTCCAGGCGGCCGCTATCACTCTGAGCAATACC
+# Intromolecular (B-A form) AAAAAAGTGGAGGCGGCCGCTATATCACTCTGAGCAATACC
+# Intermolecular (A-A form) AAAAAACTCCAGGCGGCCGCTATATCACTCTGAGCAATACC
+# Intermolecular (B-B format) AAAAAAGTGGAGGCGGCCGCTATCACTCTGAGCAATACC
+
+# I am only interested in the last bases of the adapters since they
+# define the boundaries with the TSS. I have to map the reverse
+# complement of the last part of the adapter to the reads (perfect
+# match only). It is good to notice that all of them have the same
+# sequence in that part. Looking in PWMScan, a sequence of 12 bp long
+# (GGTATTGCTCAG, the reverse-complement of adapters' last 12 bases)
+# has only one hit in the S. cerevisie genome. Reducing it to 11 bases
+# bring the hits to 7 and is present in almost all reads of a
+# sample. I will use this [GGTATTGCTCA] to scan the reads, trim them
+# of the adapter, reverse complement the resulting reads, trim the
+# barcode and map them to the genome.
+
+# P.S.: The sequencing is paired-end (fwd-rev). I have to do the same
+# procedure for both files and then merge them into one since I am
+# interest only in one end. I will then map it as if it was single-end
+
+for I in $(awk '{print $2}' samples2);
+do
+    # get rid of the adapter and barcode:
+    echo $I
+    cat $I\_[12].fastq | ./mapAdapter.pl > $I\_trimmed.fastq 2> /dev/null
+    # map to the genome (bowtie and bowtie2):
+    echo $I >> bowtie.output
+    bowtie -p 30 /home/local/db/bowtie/s_cerevisiae_sacCer3 -q $I\_trimmed.fastq -S $I.bowtie.sam 2>> bowtie.output
+    echo $I >> bowtie2.output
+    bowtie2 -p 30 -x /home/local/db/bowtie2/s_cerevisiae_sacCer3 -q $I\_trimmed.fastq -S $I.bowtie2.sam 2>> bowtie2.output
+done
+
+# bowtie2 deliver better alignemt rate on all samples. I will use its
+# results.
+
+######################################################################
+# Generate SGA files for each samples using samtools (v. , download
+# from http://samtools.sourceforge.net/ ) and ChIP-Seq tools (download
+# from http://sourceforge.net/projects/chip-seq/ )
+######################################################################
+for SRR in $(awk '{print $2}' samples2);
+do
+    SRX=$(awk -v "var=$SRR" '$2==var {print $1}' samples2)
+    NAME=$(awk -v "var=$SRX" '$1==var {print $2}' samples | sed 's/://')
+    FEATURE=TSSseq
+    echo "Processing $NAME -> $FEATURE"
+    if [ -f $SRR.bed ]; then
+	echo "   bed file already done"
+    else
+	samtools view -bS -o $SRR.bam $SRR.bowtie2.sam 2> /dev/null
+	bamToBed -i $SRR.bam > $SRR.bed
+    fi
+    # get rid of the strange chromosome names
+    sed -i 's/^[^ ]*|//g' $SRR.bed
+    bed2sga.pl -a sacCer3 -f $FEATURE < $SRR.bed | sort -s -k1,1 -k3,3n -k4,4 | compactsga > $SRR.sga
+    if [ -f $NAME.sga ]; then
+	mv $NAME.sga temp.sga
+	sort -k1,1 -k3,3n -k4,4 $SRR.sga temp.sga | compactsga > $NAME.sga
+    else
+	mv $SRR.sga $NAME.sga
+    fi
+done
+
+# Make the txt file:
+echo -e "Filename\tDescription\tFeature\tData-type\tOriented\tField-6\tGEO-ref\tTrack-URL\tFPS" > pelechano13.txt
+for SRX in $(awk '{print $1}' samples | sort -u);
+do
+#    SRX=$(awk -v "var=$SRR" '$2==var {print $1}' samples2)
+    NAME=$(awk -v "var=$SRX" '$1==var {print $2}' samples | sed 's/://')
+    MEDIA=$(awk -v "var=$SRX" '$1==var {split($3,name,"_"); print name[1]}' samples | sed 's/://')
+    REP=$(awk -v "var=$SRX" '$1==var {split($3,name,"_"); print name[2]}' samples | sed 's/://')
+    LIB=$(awk -v "var=$SRX" '$1==var {split($3,name,"_"); print name[3]}' samples | sed 's/://')
+    FEATURE=TSSseq
+    if [ "$MEDIA" == "ypgal" ]; then
+	GM=Galactose
+    else
+	GM=Glucose
+    fi
+    echo -e "$NAME.sga\tWT|$FEATURE|$GM|$LIB$REP\t$FEATURE\tRNA-seq\tT\t-\t$NAME\t-\t-"
+done | sort -k2,2 | sed 's/;/-/' >> pelechano13.txt

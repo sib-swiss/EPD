@@ -1,0 +1,10 @@
+#!	sequence	UCSC									
+#!	note	a	tags were centered by 75 bp								
+#!	note	b	tags were centered by 70 bp								
+#	UCSC track name	Track description	Track resolution	Strand	Original dataset	Raw format	Tissue	Stage/Time point	Condition	MGA series name	PMID
+1	Nucleosomes	centered MNase-seq tags__b	10		GSM1263832	SRA				park14	24413663
+2	H3K4me3	centered H3K4me3 ChIP-seq tags__a	10		GSE52339	SRA		all time points merged		kuang14	25173176
+3	H3K14ac	centered H3K14ac ChIP-seq tags__a	10		GSE52339	SRA		all time points merged		kuang14	25173176
+4	CAGE (+)	5' end of CAGE reads	1	+	GSM1192567,GSM1192569,GSM1192571	SRA				park14	24413663
+5	CAGE (-)	5' end of CAGE reads	1	-	GSM1192567,GSM1192569,GSM1192571	SRA				park14	24413663
+6	EPDnew promoters	EPDnew promoters v. 002	1__epd							epd	epd

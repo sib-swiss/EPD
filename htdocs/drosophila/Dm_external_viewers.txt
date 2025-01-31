@@ -1,0 +1,1 @@
+FlyBase	dm6	http://flybase.org/jbrowse/?data=data%2Fjson%2Fdmel&loc=3R%3A18402685..18405065&tracks=Gene%2Cprotein_domains%2CcDNA%2Ctopoview_modencode_30devstages&highlight=

@@ -1,0 +1,12 @@
+Name: H. sapiens (Dec 2013 GRCh38/hg38)
+Status: full
+NCBI Assembly: https://www.ncbi.nlm.nih.gov/assembly/GCF_000001405.26/
+Source: Assembled chromosomes from RefSeq (GCF_000001405.26): ftp://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/000/001/405/GCF_000001405.26_GRCh38/
+NCBI Version: GRCh38
+UCSC Assembly: hg38
+Local Assembly: hg38
+Bowtie Idx: h_sapiens_hg38
+Liftover: hg38ToHg19, hg38ToMm10, hg38ToBosTau8, hg38ToCanFam3, hg38ToDanRer10, hg38ToGalGal5, hg38ToOviAri3, hg38ToPanTro5, hg38ToRn5, hg38ToRn6, hg38ToSusScr3, hg38ToRheMac8, hg38ToMm39
+RepeatMasker: rmsk/rmsk_hg38.SGA.gz
+MGA FTP: none
+UCSC Genome Browser: https://genome-euro.ucsc.edu/cgi-bin/hgTracks?hubUrl=https://epd.expasy.org/epd/ucsc/epdHub/epdHub.txt&genome=hg38

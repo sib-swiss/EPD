@@ -1,0 +1,20 @@
+#!	sequence	UCSC									
+#!	note	a	tags were centered by 75 bp								
+#!	note	b	tags were centered by 50 bp								
+#!	note	c	biological and technical replicates were merged								
+#!	note	d	the midpoint between paired-end fragments was used 								
+#	UCSC track name	Track description	Track resolution	Strand	Original dataset	Raw format	Tissue	Stage/Time point	Condition	MGA series name	PMID
+#!	1,4	Nucleosomes									
+1	Liver nucleosomes	centered MNase tags__d	20		GSM1425447,GSM1425448	SRA	liver			west14	 25158628
+2	ESC nucleosomes	centered MNase tags__d	20		GSM1425441,GSM1425442	SRA	embryonic stem cells			west14	 25158628
+3	iPSC nucleosomes	centered MNase tags__d	20		GSM1425443,GSM1425444	SRA	induced pluripotent stem cells			west14	 25158628
+4	TTF nucleosomes	centered MNase tags__d	20		GSM1425445,GSM1425446	SRA	tail-tip fibroblasts			west14	 25158628
+#!	5,6	Selected Histone Marks									
+5	Myoblasts H3K4me1	centered H3K4me1 ChIP-seq tags__a	10		GSM721288	TXT	myoblasts			asp11	21551099
+6	Myoblasts H3K4me3	centered H3K4me3 ChIP-seq tags__a	10		GSM721292	TXT	myoblasts			asp11	21551099
+7	Myoblasts Pol2	centered RNA Pol II ChIP-seq tags__b	10		GSM721286	TXT	myoblasts			asp11	21551099
+8	All CAGE (+)	5' end of CAGE reads	1	+	FANTOM5	BAM	all adult tissues merged			fantom5	24670764
+#!	large_composite	9	Fantom5 CAGE	5' end of CAGE reads	1	+/-	FANTOM5	BAM	 508 tissues__c			fantom5	24670764
+10	All CAGE (-)	5' end of CAGE reads	1	-	FANTOM5	BAM	all adult tissues merged			fantom5	24670764
+11	EPDnew promoters	EPDnew promoters v. 003	1__epd							epd	epd
+12	EPDnewNC promoters	EPDnewNC promoters v. 001	1__epd							epd-nc	epd

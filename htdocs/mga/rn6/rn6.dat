@@ -1,0 +1,12 @@
+Name: R. norvegicus (Jul 2014 Rnor_6.0/rn6)
+Status: full
+NCBI Assembly: https://www.ncbi.nlm.nih.gov/assembly/GCA_000001895.4/
+Source: Assembled chromosomes from RefSeq (GCF_000001895.4): ftp://ftp.ncbi.nlm.nih.gov/genomes/R_norvegicus/ARCHIVE/BUILD.5.1
+NCBI Version: Rnor_6.0
+UCSC Assembly: rn6
+Local Assembly: rn6
+Bowtie Idx: r_norvegicus_rn6
+Liftover:  rn6ToRn5, rn6ToHg19, rn6ToHg38, rn6ToMm10, rn6ToBosTau8, rn6ToCanFam3, rn6ToPanTro5, rn6ToDanRer10, rn6ToGalGal5, rn6ToRheMac8, rn6ToMm39
+RepeatMasker: rmsk/rmsk_rn6.SGA.gz
+MGA FTP: https://epd.expasy.org/ftp/mga/rn6/
+UCSC Genome Browser: https://genome-euro.ucsc.edu/cgi-bin/hgTracks?hubUrl=https://epd.expasy.org/epd/ucsc/epdHub/epdHub.txt&genome=rn6

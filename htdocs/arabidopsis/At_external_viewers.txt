@@ -1,0 +1,1 @@
+Araport	araTha1	https://apps.araport.org/jbrowse/?data=arabidopsis&loc=Chr1%3A20762776..20766776&tracks=TAIR10_genome%2CTAIR10_loci%2CTAIR10_genes%2CTAIR9_tDNAs%2CSALK_tDNAs%2CTAIR_SSRs&highlight=

@@ -1,0 +1,16 @@
+#!	sequence	UCSC									
+#	UCSC track name	Track description	Track resolution	Strand	Original dataset	Raw format	Tissue	Stage/Time point	Condition	MGA series name	PMID
+1	All CAGE (+)	5' end of CAGE reads	1	+	FANTOM5	BAM	all tissues merged			lizio17	29182598
+#!	2,11	Selected FANTOM CAGE samples									
+2	(+) AortSmMuscDiff	5' end of CAGE reads	1	+	FANTOM5	BAM	aortic smooth muscle cells		differentiated	lizio17	29182598
+3	(+) AortSmoothMusc	5' end of CAGE reads	1	+	FANTOM5	BAM	aortic smooth muscle cells		undifferentiated	lizio17	29182598
+4	(+) Hepatocytes	5' end of CAGE reads	1	+	FANTOM5	BAM	hepatocytes			lizio17	29182598
+5	(+) MesencStmCells	5' end of CAGE reads	1	+	FANTOM5	BAM	mesenchymal stem cells			lizio17	29182598
+6	(+) Universal RNA	5' end of CAGE reads	1	+	FANTOM5	BAM	universal RNA			lizio17	29182598
+7	(-) AorticSmMuscDiff	5' end of CAGE reads	1	-	FANTOM5	BAM	aortic smooth muscle cells		differentiated	lizio17	29182598
+8	(-) AortSmMuscle	5' end of CAGE reads	1	-	FANTOM5	BAM	aortic smooth muscle cells		undifferentiated	lizio17	29182598
+9	(-) Hepatocytes	5' end of CAGE reads	1	-	FANTOM5	BAM	hepatocytes			lizio17	29182598
+10	(-) MesencStmCells	5' end of CAGE reads	1	-	FANTOM5	BAM	mesenchymal stem cells			lizio17	29182598
+11	(-) Universal RNA	5' end of CAGE reads	1	-	FANTOM5	BAM	universal RNA			lizio17	29182598
+12	All CAGE (-)	5' end of CAGE reads	1	-	FANTOM5	BAM	all tissues merged			lizio17	29182598
+13	EPDnew promoters	EPDnew promoters v. 001	1__epd							epd	epd

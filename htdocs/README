@@ -1,0 +1,3 @@
+Notes:
+- session files for the selective (promoter-specific) viewers are in htdocs/epdnew/sessions/
+- session files for the generic and specialized (breast ca, etc.) viewers are in htdocs/ucsc/epdHub/viewers

@@ -1,0 +1,37 @@
+#!	sequence	UCSC									
+#!	note	a	tags were centered by 80 bp								
+#!	note	b	tags were centered by 35 bp								
+#!	note	c	tags were centered by 75 bp								
+#	UCSC track name	Track description	Track resolution	Strand	Original dataset	Raw format	Tissue	Stage/Time point	Condition	MGA series name	PMID
+1	MNase (256-cell)	centered MNase-seq tags__c	25		GSE44269	SRA		256-cell embryo		zhang14	24285721
+2	MNase (dome)	centered MNase-seq tags__c	25		GSE44269	SRA		dome		zhang14	24285721
+3	Dome H3K4me3	centered H3K4me3 ChIP-seq tags__a	10		GSM1081556	SRA		dome		zhang14	24285721
+4	Dome Pol2	centered RNA Pol II ChIP-seq tags__b	10		GSM1081560,GSM1081559	SRA		dome		zhang14	24285721
+5	All CAGE (+)	5' end of CAGE reads	1	+	SRP013950	SRA		all stages merged		nepal13	24002785
+#!	6,29	CAGE reads at various stages									
+6	(+) Unfert. Egg	5' end of CAGE reads	1	+	SRX156307	SRA		unfertilized egg		nepal13	24002785
+7	(+) Fert. Egg	5' end of CAGE reads	1	+	SRX156325	SRA		fertilized egg		nepal13	24002785
+8	(+) 64 Cell Em.	5' end of CAGE reads	1	+	SRX156334	SRA		64-cell embryo		nepal13	24002785
+9	(+) 512 Cell Em.	5' end of CAGE reads	1	+	SRX156336	SRA		512-cell embryo		nepal13	24002785
+10	(+) High Em.	5' end of CAGE reads	1	+	SRX156337	SRA		high embryo		nepal13	24002785
+11	(+) Oblong Em.	5' end of CAGE reads	1	+	SRX156338	SRA		oblong embryo		nepal13	24002785
+12	(+) Sphere Em.	5' end of CAGE reads	1	+	SRX156347	SRA		sphere/dome embryo		nepal13	24002785
+13	(+) Dome 30 Em.	5' end of CAGE reads	1	+	SRX156349	SRA		dome/30% epiboly		nepal13	24002785
+14	(+) Shield Em.	5' end of CAGE reads	1	+	SRX156350	SRA		shield embryo		nepal13	24002785
+15	(+) 14 Somites Em.	5' end of CAGE reads	1	+	SRX156352	SRA		14-somite embryo		nepal13	24002785
+16	(+) Prim-6 Em.	5' end of CAGE reads	1	+	SRX156355	SRA		prim-6 embryo		nepal13	24002785
+17	(+) Prim-20 Em.	5' end of CAGE reads	1	+	SRX156356	SRA		prim-20 embryo		nepal13	24002785
+18	(-) Unfert. Egg	5' end of CAGE reads	1	-	SRX156307	SRA		unfertilized egg		nepal13	24002785
+19	(-) Fert. Egg	5' end of CAGE reads	1	-	SRX156325	SRA		fertilized egg		nepal13	24002785
+20	(-) 64 Cell Em.	5' end of CAGE reads	1	-	SRX156334	SRA		64-cell embryo		nepal13	24002785
+21	(-) 512 Cell Em.	5' end of CAGE reads	1	-	SRX156336	SRA		512-cell embryo		nepal13	24002785
+22	(-) High Em.	5' end of CAGE reads	1	-	SRX156337	SRA		high embryo		nepal13	24002785
+23	(-) Oblong Em.	5' end of CAGE reads	1	-	SRX156338	SRA		oblong embryo		nepal13	24002785
+24	(-) Sphere Em.	5' end of CAGE reads	1	-	SRX156347	SRA		sphere/dome embryo		nepal13	24002785
+25	(-) Dome 30 Em.	5' end of CAGE reads	1	-	SRX156349	SRA		dome/30% epiboly		nepal13	24002785
+26	(-) Shield Em.	5' end of CAGE reads	1	-	SRX156350	SRA		shield embryo		nepal13	24002785
+27	(-) 14 Somites Em.	5' end of CAGE reads	1	-	SRX156352	SRA		14-somite embryo		nepal13	24002785
+28	(-) Prim-6 Em.	5' end of CAGE reads	1	-	SRX156355	SRA		prim-6 embryo		nepal13	24002785
+29	(-) Prim-20 Em.	5' end of CAGE reads	1	-	SRX156356	SRA		prim-20 embryo		nepal13	24002785
+30	All CAGE (-)	5' end of CAGE reads	1	-	SRP013950	SRA		all stages merged		nepal13	24002785
+31	EPDnew promoters	EPDnew promoters v. 001	1__epd							epd	epd

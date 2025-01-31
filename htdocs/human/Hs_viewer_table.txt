@@ -1,0 +1,23 @@
+#!	sequence	UCSC									
+#!	note	a	tags were centered by 73 bp								
+#!	note	b	tags were centered by 40 bp								
+#!	note	c	biological and technical replicates were merged								
+#!	note	d	cellular long poly-A(+) samples only
+#!	note	e	tags were centered by 70 bp
+#!	note	f	a 20-bp resolution was used for H3K4 methylations and for all acetylations
+#	UCSC track name	Track description	Track resolution	Strand	Original dataset	Raw format	Tissue	Stage/Time point	Condition	MGA series name	PMID
+#!	1,2	Selected histone marks									
+1	H3K4me1	centered H3K4me1 ChIP-seq tags__a	20		SRP000201	BED	CD4+ T cells			barski07	17512414
+2	H3K4me3	centered H3K4me3 ChIP-seq tags__a	20		SRP000201	BED	CD4+ T cells			barski07	17512414
+3	Pol2	centered RNA Pol II ChIP-seq tags__b	20		SRP000201	BED	CD4+ T cells			barski07	17512414
+#!	large_composite	4	Roadmap histones	centered ChIP-seq tags for 31 histone marks__e	20 or 100__f		https://ftp.ncbi.nlm.nih.gov/pub/geo/DATA/roadmapepigenomics/by_sample/	BED	116 tissues			roadmap	25693562
+5	All CAGE (+)	5' end of CAGE reads	1	+	GSE34448	BAM	all cell lines merged			encode/GSE34448	22955620
+#!	large_composite	6	ENCODE CAGE	5' end of CAGE reads	1	+/-	GSE34448	BAM	35 cell lines__d			encode/GSE34448	22955620
+7	All CAGE (-)	5' end of CAGE reads	1	-	GSE34448	BAM	all cell lines merged			encode/GSE34448	22955620
+8	All RAMPAGE (+)	5' end of RAMPAGE reads	1	+	https://encodeproject.org	BAM	all samples merged			encode/rampage	22936248
+9	All RAMPAGE (-)	5' end of RAMPAGE reads	1	-	https://encodeproject.org	BAM	all samples merged			encode/rampage	22936248
+10	All Fantom5 (+)	5' end of CAGE reads	1	+	http://fantom.gsc.riken.jp/5/datafiles/latest/basic/	BAM	all samples merged			fantom5	24670764
+#!	large_composite	11	Fantom5 CAGE	5' end of CAGE reads	1	+/-	http://fantom.gsc.riken.jp/5/datafiles/latest/basic/	BAM	555 tissues__c			fantom5	24670764
+12	All Fantom5 (-)	5' end of CAGE reads	1	-	http://fantom.gsc.riken.jp/5/datafiles/latest/basic/	BAM	all samples merged			fantom5	24670764
+13	EPDnew promoters	EPDnew promoters v. 006	1__epd							epd	epd
+14	EPDnewNC promoters	EPDnewNC promoters v. 001	1__epd							epd-nc	epd

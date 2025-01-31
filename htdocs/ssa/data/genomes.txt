@@ -1,0 +1,15 @@
+AMe AMe/am5
+At  At
+CFa CFa/cfa3
+Ce  Ce/ce6 Ce/ce10 Ce/ce11
+Dm  Dm/dm6 Dm/dm3
+Dr  Dr/zv7 Dr/zv6 Dr/z10
+GGa GGa/gg5
+Hs  Hs/hg38 Hs/hg19 Hs/hg18 
+Mm  Mm/mm10 Mm/mm9 Mm/mm8
+PFa PFa/pfa2
+RMa RMa/rm8
+Rn  Rn/rn6
+SCe SCe/sce3
+SPo SPo/spo2
+Zma Zma

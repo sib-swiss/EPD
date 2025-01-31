@@ -1,0 +1,12 @@
+Name: D. melanogaster (Aug 2014 BDGP Rel6 + ISO1 MT/dm6)
+Status: full
+NCBI Assembly: https://www.ncbi.nlm.nih.gov/assembly/GCF_000001215.4/
+Source: Assembled chromosomes from Refseq (GCF_000001215.4): ftp://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/000/001/215/GCF_000001215.4_Release_6_plus_ISO1_MT
+NCBI Version: Release 6 plus ISO1 MT
+UCSC Assembly: dm6
+Local Assembly: dm6
+Bowtie Idx: d_melanogaster_dm6
+Liftover: dm6ToDm3
+RepeatMasker: rmsk/rmsk_dm6.SGA.gz
+MGA FTP: https://epd.expasy.org/ftp/mga/dm6/
+UCSC Genome Browser: https://genome-euro.ucsc.edu/cgi-bin/hgTracks?hubUrl=https://epd.expasy.org/epd/ucsc/epdHub/epdHub.txt&genome=dm6

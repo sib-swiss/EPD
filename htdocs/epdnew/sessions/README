@@ -1,0 +1,6 @@
+06.08.24
+On-the-file generation of promoters-specific sessions files has been implemented
+
+(old not from René)
+- if the conventional hierarchy <assembly name>/[euro|us]/<session TXT files> is deviated from, the "getUSLink" function in "epdNew2genome.php" must be updated
+

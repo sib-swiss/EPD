@@ -1,0 +1,12 @@
+Name: P. falciparum (Apr 2016 ASM276v2/pfa2)
+Status: full
+NCBI Assembly: https://www.ncbi.nlm.nih.gov/assembly/GCF_000002765.4/
+Source: Assembled chromosomes from Refseq (GCF_000002765.4)
+NCBI Version: ASM276v2
+UCSC Assembly: none
+Local Assembly: pfa2
+Bowtie Idx: p_falciparum_pfa2
+Liftover: none
+RepeatMasker: none
+MGA FTP: https://epd.expasy.org/ftp/mga/pfa2/
+UCSC Genome Browser: https://genome-euro.ucsc.edu/cgi-bin/hgTracks?hubUrl=https://epd.expasy.org/epd/ucsc/epdHub/epdHub.txt&genome=pfa2
