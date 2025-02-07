@@ -36,6 +36,15 @@ RUN echo '# OS update' \
 	&& make install-bin \
 	&& cd .. \
 	&& rm -rf chipseq.git/ \
+	&&        echo '# Install PWMScan' \
+	&& cd /usr/local/ \
+	&& git clone https://gitlab.sib.swiss/EPD/pwmscan.git pwmscan.git \
+	&& cd pwmscan.git/ \
+	&& make clean \
+	&& make \
+	&& binDir=/usr/local/bin make install \
+	&& cd .. \
+	&& rm -rf pwmscan.git/ \
 	&&        echo '# Install EPD' \
 	&& cd /usr/local/ \
 	&& git clone https://github.com/sib-swiss/EPD.git EPD_web.git \
