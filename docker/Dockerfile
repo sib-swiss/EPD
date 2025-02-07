@@ -28,7 +28,7 @@ RUN echo '# OS update' \
 	&& export DEBIAN_FRONTEND=noninteractive \
 	&& apt-get update  -y \
 	&&        echo '# Install OS requirements' \
-	&& apt-get install -y --no-install-recommends perl libcgi-pm-perl liblist-moreutils-perl liblist-moreutils-xs-perl wget git mysql-server apache2 ca-certificates php-mysqlnd libapache2-mod-php xz-utils make gcc libc6-dev curl \
+	&& apt-get install -y --no-install-recommends perl libcgi-pm-perl liblist-moreutils-perl liblist-moreutils-xs-perl wget git mysql-server apache2 ca-certificates php-mysqlnd libapache2-mod-php xz-utils make gcc libc6-dev gfortran libncurses-dev libgfortran5 curl \
 	&&        echo '# Install chipseq tools' \
 	&& cd /usr/local/ \
 	&& git clone https://gitlab.sib.swiss/EPD/chipseq.git chipseq.git \
@@ -45,6 +45,17 @@ RUN echo '# OS update' \
 	&& binDir=/usr/local/bin make install \
 	&& cd .. \
 	&& rm -rf pwmscan.git/ \
+	&&        echo '# Install SSA' \
+	&& cd /usr/local/ \
+	&& git clone https://gitlab.sib.swiss/EPD/ssa.git ssa.git \
+	&& cd ssa.git \
+	&& sed -i 's@^binDir = @binDir = /usr/local/bin@' Makefile \
+	&& make clean \
+	&& echo '#Issues to compile other binaries of SSA' \
+	&& make FINDM \
+	&& cp -f FINDM /usr/local/bin/ \
+	&& cd .. \
+	&& rm -rf ssa.git/ \
 	&&        echo '# Install EPD' \
 	&& cd /usr/local/ \
 	&& git clone https://github.com/sib-swiss/EPD.git EPD_web.git \
