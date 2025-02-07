@@ -4,6 +4,6 @@ NI:     = /db/embl/nid.ptr
 SV:     = /db/embl/svid.ptr
 EM:     = /db/embl/svid.ptr
 B:      = /home/local/ssa/data/bacteria.ptr
-EU:     = /var/vhosts/sib.swiss/MINIEPD/htdocs/ssa/data/eukaryote.ptr
+EU:     = /usr/local/EPD_web.git/htdocs/ssa/data/eukaryote.ptr
 V:      = /home/local/ssa/data/viruses.ptr
 :       = /db/embl/svid.ptr
