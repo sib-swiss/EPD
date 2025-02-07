@@ -178,8 +178,7 @@ exec("echo 'M' >> $wmx_temp");
 #exec("echo 'B' >> $wmx_temp");
 
 # Run FINDM:
-# exec("export SSA2DBC=/home/local/ssa/data/SSA2DBC.def; FINDM < $wmx_temp > $oprof_temp 2> /dev/null");
-exec("export SSA2DBC=/var/vhosts/sib.swiss/MINIEPD/htdocs/ssa/data/SSA2DBC.def; FINDM < $wmx_temp > $oprof_temp 2> /dev/null"); # code changed
+exec("export SSA2DBC=/usr/local/EPD_web.git/htdocs/ssa/data/SSA2DBC.def; FINDM < $wmx_temp > $oprof_temp 2> /dev/null"); # code changed
 exec("awk 'BEGIN  { FIELDWIDTHS = \"5 20 27 1 10 8\" } \$1~\"^FP\" {print \$5}' $oprof_temp", $matches);
 
 # This set the first stripe on the TSS:

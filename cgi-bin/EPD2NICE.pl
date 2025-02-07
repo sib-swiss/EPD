@@ -33,7 +33,7 @@ if (hostname =~ /ccg-serv/ || hostname =~ /epdnew/ ){
   $epd2embl = ' FROMFPS';
   # path to frozen, synchronized EMBL subset used for sequence extraction, still required???
   # $ENV{'SSA2DBC'} = "/home/local/ssa/data/SSA2DBC.def";
-  $ENV{'SSA2DBC'} = "/var/vhosts/sib.swiss/MINIEPD/htdocs/ssa/data/SSA2DBC.def"; # code changed
+  $ENV{'SSA2DBC'} = "/usr/local/EPD_web.git/htdocs/ssa/data/SSA2DBC.def"; # code changed
   $WWWTmpDir = '/var/tmp/hourly';
 #  $LOGDir = '../htdocs/logs/';
 }
@@ -44,7 +44,7 @@ elsif (hostname eq ""){
   $epd2fasta = ' /home/vital-it/gambrosi/ssa/linux/EPDtoFA';
   $epd2embl = ' /home/vital-it/gambrosi/ssa/linux/FROMFPS';
   # $ENV{'SSA2DBC'} = "/home/local/ssa/data/SSA2DBC.def";
-  $ENV{'SSA2DBC'} = "/var/vhosts/sib.swiss/MINIEPD/htdocs/ssa/data/SSA2DBC.def"; # code changed
+  $ENV{'SSA2DBC'} = "/usr/local/EPD_web.git/htdocs/ssa/data/SSA2DBC.def"; # code changed
   $WWWTmpDir = '/var/tmp/hourly';
 }
 

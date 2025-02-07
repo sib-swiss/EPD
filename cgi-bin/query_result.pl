@@ -21,7 +21,7 @@ if (hostname =~ /ccg-serv/ || hostname =~ /epdnew/ ){
     $epd2embl = ' FROMFPS';
     # path to frozen, synchronized EMBL subset used for sequence extraction, still required???
     # $ENV{'SSA2DBC'} = "/home/local/ssa/data/SSA2DBC.def";
-    $ENV{'SSA2DBC'} = "/var/vhosts/sib.swiss/MINIEPD/htdocs/ssa/data/SSA2DBC.def"; # code changed
+    $ENV{'SSA2DBC'} = '/usr/local/EPD_web.git/htdocs/ssa/data/SSA2DBC.def'; # code changed
     $WWWTmpDir = '/var/tmp/daily';
     #$R_cmd = "/mnt/common/R-BioC/install/Linux/x86_64/R-2.8.0/bin/R --no-save > /dev/null";
     $R_cmd = "/usr/bin/R --no-save > /dev/null";
@@ -33,7 +33,7 @@ elsif (hostname eq ""){
     $epd2fasta = ' /home/vital-it/gambrosi/ssa/linux/EPDtoFA';
     $epd2embl = ' /home/vital-it/gambrosi/ssa/linux/FROMFPS';
     # $ENV{'SSA2DBC'} = "/home/local/ssa/data/SSA2DBC.def";
-    $ENV{'SSA2DBC'} = "/var/vhosts/sib.swiss/MINIEPD/htdocs/ssa/data/SSA2DBC.def"; # code changed
+    $ENV{'SSA2DBC'} = '/usr/local/EPD_web.git/htdocs/ssa/data/SSA2DBC.def'; # code changed
     $WWWTmpDir = "/scratch/cluster/daily/www-ccg";
     $R_cmd = "R --no-save > /dev/null";
 }

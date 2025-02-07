@@ -3,18 +3,18 @@ use strict;
 
 $ENV{'PATH'}    .= ":/home/local/perl:/home/local/bin:/usr/local/bin";
 # $ENV{'SSA2DBC'} .= "/home/local/ssa/data/SSA2DBC.def";
-$ENV{'SSA2DBC'} .= "/var/vhosts/sib.swiss/MINIEPD/htdocs/ssa/data/SSA2DBC.def"; # code changed
+$ENV{'SSA2DBC'} .= "/usr/local/EPD_web.git/htdocs/ssa/data/SSA2DBC.def"; # code changed
 
 my $DATA = "/home/local/";
 # my $my_ssa2dbc = $DATA."ssa/data/SSA2DBC.def";
-my $my_ssa2dbc = "/var/vhosts/sib.swiss/MINIEPD/htdocs/ssa/data/SSA2DBC.def"; # code changed
+my $my_ssa2dbc = '/usr/local/EPD_web.git/htdocs/ssa/data/SSA2DBC.def'; # code changed
 
 my $usage = "
 
 fps2fa.pl <fpsfile> <from> <to> <db> <lc>
 
 ";
-die $usage if (scalar (@ARGV) < 4);
+die $usage  if (scalar (@ARGV) < 4);
 my $input_file = $ARGV[0]; #shift or die $usage;
 my $from = $ARGV[1]; #shift or die $usage;
 my $to = $ARGV[2]; #shift or die $usage;
@@ -26,7 +26,7 @@ my @seq;
 
 
 $input_file =~ s/.fps//;
-$lowercase = 0 if $ARGV[4] eq "";
+$lowercase = 0  if $ARGV[4] eq '';
 
 #print "$input_file\n";
 
