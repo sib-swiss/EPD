@@ -4,7 +4,8 @@ export EPD_VERSION=1.0.0
 
 # Run the website
 ```bash
-docker run -p 8081:8081 -d epd:$EPD_VERSION
+docker run                                       -p 8081:8081 -d epd:$EPD_VERSION
+docker run --volume $PWD/../MOUNTING:/mnt/genome -p 8081:8081 -d epd:$EPD_VERSION
 ```
 
 # Run bash in a running container

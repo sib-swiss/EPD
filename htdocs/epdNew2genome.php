@@ -1145,7 +1145,7 @@ echo "<option disabled selected> -- Select Motif -- </option>\n";
 #echo "<option value='ccaatbox'>CCAAT-box</option>\n";
 #echo "</optgroup>\n";
 echo "</select></td><td><div id='libType'></div></td></tr>\n";
-echo "<tr><td>From: <select id='plotFrom'  class='epdquery' style='width:60px;'>\n";
+echo "<tr><td>From: <select id='plotFrom' class='epdquery'>\n";
 echo "<optgroup>\n";
 echo "<option value='-1000'>-1000</option>\n";
 echo "<option value='-2000'>-2000</option>\n";
