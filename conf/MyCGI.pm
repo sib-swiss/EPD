@@ -3,6 +3,8 @@ package MyCGI;
 use strict;
 use warnings;
 #use diagnostics;
+use Exporter 'import';
+our @EXPORT_OK = qw(param);
 
 use CGI;
 
@@ -23,6 +25,7 @@ sub param_raw {
 sub param {
     my $self = shift;
     my $param_name = shift;
+    return $self->SUPER::param($param_name)  if ( !$param_name );
 
     # NOTE: param() may be called by the CGI module code, so we must make sure
     # that this override does not interfere with the base method: we only check
@@ -65,7 +68,11 @@ sub must_check {
 # Die on anything that is NOT an alphanumeric character.
 sub check_characters {
     my ($value) = @_;
-    die "FATAL - Unauthorized character '$&' in parameter '$value'"  if ( $value =~ /[^\w \+\-\/\.,:>\n\r\(\)]/ );
+    if ( $value =~ /[^\w \+\-\/\.,:>\n\r\(\)]/ ){
+        my $match = $&;
+        my $hex_match = sprintf '%04x', ord $match;
+        die "FATAL - Unauthorized character '$match' / '$hex_match' in parameter '$value'";
+    }
 }
 
 1;
