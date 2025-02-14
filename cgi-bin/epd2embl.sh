@@ -1,7 +1,7 @@
 #!/bin/sh
 #
 # This line defines the environment variable for FROMPS
-SSA2DBC=/usr/molbio/etc/SSA2DBC.def; export SSA2DBC
+SSA2DBC=/usr/local/EPD_web.git/htdocs/ssa/data/SSA2DBC.def; export SSA2DBC
 
 /bin/rm $4.inp $4
 cat $1 > $4.fps

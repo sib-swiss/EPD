@@ -2,11 +2,9 @@
 use strict;
 
 $ENV{'PATH'}    .= ":/home/local/perl:/home/local/bin:/usr/local/bin";
-# $ENV{'SSA2DBC'} .= "/home/local/ssa/data/SSA2DBC.def";
 $ENV{'SSA2DBC'} .= "/usr/local/EPD_web.git/htdocs/ssa/data/SSA2DBC.def"; # code changed
 
 my $DATA = "/home/local/";
-# my $my_ssa2dbc = $DATA."ssa/data/SSA2DBC.def";
 my $my_ssa2dbc = '/usr/local/EPD_web.git/htdocs/ssa/data/SSA2DBC.def'; # code changed
 
 my $usage = "

@@ -17,7 +17,6 @@ $DB="/db"; # considered obsolete
 $epd2fasta = ' EPDtoFA';
 $epd2embl = ' FROMFPS';
 # path to frozen, synchronized EMBL subset used for sequence extraction, still required???
-# $ENV{'SSA2DBC'} = "/home/local/ssa/data/SSA2DBC.def";
 $ENV{'SSA2DBC'} = "/usr/local/EPD_web.git/htdocs/ssa/data/SSA2DBC.def"; # code changed
 $WWWTmpDir = '/var/tmp/daily';
 $R_cmd = "R --no-save > /dev/null";
@@ -28,7 +27,7 @@ $DATA="";
 $DB="/db";
 $epd2fasta = ' /home/vital-it/gambrosi/ssa/linux/EPDtoFA';
 $epd2embl = ' /home/vital-it/gambrosi/ssa/linux/FROMFPS';
-$ENV{'SSA2DBC'} = "/home/local/ccg/etc/SSA2DBC.def";
+$ENV{'SSA2DBC'} = "/usr/local/EPD_web.git/htdocs/ssa/data/SSA2DBC.def";
 $WWWTmpDir = "";
 $R_cmd = "R --no-save > /dev/null";
 }

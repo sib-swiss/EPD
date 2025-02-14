@@ -6,7 +6,7 @@
 # EPDtoFA apparently needs this one
 #$ENV{'PATH'} .= ":/opt/ansic/bin";
 # in order to maintain synchronization between EPD and EMBL, keep a frozen EMBL subset in epd-embl.dat
-$ENV{'SSA2DBC'} = '/home/local/ssa/data/SSA2DBC.def';
+$ENV{'SSA2DBC'} = '/usr/local/EPD_web.git/htdocs/ssa/data/SSA2DBC.def';
 
 use CGI;
 use MyCGI;
