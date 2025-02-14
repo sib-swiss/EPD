@@ -53,7 +53,9 @@ RUN echo '# OS update' \
 	&& make clean \
 	&& echo '#Issues to compile other binaries of SSA' \
 	&& make FINDM \
-	&& cp -f FINDM /usr/local/bin/ \
+	&& make FROMFPS \
+	&& make EPDtoFA \
+	&& install FINDM FROMFPS EPDtoFA /usr/local/bin/ \
 	&& cd .. \
 	&& rm -rf ssa.git/ \
 	&&        echo '# Install EPD' \
