@@ -83,10 +83,11 @@ function getLink($chr, $begin, $end, $assembly, $render, $sessionstr) {
 }
 
 function getSpecificUcscLink($pid, $chr, $begin, $end, $assembly) {
-    $file = "viewer_$pid.txt";
+#   $file = "viewer_$pid.txt";
     # Session file must exist for both US server and European mirror
     # for the links to appear in the interface
-    if(file_exists("epdnew/sessions/$assembly/euro/$file") && file_exists("epdnew/sessions/$assembly/us/$file")) {
+#   if(file_exists("epdnew/sessions/$assembly/euro/$file") && file_exists("epdnew/sessions/$assembly/us/$file")) {
+    if(file_exists("wwwtmp/$assembly"."_$pid"."_specific_viewer.txt") && file_exists("wwwtmp/$assembly"."_$pid"."_specific_viewer_us.txt")) {
 #       $sessionstr = '&hgS_doLoadUrl=submit&hgS_loadUrlName=https://epd.expasy.org/miniepd/epdnew/sessions/'.$assembly.'/euro/'.$file;
         $sessionstr = "&hgS_doLoadUrl=submit&hgS_loadUrlName=https://epd.expasy.org/miniepd/wwwtmp/$assembly"."_$pid"."_specific_viewer.txt"; # new dcode
         return getLink($chr, $begin, $end, $assembly, FALSE, $sessionstr);
