@@ -28,7 +28,7 @@ RUN echo '# OS update' \
 	&& export DEBIAN_FRONTEND=noninteractive \
 	&& apt-get update  -y \
 	&&        echo '# Install OS requirements' \
-	&& apt-get install -y --no-install-recommends perl libcgi-pm-perl liblist-moreutils-perl liblist-moreutils-xs-perl wget git mysql-server apache2 ca-certificates php-mysqlnd libapache2-mod-php xz-utils make gcc libc6-dev gfortran libncurses-dev libgfortran5 curl \
+	&& apt-get install -y --no-install-recommends perl libcgi-pm-perl liblist-moreutils-perl liblist-moreutils-xs-perl wget git mysql-server apache2 ca-certificates php-mysqlnd libapache2-mod-php xz-utils make gcc libc6-dev gfortran libncurses-dev libgfortran5 curl gawk \
 	&&        echo '# Install chipseq tools' \
 	&& cd /usr/local/ \
 	&& git clone https://gitlab.sib.swiss/EPD/chipseq.git chipseq.git \
