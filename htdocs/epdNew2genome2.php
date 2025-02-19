@@ -657,7 +657,7 @@ if ($stmt = $db_con->prepare("$query")) {
     if (preg_match("/at/",$db)){
       print "<tr align='left'><td>TAIR:</td>\n";
       print "<td><a href =\"";
-      print "https://www.arabidopsis.org/servlets/Search?type=general&search_action=detail&method=1&show_obsolete=F&name=";
+      print "https://www.arabidopsis.org/results?mainType=general&category=genes&searchText=";
       print "$ensembl";
       print "&sub_type=gene&SEARCH_EXACT=4&SEARCH_CONTAINS=1\" target='_blank'>$ensembl</a></td></tr>";
 
