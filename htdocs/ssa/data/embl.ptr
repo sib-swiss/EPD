@@ -1,5 +1,5 @@
  1. FMT=FASTA                                                  
- 2. DIR=/var/vhosts/sib.swiss/CCGUSER2/htdocs/genome/embl/     
+ 2. DIR=/usr/local/EPD_web.git/htdocs/genome/embl              
  3. SEQ=.seq                                                   
  4. DOC=.seq                                                   
  5. KEY=2                                                      
