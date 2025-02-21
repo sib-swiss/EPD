@@ -705,7 +705,8 @@ if ($stmt = $db_con->prepare("$query")) {
     } else {
       print "<tr align='left'><td>Ensembl:</td>\n";
       print "<td><a href =\"";
-      print "https://www.ensembl.org/$specie/Gene/Summary?g=";
+      $ensembl_species = $specie != 'Canis_familiaris' ? $specie : 'Canis_lupus_familiaris';
+      print "https://www.ensembl.org/$ensembl_species/Gene/Summary?g=";
       print "$ensembl";
       print "\" target='_blank'>$ensembl</a></td></tr>";
     }
