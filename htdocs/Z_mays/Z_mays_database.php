@@ -56,7 +56,7 @@ $noncoding = False;
                 <!-- UCSC PICTURE -->
                 <a href="https://genome-euro.ucsc.edu/cgi-bin/hgTracks?&hubUrl=https://epd.expasy.org/epd/ucsc/epdHub/epdHub.txt&hgS_doLoadUrl=submit&hgS_loadUrlName=https://epd.expasy.org/epd/ucsc/epdHub/epd_zm3_viewer.txt&genome=zm3&position=chr2%3A45482537-45486537<?php rtrim(readfile("../ucsc/session_options.conf"));?>" target="_blank">
                 <img id="ucscexample" src="Zm_promoter_example.png" alt="Promoter example" title="Click to go to the EPD hub on UCSC" /></a>
-<div style="display: block; margin-top: 5px;">Promoter(s) shown above: <a href="/cgi-bin/miniepd/get_doc?db=zmEpdNew&format=genome&entry=GRMZM2G051355_1">GRMZM2G051355</a>.
+<div style="display:block; margin-top:5px">Promoter(s) shown above: <a href="/cgi-bin/miniepd/get_doc?db=zmEpdNew&format=genome&entry=GRMZM2G147884_1">GRMZM2G147884</a>.
 </div>
         </td>
         </tr>
