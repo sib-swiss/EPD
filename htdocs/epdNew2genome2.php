@@ -664,14 +664,14 @@ if ($stmt = $db_con->prepare("$query")) {
     } else if (preg_match("/zm/",$db)){
       print "<tr align='left'><td>GRAMENE:</td>\n";
       print "<td><a href =\"";
-      print "http://ensembl.gramene.org/Zea_mays/Gene/Summary?g=";
+      print "https://ensembl.gramene.org/Search/Results?q=";
       print "$ensembl";
       print "\" target='_blank'>$ensembl</a></td></tr>";
 
     } else if (preg_match("/am/",$db)){
       print "<tr align='left'><td>BEEBASE:</td>\n";
       print "<td><a href =\"";
-      print "http://metazoa.ensembl.org/Apis_mellifera/Gene/Summary?db=core;g=";
+      print "https://metazoa.ensembl.org/Apis_mellifera/Gene/Summary?db=core;g=";
       print "$ensembl";
       print "\" target='_blank'>$ensembl</a></td></tr>";
 

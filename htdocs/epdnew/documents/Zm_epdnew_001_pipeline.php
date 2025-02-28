@@ -61,7 +61,7 @@ Promoter collection:
     </td>
     <td class='document' width='40'>
       <a target='_blank'
-      href='http://ensembl.gramene.org/biomart/martview'>SOURCE</a>
+      href='https://ensembl.gramene.org/biomart/martview'>SOURCE</a>
     </td>
     <td class='document' width='40'>
       <a target='_blank' href='<?php echo $url_ftp; ?>/mga/zm3/gramene/gramene.html'>
@@ -136,7 +136,7 @@ Experimental data:
 <h3>1. Download annotated TSS</h3>
 
 Data was downloaded from <a
-href="http://ensembl.gramene.org/biomart/martview">
+href="https://ensembl.gramene.org/biomart/martview">
 Gramene Mart</a> the 01-06-2016</ol>.
 
 Transcripts have been filtered according to the following rules:
