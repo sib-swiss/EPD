@@ -81,7 +81,7 @@
    <!-- <li class='epd_submenu'><a href="/miniepd/advance_search.php">Standard search</a></li> -->
    <li class='epd_submenu'><a href="/miniepd/EPDnew_select.php">Select / Download</a></li>
    <li class='epd_submenu'><a href="/miniepd/EPDnew_study.php">Promoter analysis tools</a></li>
-   <li class='epd_submenu'><a href="<?php echo $url_ftp; ?>/epdnew/">FTP site</a></li>
+   <li class='epd_submenu'><a href="/miniepd/ftp/epdnew/">FTP site</a></li>
 
    </ul>
 </li>
@@ -93,7 +93,7 @@
    <li class='epd_submenu'><a href="/miniepd/promoter_elements.php">Promoter elements</a></li>
    <!-- li class='epd_submenu'><a href="http://srs.ebi.ac.uk/srs6bin/cgi-bin/wgetz?-page+LibInfo+-lib+EPD">SRS access to EPD</a></li -->
    <li class='epd_submenu'><a href="/miniepd/EPD_download.php">Select / Download</a></li>
-   <li class='epd_submenu'><a href="<?php echo $url_ftp; ?>ftp/epd/">FTP site</a></li>
+   <li class='epd_submenu'><a href="/miniepd/ftp/epd/">FTP site</a></li>
    </ul>
 </li>
 
