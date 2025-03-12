@@ -635,6 +635,15 @@ We apologize for the inconvenience and thank you for your understanding.</div>
 </div>
 
 <?php
+preg_match('/(\S+)_epdnew/', $database, $matches);
+$org = $matches[1];
+if(file_exists("ftp/epdnew/$org/current/errata/$id.err")) {
+    $message = file_get_contents("ftp/epdnew/$org/current/errata/$id.err");
+    echo "<p style='font-size:14px; color:red'>$message</p>\n";
+}
+
+$text_url="/cgi-bin/miniepd/get_doc?db=$db&format=text&entry=$id";
+echo "<p>Format: 'genome'. Click <a href=$text_url>here</a> to to display this entry in format 'text'.\n";
 ######################################################################
 # Print General Info:
 
