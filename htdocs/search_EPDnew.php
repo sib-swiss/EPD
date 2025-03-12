@@ -113,6 +113,7 @@ if ($stmt = $db_con->prepare("SELECT gene_description.id, gene_description.gene_
     $result .= "<td align='left' style='min-width:100px;'><a href='$link'>$id</a></td>\n";
     $result .= "<td style='min-width:100px;'>$name</td>\n";
     $result .= "<td style='width:500px;'>$description</td>\n";
+    $link = "/cgi-bin/miniepd/get_doc?db=$viewerDBs[$db]&format=text&entry=$id";
     $result .= "<td align='center' width='15'><a href='$link'> <img border='0' bordercolor='black' src='/img_epd/Text_small.png' alt='T' width='15' height='15'> </a> </td><td></td></tr>\n";
     $c++;
   }
