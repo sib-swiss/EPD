@@ -58,6 +58,17 @@ RUN echo '# OS update' \
 	&& install FINDM FROMFPS EPDtoFA /usr/local/bin/ \
 	&& cd .. \
 	&& rm -rf ssa.git/ \
+	&&        echo '# Install fetch/BTLib' \
+	&& cd /usr/local/ \
+	&& wget 'https://downloads.sourceforge.net/project/estscan/BTLib/0.20/BTLib-0.20.tar.gz' \
+	&& tar xvfz BTLib-0.20.tar.gz \
+	&& cd BTLib-0.20/ \
+	&& perl Makefile.PL \
+	&& make \
+	&& make test \
+	&& make install \
+	&& cd .. \
+	&& rm -rf BTLib-0.20.tar.gz BTLib-0.20/ \
 	&&        echo '# Install EPD' \
 	&& cd /usr/local/ \
 	&& git clone https://github.com/sib-swiss/EPD.git EPD_web.git \
