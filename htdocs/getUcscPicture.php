@@ -96,7 +96,7 @@ $outputFile = "epdnew/gif/$organism/$pid.png";
 #    $ucscMirror = 'genome-euro.ucsc.edu';
 # }
 
-if(!file_exists($outputFile)) {
+if( !file_exists($outputFile) || 0 == filesize($outputFile) ){
     # Download image if not already done
     $start = $position - 1000;
     $stop = $position + 1000;
@@ -105,6 +105,8 @@ if(!file_exists($outputFile)) {
 
     # argument TRUE is to get a link to an image rather than to the browser
     $ucscUrl = getUcscLink($organism, $chr, $start, $stop, $assembly, TRUE);
+#TODO display URL to find why png are empty in the docker running on windows
+#TODO discard display of all param values in stderr
     exec("curl '$ucscUrl' > $outputFile");
 }
 
