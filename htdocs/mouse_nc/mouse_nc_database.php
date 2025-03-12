@@ -49,13 +49,14 @@ $noncoding = True;
 </td>
 <td>
 <!-- RIGHT TABLE -->
-        <table class="epd-db3">
-            <tr>
+    <table class="epd-db3">
+        <tr>
             <td>
                 <!-- UCSC PICTURE -->
                 <a href="https://genome-euro.ucsc.edu/cgi-bin/hgTracks?&hubUrl=https://epd.expasy.org/epd/ucsc/epdHub/epdHub.txt&hgS_doLoadUrl=submit&hgS_loadUrlName=https://epd.expasy.org/epd/ucsc/epdHub/epd_mm10_viewer.txt&db=mm10&position=chr12%3A81530955-81534955<?php rtrim(readfile("../ucsc/session_options.conf"));?>" target="_blank">
                 <img id="ucscexample" src="MmNC_promoter_example.png" alt="Promoter example" title="Click to go to the EPD hub on UCSC" /></a>
-        </td>
+                <div style="display:block; margin-top:5px">Promoter(s) shown above: <a href="/cgi-bin/miniepd/get_doc?db=mmNCEpdNew&format=genome&entry=6530401F13Rik_1">6530401F13Rik</a>.
+            </td>
         </tr>
     </table>
 <!-- End of right table -->
