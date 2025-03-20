@@ -105,8 +105,7 @@ if( !file_exists($outputFile) || 0 == filesize($outputFile) ){
 
     # argument TRUE is to get a link to an image rather than to the browser
     $ucscUrl = getUcscLink($organism, $chr, $start, $stop, $assembly, TRUE);
-#TODO display URL to find why png are empty in the docker running on windows
-#TODO discard display of all param values in stderr
+#TODO  display URL to find why png are empty in the docker running on windows
     exec("curl '$ucscUrl' > $outputFile");
 }
 

@@ -37,9 +37,9 @@ sub param {
             map { check_characters($_) } @param_values;
             return @param_values;
         } else {
-            warn "param name: $param_name\n";
+#            warn "param name: $param_name\n";
             my $param_value = $self->SUPER::param($param_name);
-            warn "param value: '$param_value'\n";
+#            warn "param value: '$param_value'\n";
             check_characters($param_value);
             return $param_value;
         }
