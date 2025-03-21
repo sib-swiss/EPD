@@ -1,0 +1,13 @@
+Complete genome assemblies referred to in EPD and BED files:
+
+File Name			Species 		Release 			Last updated
+epdXXX_AT_NCBI_TAIR7.0.BED	Arabidopsis thaliana 	NCBI Build TAIR7.0 		18-07-2007
+epdXXX_BT_NCBI_3.1.BED		Bos taurus	 	NCBI Build 3.1, Btau_3.1 	26-01-2007
+epdXXX_CE_WS190.BED		Caenorhanditis elegans 	NCBI Build WS170 		27-04-2007
+epdXXX_DM_BDGP5.1.BED		Drosophila melanogaster	NCBI Build 5.1		 	06-12-2006
+epdXXX_GG_NCBI_2.1.BED		Gallus gallus 		NCBI Build 2.1, WASHUC2 	05-12-2006
+epdXXX_HS_NCBI36.BED		Homo sapiens	 	NCBI Build 36.2		 	26-10-2006
+epdXXX_MM_NCBI_m37.BED		Mus musculus	 	NCBI Build 37.1 		18-07-2007
+epdXXX_OS_TIGR_5.BED		Oryza sativa	 	Genome assembly v5 		27-04-2007
+epdXXX_PT_NCBI_2.1.BED		Pan troglodytes 	NCBI Build 2.1, PanTro2.1 	26-10-2006
+epdXXX_RN_RGSC_3.4.BED		Rattus norvegicus 	NCBI Build 3.1, RGSC v3.4 	12-07-2006

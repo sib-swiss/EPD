@@ -1,0 +1,5 @@
+track name=TSS_in_EPD description="Eukaryotic_Promoter_Database_(EPD)_rel._128" url="https://epd.expasy.org/epd/cgi-bin/query_result.pl?out_format=NICE&Entry_0=$$"
+chr16	156427	156432	PT_HBAZ	0	+	156427	156432	0	1	5	0
+chr11	5030974	5030979	PT_HBB	0	-	5030974	5030979	0	1	5	0
+chr11	5061839	5061844	PT_HBG_A	0	-	5061839	5061844	0	1	5	0
+chr11	5061839	5061844	PT_HBG_B	0	-	5061839	5061844	0	1	5	0
