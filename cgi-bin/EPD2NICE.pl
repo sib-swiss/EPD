@@ -22,33 +22,9 @@ use Sys::Hostname;
 
 #use Statistics::R;
 
-##machine-depended
-if (hostname =~ /ccg-serv/ || hostname =~ /epdnew/ ){
-    #$bin="/mnt/local/bin";
-    $DATA="/home/local";
-    #$DB="/home/local/db"; # eventually create local copy of EPD ?
-    #$DB="/db";
-    $DB="/local/ftp";
-    $epd2fasta = ' EPDtoFA';
-    $epd2embl = ' FROMFPS';
-    # path to frozen, synchronized EMBL subset used for sequence extraction, still required???
-    $ENV{'SSA2DBC'} = "/usr/local/EPD_web.git/htdocs/ssa/data/SSA2DBC.def"; # code changed
-    $WWWTmpDir = '/tmp';
-    #  $LOGDir = '../htdocs/logs/';
-}
-elsif (hostname eq ""){
-    #$bin="";
-    $DATA="/scratch/frt";
-    $DB="/db";
-    $epd2fasta = ' /home/vital-it/gambrosi/ssa/linux/EPDtoFA';
-    $epd2embl = ' /home/vital-it/gambrosi/ssa/linux/FROMFPS';
-    $ENV{'SSA2DBC'} = "/usr/local/EPD_web.git/htdocs/ssa/data/SSA2DBC.def"; # code changed
-    $WWWTmpDir = '/tmp';
-}
 
+my $WWWTmpDir = '/tmp';
 my $fetchCommand = "/usr/local/bin/fetch -c ../etc/fetch.conf";
-
-
 
 
 #&R::setDebug(0);
