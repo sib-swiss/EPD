@@ -91,8 +91,8 @@ if ($ENV{'REQUEST_METHOD'} eq 'POST') {
         $field = '$3';
         $field2 = '$2';
     }elsif ($FORM{"query_db"} eq "epd"){
-	$fps_file = "/local/ftp/epd/current/epd.fps";
-	$dat_file = "/local/ftp/epd/current/epd.dat /local/ftp/epd/current/epd_bulk.dat";
+	$fps_file = "./ftp/epd/current/epd.fps";
+	$dat_file = "./ftp/epd/current/epd.dat ./ftp/epd/current/epd_bulk.dat";
 	$database = "EPD New";
 	$field = '$3';
 	$field2 = '$2';
