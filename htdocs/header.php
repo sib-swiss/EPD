@@ -598,8 +598,8 @@
 	  if ($_GET['db'] == "all" ){
 	    echo 'action="/miniepd/master_search.php" ';
 	  }else if ($_GET['db'] == "epd" ){
-	    echo 'action="/cgi-bin/miniepd/fetch_biomart.cgi" ';
-	    #echo 'action="/search_EPD.php" ';
+	    #echo 'action="/cgi-bin/miniepd/fetch_biomart.cgi" ';
+	    echo 'action="/miniepd/master_search.php" ';
 	  }else{
 	    echo 'action="/miniepd/search_EPDnew.php" ';
 	  }

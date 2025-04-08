@@ -5,8 +5,8 @@ function chgFormAction( )
     if( actionName == "all" ) {
         document.searchDB.action = "/miniepd/master_search.php";
     }
-    else if( actionName == "/miniepd" ) {
-        document.searchDB.action = "/miniepd/cgi-bin/fetch_biomart.cgi";
+    else if( actionName == "epd" ) {
+        document.searchDB.action = "/miniepd/master_search.php";
     }
     else {
         document.searchDB.action = "/miniepd/search_EPDnew.php";

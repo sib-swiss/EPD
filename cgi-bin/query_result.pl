@@ -29,8 +29,8 @@ elsif (hostname eq ""){
     $bin="";
     $DATA="";
     $DB="../htdocs/ftp";
-    $epd2fasta = ' /home/vital-it/gambrosi/ssa/linux/EPDtoFA';
-    $epd2embl = ' /home/vital-it/gambrosi/ssa/linux/FROMFPS';
+    $epd2fasta = ' EPDtoFA';
+    $epd2embl = ' FROMFPS';
     $ENV{'SSA2DBC'} = '/usr/local/EPD_web.git/htdocs/ssa/data/SSA2DBC.def'; # code changed
     $WWWTmpDir = "/scratch/cluster/daily/www-ccg";
     $R_cmd = "R --no-save > /dev/null";

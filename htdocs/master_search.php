@@ -104,8 +104,12 @@
 <?php
 
     $query_str = $_POST['query_str'];
+    $db        = $_POST['db'];
 if (empty($query_str)){
   $query_str = $_GET['query'];
+}
+if (empty($db)){
+  $db = $_GET['db'];
 }
 
 date_default_timezone_set("Europe/Rome");
@@ -159,6 +163,7 @@ echo "  <table align='left' style='font-size: 12px; font-family: Helvetica; widt
 echo "    <tr align='left' style='height : 50px;'>\n";
 echo "    <td align='left' colspan='2'><b>Experimentally validated promoters:</b></td><td></td></tr>\n";
 
+if($db == "all") {
 foreach($dbNames as $id => $dbName) {
   echo "\n";
   echo "    <tr class='border-bottom-dotted'>\n";
@@ -176,7 +181,7 @@ foreach($dbNames as $id => $dbName) {
   echo "     </div>\n";
   echo "   </td></tr>\n";
 }
-
+}
 ?>
 
 <tr class='border-bottom-dotted'>
