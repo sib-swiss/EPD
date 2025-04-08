@@ -25,7 +25,7 @@ sub param_raw {
 sub param {
     my $self = shift;
     my $param_name = shift;
-    return $self->SUPER::param($param_name)  if ( !$param_name );
+    return $self->SUPER::param()  if ( !$param_name );
 
     # NOTE: param() may be called by the CGI module code, so we must make sure
     # that this override does not interfere with the base method: we only check
