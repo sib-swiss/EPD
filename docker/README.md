@@ -30,5 +30,6 @@ docker run --rm -it epd:$EPD_VERSION bash
 # Podman
 ```bash
 podman pull docker.io/sibswiss/epd:$EPD_VERSION
-podman run -p 8111:8081 -d docker.io/sibswiss/epd:$EPD_VERSION
+podman run                                       -p 8111:8081 -d docker.io/sibswiss/epd:$EPD_VERSION
+podman run --volume /local/db/genome:/mnt/genome -p 8111:8081 -d docker.io/sibswiss/epd:$EPD_VERSION
 ```
