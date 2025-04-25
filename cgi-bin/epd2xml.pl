@@ -1158,7 +1158,7 @@ close(RECORD);
 
 
 sub find_exp {
-    open ( EXP_LIST, "/home/local/epd/htdocs/list_of_methods") || die " can't open list_of_methods: $!";
+    open ( EXP_LIST, "../htdocs/list_of_methods") || die " can't open list_of_methods: $!";
 
            while ( defined ($exp_abb = <EXP_LIST>)) {
                chomp ($exp_abb);
@@ -1171,7 +1171,7 @@ sub find_exp {
 
 
 sub find_journal {
-    open ( JOURNAL_LIST, "/home/local/epd/htdocs/journal_abbs") || die " can't open journal_abbs: $!";
+    open ( JOURNAL_LIST, "../htdocs/journal_abbs") || die " can't open journal_abbs: $!";
 
            while ( defined ($journal_na = <JOURNAL_LIST>)) {
                chomp ($journal_na);

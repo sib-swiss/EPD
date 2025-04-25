@@ -13,8 +13,7 @@
     <script src="/js_epd/jquery-3.6.3.min.js"></script>
     <script src="/js_epd/jquery-ui-1.13.2.min.js"></script>
     <script src="/miniepd/scripts/check_form-24022023.min.js"></script>
-    <script language='javascript' type='text/javascript' src='/js_epd/epd.min.js'></script>
-
+    <script language='javascript' type='text/javascript' src='/miniepd/scripts/epd.min.js'></script>
 
   <script>
     // This function is to get the autocomplete:

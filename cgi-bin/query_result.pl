@@ -317,7 +317,7 @@ elsif ($out_format eq 'GC')
         print ($query->header);
         print ("<pre>");
         print "<B><FONT SIZE=+2>CG-content of selection of $num promoter sequences </FONT><br><FONT SIZE=+1> in range: $from to $to (window size=30) </FONT></B><br>";
-        print "\t\t\t\t<tr>\n\t<td align=center nowrap\=\"nowrap\"><a href=\"../wwwtmp/tmp_$$.png\"><IMG SRC=\"../wwwtmp/tmp_$$.png\"><\/a><\/td>\n\t\t\t\t<\/tr>";
+        print "\t\t\t\t<tr>\n\t<td align=center nowrap\=\"nowrap\"><a href=\"wwwtmp/tmp_$$.png\"><IMG SRC=\"wwwtmp/tmp_$$.png\"><\/a><\/td>\n\t\t\t\t<\/tr>";
         # /home/local/epd/wwwtmp/tmp_7397.png
         # http://epd-test.unil.ch//tmp/www-sib/tmp_7397.png
         #                         wwwtmp/tmp_7619.png
@@ -394,13 +394,13 @@ elsif ($out_format eq 'JAVA')
 }
 elsif ($out_format eq 'XML')
 {
-    $tmpfile="../wwwtmp/tmp\_$$\.xml";
+    $tmpfile="wwwtmp/tmp\_$$\.xml";
     print ($query->header);
     open(TMP,">$tmpfile");
     print TMP ("\<\?xml version=\"1.0\" standalone=\"no\"\?\>\n");
-    print TMP ("\<\?xml-stylesheet type=\"text/xsl\" href=\"http://www.epd.isb-sib.ch/epd.xsl\"\?\>\n");
-    print TMP ("\<\!DOCTYPE epd SYSTEM \"http://www.epd.isb-sib.ch/epd.dtd\"\>\n");
-    print TMP ("\<epd xmlns=\'http://www.epd.isb-sib.ch/'\>\n");
+    print TMP ("\<\?xml-stylesheet type=\"text/xsl\" href=\"https://epd.expasy.org/miniepd/epd.xsl\"\?\>\n");
+    print TMP ("\<\!DOCTYPE epd SYSTEM \"https://epd.expasy.org/miniepd/epd.dtd\"\>\n");
+    print TMP ("\<epd xmlns=\'https://epd.expasy.org/miniepd/'\>\n");
 
     foreach $entry (@entries)
     {
@@ -415,7 +415,7 @@ elsif ($out_format eq 'XML')
     print TMP"\</epd\>";
     close(TMP);
     system("gzip -c $tmpfile > $tmpfile\.gz");
-    print "<hmtl><body>The selected EPD entries in xml format are ready for download <a href=\"$tmpfile\.gz\">HERE</a><p><u>The xml file contains the following EPD Entries <\/u>:<p>";
+    print "<hmtl><body>The selected EPD entries in xml format are ready for download <a href=\"https://epd.expasy.org/miniepd/$tmpfile\.gz\">HERE</a><p><u>The xml file contains the following EPD Entries <\/u>:<p>";
     foreach $entry(@entries)
     {
         print "$entry<br>\n";
