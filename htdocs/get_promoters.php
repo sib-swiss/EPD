@@ -57,7 +57,8 @@ $fp = fopen('./logs/select_promoters.log', 'a');
 fwrite($fp, "$date\t$time\t$Users_IP_address\t$db\n");
 fclose($fp);
 
-
+$host_urls = explode(',', $_SERVER['HTTP_X_FORWARDED_HOST']);
+$host_url = trim($host_urls[0]);
 
 $tataquery       = "";
 $tataand         = "AND";
@@ -460,15 +461,15 @@ if ($stmt = $db_con->prepare("$query")) {
                     <tr style='height:25px;' bgcolor='#DDE6E5'>
                     <td>
                     <center><font color=black>Motif Enrichment</font></center>
-                    </td><td><a style='text-decoration: none' href='$url_ssa/oprof.php?fps_link=hourly/$fpsfilename' title='Oprof' target='_blank'> <BUTTON TYPE='button'>OProf</BUTTON></a> &nbsp; <a target='_blank' href='/miniepd/documents/oprof/oprofQuickGuide.php'><img src='/img_epd/Help-icon.png' alt='OProf Help' height='18' width='18'></a></td></tr>
+                    </td><td><a style='text-decoration: none' href='https://epd.expasy.org/ssa/oprof.php?fps_url=http://$host_url/miniepd/wwwtmp/$fpsfilename&species=$assembly' title='FindM' target='_blank'> <BUTTON TYPE='button'>OProf</BUTTON></a> &nbsp; <a target='_blank' href='documents/oprof/oprofQuickGuide.php'><img src='/img_epd/Help-icon.png' alt='OProf Help' height='18' width='18'></a></td></tr>
                     <tr style='height:25px;' bgcolor='#DDE6E5'>
                     <td>
                     <center><font color=black>Motif Discovery</font></center>
-                    </td><td><a style='text-decoration: none' href='$url_ssa/findm.php?fps_link=hourly/$fpsfilename' title='FindM' target='_blank'> <BUTTON TYPE='button'>FindM</BUTTON></a> &nbsp; <a target='_blank' href='/miniepd/documents/findm/findmQuickGuide.php'><img src='/img_epd/Help-icon.png' alt='FindM Help' height='18' width='18'></a></td></tr>
+                    </td><td><a style='text-decoration: none' href='https://epd.expasy.org/ssa/findm.php?fps_url=http://$host_url/miniepd/wwwtmp/$fpsfilename&species=$assembly' title='FindM' target='_blank'> <BUTTON TYPE='button'>FindM</BUTTON></a> &nbsp; <a target='_blank' href='documents/findm/findmQuickGuide.php'><img src='/img_epd/Help-icon.png' alt='FindM Help' height='18' width='18'></a></td></tr>
                     <tr style='height:25px;' bgcolor='#DDE6E5'>
                     <td>
                     <center><font color=black>Chromatin analysis</font></center>
-                    </td><td><a style='text-decoration: none' href='$url_chipseq/chip_cor.php?sga_link=hourly/$sgafile&species=$assembly' title='Chip-Cor' target='_blank'> <BUTTON TYPE='button'>ChIP-Cor</BUTTON></a> &nbsp; <a target='_blank' href='/miniepd/documents/chip-cor/chipcorQuickGuide.php'><img src='/img_epd/Help-icon.png' alt='ChIP-Cor Help' height='18' width='18'></a></td></tr>
+                    </td><td><a style='text-decoration: none' href='https://epd.expasy.org/chipseq/chip_cor.php?bed_link=http://$host_url/miniepd/wwwtmp/$sgafile&species=$assembly&strand=oriented' title='Chip-Cor' target='_blank'> <BUTTON TYPE='button'>ChIP-Cor</BUTTON></a> &nbsp; <a target='_blank' href='documents/chip-cor/chipcorQuickGuide.php'><img src='/img_epd/Help-icon.png' alt='ChIP-Cor Help' height='18' width='18'></a></td></tr>
 
 
                     </table>";
@@ -481,14 +482,14 @@ if ($stmt = $db_con->prepare("$query")) {
     }else if ($action == "toOprof"){
         $fpsfile = $databases[$db]."_".generateRandomString().".fps";
         shell_exec("sga2fps.pl --db ./ -a $assembly wwwtmp/$sgafile > wwwtmp/$fpsfile;");
-        header( "Location: /ssa/oprof.php?fps_link=hourly/$fpsfile" ) ;
+        header( "Location: https://epd.expasy.org/ssa/oprof.php?fps_url=http://$host_url/miniepd/wwwtmp/$fpsfilename&species=$assembly" ) ;
     }else if ($action == "toFindm"){
         $fpsfile = $databases[$db]."_".generateRandomString().".fps";
         shell_exec("sga2fps.pl --db ./ -a $assembly wwwtmp/$sgafile > wwwtmp/$fpsfile;");
-        header( "Location: /ssa/findm.php?fps_link=hourly/$fpsfile" ) ;
+        header( "Location: https://epd.expasy.org/ssa/findm.php?fps_url=http://$host_url/miniepd/wwwtmp/$fpsfilename&species=$assembly" ) ;
     }else if ($action == "toChipcor"){
         $fpsfile = $databases[$db]."_".generateRandomString().".fps";
-        header( "Location: /chipseq/chip_cor.php?sga_link=hourly/$sgafile&species=$assembly&strand=oriented" ) ;
+        header( "Location: https://epd.expasy.org/chipseq/chip_cor.php?bed_link=http://$host_url/miniepd/wwwtmp/$sgafile&species=$assembly&strand=oriented" ) ;
     }
 }else{
     echo "There is an error in the query!\n";
