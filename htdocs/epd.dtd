@@ -1,7 +1,7 @@
 <!-- DTD for the Eukaryotic Promoter Database -->
 
 <!-- ELEMENTS -->
-
+<!DOCTYPE epd [
 <!ELEMENT epd (Entry+)>
    <!ELEMENT Entry (ID_line,AC_line,DT_line,DE_line+,OS_line,Similarity,Cross-links,References+,ME_line+,SE_line,MGA?,Taxonomy,KW_line+,Old_format,End_of_Entry)>
       <!ELEMENT ID_line (#PCDATA)>
@@ -129,3 +129,5 @@
 <!ATTLIST RX_line Journal_source (MEDLINE|OTHER) "MEDLINE">
 
 <!ATTLIST End_of_Entry End_pattern CDATA #FIXED "//">
+]>
+
