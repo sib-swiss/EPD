@@ -1,5 +1,5 @@
 <?xml version='1.0'?>
-                      <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+                      <xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
                              <xsl:template match="/">                               
 <xsl:for-each select="epd/Entry"><xsl:apply-templates select="ID_line"/>XX
 AC   <xsl:value-of select="AC_line"/>
