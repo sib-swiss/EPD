@@ -48,7 +48,7 @@ $ENV{'PATH'} = "/usr/local/bin:".$ENV{'PATH'}.":/usr/molbio/perl";
 ################################################################
 # Get and check parameters
 #$query = new CGI;
-$query = new MyCGI;
+my $query = new MyCGI;
 
 @names = $query->param();
 #        print ($query->header);
