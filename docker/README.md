@@ -28,6 +28,11 @@ docker run --rm -it epd:$EPD_VERSION bash
 
 
 # Podman
+
+If disk space is too low, the `XDG_DATA_HOME` environmental variable allows to change where images are pulled (and decompressed),
+otherwise images are pulled in the home directory of the user under `$HOME/.local/share/containers/storage`.
+See https://docs.podman.io/en/stable/markdown/podman.1.html
+
 ```bash
 podman pull docker.io/sibswiss/epd:$EPD_VERSION
 podman run                                       -p 8111:8081 -d docker.io/sibswiss/epd:$EPD_VERSION
