@@ -16,7 +16,7 @@ my $epd2fasta = ' EPDtoFA';
 my $epd2embl = ' FROMFPS';
 $ENV{'SSA2DBC'} = '/usr/local/EPD_web.git/htdocs/ssa/data/SSA2DBC.def'; # code changed
 my $WWWTmpDir = './wwwtmp';
-my $R_cmd = "R --no-save > /dev/null";
+my $R_cmd = 'R --no-save > /dev/null';
 
 my $epd2HTML = "./epdTxt2HTML.pl";
 my $fetch = "/usr/local/bin/fetch -c ../etc/fetch.conf";

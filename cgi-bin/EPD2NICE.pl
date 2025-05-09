@@ -14,7 +14,7 @@ use FindBin qw( $RealBin );
 use lib $RealBin;
 use links;   # URLs of database access sites; variables: (%URLs %BEDE %BEDU %BEDP %ENSEMBL %UCSC %PlantGDB %Gramene %taxID)
 use IPC::Open2;
-use Sys::Hostname;
+#use Sys::Hostname;
 #use CGI;
 
 #use R;

@@ -6,19 +6,11 @@ use CGI;
 use CGI::Carp qw (fatalsToBrowser);
 use MyCGI;
 use IPC::Open2;
-use Sys::Hostname;
+#use Sys::Hostname;
 
-if (hostname eq "ccg-serv01" || hostname =~ /epdnew/ ){
-$bin="/usr/local/bin";
-#$DB="/home/local/db"; # eventually generate local copy to increase speed?
-$DB="/db";
-$WWWTmpDir = '/var/tmp/daily';
-}
-elsif (hostname eq ""){
-$bin="";
-$DB="/db";
-$WWWTmpDir = "/scratch/cluster/daily/www-ccg";
-}
+my $WWWTmpDir = './wwwtmp';
+#my $DB="/home/local/db"; # eventually generate local copy to increase speed?
+my $DB = '/db';
 
 &printCGIHeader ();
 &printHTMLHeader ();

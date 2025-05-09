@@ -6,31 +6,11 @@ use CGI;
 use CGI::Carp qw (fatalsToBrowser);
 use MyCGI;
 use IPC::Open2;
-use Sys::Hostname;
+#use Sys::Hostname;
 
-##machine-depended
-if (hostname eq "ccg-serv01" || hostname =~ /epdnew/ ){
-$bin="/usr/local/bin";
-$DATA="/home/local"; # considered obsolete
-#$DB="/home/local/db"; # eventually create local copy of EPD ?
-$DB="/db"; # considered obsolete
-$epd2fasta = ' EPDtoFA';
-$epd2embl = ' FROMFPS';
-# path to frozen, synchronized EMBL subset used for sequence extraction, still required???
 $ENV{'SSA2DBC'} = "/usr/local/EPD_web.git/htdocs/ssa/data/SSA2DBC.def"; # code changed
-$WWWTmpDir = '/var/tmp/daily';
-$R_cmd = "R --no-save > /dev/null";
-}
-elsif (hostname eq ""){
-$bin="";
-$DATA="";
-$DB="/db";
-$epd2fasta = ' /home/vital-it/gambrosi/ssa/linux/EPDtoFA';
-$epd2embl = ' /home/vital-it/gambrosi/ssa/linux/FROMFPS';
-$ENV{'SSA2DBC'} = "/usr/local/EPD_web.git/htdocs/ssa/data/SSA2DBC.def";
-$WWWTmpDir = "";
-$R_cmd = "R --no-save > /dev/null";
-}
+my $R_cmd = 'R --no-save > /dev/null';
+my $WWWTmpDir = './wwwtmp';
 
 # get and check the query parameters
 
