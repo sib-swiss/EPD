@@ -9,35 +9,16 @@ use CGI;
 use CGI::Carp qw(fatalsToBrowser);
 use MyCGI;
 use IPC::Open2;
-use Sys::Hostname;
+#use Sys::Hostname;
 
-if (hostname =~ /ccg-serv/ || hostname =~ /epdnew/ ){
-    $bin="/usr/local/bin";
-    $DATA="/home/local"; # presumably obsolete
-    #$DB="/home/local/db"; # eventually create local copy of EPD ?
-    #    $DB="/db";
-    $DB = '../htdocs/ftp';
-    $epd2fasta = ' EPDtoFA';
-    $epd2embl = ' FROMFPS';
-    # path to frozen, synchronized EMBL subset used for sequence extraction, still required???
-    $ENV{'SSA2DBC'} = '/usr/local/EPD_web.git/htdocs/ssa/data/SSA2DBC.def'; # code changed
-    $WWWTmpDir = '/var/tmp/daily';
-    #$R_cmd = "/mnt/common/R-BioC/install/Linux/x86_64/R-2.8.0/bin/R --no-save > /dev/null";
-    $R_cmd = "/usr/bin/R --no-save > /dev/null";
-}
-elsif (hostname eq ""){
-    $bin="";
-    $DATA="";
-    $DB="../htdocs/ftp";
-    $epd2fasta = ' EPDtoFA';
-    $epd2embl = ' FROMFPS';
-    $ENV{'SSA2DBC'} = '/usr/local/EPD_web.git/htdocs/ssa/data/SSA2DBC.def'; # code changed
-    $WWWTmpDir = "/scratch/cluster/daily/www-ccg";
-    $R_cmd = "R --no-save > /dev/null";
-}
+my $DB = '../htdocs/ftp';
+my $epd2fasta = ' EPDtoFA';
+my $epd2embl = ' FROMFPS';
+$ENV{'SSA2DBC'} = '/usr/local/EPD_web.git/htdocs/ssa/data/SSA2DBC.def'; # code changed
+my $WWWTmpDir = './wwwtmp';
+my $R_cmd = "R --no-save > /dev/null";
 
 my $epd2HTML = "./epdTxt2HTML.pl";
-#my $fetch = "$bin/fetch -c ../etc/fetch.conf";
 my $fetch = "/usr/local/bin/fetch -c ../etc/fetch.conf";
 my $grep = '/bin/grep';
 my $epd2xml = './epd2xml.pl';
