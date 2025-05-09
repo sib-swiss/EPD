@@ -464,19 +464,6 @@ elsif ($out_format =~ /SSA\_(.*)/)
         {
             print "$1\n\<INPUT TYPE=\"HIDDEN\" NAME=\"custom_set\" VALUE=\"$tmp.fps\">\n\<option\>$3\n";
         }
-        elsif (/.?(\<form action=)(\"[^\"]+)(\".*)/)
-        {
-            # test which host
-            if (hostname() eq 'ludwig-sun1'){
-                print "$1\"http\:\/\/\/cgi-bin\/ssa\/$program\_form\_parser$3\n";
-            }
-            elsif (hostname() eq 'sib-sun12'){
-                print "$1\"http\:\/\/\/cgi-bin\/ssa\/$program\_form\_parser$3\n";
-            }
-            elsif (hostname() eq 'www03.vital-it.ch'){
-                print "$1\"/cgi-bin\/ssa\/$program\_form\_parser$3\n";
-            }
-        }
         elsif (/^(.+)(\<option selected\>)(EPD non-redundant promoter set.*)/)
         {
             print "$1$2Selected set of EPD entries\<\/option\>\n";
