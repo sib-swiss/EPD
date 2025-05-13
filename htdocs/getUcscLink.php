@@ -1,8 +1,5 @@
 <?php
 
-$host_urls = explode(',', $_SERVER['HTTP_X_FORWARDED_HOST']);
-$host_url = trim($host_urls[0]);
-
 function getLink($chr, $begin, $end, $assembly, $render, $sessionstr) {
     $clade = '';
     # Boolean indicating if there is a WIG file specification associated
@@ -86,6 +83,8 @@ function getLink($chr, $begin, $end, $assembly, $render, $sessionstr) {
 }
 
 function getSpecificUcscLink($pid, $chr, $begin, $end, $assembly) {
+    $host_urls = explode(',', $_SERVER['HTTP_X_FORWARDED_HOST']);
+    $host_url = trim($host_urls[0]);
 #   $file = "viewer_$pid.txt";
     # Session file must exist for both US server and European mirror
     # for the links to appear in the interface
