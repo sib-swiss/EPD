@@ -1,5 +1,8 @@
 <?php
 
+$host_urls = explode(',', $_SERVER['HTTP_X_FORWARDED_HOST']);
+$host_url = trim($host_urls[0]);
+
 function getLink($chr, $begin, $end, $assembly, $render, $sessionstr) {
     $clade = '';
     # Boolean indicating if there is a WIG file specification associated
@@ -89,7 +92,7 @@ function getSpecificUcscLink($pid, $chr, $begin, $end, $assembly) {
 #   if(file_exists("epdnew/sessions/$assembly/euro/$file") && file_exists("epdnew/sessions/$assembly/us/$file")) {
     if(file_exists("wwwtmp/$assembly"."_$pid"."_specific_viewer.txt") && file_exists("wwwtmp/$assembly"."_$pid"."_specific_viewer_us.txt")) {
 #       $sessionstr = '&hgS_doLoadUrl=submit&hgS_loadUrlName=https://epd.expasy.org/miniepd/epdnew/sessions/'.$assembly.'/euro/'.$file;
-        $sessionstr = "&hgS_doLoadUrl=submit&hgS_loadUrlName=https://epd.expasy.org/miniepd/wwwtmp/$assembly"."_$pid"."_specific_viewer.txt"; # new dcode
+        $sessionstr = "&hgS_doLoadUrl=submit&hgS_loadUrlName=http://$host_url/miniepd/wwwtmp/$assembly"."_$pid"."_specific_viewer.txt"; # new code
         return getLink($chr, $begin, $end, $assembly, FALSE, $sessionstr);
     } else {
         date_default_timezone_set('Europe/Zurich');
