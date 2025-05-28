@@ -379,13 +379,15 @@ elsif ($out_format eq 'XML')
     my $host_url = $host_urls[0];
     $host_url =~ s{^\s+}{};
     $host_url =~ s{\s+$}{};
+    my $http = $ENV{'HTTP_REFERER'}; # $ENV{'HTTPS'} does not look to exist, to use this trick
+    $http =~ s{:.+$}{};
     $tmpfile="wwwtmp/tmp\_$$\.xml";
     print ($query->header);
     open(TMP,">$tmpfile");
     print TMP ("\<\?xml version=\"1.0\" standalone=\"no\"\?\>\n");
-    print TMP ("\<\?xml-stylesheet type=\"text/xsl\" href=\"http://$host_url/miniepd/epd.xsl\"\?\>\n");
-    print TMP ("\<\!DOCTYPE epd SYSTEM \"http://$host_url/miniepd/epd.dtd\"\>\n");
-    print TMP ("\<epd xmlns=\'http://$host_url/miniepd/'\>\n");
+    print TMP ("\<\?xml-stylesheet type=\"text/xsl\" href=\"$http://$host_url/miniepd/epd.xsl\"\?\>\n");
+    print TMP ("\<\!DOCTYPE epd SYSTEM \"$http://$host_url/miniepd/epd.dtd\"\>\n");
+    print TMP ("\<epd xmlns=\'$http://$host_url/miniepd/'\>\n");
 
     foreach $entry (@entries)
     {
@@ -400,7 +402,7 @@ elsif ($out_format eq 'XML')
     print TMP"\</epd\>";
     close(TMP);
     system("gzip -c $tmpfile > $tmpfile\.gz");
-    print "<hmtl><body>The selected EPD entries in xml format are ready for download <a href=\"http://$host_url/miniepd/$tmpfile\.gz\">HERE</a><p><u>The xml file contains the following EPD Entries <\/u>:<p>";
+    print "<hmtl><body>The selected EPD entries in xml format are ready for download <a href=\"$http://$host_url/miniepd/$tmpfile\.gz\">HERE</a><p><u>The xml file contains the following EPD Entries <\/u>:<p>";
     foreach $entry(@entries)
     {
         print "$entry<br>\n";

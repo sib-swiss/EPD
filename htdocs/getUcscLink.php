@@ -85,13 +85,14 @@ function getLink($chr, $begin, $end, $assembly, $render, $sessionstr) {
 function getSpecificUcscLink($pid, $chr, $begin, $end, $assembly) {
     $host_urls = explode(',', $_SERVER['HTTP_X_FORWARDED_HOST']);
     $host_url = trim($host_urls[0]);
+    $http = preg_match("/^https:/", $_SERVER['HTTP_REFERER']) ? 'https' : 'http'; # HTTP_ORIGIN looks to be unreachable here, because in a function call???
 #   $file = "viewer_$pid.txt";
     # Session file must exist for both US server and European mirror
     # for the links to appear in the interface
 #   if(file_exists("epdnew/sessions/$assembly/euro/$file") && file_exists("epdnew/sessions/$assembly/us/$file")) {
     if(file_exists("wwwtmp/$assembly"."_$pid"."_specific_viewer.txt") && file_exists("wwwtmp/$assembly"."_$pid"."_specific_viewer_us.txt")) {
 #       $sessionstr = '&hgS_doLoadUrl=submit&hgS_loadUrlName=https://epd.expasy.org/miniepd/epdnew/sessions/'.$assembly.'/euro/'.$file;
-        $sessionstr = "&hgS_doLoadUrl=submit&hgS_loadUrlName=http://$host_url/miniepd/wwwtmp/$assembly"."_$pid"."_specific_viewer.txt"; # new code
+        $sessionstr = "&hgS_doLoadUrl=submit&hgS_loadUrlName=$http://$host_url/miniepd/wwwtmp/$assembly"."_$pid"."_specific_viewer.txt"; # new code
         return getLink($chr, $begin, $end, $assembly, FALSE, $sessionstr);
     } else {
         date_default_timezone_set('Europe/Zurich');
