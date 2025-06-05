@@ -9,7 +9,7 @@
   <div id='sib_header_medium'>
     <div id='sib_other_logo'>
 
-      <a href='/miniepd/' id='epd_logo_new' ><span>Eukariotic Promoter Database</span></a>
+      <a href='/miniepd/' id='epd_logo_new' style='left:-94px'><span>Eukariotic Promoter Database</span></a>
       </div>
 
       <div id='sib_title'>
@@ -62,17 +62,16 @@
 	  </li>
 
 	  <li class='menu_title' id="menu_vg"><a
-	  href="<?php echo $url_ccg; ?>/mga/">Access MGA
-	  Database</a></li>
+	  href="https://epd.expasy.org/mga/">Access MGA Database</a></li>
 	  <li style = 'display: block'>
 	    <ul class='epd_submenu'>
 	      <li class='epd_submenu'><a
-	      href="<?php echo $url_ccg; ?>/mga/searchMga.php">MGA-Search</a></li>
+	      href="https://epd.expasy.org/mga/searchMga.php">MGA-Search</a></li>
 	      <li class='epd_submenu'><a
-	      href="<?php echo $url_ccg; ?>/chipseq/data/html/res_data.php">MGA
+	      href="https://epd.expasy.org/chipseq/data/html/res_data.php">MGA
 	      Data Overview</a></li>
 	      <li class='epd_submenu'><a
-	      href="<?php echo $url_ftp; ?>/mga/">MGA FTP site</a></li>
+	      href="https://epd.expasy.org/mga/">MGA FTP site</a></li>
 	    </ul>
 	  </li>
 
@@ -96,36 +95,36 @@
    <div id='sib_search'>
 
      <form name="searchDB" method="POST" action="/miniepd/master_search.php" onSubmit="return valForm()">
-   <div id="epdheader" align="center" valign="top" style="line-height: 25px; height: 25px;">
+   <div id="epdheader" align="center" valign="top" style="line-height:25px; height:25px">
    <table>
    <tr>
    <td align="center">
    <input name="query_str" class="epdquery" size=50 style="border-style:solid; border-color:#CCCCCC; height:21px;  border-width:1px;"> in
    </td>
    <td align="center">
-<select name="query_db" class="epdquery" onchange="chgFormAction();" style="border-style:solid; border-color:#CCCCCC; height:21px;  border-width:1px;">
-  <option value="all" <?php if (isset($_POST['query_db'])){if ($_POST['query_db'] == "all" ) echo 'selected="selected" ';} ?> > All databases</option>
+<select name="query_db" class="epdquery" onchange="chgFormAction();" style="border-style:solid; border-color:#CCC; height:21px; border-width:1px">
+  <option value="all">All databases</option>
 
   <optgroup label="EPDnew - Animals">
-  <option value="human" <?php if (isset($_POST['query_db'])){if ($_POST['query_db'] == "human") echo 'selected="selected" ';} ?> >H. sapiens</option>
-  <option value="mouse" <?php if (isset($_POST['query_db'])){if ($_POST['query_db'] == "mouse") echo 'selected="selected" ';} ?> >M. musculus</option>
-  <option value="drosophila" <?php if (isset($_POST['query_db'])){if ($_POST['query_db'] == "drosophila") echo 'selected="selected" ';} ?> >D. melanogaster</option>
-  <option value="A_mellifera" <?php if (isset($_POST['query_db'])){if ($_POST['query_db'] == "A_mellifera") echo 'selected="selected" ';} ?> >A. mellifera</option>
-  <option value="zebrafish" <?php if (isset($_POST['query_db'])){if ($_POST['query_db'] == "zebrafish") echo 'selected="selected" ';} ?> >D. rerio</option>
-  <option name="worm" value="worm" <?php if (isset($_POST['query_db'])){if ($_POST['query_db'] == "worm") echo 'selected="selected" '; } ?> >C. elegans</option>
+  <option value="human">H. sapiens</option>
+  <option value="mouse">M. musculus</option>
+  <option value="drosophila">D. melanogaster</option>
+  <option value="A_mellifera">A. mellifera</option>
+  <option value="zebrafish">D. rerio</option>
+  <option name="worm" value="worm">C. elegans</option>
   </optgroup>
 
   <optgroup label="EPDnew - Plants">
-  <option name="arabidopsis" value="arabidopsis" <?php if (isset($_POST['query_db'])){if ($_POST['query_db'] == "arabidopsis") echo 'selected="selected" '; } ?> >A. thaliana</option>
-  <option name="Z_mays" value="Z_mays" <?php if (isset($_POST['query_db'])){if ($_POST['query_db'] == "Z_mays") echo 'selected="selected" '; } ?> >Z. mays</option>
+  <option name="arabidopsis" value="arabidopsis">A. thaliana</option>
+  <option name="Z_mays" value="Z_mays">Z. mays</option>
   </optgroup>
 
   <optgroup label="EPDnew - Fungi">
-  <option name="S_cerevisiae" value="S_cerevisiae" <?php if (isset($_POST['query_db'])){if ($_POST['query_db'] == "S_cerevisiae") echo 'selected="selected" ';} ?> >S. cerevisiae</option>
-  <option name="S_pombe" value="S_pombe" <?php if (isset($_POST['query_db'])){if ($_POST['query_db'] == "S_pombe") echo 'selected="selected" ';} ?> >S. pombe</option>
+  <option name="S_cerevisiae" value="S_cerevisiae">S. cerevisiae</option>
+  <option name="S_pombe" value="S_pombe">S. pombe</option>
   </optgroup>
 
-  <option value="epd" <?php if (isset($_POST['query_db'])){if ($_POST['query_db'] == "epd") echo 'selected="selected" ';} ?> >EPD</option>
+  <option value="epd">EPD</option>
 </select>
    </td>
    <td align="center">

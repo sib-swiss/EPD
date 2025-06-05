@@ -379,7 +379,7 @@ elsif ($out_format eq 'XML')
     my $host_url = $host_urls[0];
     $host_url =~ s{^\s+}{};
     $host_url =~ s{\s+$}{};
-    my $http = $ENV{'HTTP_REFERER'}; # $ENV{'HTTPS'} does not look to exist, to use this trick
+    my $http = $ENV{'HTTP_REFERER'} || 'http'; # $ENV{'HTTPS'} does not look to exist, to use this trick
     $http =~ s{:.+$}{};
     $tmpfile="wwwtmp/tmp\_$$\.xml";
     print ($query->header);

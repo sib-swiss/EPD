@@ -141,15 +141,15 @@
 	}
 
       ?> onSubmit="return valForm()" >
-      <div id="epdheader" align="center" valign="top" style="line-height: 25px; height: 25px;">
+      <div id="epdheader" align="center" valign="top" style="line-height:25px; height:25px">
 	<table>
 	  <tr>
 	    <td align="center">
-	      <input id="query" name="query" class="epdquery" size=50 style="border-style:solid; border-color:#CCCCCC; height:21px;  border-width:1px;">
+	      <input id="query" name="query" class="epdquery" size=50 style="border-style:solid; border-color:#CCC; height:21px; border-width:1px">
 	      </td>
 	      <td align="center"> in </td>
 	      <td align="center">
-		<select id="db" name="db" class="epdquery" onchange="chgFormAction();" style="border-style:solid; border-color:#CCCCCC; height:21px;  border-width:1px;">
+		<select id="db" name="db" class="epdquery" onchange="chgFormAction();" style="border-style:solid; border-color:#CCC; height:21px; border-width:1px">
 		<?php
 		  #Add the database menu
 		  include("menu.php");
