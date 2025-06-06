@@ -296,15 +296,15 @@ if ($ENV{'REQUEST_METHOD'} eq 'POST') {
     }
 
     my $dat = $FORM{"query_db"};
-    push(@page, "</table></div><br>");
+    push(@page, "</table><br>");
 
     if ($FORM{"query_db"} eq "epd"){
 
         push(@page, "Download as:<br>");
-        push(@page, "<input type=\"radio\" VALUE=text name=out_format> EPD entry (text only)</FONT><br>");
-        push(@page, "<input type=\"radio\" VALUE=HTML name=out_format> EPD entry (html)</FONT><br>");
-        push(@page, "<input type=\"radio\" VALUE=NICE name=out_format CHECKED> EPD entry (nice view)</FONT><br>");
-        push(@page, "<input type=\"radio\" VALUE=XML name=out_format> EPD entry (xml)</FONT><br>");
+        push(@page, "<input type=\"radio\" VALUE=text name=out_format> EPD entry (text only)<br>");
+        push(@page, "<input type=\"radio\" VALUE=HTML name=out_format> EPD entry (html)<br>");
+        push(@page, "<input type=\"radio\" VALUE=NICE name=out_format CHECKED> EPD entry (nice view)<br>");
+        push(@page, "<input type=\"radio\" VALUE=XML name=out_format> EPD entry (xml)<br>");
         push(@page, "<input type=\"radio\" VALUE=EMBL name=out_format> Promoter sequence (EMBL format)<br>");
         push(@page, "<input type=\"radio\" VALUE=FASTA name=out_format> Promoter sequence (FASTA format)<br>");
         push(@page, "<b>from</b> &nbsp;<INPUT type=\"text\" name=\"from\" size=\"5\" value=\"-499\">");
@@ -320,7 +320,7 @@ if ($ENV{'REQUEST_METHOD'} eq 'POST') {
         push(@page, "bp relative to the TSS<br>");
     }
 
-    push(@page, "<input type=\"hidden\"/ name=\"database\" value=\"$dat\">");
+    push(@page, "<input type=\"hidden\" name=\"database\" value=\"$dat\">");
     push(@page, "<input class='epdsubmit' type=\"submit\" value=\"Download\" >");
     push(@page, "</form>");
 
