@@ -85,7 +85,8 @@ function getLink($chr, $begin, $end, $assembly, $render, $sessionstr) {
 function getSpecificUcscLink($pid, $chr, $begin, $end, $assembly) {
     $host_urls = explode(',', $_SERVER['HTTP_X_FORWARDED_HOST']);
     $host_url = trim($host_urls[0]);
-    $http = preg_match("/^https:/", $_SERVER['HTTP_REFERER']) ? 'https' : 'http'; # HTTP_ORIGIN looks to be unreachable here, because in a function call???
+    $referer = array_key_exists('HTTP_REFERER', $_SERVER) ? $_SERVER['HTTP_REFERER'] : 'http';
+    $http = preg_match("/^https:/", $referer) ? 'https' : 'http'; # HTTP_ORIGIN looks to be unreachable here, because in a function call???
 #   $file = "viewer_$pid.txt";
     # Session file must exist for both US server and European mirror
     # for the links to appear in the interface
