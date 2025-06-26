@@ -96,7 +96,7 @@ $outputFile = "epdnew/gif/$organism/$pid.png";
 #    $ucscMirror = 'genome-euro.ucsc.edu';
 # }
 
-if( !file_exists($outputFile) || 0 == filesize($outputFile) ){
+if( !file_exists($outputFile) || !preg_match('/png/', mime_content_type($outputFile)) || 0 == filesize($outputFile) ){
     # Download image if not already done
     $start = $position - 1000;
     $stop = $position + 1000;
