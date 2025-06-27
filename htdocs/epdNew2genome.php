@@ -972,9 +972,11 @@ if ($stmt = $db_con->prepare("$query")) {
             system("$command");
         }   # ** new
         $ucsc_specific_link = getSpecificUcscLink($id, $ucscChr, $ucscBegin, $ucscEnd, $ucscAssembly);
+        $eu_viewer_file = preg_replace('/^.*?loadUrlName=(http.*?\.txt).*$/', '$1', $ucsc_specific_link);
         $us_specific_link = getUSLink($ucsc_specific_link);
+        $us_viewer_file = preg_replace('/^.*?loadUrlName=(http.*?\.txt).*$/', '$1', $us_specific_link);
         if($ucsc_specific_link) { # should always be true
-            echo "<td><a href =\"$us_specific_link\" onclick='openUCSC(\"$us_specific_link\", \"ucsc-specific\");return false;'>Selective viewer</a> showing the 3 Fantom5 tissues with the highest expression of <b>$id</b>&nbsp;&nbsp;(<a href =\"$ucsc_specific_link\" onclick='openUCSC(\"$ucsc_specific_link\", \"ucsc-specific\");return false;'>European mirror</a>)</td>\n";
+            echo "<td><a href =\"$us_specific_link\" onclick='openUCSC(\"$us_specific_link\", \"ucsc-specific\");return false;'>Selective viewer</a> showing the 3 Fantom5 tissues with the highest expression of <b>$id</b>&nbsp;&nbsp;(<a href =\"$ucsc_specific_link\" onclick='openUCSC(\"$ucsc_specific_link\", \"ucsc-specific\");return false;'>European mirror</a>)<br>Download session files: (<a href =\"$us_viewer_file\">US session file</a>)&nbsp;&nbsp;(<a href =\"$eu_viewer_file\">EU session file</a>)</td>\n";
         }
     } else if ($ucscAssembly === "hg19") {
         $ucsc_gm12878_link = getGM12878UcscLink($id, $ucscChr, $ucscBegin, $ucscEnd, $ucscAssembly);
