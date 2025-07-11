@@ -59,10 +59,10 @@ shell_exec("export LD_LIBRARY_PATH=/lib64:/usr/lib64:/usr/lib64/mysql; liftOver 
 #fwrite($fp, "liftOver $bedFile $chain $liftoverBed $liftoverUnmapped;");
 #fclose($fp);
 # shell_exec("bed2sga -a $ucscDestAssembly -f TSS $liftoverBed -x 4 > $liftoverSga;");
-shell_exec("bed2sga -s $ucscDestAssembly -f TSS -e 4 $liftoverBed | sort -s -k1,1 -k3,3n -k4,4 > $liftoverSga;");
+shell_exec("bed2sga -a $ucscDestAssembly -f TSS -x 4 $liftoverBed | sort -s -k1,1 -k3,3n -k4,4 > $liftoverSga;");
 #echo "bed2sga -a $ucscDestAssembly -f TSS $liftoverBed > $liftoverSga;\n";
 # shell_exec("sga2fps.pl -a $ucscDestAssembly $liftoverSga > $liftoverFps;");
-shell_exec("sga2fps.pl -s $ucscDestAssembly $liftoverSga > $liftoverFps;");
+shell_exec("sga2fps.pl -a $ucscDestAssembly $liftoverSga > $liftoverFps;");
 
 if (filesize("$liftoverSga") > 0){
   $sgafileurl = "<a target='_blank' href='/miniepd/".$liftoverSga."'>SGA file</a>";
