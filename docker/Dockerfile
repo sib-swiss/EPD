@@ -45,6 +45,11 @@ RUN echo '# OS update' \
 	&& binDir=/usr/local/bin make install \
 	&& cd .. \
 	&& rm -rf pwmscan.git/ \
+	&&        echo '# Install liftOver' \
+	&& cd /usr/local/ \
+	&& wget 'https://hgdownload.cse.ucsc.edu/admin/exe/linux.x86_64/liftOver' \
+	&& chmod a+rx liftOver \
+	&& mv liftOver /usr/local/bin/ \
 	&&        echo '# Install SSA' \
 	&& cd /usr/local/ \
 	&& git clone https://gitlab.sib.swiss/EPD/ssa.git ssa.git \
