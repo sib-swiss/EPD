@@ -41,7 +41,9 @@ $fp = fopen('./logs/liftOver.log', 'a');
 fwrite($fp, "$date\t$time\t$Users_IP_address\t$origAssembly -> $destAssembly\n");
 fclose($fp);
 
-
+$host_urls = explode(',', $_SERVER['HTTP_X_FORWARDED_HOST']);
+$host_url = trim($host_urls[0]);
+$http = preg_match("/^https:/", $_SERVER['HTTP_ORIGIN']) ? 'https' : 'http';
 
 # Generate files:
 $liftoverBed = "wwwtmp/epdnew_".$origAssembly."To".$destAssembly."_".generateRandomString().".bed";
@@ -56,9 +58,11 @@ shell_exec("export LD_LIBRARY_PATH=/lib64:/usr/lib64:/usr/lib64/mysql; liftOver 
 #echo "liftOver $bedFile $chain $liftoverBed $liftoverUnmapped;";
 #fwrite($fp, "liftOver $bedFile $chain $liftoverBed $liftoverUnmapped;");
 #fclose($fp);
-shell_exec("bed2sga -a $ucscDestAssembly -f TSS $liftoverBed -x 4 > $liftoverSga;");
+# shell_exec("bed2sga -a $ucscDestAssembly -f TSS $liftoverBed -x 4 > $liftoverSga;");
+shell_exec("bed2sga -s $ucscDestAssembly -f TSS -e 4 $liftoverBed | sort -s -k1,1 -k3,3n -k4,4 > $liftoverSga;");
 #echo "bed2sga -a $ucscDestAssembly -f TSS $liftoverBed > $liftoverSga;\n";
-shell_exec("sga2fps.pl -a $ucscDestAssembly $liftoverSga > $liftoverFps;");
+# shell_exec("sga2fps.pl -a $ucscDestAssembly $liftoverSga > $liftoverFps;");
+shell_exec("sga2fps.pl -s $ucscDestAssembly $liftoverSga > $liftoverFps;");
 
 if (filesize("$liftoverSga") > 0){
   $sgafileurl = "<a target='_blank' href='/miniepd/".$liftoverSga."'>SGA file</a>";
@@ -137,15 +141,15 @@ if (filesize("$liftoverSga") > 0){
              <tr style='height:25px;' bgcolor='#DDE6E5'>
              <td>
              <center><font color=black>Motif Enrichment</font></center>
-             </td><td><a style='text-decoration: none' href='$url_ssa/oprof.php?fps_link=hourly/$liftoverFps' title='Oprof' target='_blank'> <BUTTON TYPE='button'>OProf</BUTTON></a> &nbsp; <a target='_blank' href='/miniepd/documents/oprof/oprofQuickGuide.php'><img src='/img_epd/Help-icon.png' alt='OProf Help' height='18' width='18'></a></td></tr>
+             </td><td><a style='text-decoration: none' href='$url_ssa/oprof.php?fps_url=$http://$host_url/miniepd/$liftoverFps&species=$ucscDestAssembly' title='Oprof' target='_blank'> <BUTTON TYPE='button'>OProf</BUTTON></a> &nbsp; <a target='_blank' href='/miniepd/documents/oprof/oprofQuickGuide.php'><img src='/img_epd/Help-icon.png' alt='OProf Help' height='18' width='18'></a></td></tr>
              <tr style='height:25px;' bgcolor='#DDE6E5'>
              <td>
              <center><font color=black>Motif Discovery</font></center>
-             </td><td><a style='text-decoration: none' href='$url_ssa/findm.php?fps_link=hourly/$liftoverFps' title='FindM' target='_blank'> <BUTTON TYPE='button'>FindM</BUTTON></a> &nbsp; <a target='_blank' href='/miniepd/documents/findm/findmQuickGuide.php'><img src='/img_epd/Help-icon.png' alt='FindM Help' height='18' width='18'></a></td></tr>
+             </td><td><a style='text-decoration: none' href='$url_ssa/findm.php?fps_url=$http://$host_url/miniepd/$liftoverFps&species=$ucscDestAssembly' title='FindM' target='_blank'> <BUTTON TYPE='button'>FindM</BUTTON></a> &nbsp; <a target='_blank' href='/miniepd/documents/findm/findmQuickGuide.php'><img src='/img_epd/Help-icon.png' alt='FindM Help' height='18' width='18'></a></td></tr>
              <tr style='height:25px;' bgcolor='#DDE6E5'>
              <td>
              <center><font color=black>Chromatin analysis</font></center>
-             </td><td><a style='text-decoration: none' href='$url_chipseq/chip_cor.php?sga_link=hourly/$liftoverSga&species=$ucscDestAssembly' title='Chip-Cor' target='_blank'> <BUTTON TYPE='button'>ChIP-Cor</BUTTON></a> &nbsp; <a target='_blank' href='/miniepd/documents/chip-cor/chipcorQuickGuide.php'><img src='/img_epd/Help-icon.png' alt='ChIP-Cor Help' height='18' width='18'></a></td></tr>
+             </td><td><a style='text-decoration: none' href='$url_chipseq/chip_cor.php?bed_link=$http://$host_url/miniepd/$liftoverSga&species=$ucscDestAssembly' title='Chip-Cor' target='_blank'> <BUTTON TYPE='button'>ChIP-Cor</BUTTON></a> &nbsp; <a target='_blank' href='/miniepd/documents/chip-cor/chipcorQuickGuide.php'><img src='/img_epd/Help-icon.png' alt='ChIP-Cor Help' height='18' width='18'></a></td></tr>
 
 
              </table>";
