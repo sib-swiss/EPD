@@ -1118,8 +1118,6 @@ orfeomeMrna hide
 org Mouse
 phyloP60wayPlacental_imgOrd 19
 pix 950
-position chr12:57228424-57232424
-position.mm10 lastVirtModeType=default&lastVirtModeExtraState=&virtModeType=default&virtMode=0&nonVirtPosition=&position=chr12%3A57228424%2D57232424
 r 52264862
 refSeqComposite pack
 refSeqComposite.label.gene 1

@@ -1345,8 +1345,6 @@ phastCons100way_imgOrd 24
 phastCons100way_sel 1
 phyloP100way_sel -1
 pix 950
-position chr14:61749098-61753098
-position.hg38 lastVirtModeType=default&lastVirtModeExtraState=&virtModeType=default&virtMode=0&nonVirtPosition=&position=chr14%3A61749098%2D61753098
 r 61753098
 refGene_sel 0
 refSeqComposite full

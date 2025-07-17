@@ -960,15 +960,19 @@ if ($stmt = $db_con->prepare("$query")) {
     # Only available for hg38 and mm10
     if($ucscAssembly === "hg38" or $ucscAssembly === "mm10") {
         if($ucscAssembly === "hg38") { # ** new
-            $command = "grep ^$id ../htdocs/epdnew/sessions/scripts/data/hg38*.dat | ../htdocs/epdnew/sessions/scripts/make_session_files_test.pl --tracknum 3 --both -s ../htdocs/epdnew/sessions/scripts/hg38_template.txt -i 12 > wwwtmp/$ucscAssembly\_$id\_specific_viewer.txt"; # ** new
+            $command  = "echo position $ucscChr:$ucscBegin-$ucscEnd > wwwtmp/$ucscAssembly\_$id\_specific_viewer.txt\n";
+            $command .= "grep ^$id ../htdocs/epdnew/sessions/scripts/data/hg38*.dat | ../htdocs/epdnew/sessions/scripts/make_session_files_test.pl --tracknum 3 --both -s ../htdocs/epdnew/sessions/scripts/hg38_template.txt -i 12 >> wwwtmp/$ucscAssembly\_$id\_specific_viewer.txt"; # ** new
             system("$command");
-            $command = "grep ^$id ../htdocs/epdnew/sessions/scripts/data/hg38*.dat | ../htdocs/epdnew/sessions/scripts/make_session_files_test.pl --tracknum 3 --both -s ../htdocs/epdnew/sessions/scripts/hg38_template_us.txt -i 12 > wwwtmp/$ucscAssembly\_$id\_specific_viewer_us.txt"; # ** new
+            $command  = "echo position $ucscChr:$ucscBegin-$ucscEnd > wwwtmp/$ucscAssembly\_$id\_specific_viewer_us.txt\n";
+            $command .= "grep ^$id ../htdocs/epdnew/sessions/scripts/data/hg38*.dat | ../htdocs/epdnew/sessions/scripts/make_session_files_test.pl --tracknum 3 --both -s ../htdocs/epdnew/sessions/scripts/hg38_template_us.txt -i 12 >> wwwtmp/$ucscAssembly\_$id\_specific_viewer_us.txt"; # ** new
             system("$command");
         }   # ** new
         if($ucscAssembly === "mm10") { # ** new
-            $command = "grep ^$id ../htdocs/epdnew/sessions/scripts/data/mm10*.dat | ../htdocs/epdnew/sessions/scripts/make_session_files_test.pl --tracknum 3 --both -s ../htdocs/epdnew/sessions/scripts/mm10_template.txt -i 10 > wwwtmp/$ucscAssembly\_$id\_specific_viewer.txt"; # ** new
+            $command  = "echo position $ucscChr:$ucscBegin-$ucscEnd > wwwtmp/$ucscAssembly\_$id\_specific_viewer.txt\n";
+            $command .= "grep ^$id ../htdocs/epdnew/sessions/scripts/data/mm10*.dat | ../htdocs/epdnew/sessions/scripts/make_session_files_test.pl --tracknum 3 --both -s ../htdocs/epdnew/sessions/scripts/mm10_template.txt -i 10 >> wwwtmp/$ucscAssembly\_$id\_specific_viewer.txt"; # ** new
             system("$command");
-            $command = "grep ^$id ../htdocs/epdnew/sessions/scripts/data/mm10*.dat | ../htdocs/epdnew/sessions/scripts/make_session_files_test.pl --tracknum 3 --both -s ../htdocs/epdnew/sessions/scripts/mm10_template_us.txt -i 10 > wwwtmp/$ucscAssembly\_$id\_specific_viewer_us.txt"; # ** new
+            $command  = "echo position $ucscChr:$ucscBegin-$ucscEnd > wwwtmp/$ucscAssembly\_$id\_specific_viewer_us.txt\n";
+            $command .= "grep ^$id ../htdocs/epdnew/sessions/scripts/data/mm10*.dat | ../htdocs/epdnew/sessions/scripts/make_session_files_test.pl --tracknum 3 --both -s ../htdocs/epdnew/sessions/scripts/mm10_template_us.txt -i 10 >> wwwtmp/$ucscAssembly\_$id\_specific_viewer_us.txt"; # ** new
             system("$command");
         }   # ** new
         $ucsc_specific_link = getSpecificUcscLink($id, $ucscChr, $ucscBegin, $ucscEnd, $ucscAssembly);
@@ -986,6 +990,14 @@ if ($stmt = $db_con->prepare("$query")) {
 
     echo "</tr>\n";
   }
+    if($ucscAssembly === "hg19" or $ucscAssembly === "mm10") {
+       echo "<tr><td colspan='3'><p><font color=red>Instructions for using selective viewers from a local web server (direct links won't work!):</font>\n";
+       echo "<ul><li>Download one of the session files: (<a href =\"$us_viewer_file\">US session file</a>) or (<a href =\"$eu_viewer_file\">EU session file</a> to your local computer.\n";
+       echo "<li>Open the corresponding UCSC session upload link: (<a href=https://genome.ucsc.edu/cgi-bin/hgSession>US browser</a>)&nbsp;&nbsp;(<a href=https://genome-euro.ucsc.edu/cgi-bin/hgSession>EU browser</a>).</li>\n";
+       echo "<li>Upload the session file via the \"Browse...\" button under the heading <b>Restore Settings</b></li>\n";
+       echo "<li>After pressing \"Browse...\" go the the genome browser using the corresponing link at the navigation bar on top of the page.</li></td>\n";
+      echo "</tr>\n";
+    }
   $stmt->close();
 } else{
   echo "There is something wrong in the UCSC query in external resources!<br>";
