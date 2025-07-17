@@ -992,10 +992,10 @@ if ($stmt = $db_con->prepare("$query")) {
   }
     if($ucscAssembly === "hg19" or $ucscAssembly === "mm10") {
        echo "<tr><td colspan='3'><p><font color=red>Instructions for using selective viewers from a local web server (direct links won't work!):</font>\n";
-       echo "<ul><li>Download one of the session files: (<a href =\"$us_viewer_file\">US session file</a>) or (<a href =\"$eu_viewer_file\">EU session file</a> to your local computer.\n";
+       echo "<ul><li>Download one of the session files: (<a href =\"$us_viewer_file\">US session file</a>) or (<a href =\"$eu_viewer_file\">EU session file</a>) to your local computer.\n";
        echo "<li>Open the corresponding UCSC session upload link: (<a href=https://genome.ucsc.edu/cgi-bin/hgSession>US browser</a>)&nbsp;&nbsp;(<a href=https://genome-euro.ucsc.edu/cgi-bin/hgSession>EU browser</a>).</li>\n";
        echo "<li>Upload the session file via the \"Browse...\" button under the heading <b>Restore Settings</b></li>\n";
-       echo "<li>After pressing \"Browse...\" go the the genome browser using the corresponing link at the navigation bar on top of the page.</li></td>\n";
+       echo "<li>After pressing \"Browse...\" go to the genome browser using the corresponding link at the navigation bar on top of the page.</li></td>\n";
       echo "</tr>\n";
     }
   $stmt->close();
