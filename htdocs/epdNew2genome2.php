@@ -577,6 +577,7 @@ $newdb = $_GET['db'];
 #print "$db";
 
 include("left_menu.php");
+echo "<style>#epd_logo_new {left:1px}</style>";
 #include("header.php");
 
 # Connect to the database

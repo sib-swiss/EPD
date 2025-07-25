@@ -338,6 +338,7 @@ elsif ($out_format eq 'NICE'){
     open(my $HEADER, '<', "$header")  or die "Can't open the [$header] file!";
     print <$HEADER>;
     close $HEADER;
+    print "<style>#epd_logo_new {left:1px}</style>\n";
 
     if (scalar(@entries) > 1){
         print "<div align=\"center\"><strong>";

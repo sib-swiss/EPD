@@ -414,6 +414,7 @@ sub printCGIHeader {
     my @html = <HTMLHEADER>;
     #print "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.01 Transitional//EN\" \"http://www.w3.org/TR/html4/loose.dtd\">";
     print "@html";
+    print "<style>#epd_logo_new {left:1px}</style>\n";
     # Print result div:
     print "<div id='genes' >";
     #print "<div id='wait-result'></div>";

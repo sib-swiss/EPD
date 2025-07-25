@@ -155,6 +155,7 @@ echo "\">\n";
 
 
 include("left_menu.php");
+echo "<style>#epd_logo_new {left:1px}</style>";
 
 echo "<input type='hidden' id='query_str' value='$query_str' />";
 echo "<br /><div id='epdresult'>\n";
