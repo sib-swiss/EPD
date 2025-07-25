@@ -2345,8 +2345,6 @@ phastCons100way_imgOrd 18
 phastCons100way_sel 1
 phyloP100wayAll_sel -1
 pix 950
-position chr21:33028247-33036755
-position.hg19 lastVirtModeType=default&lastVirtModeExtraState=&virtModeType=default&virtMode=0&nonVirtPosition=&position=chr21%3A33028247%2D33036755
 pubsBlat_imgOrd 13
 pubsBlat_sel 0
 pubsMarkerSnp_imgOrd 14
