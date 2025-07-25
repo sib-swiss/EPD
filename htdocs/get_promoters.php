@@ -478,7 +478,7 @@ if ($stmt = $db_con->prepare("$query")) {
                     echo "<table>\n";
                     echo "<tr><td colspan='3'><p><font color=red>Instructions for using the downstream analysis buttons from a local web server (the direct navigation buttons won't work!):</font>\n";
                     echo "<ul><li>Download the FPS (OProf and FindM) or SGA (ChIP-Cor) files to your local computer using the above download links.\n";
-                    echo "<li>Press the navigation button of your choice to open to input form of the corresponding <a href=https://epd.expasy.org/ssa/>SSA</a> or <a href=https://epd.expasy.org/chipseq/>ChIP-Seq</a> application.</li>\n";
+                    echo "<li>Press the navigation button of your choice to open the input form of the corresponding <a href=https://epd.expasy.org/ssa/>SSA</a> or <a href=https://epd.expasy.org/chipseq/>ChIP-Seq</a> application.</li>\n";
                     echo "<li>On the left side of the form, under <b>Upload custom Data</b>, press the <b>\"Browse...\"</b> button, in order to upload the downloaded FPS or SGA file to the respective server.</li></td>\n";
                     echo "</tr>\n";
                     echo "</table>\n";
