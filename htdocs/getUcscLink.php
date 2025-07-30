@@ -83,9 +83,10 @@ function getLink($chr, $begin, $end, $assembly, $render, $sessionstr) {
 }
 
 function getSpecificUcscLink($pid, $chr, $begin, $end, $assembly) {
+    $host_port = array_key_exists('SERVER_PORT', $_SERVER) and $_SERVER['SERVER_PORT'] != 443 and $_SERVER['SERVER_PORT'] != 80 ? ':'.$_SERVER['SERVER_PORT'] : '';
     $forward_host = array_key_exists('HTTP_X_FORWARDED_HOST', $_SERVER) ? $_SERVER['HTTP_X_FORWARDED_HOST'] : '127.0.0.1';
     $host_urls = explode(',', $forward_host);
-    $host_url = trim($host_urls[0]);
+    $host_url = trim($host_urls[0]).$host_port;
     $referer = array_key_exists('HTTP_REFERER', $_SERVER) ? $_SERVER['HTTP_REFERER'] : 'http';
     $http = preg_match("/^https:/", $referer) ? 'https' : 'http'; # HTTP_ORIGIN looks to be unreachable here, because in a function call???
 #   $file = "viewer_$pid.txt";
