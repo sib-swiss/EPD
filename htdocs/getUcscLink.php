@@ -83,7 +83,8 @@ function getLink($chr, $begin, $end, $assembly, $render, $sessionstr) {
 }
 
 function getSpecificUcscLink($pid, $chr, $begin, $end, $assembly) {
-    $host_urls = explode(',', $_SERVER['HTTP_X_FORWARDED_HOST']);
+	$forward_host = array_key_exists('HTTP_X_FORWARDED_HOST', $_SERVER) ? $_SERVER['HTTP_X_FORWARDED_HOST'] : '127.0.0.1';
+    $host_urls = explode(',', $forward_host);
     $host_url = trim($host_urls[0]);
     $referer = array_key_exists('HTTP_REFERER', $_SERVER) ? $_SERVER['HTTP_REFERER'] : 'http';
     $http = preg_match("/^https:/", $referer) ? 'https' : 'http'; # HTTP_ORIGIN looks to be unreachable here, because in a function call???

@@ -57,7 +57,8 @@ $fp = fopen('./logs/select_promoters.log', 'a');
 fwrite($fp, "$date\t$time\t$Users_IP_address\t$db\n");
 fclose($fp);
 
-$host_urls = explode(',', $_SERVER['HTTP_X_FORWARDED_HOST']);
+$forward_host = array_key_exists('HTTP_X_FORWARDED_HOST', $_SERVER) ? $_SERVER['HTTP_X_FORWARDED_HOST'] : '127.0.0.1';
+$host_urls = explode(',', $forward_host);
 $host_url = trim($host_urls[0]);
 $http = preg_match("/^https:/", $_SERVER['HTTP_ORIGIN']) ? 'https' : 'http';
 
