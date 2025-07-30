@@ -990,7 +990,7 @@ if ($stmt = $db_con->prepare("$query")) {
 
     echo "</tr>\n";
   }
-    if(preg_match("/127\.0\.0\.1/", $ucsc_specific_link) and ($ucscAssembly === "hg19" or $ucscAssembly === "mm10")) {
+    if(isset($ucsc_specific_link) and preg_match("/127\.0\.0\.1/", $ucsc_specific_link) and ($ucscAssembly === "hg19" or $ucscAssembly === "mm10")) {
        echo "<tr><td colspan='3'><p><font color=red>Instructions for using selective viewers from a local web server (direct links won't work!):</font>\n";
        echo "<ul><li>Download one of the session files: (<a href =\"$us_viewer_file\">US session file</a>) or (<a href =\"$eu_viewer_file\">EU session file</a>) to your local computer.\n";
        echo "<li>Open the corresponding UCSC session upload link: (<a href=https://genome.ucsc.edu/cgi-bin/hgSession>US browser</a>)&nbsp;&nbsp;(<a href=https://genome-euro.ucsc.edu/cgi-bin/hgSession>EU browser</a>).</li>\n";

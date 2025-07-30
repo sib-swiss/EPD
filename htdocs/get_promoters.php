@@ -58,7 +58,7 @@ fwrite($fp, "$date\t$time\t$Users_IP_address\t$db\n");
 fclose($fp);
 
 $forward_host = array_key_exists('HTTP_X_FORWARDED_HOST', $_SERVER) ? $_SERVER['HTTP_X_FORWARDED_HOST'] : '127.0.0.1';
-$host_port = $forward_host === '127.0.0.1' ? '8081' : '';
+$host_port = $forward_host === '127.0.0.1' ? ':8081' : '';
 $host_urls = explode(',', $forward_host);
 $host_url = trim($host_urls[0]).$host_port;
 $http = preg_match("/^https:/", $_SERVER['HTTP_ORIGIN']) ? 'https' : 'http';
@@ -477,7 +477,7 @@ if ($stmt = $db_con->prepare("$query")) {
 
                     </table>";
 
-                if($host_url === '127.0.0.1') {
+                if(preg_match("/127\.0\.0\.1/", $host_url)) {
                     echo "<table>\n";
                     echo "<tr><td colspan='3'><p><font color=red>Instructions for using the downstream analysis buttons from a local web server (the direct navigation buttons won't work!):</font>\n";
                     echo "<ul><li>Download the FPS (OProf and FindM) or SGA (ChIP-Cor) files to your local computer using the above download links.\n";
