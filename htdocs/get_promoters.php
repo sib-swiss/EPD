@@ -476,6 +476,7 @@ if ($stmt = $db_con->prepare("$query")) {
 
                     </table>";
 
+                if($host_url === '127.0.0.1') {
                     echo "<table>\n";
                     echo "<tr><td colspan='3'><p><font color=red>Instructions for using the downstream analysis buttons from a local web server (the direct navigation buttons won't work!):</font>\n";
                     echo "<ul><li>Download the FPS (OProf and FindM) or SGA (ChIP-Cor) files to your local computer using the above download links.\n";
@@ -483,6 +484,7 @@ if ($stmt = $db_con->prepare("$query")) {
                     echo "<li>On the left side of the form, under <b>Upload custom Data</b>, press the <b>\"Browse...\"</b> button, in order to upload the downloaded FPS or SGA file to the respective server.</li></td>\n";
                     echo "</tr>\n";
                     echo "</table>\n";
+                }
 
                 echo "</tr>\n";
                 echo "</table>\n";
