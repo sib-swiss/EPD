@@ -9,7 +9,7 @@
   <div id='sib_header_medium'>
     <div id='sib_other_logo'>
 
-      <a href='/miniepd/' id='epd_logo_new' style='left:-94px'><span>Eukariotic Promoter Database</span></a>
+      <a href='/miniepd/' id='epd_logo_new'><span>Eukariotic Promoter Database</span></a>
       </div>
 
       <div id='sib_title'>
