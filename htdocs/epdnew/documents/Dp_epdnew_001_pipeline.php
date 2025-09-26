@@ -100,8 +100,9 @@ Experimental data:
 		6
     </td>
     <td class='document'>
-		<!-- TOTAL TAGS -->
-	<?php $command='awk -F \'\t\' \'{sum += $5} END {print sum}\' /local<?php echo $url_ftp; ?>/mga/dpu2/raborn16/*_merged.sga'; echo number_format(intval(exec("$command")));?>
+        <!-- TOTAL TAGS -->
+        85,759,153
+	<!-- <?php $command='awk -F \'\t\' \'{sum += $5} END {print sum}\' /local<?php echo $url_ftp; ?>/mga/dpu2/raborn16/*_merged.sga'; echo number_format(intval(exec("$command")));?> -->
     </td>
     <td class='document'>
       <a target='_blank' href='https://www.ncbi.nlm.nih.gov/pubmed/27585846'>
