@@ -1,0 +1,12 @@
+Name: H. vulgare (Apr 2021 MorexV3)
+Status: partial
+NCBI Assembly: https://www.ncbi.nlm.nih.gov/datasets/genome/GCF_904849725.1/
+Source: https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/904/849/725/GCF_904849725.1_MorexV3_pseudomolecules_assembly/
+NCBI Version: GCF_904849725.1
+UCSC Assembly: GCF_904849725.1
+Local Assembly: MorexV3
+Bowtie Idx: h_vulgare_MorexV3
+Liftover: none
+RepeatMasker: rmsk/rmsk_MorexV3.SGA.gz
+MGA FTP: https://epd.expasy.org/ftp/mga/MorexV3/
+UCSC Genome Browser: https://genome.ucsc.edu/cgi-bin/hgTracks?db=GCF_904849725.1
