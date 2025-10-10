@@ -103,6 +103,13 @@
 		    if (isset($_GET['db'])){
 		      if ($_GET['db'] == "Z_mays") echo 'selected="selected" ';
     }?> >Z. mays</option>
+    <option id="H_vulgare" value="H_vulgare" <?php
+		    if (isset($_POST['query_db'])){
+		      if ($_POST['query_db'] == "H_vulgare") echo 'selected="selected" ';
+		    }
+		    if (isset($_GET['db'])){
+		      if ($_GET['db'] == "H_vulgare") echo 'selected="selected" ';
+    }?> >H. vulgare</option>
   </optgroup>
   <optgroup label="EPDnew - Fungi">
     <option id="S_cerevisiae" value="S_cerevisiae" <?php

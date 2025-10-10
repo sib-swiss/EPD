@@ -445,6 +445,24 @@
         },
         {
           "@type": "Dataset",
+          "name": "H_vulgare",
+          "description": "hvEPDnew, the Hordeum vulgare (barley) curated promoter database.",
+          "url": "https://epd.expasy.org/epd/H_vulgare/H_vulgare_database.php?db=H_vulgare",
+          "isAccessibleForFree" : true,
+          "license": {
+            "@type": "CreativeWork",
+            "name": "Attribution 4.0 International (CC BY 4.0)",
+            "url": "https://creativecommons.org/licenses/by/4.0/"
+          },
+          "creator": [
+            {
+              "@type": "Person",
+              "name": "The EPD team"
+            }
+          ],
+        },
+        {
+          "@type": "Dataset",
           "name": "S. cerevisiae",
           "description": "scEPDnew, the Saccharomyces cerevisiae (baking yeast) curated promoter database.",
           "url": "https://epd.expasy.org/epd/S_cerevisiae/S_cerevisiae_database.php?db=S_cerevisiae",
