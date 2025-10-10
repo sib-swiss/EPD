@@ -100,6 +100,9 @@ precision and high coverage</a>.
     <li><b><i>Zea mays</i></b> (zm3): <b><?php echo
       count(file("ftp/epdnew/Z_mays/current/Zm_EPDnew.fps"));?></b>
       promoters <?php echo is_mounted('zm3');?></li>
+    <li><b><i>Hordeum vulgare</i></b> (MorexV3): <b><?php echo
+      count(file("ftp/epdnew/H_vulgare/current/Hv_EPDnew.fps"));?></b>
+      promoters <?php echo is_mounted('MorexV3');?></li>
     </ul>
   </li>
   <li>Fungi:
