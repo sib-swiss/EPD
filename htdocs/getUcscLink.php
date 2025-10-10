@@ -16,6 +16,7 @@ function getLink($chr, $begin, $end, $assembly, $render, $sessionstr) {
         case "spo2":
         case "zm3":
         case "araTha1":
+        case "MorexV3":
             $dbVarName = 'genome';
             break;
 
@@ -64,6 +65,8 @@ function getLink($chr, $begin, $end, $assembly, $render, $sessionstr) {
             # Unknown assembly - should never happen
             return '';
     }
+    # Replace assembly name for GenArk assemblies.
+    if($assembly == "MorexV3") {$assembly = "GCF_904849725.1";}
 
     # Definition of URL components ############################################
     if($render) {

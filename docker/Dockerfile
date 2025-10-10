@@ -86,7 +86,7 @@ RUN echo '# OS update' \
 	&& service mysql start \
 	&& cd mysql/ \
 	&& echo '# remove unused db' \
-	&& rm -f Dpulex_epdnew.sql.xz \
+	&& rm -f Dpulex_epdnew.sql.xz ncbiGene.sql.xz \
 	&& echo 'ls *_epdnew.sql.xz | grep -v S_pombe | xargs rm -f' \
 	&& for sql in *.sql.xz; do mysql -u root -e "CREATE DATABASE ${sql/.sql.xz/}"; done \
 	&& mysql -u root -e "CREATE USER 'ccgweb'@'localhost' IDENTIFIED BY 'ccgweb'" \

@@ -45,6 +45,7 @@
             <optgroup label="EPDnew - Plants">
     	        <option value="arabidopsis">A. thaliana</option>
         	    <option value="Z_mays">Z. mays</option>
+        	    <option value="H_vulgare">H. vulgare</option>
 	        </optgroup>
             <optgroup label="EPDnew - Fungi">
 	            <option value="S_cerevisiae">S. cerevisiae</option>
@@ -83,7 +84,7 @@
     <tbody>
     <tr>
       <td style="vertical-align:middle; padding: 5px 5px 5px 20px;">
-	<select  name="dispersionAND" class="epddownload" style="width: 48px;">
+	<select  name="dispersionAND" class="epddownload" style="width: 54px;">
 	  <option  value="AND" selected="selected">AND</option>
 	  <option  value="OR">OR</option>
 	</select>
@@ -99,7 +100,7 @@
 
     <tr>
       <td style="vertical-align:middle; padding: 5px 5px 5px 20px;">
-	<select  name="eAverageAND" class="epddownload" style="width: 48px;">
+	<select  name="eAverageAND" class="epddownload" style="width: 54px;">
 	  <option  value="AND" selected="selected">AND</option>
 	  <option  value="OR">OR</option>
 	</select>
@@ -111,7 +112,7 @@
 
     <tr>
       <td style="vertical-align:middle; padding: 5px 5px 5px 20px;">
-	<select  name="eSamplesAND" class="epddownload" style="width: 48px;">
+	<select  name="eSamplesAND" class="epddownload" style="width: 54px;">
 	  <option  value="AND" selected="selected">AND</option>
 	  <option  value="OR">OR</option>
 	</select>
@@ -286,7 +287,7 @@
 
 <?php readfile("footer.html"); ?>
 
-<script src="/miniepd/scripts/epd_select-24022023.min.js">
+<script src="/miniepd/scripts/epd_select-251010.min.js">
 </script>
 
 </body>

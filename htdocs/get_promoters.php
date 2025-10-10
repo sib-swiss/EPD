@@ -12,6 +12,8 @@ function generateRandomString($length = 5) {
 
 #print_r($_POST);
 
+# new code added to support new motifs
+
 $db            = $_POST['select_db'];
 $tata          = $_POST['tata'];
 $inrand        = $_POST['inrAND'];
@@ -20,6 +22,12 @@ $ccaatand      = $_POST['ccaatAND'];
 $ccaat         = $_POST['ccaat'];
 $gcand         = $_POST['gcAND'];
 $gc            = $_POST['gc'];
+$yr            = $_POST['yr'];
+$yrand         = $_POST['yrAND'];
+$ypatch        = $_POST['ypatch'];
+$ypatchand     = $_POST['ypatchAND'];
+$ggccca        = $_POST['ggccca'];
+$ggcccaand     = $_POST['ggcccaAND'];
 $cpgand        = $_POST['cpgAND'];
 $cpg           = $_POST['cpg'];
 $dispersionand = $_POST['dispersionAND'];
@@ -69,6 +77,7 @@ $wherequery      = "";
 $inrquery        = "";
 $ccaatquery      = "";
 $gcquery         = "";
+$yrquery         = "";
 $dispersionquery = "";
 $eaveragequery   = "";
 $esamplesgequery = "";
@@ -98,7 +107,8 @@ if ($confFile) {
 # get the UCSC assembly name from the data file:
 $assembly = shell_exec("awk '$1==\"DR\" && $2==\"UCSC;\"{print $3; exit}' ftp/epdnew/$db/current/*_EPDnew.dat");
 $assembly = str_replace("\n", '', $assembly);
-# echo "assembly: $assembly<br>";
+echo "Assenbly assembly: $assembly<br>";
+if($assembly == "GCF_904849725.1") {$assembly = "MorexV3";}
 
 
 /* if ($db == "human"){ */
@@ -229,6 +239,55 @@ if ($gc == 'with'){
     #  $where = 1;
 }
 
+# new code added to support new motifs
+
+# YR Initiator
+if ($where == 0){
+    $yrand = '';
+}
+if ($yr == 'with'){
+    $yrquery = $yrand.' promoter_motif.yr LIKE "1"';
+    $where++;
+}else if ($yr == 'without'){
+    $yrquery = $yrand.' promoter_motif.yr LIKE "0"';
+    $where++;
+}else{
+    $yrquery = '';
+    #  $where = 1;
+}
+
+# Y-patch
+if ($where == 0){
+    $ypatchand = '';
+}
+if ($ypatch == 'with'){
+    $ypatchquery = $ypatchand.' promoter_motif.ypatch LIKE "1"';
+    $where++;
+}else if ($ypatch == 'without'){
+    $ypatchquery = $ypatchand.' promoter_motif.ypatch LIKE "0"';
+    $where++;
+}else{
+    $ypatchquery = '';
+    #  $where = 1;
+}
+
+# GGCCCA motif
+
+if ($where == 0){
+    $ggcccaand = '';
+}
+if ($ggccca == 'with'){
+    $ggcccaquery = $ggcccaand.' promoter_motif.ggccca LIKE "1"';
+    $where++;
+}else if ($ggccca == 'without'){
+    $ggcccaquery = $ggcccaand.' promoter_motif.ggccca LIKE "0"';
+    $where++;
+}else{
+    $ggcccaquery = '';
+    #  $where = 1;
+}
+
+
 # Dispersion
 if ($where == 0){
     $dispersionand = '';
@@ -280,7 +339,10 @@ LEFT JOIN promoter_ensembl
 ON promoter_coordinate.id = promoter_ensembl.id
 LEFT JOIN cross_references
 ON promoter_ensembl.ensembl_id = cross_references.ensembl_id
-$wherequery $idquery $tataquery $inrquery $ccaatquery $gcquery $dispersionquery $esamplesquery $eaveragequery";
+
+$wherequery $idquery $tataquery $inrquery $ccaatquery $gcquery $yrquery $ypatchquery $ggcccaquery$dispersionquery $esamplesquery $eaveragequery";
+
+# new code added to support new motifs (see above)
 
 # echo "$query;<br>\n";
 
@@ -329,8 +391,10 @@ if ($stmt = $db_con->prepare("$query")) {
     $fpsfilename = $databases[$db]."_".generateRandomString().".fps";
     $fpsfile = "wwwtmp/".$fpsfilename;
     shell_exec("sga2fps.pl --db ./ -a $assembly wwwtmp/$sgafile > $fpsfile;");
+#    shell_exec("sga2fps.pl --db ./ -s $assembly wwwtmp/$sgafile > $fpsfile;"); # changed PB
     $bedfile = "wwwtmp/".$databases[$db]."_".generateRandomString().".bed";
     shell_exec("sga2bed --db ./ -H -l 1 -X 6:4 wwwtmp/$sgafile > $bedfile;");
+#    shell_exec("sga2bed -i   ./ -r -l 1 -e 6:4 wwwtmp/$sgafile > $bedfile;"); # changed PB
 
     $sgafileurl = "<a target='_blank' href='/miniepd/wwwtmp/".$sgafile."'>SGA file</a>";
     $logfileurl = "<a target='_blank' href='/miniepd/wwwtmp/".$logfile."'>Log file</a>";
@@ -362,12 +426,20 @@ if ($stmt = $db_con->prepare("$query")) {
             <td colspan='2' align=center width=100% bgcolor=\"#336699\" style='color: #ffffff'><b>Selection Parameters</b>
             </td>
             </tr>
-            <tr>
-            <tr bgcolor='#C0E0FF'><td width='50%'><b>TATA-box:</b></td><td> $tata </td></tr>
+            <tr>";
+        # new code added to support new motifs
+        if($assembly == "MorexV3") {
+        echo "<tr bgcolor='#C0E0FF'><td width='50%'><b>TATA-box:</b></td><td> $tata </td></tr>
+            <tr bgcolor='#C0E0FF'><td width='50%'><b>YR Initiator:</b></td><td> $yr </td></tr>
+            <tr bgcolor='#C0E0FF'><td width='50%'><b>Y-patch:</b></td><td> $ypatch </td></tr>
+            <tr bgcolor='#C0E0FF'><td width='50%'><b>GGCCCA motif:</b></td><td> $ggccca </td></tr>";
+        } else {
+        echo "<tr bgcolor='#C0E0FF'><td width='50%'><b>TATA-box:</b></td><td> $tata </td></tr>
             <tr bgcolor='#C0E0FF'><td width='50%'><b>Initiator:</b></td><td> $inr </td></tr>
             <tr bgcolor='#C0E0FF'><td width='50%'><b>CCAAT-box:</b></td><td> $ccaat </td></tr>
-            <tr bgcolor='#C0E0FF'><td width='50%'><b>GC-box:</b></td><td> $gc </td></tr>
-            <tr bgcolor='#C0E0FF'><td width='50%'><b>Marked as:</b></td><td> $dispersion </td></tr>
+            <tr bgcolor='#C0E0FF'><td width='50%'><b>GC-box:</b></td><td> $gc </td></tr>";
+        }
+        echo "<tr bgcolor='#C0E0FF'><td width='50%'><b>Marked as:</b></td><td> $dispersion </td></tr>
             <tr bgcolor='#C0E0FF'><td width='50%'><b>Average expression:</b></td><td> $eaverage </td></tr>
             <tr bgcolor='#C0E0FF'><td width='50%'><b>Expressed in:</b></td><td> $esamples </td></tr>
 
@@ -494,11 +566,13 @@ if ($stmt = $db_con->prepare("$query")) {
 
     }else if ($action == "toOprof"){
         $fpsfile = $databases[$db]."_".generateRandomString().".fps";
-        shell_exec("sga2fps.pl --db ./ -a $assembly wwwtmp/$sgafile > wwwtmp/$fpsfile;");
+       shell_exec("sga2fps.pl --db ./ -a $assembly wwwtmp/$sgafile > wwwtmp/$fpsfile;");
+#        shell_exec("sga2fps.pl --db ./ -s $assembly wwwtmp/$sgafile > wwwtmp/$fpsfile;"); # changed PB
         header( "Location: https://epd.expasy.org/ssa/oprof.php?fps_url=$http://$host_url/miniepd/wwwtmp/$fpsfilename&species=$assembly" ) ;
     }else if ($action == "toFindm"){
         $fpsfile = $databases[$db]."_".generateRandomString().".fps";
-        shell_exec("sga2fps.pl --db ./ -a $assembly wwwtmp/$sgafile > wwwtmp/$fpsfile;");
+       shell_exec("sga2fps.pl --db ./ -a $assembly wwwtmp/$sgafile > wwwtmp/$fpsfile;");
+#        shell_exec("sga2fps.pl --db ./ -s $assembly wwwtmp/$sgafile > wwwtmp/$fpsfile;"); # changed PB
         header( "Location: https://epd.expasy.org/ssa/findm.php?fps_url=$http://$host_url/miniepd/wwwtmp/$fpsfilename&species=$assembly" ) ;
     }else if ($action == "toChipcor"){
         $fpsfile = $databases[$db]."_".generateRandomString().".fps";

@@ -63,6 +63,12 @@ function IDchanged() {
         addStandardMotifMenus();
         break;
 
+        case "H_vulgare":
+        document.getElementById("idtype").options[1].textContent = "NCBI gene name";
+        document.getElementById("idtype").options[2].textContent = "RefSeq";
+        addPlantMotifMenus();
+        break;
+
         case "S_cerevisiae":
     	document.getElementById("idtype").options[1].textContent = "sgdGene ID";
     	document.getElementById("idtype").options[2].textContent = "RefSeq";
@@ -173,7 +179,7 @@ function addStandardMotifMenus() {
     var select1 = document.createElement("select");
     select1.setAttribute("class", "epddownload storable");
     select1.setAttribute("name", "inrAND");
-    select1.setAttribute("style", "width: 48px;");
+    select1.setAttribute("style", "width: 54px;");
     option = document.createElement("option");
     option.setAttribute("selected", "selected");
     option.value = "AND"; option.textContent = "AND";
@@ -212,6 +218,82 @@ function addStandardMotifMenus() {
     tbody.appendChild(row);
 
     // Shift TATA menu to the right to make it aligned with the other menus
-    select.setAttribute("style", "margin-left: 51px; width: 64px;");
+    select.setAttribute("style", "margin-left: 57px; width: 64px;");
+}
+
+function addPlantMotifMenus() {
+    var tbody = removeMotifMenus();
+
+    // Add TATA box menu
+    var row = document.createElement("tr");
+    var cell = document.createElement("td");
+    cell.setAttribute("style", "vertical-align: middle; padding: 5px 5px 5px 20px");
+    var select = document.createElement("select");
+    select.setAttribute("class", "epddownload storable");
+    select.setAttribute("name", "tata");
+    select.setAttribute("style", "width: 64px");
+    var options = new Array(3);
+    for(var i = 0; i < 3; i++) options[i] = document.createElement("option");
+    options[0].value = "all";options[0].textContent = "";
+    options[0].setAttribute("selected", "selected");
+    options[1].value = "with";options[1].textContent = "with";
+    options[2].value = "without";options[2].textContent = "without";
+    for(var i = 0; i < 3; i++) select.appendChild(options[i]);
+    // Look whether a selection has been previously made
+    if(sessionStorage.getItem('tata')) select.selectedIndex = sessionStorage.getItem('tata');
+    cell.appendChild(select);
+    cell.appendChild(document.createTextNode(" TATA box"));
+    row.appendChild(cell);
+    tbody.appendChild(row);
+
+    // Add YR Initiator
+    row = row.cloneNode(true);
+    cell = row.firstChild;
+    var select2 = cell.firstChild;
+    select2.name = "yr";
+    if(sessionStorage.getItem('yr')) select2.selectedIndex = sessionStorage.getItem('yr');
+    var select1 = document.createElement("select");
+    select1.setAttribute("class", "epddownload storable");
+    select1.setAttribute("name", "yrAND");
+    select1.setAttribute("style", "width: 54px;");
+    option = document.createElement("option");
+    option.setAttribute("selected", "selected");
+    option.value = "AND"; option.textContent = "AND";
+    select1.appendChild(option);
+    option = document.createElement("option");
+    option.value = "OR"; option.textContent = "OR";
+    select1.appendChild(option);
+    if(sessionStorage.getItem('yrAND')) select1.selectedIndex = sessionStorage.getItem('yrAND');
+    cell.insertBefore(select1, select2);
+    cell.insertBefore(document.createTextNode(" "), select2);
+    cell.lastChild.textContent = " YR Initiator";
+    tbody.appendChild(row);
+
+    // Add Y-patch menu
+    row = row.cloneNode(true);
+    cell = row.firstChild;
+    select1 = cell.firstChild;
+    select2 = cell.lastChild.previousElementSibling;
+    select1.name = "ypatchAND";
+    if(sessionStorage.getItem('ypatchAND')) select1.selectedIndex = sessionStorage.getItem('ypatchAND');
+    select2.name = "ypatch";
+    if(sessionStorage.getItem('ypatch')) select2.selectedIndex = sessionStorage.getItem('ypatch');
+    cell.lastChild.textContent = " Y-patch";
+    tbody.appendChild(row);
+
+    // Add GGCCCA menu
+    row = row.cloneNode(true);
+    cell = row.firstChild;
+    select1 = cell.firstChild;
+    select2 = cell.lastChild.previousElementSibling;
+    select1.name = "ggcccaAND";
+    if(sessionStorage.getItem('ggcccaAND')) select1.selectedIndex = sessionStorage.getItem('ggcccaAND');
+    select2.name = "ggccca";
+    if(sessionStorage.getItem('ggccca')) select2.selectedIndex = sessionStorage.getItem('ggccca');
+    cell.lastChild.textContent = " GGCCCA motif";
+    tbody.appendChild(row);
+
+    // Shift TATA menu to the right to make it aligned with the other menus
+    select.setAttribute("style", "margin-left: 57px; width: 64px;");
 }
 

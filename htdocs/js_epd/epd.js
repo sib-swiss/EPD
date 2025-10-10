@@ -336,6 +336,11 @@ function setIdType() {
     	document.getElementById("idtype").options[2].textContent = "RefSeq";
         break;
 
+        case "H_vulgare":
+        document.getElementById("idtype").options[1].textContent = "NCBI gene name";
+        document.getElementById("idtype").options[2].textContent = "RefSeq";
+        break;
+
         case "S_cerevisiae":
     	document.getElementById("idtype").options[1].textContent = "sgdGene ID";
     	document.getElementById("idtype").options[2].textContent = "RefSeq";

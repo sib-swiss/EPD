@@ -754,7 +754,7 @@ if ($stmt = $db_con->prepare("$query")) {
 
 # NCBI Gene link:
 if ($refseq != ""){
-  $ncbi_con = mysqli_connect("127.0.0.1","ccgweb","ccgweb","ncbiGene");
+  $ncbi_con = mysqli_connect("127.0.0.1","ccgweb","ccgweb","ncbiGene2");
   $query = "SELECT geneId FROM refseqToGene WHERE refseqId LIKE '$rseq'";
   if ($stmt = $ncbi_con->prepare("$query")) {
     $stmt->execute();

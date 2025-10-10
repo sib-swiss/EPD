@@ -1,4 +1,5 @@
 <?php
+
 # function generateRandomString($length = 5) {
 #     $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
 #     $randomString = '';
@@ -232,6 +233,13 @@ if(preg_match("/hsNC/", $db)) {
   $dbOld = 'epdNew_zm';
   $_GET['db'] = 'Z_mays';
   $specie = 'Zea_mays';
+} else if(preg_match("/hv/",$db)){
+  $database = 'H_vulgare_epdnew';
+  $assembly = 'MorexV3';
+  $commonName = 'barley';
+  $dbOld = 'epdNew_hv';
+  $_GET['db'] = 'H_vulgare';
+  $specie = 'Hordeum_vulgare';
 } else if(preg_match("/am/",$db)){
   $database = 'A_mellifera_epdnew';
   $assembly = 'amel5';
@@ -796,6 +804,12 @@ if ($stmt = $db_con->prepare("$query")) {
       print "https://protists.ensembl.org/$specie/Gene/Summary?g=";
       print "$ensembl";
       print "\" target='_blank'>$ensembl</a></td></tr>";
+    } else if (preg_match("/hv/",$db)){
+      print "<tr align='left'><td>EnsemblPlants:</td>\n";
+      print "<td><a href =\"";
+      print "https://plants.ensembl.org/$specie/Gene/Summary?g=";
+      print "$ensembl";
+      print "\" target='_blank'>$ensembl</a></td></tr>";
     } else {
       print "<tr align='left'><td>Ensembl:</td>\n";
       print "<td><a href =\"";
@@ -838,7 +852,7 @@ if ($stmt = $db_con->prepare("$query")) {
 
 # NCBI Gene link:
 if ($refseq != ""){
-  $ncbi_con = mysqli_connect("127.0.0.1","ccgweb","ccgweb","ncbiGene");
+  $ncbi_con = mysqli_connect("127.0.0.1","ccgweb","ccgweb","ncbiGene2");
   $query = "SELECT geneId FROM refseqToGene WHERE refseqId LIKE '$rseq'";
   if ($stmt = $ncbi_con->prepare("$query")) {
     $stmt->execute();
@@ -869,15 +883,19 @@ echo "</table></p>\n";
 ######################################################################
 # Print Promoter Viewer:
 
-if ( preg_match("/Homo/",$specie) || preg_match("/Mac/",$specie) || preg_match("/Mus/",$specie) || preg_match("/Rat/",$specie)  || preg_match("/Canis/",$specie) || preg_match("/Gal/",$specie) || preg_match("/Drosophila/",$specie) || preg_match("/Danio/",$specie) || preg_match("/Cae/",$specie) || preg_match("/Sac/",$specie) || preg_match("/Ara/",$specie) || preg_match("/Zea/",$specie) || preg_match("/pombe/",$specie) || preg_match("/mellifera/",$specie) || preg_match("/falciparum/", $specie) ){
+if ( preg_match("/Homo/",$specie) || preg_match("/Mac/",$specie) || preg_match("/Mus/",$specie) || preg_match("/Rat/",$specie)  || preg_match("/Canis/",$specie) || preg_match("/Gal/",$specie) || preg_match("/Drosophila/",$specie) || preg_match("/Danio/",$specie) || preg_match("/Cae/",$specie) || preg_match("/Sac/",$specie) || preg_match("/Ara/",$specie) || preg_match("/Zea/",$specie) || preg_match("/pombe/",$specie) || preg_match("/mellifera/",$specie) || preg_match("/falciparum/", $specie) || preg_match("/Hordeum/",$specie) ){
   # set the height of the loading DIV to the final dimension of the
   # image (it depends on the epdHub). Chenge them if you change the hub
   # (change the UCSC picture)
 #  if ( preg_match("/Homo/", $specie) ){ $dheight = "689px"; }
 #  if ( preg_match("/Mus/", $specie) ){ $dheight = "658px"; }
 #  if ( preg_match("/Homo/", $specie) ){ $dheight = "606px"; }
-#  echo "$assembly";
-  $query = "SELECT assembly, chromosome, prsition FROM promoter_ucsc WHERE id LIKE '$id' AND assembly LIKE '$assembly'";
+    #  echo "$assembly";
+  if($assembly == "MorexV3") {
+    $query = "SELECT assembly, chromosome, prsition FROM promoter_ucsc WHERE id LIKE '$id' AND assembly LIKE 'GCF_904849725.1'";
+  } else {
+    $query = "SELECT assembly, chromosome, prsition FROM promoter_ucsc WHERE id LIKE '$id' AND assembly LIKE '$assembly'";
+  }
   if ($stmt = $db_con->prepare("$query")) {
     $stmt->execute();
     $stmt->bind_result($ucscAssembly, $ucscChr, $ucscPos);
@@ -894,7 +912,7 @@ if ( preg_match("/Homo/",$specie) || preg_match("/Mac/",$specie) || preg_match("
   echo "<tr align='left' style='background-color:#CEE3F6;'>\n";
   echo "<td align='left'><h2>Promoter Image <a title='Go to the EPD Hub at UCSC' style='font-size: 70%;' href ='";
   # UCSC link for the "Promoter image" section
-  $link = getUcscLink($organism, $ucscChr, $ucscBegin, $ucscEnd, $ucscAssembly, FALSE);
+  $link = getUcscLink($organism, $ucscChr, $ucscBegin, $ucscEnd, $assembly, FALSE);
   echo $link;
   echo "' target='_blank'>[View it at UCSC]</a> </h2></td>\n";
   echo "<td align='right'><a href='/miniepd/EPDnew_database.php#promoterImage'>[Help]</a></td></tr>\n";
@@ -950,7 +968,7 @@ if ($stmt = $db_con->prepare("$query")) {
     echo "<tr style='text-align: left;'><td style='width: 150px;'>EPD view at UCSC ($ucscAssembly):</td>\n";
 
     # UCSC links
-    $ucsc_link = getUcscLink($organism, $ucscChr, $ucscBegin, $ucscEnd, $ucscAssembly, FALSE);
+    $ucsc_link = getUcscLink($organism, $ucscChr, $ucscBegin, $ucscEnd, $assembly, FALSE);
     $us_link = getUSLink($ucsc_link);
     echo "<td style='width:300px;'><a href =\"$us_link\" onclick='openUCSC(\"$us_link\", \"ucsc\");return false;'>$ucscChr:$ucscBegin&ndash;$ucscEnd</a>";
     echo "&nbsp;&nbsp;(<a href =\"$ucsc_link\" onclick='openUCSC(\"$ucsc_link\", \"ucsc\");return false;'>European mirror</a>)</td>\n";
@@ -1210,11 +1228,13 @@ echo "<tr align='left' style='background-color:#CEE3F6;'>\n";
 echo "<td align='left'><h2>Expression Profile Tool</h2></td>\n";
 echo "<td align='right'><a href='/miniepd/EPDnew_database.php#expressionProfileTool'>[Help]</a></td></tr>\n";
 echo "<tr align='left'><td align='left' colspan='2'>\n";
+# if($newdb == "H_vulgare") {echo "This feature is not yet implemented for H. vulgare, Id=$id";}
 echo "<div id='expressionDiv'></div>";
 echo "<div id='expressionCanvas' style='display:none; width:600px; background-color:#fff; border: 1px solid #aaa; overflow-x: auto;'></div>\n";
 echo "<p><div id='expressionSamples' style='overflow:auto;  max-height:300px'></div></p>\n";
 echo "<div style='display:block;' id='expressionLoadingDiv'>\n";
 echo "<p><img src='/img_epd/ajax-loader.gif' /> </p> </div>\n";
+
 echo "</tr>\n";
 echo "</table></p>\n";
 
