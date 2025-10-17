@@ -15,7 +15,7 @@ $noncoding = False;
 <table class="epd-db2">
     <tr>
         <td>Version</td>
-        <td><b>002</b></td>
+        <td><b>000</b></td>
     </tr>
     <tr>
         <td>Coverage</td>

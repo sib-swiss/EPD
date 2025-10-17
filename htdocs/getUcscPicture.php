@@ -83,6 +83,7 @@ include("getUcscLink.php");
 # }
 
 # Get the parameters:
+
 $organism = $_GET["organism"];
 $chr = $_GET["chr"];
 $position = $_GET["pos"];
@@ -100,11 +101,8 @@ if( !file_exists($outputFile) || !preg_match('/png/', mime_content_type($outputF
     # Download image if not already done
     $start = $position - 1000;
     $stop = $position + 1000;
-    # $rdir = generateRandomString(5);
-    # $tmpDir = "wwwtmp/$rdir";
-
-    # argument TRUE is to get a link to an image rather than to the browser
     $ucscUrl = getUcscLink($organism, $chr, $start, $stop, $assembly, TRUE);
+
     error_log("UCSC URL: [$ucscUrl]", 0);
     exec("curl '$ucscUrl' > $outputFile");
 }
