@@ -305,7 +305,7 @@ if ($where == 0){
     $eaverageand = '';
 }
 if ($eaverage != ''){
-    $eaveragequery = $eaverageand." promoter_average_expression.average_expression > '$eaverage'";
+    $eaveragequery = $eaverageand." promoter_average_expression.average_expression >= '$eaverage'";
     $where++;
 }else{
     $eaveragequery = "";
