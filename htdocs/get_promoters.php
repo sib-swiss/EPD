@@ -107,7 +107,7 @@ if ($confFile) {
 # get the UCSC assembly name from the data file:
 $assembly = shell_exec("awk '$1==\"DR\" && $2==\"UCSC;\"{print $3; exit}' ftp/epdnew/$db/current/*_EPDnew.dat");
 $assembly = str_replace("\n", '', $assembly);
-echo "Assenbly assembly: $assembly<br>";
+#echo "Assenbly assembly: $assembly<br>";
 if($assembly == "GCF_904849725.1") {$assembly = "MorexV3";}
 
 
@@ -317,7 +317,7 @@ if ($where == 0){
     $esamplesand = '';
 }
 if ($esamples != ''){
-    $esamplesquery = $esamplesand." promoter_average_expression.number_of_samples > '$esamples'";
+    $esamplesquery = $esamplesand." promoter_average_expression.number_of_samples >= '$esamples'";
     $where++;
 }else{
     $esamplesquery = "";
