@@ -207,7 +207,7 @@
               "@type": "Person",
               "name": "The EPD team"
             }
-          ],
+          ]
         },
         {
           "@type": "Dataset",
