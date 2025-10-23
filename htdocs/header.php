@@ -225,13 +225,7 @@
               "@type": "Person",
               "name": "The EPD team"
             }
-          ],
-          "provider": {
-            "@type": "Organization",
-            "name": "SIB Swiss Institute of Bioinformatics",
-            "@id": "https://ror.org/002n09z45",
-            "url":"https://sib.swiss"
-          }
+          ]
         },
         {
           "@type": "Dataset",
@@ -249,13 +243,7 @@
               "@type": "Person",
               "name": "The EPD team"
             }
-          ],
-          "provider": {
-            "@type": "Organization",
-            "name": "SIB Swiss Institute of Bioinformatics",
-            "@id": "https://ror.org/002n09z45",
-            "url":"https://sib.swiss"
-          }
+          ]
         },
         {
           "@type": "Dataset",
@@ -273,13 +261,7 @@
               "@type": "Person",
               "name": "The EPD team"
             }
-          ],
-          "provider": {
-            "@type": "Organization",
-            "name": "SIB Swiss Institute of Bioinformatics",
-            "@id": "https://ror.org/002n09z45",
-            "url":"https://sib.swiss"
-          }
+          ]
         },
         {
           "@type": "Dataset",
@@ -297,13 +279,7 @@
               "@type": "Person",
               "name": "The EPD team"
             }
-          ],
-          "provider": {
-            "@type": "Organization",
-            "name": "SIB Swiss Institute of Bioinformatics",
-            "@id": "https://ror.org/002n09z45",
-            "url":"https://sib.swiss"
-          }
+          ]
         },
         {
           "@type": "Dataset",
@@ -321,13 +297,7 @@
               "@type": "Person",
               "name": "The EPD team"
             }
-          ],
-          "provider": {
-            "@type": "Organization",
-            "name": "SIB Swiss Institute of Bioinformatics",
-            "@id": "https://ror.org/002n09z45",
-            "url":"https://sib.swiss"
-          }
+          ]
         },
         {
           "@type": "Dataset",
@@ -345,13 +315,7 @@
               "@type": "Person",
               "name": "The EPD team"
             }
-          ],
-          "provider": {
-            "@type": "Organization",
-            "name": "SIB Swiss Institute of Bioinformatics",
-            "@id": "https://ror.org/002n09z45",
-            "url":"https://sib.swiss"
-          }
+          ]
         },
         {
           "@type": "Dataset",
@@ -369,13 +333,7 @@
               "@type": "Person",
               "name": "The EPD team"
             }
-          ],
-          "provider": {
-            "@type": "Organization",
-            "name": "SIB Swiss Institute of Bioinformatics",
-            "@id": "https://ror.org/002n09z45",
-            "url":"https://sib.swiss"
-          }
+          ]
         },
         {
           "@type": "Dataset",
@@ -393,13 +351,7 @@
               "@type": "Person",
               "name": "The EPD team"
             }
-          ],
-          "provider": {
-            "@type": "Organization",
-            "name": "SIB Swiss Institute of Bioinformatics",
-            "@id": "https://ror.org/002n09z45",
-            "url":"https://sib.swiss"
-          }
+          ]
         },
         {
           "@type": "Dataset",
@@ -417,13 +369,7 @@
               "@type": "Person",
               "name": "The EPD team"
             }
-          ],
-          "provider": {
-            "@type": "Organization",
-            "name": "SIB Swiss Institute of Bioinformatics",
-            "@id": "https://ror.org/002n09z45",
-            "url":"https://sib.swiss"
-          }
+          ]
         },
         {
           "@type": "Dataset",
@@ -441,13 +387,7 @@
               "@type": "Person",
               "name": "The EPD team"
             }
-          ],
-          "provider": {
-            "@type": "Organization",
-            "name": "SIB Swiss Institute of Bioinformatics",
-            "@id": "https://ror.org/002n09z45",
-            "url":"https://sib.swiss"
-          }
+          ]
         },
         {
           "@type": "Dataset",
@@ -465,13 +405,7 @@
               "@type": "Person",
               "name": "The EPD team"
             }
-          ],
-          "provider": {
-            "@type": "Organization",
-            "name": "SIB Swiss Institute of Bioinformatics",
-            "@id": "https://ror.org/002n09z45",
-            "url":"https://sib.swiss"
-          }
+          ]
         },
         {
           "@type": "Dataset",
@@ -489,13 +423,7 @@
               "@type": "Person",
               "name": "The EPD team"
             }
-          ],
-          "provider": {
-            "@type": "Organization",
-            "name": "SIB Swiss Institute of Bioinformatics",
-            "@id": "https://ror.org/002n09z45",
-            "url":"https://sib.swiss"
-          }
+          ]
         },
         {
           "@type": "Dataset",
@@ -513,13 +441,7 @@
               "@type": "Person",
               "name": "The EPD team"
             }
-          ],
-          "provider": {
-            "@type": "Organization",
-            "name": "SIB Swiss Institute of Bioinformatics",
-            "@id": "https://ror.org/002n09z45",
-            "url":"https://sib.swiss"
-          }
+          ]
         },
         {
           "@type": "Dataset",
@@ -537,13 +459,7 @@
               "@type": "Person",
               "name": "The EPD team"
             }
-          ],
-          "provider": {
-            "@type": "Organization",
-            "name": "SIB Swiss Institute of Bioinformatics",
-            "@id": "https://ror.org/002n09z45",
-            "url":"https://sib.swiss"
-          }
+          ]
         },
         {
           "@type": "Dataset",
@@ -561,13 +477,7 @@
               "@type": "Person",
               "name": "The EPD team"
             }
-          ],
-          "provider": {
-            "@type": "Organization",
-            "name": "SIB Swiss Institute of Bioinformatics",
-            "@id": "https://ror.org/002n09z45",
-            "url":"https://sib.swiss"
-          }
+          ]
         },
         {
           "@type": "Dataset",
@@ -585,13 +495,7 @@
               "@type": "Person",
               "name": "The EPD team"
             }
-          ],
-          "provider": {
-            "@type": "Organization",
-            "name": "SIB Swiss Institute of Bioinformatics",
-            "@id": "https://ror.org/002n09z45",
-            "url":"https://sib.swiss"
-          }
+          ]
         },
         {
           "@type": "Dataset",
@@ -609,13 +513,7 @@
               "@type": "Person",
               "name": "The EPD team"
             }
-          ],
-          "provider": {
-            "@type": "Organization",
-            "name": "SIB Swiss Institute of Bioinformatics",
-            "@id": "https://ror.org/002n09z45",
-            "url":"https://sib.swiss"
-          }
+          ]
         }
     ]
 }
